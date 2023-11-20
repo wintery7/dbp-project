@@ -255,6 +255,7 @@ namespace deepcheesebacon
             RemoveButton.Text = "삭제";
             RemoveButton.TextColor = Color.White;
             RemoveButton.UseVisualStyleBackColor = false;
+            RemoveButton.Click += RemoveButton_Click_1;
             // 
             // ModifyButton
             // 
