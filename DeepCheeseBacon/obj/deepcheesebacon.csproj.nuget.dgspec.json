@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Desktop\\dbp-project\\deepcheesebacon\\deepcheesebacon.csproj": {}
+    "C:\\Users\\User\\Documents\\GitHub\\DeepCheeseBacon\\dbp-project\\deepcheesebacon\\deepcheesebacon.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Desktop\\dbp-project\\deepcheesebacon\\deepcheesebacon.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\DeepCheeseBacon\\dbp-project\\deepcheesebacon\\deepcheesebacon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\dbp-project\\deepcheesebacon\\deepcheesebacon.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\DeepCheeseBacon\\dbp-project\\deepcheesebacon\\deepcheesebacon.csproj",
         "projectName": "deepcheesebacon",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\dbp-project\\deepcheesebacon\\deepcheesebacon.csproj",
-        "packagesPath": "C:\\Users\\neopi\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\dbp-project\\deepcheesebacon\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\DeepCheeseBacon\\dbp-project\\deepcheesebacon\\deepcheesebacon.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\DeepCheeseBacon\\dbp-project\\deepcheesebacon\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\neopi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,9 +44,21 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.2.0, )"
+            },
+            "NLog": {
+              "target": "Package",
+              "version": "[5.2.6, )"
+            },
+            "WebSocketSharp-netstandard": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             }
           },
           "imports": [
@@ -68,7 +80,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,9 +1,12 @@
 using deepcheesebacon.Work;
 
-namespace deepcheesebacon {
-    public partial class WorkForm : Form {
+namespace deepcheesebacon
+{
+    public partial class WorkForm : Form
+    {
         DBHandlerForWork db;
-        public WorkForm() {
+        public WorkForm()
+        {
             InitializeComponent();
             //DB = DBHandler.Instance();
             //DB.setTopCategoryItem(this.TopCategoryCombo, this.MiddleCategoryCombo, this.BottomCategoryCombo);
@@ -12,7 +15,8 @@ namespace deepcheesebacon {
             InitDatabase();
         }
 
-        private void InitDatabase() {
+        private void InitDatabase()
+        {
             DBHandlerForWork.Instance.SetDBSource("34.64.40.193", "deep_cheese", "seoungjun", "1234", "utf8");
             db = DBHandlerForWork.Instance;
         }
@@ -31,15 +35,18 @@ namespace deepcheesebacon {
         }
         */
 
-        private void MiddleCategoryCombo_SelectedIndexChanged(object sender, EventArgs e) {
+        private void MiddleCategoryCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
             //DB.setBottomCategory(this.BottomCategoryCombo, TopCategoryCombo.SelectedItem.ToString(), MiddleCategoryCombo.SelectedItem.ToString());
         }
 
-        private void TopCategoryCombo_SelectedIndexChanged(object sender, EventArgs e) {
+        private void TopCategoryCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
             //DB.setMiddleCategory(MiddleCategoryCombo, this.BottomCategoryCombo, TopCategoryCombo.SelectedItem.ToString());
         }
 
-        private void SearchButton_Click(object sender, EventArgs e) {
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
             /*
             string topCategory = this.TopCategoryCombo.Text;
             string middleCategory = this.MiddleCategoryCombo.Text;
@@ -52,7 +59,8 @@ namespace deepcheesebacon {
             */
         }
 
-        private void RegisterButton_Click(object sender, EventArgs e) {
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
             /*
             DateTime startday = this.StartDay.Value.Date;
             DateTime starttime = this.StartTime.Value;
@@ -73,40 +81,54 @@ namespace deepcheesebacon {
             */
         }
 
-        private void WorkMasterButton_Click(object sender, EventArgs e) {
+        private void WorkMasterButton_Click(object sender, EventArgs e)
+        {
             Form form = new WorkMasterForm();
             form.Show();
         }
 
-        private void RemoveButton_Click(object sender, EventArgs e) {
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void ModifyButton_Click(object sender, EventArgs e) {
+        private void ModifyButton_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void WorkDetailBox_TextChanged(object sender, EventArgs e) {
+        private void WorkDetailBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
-        private void IdSearchBox_TextChanged(object sender, EventArgs e) {
+        private void IdSearchBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
-        private void IdSearchLabel_Click(object sender, EventArgs e) {
+        private void IdSearchLabel_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void customGroupBox1_Enter(object sender, EventArgs e) {
+        private void customGroupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
 
-        private void WorkForm_Load(object sender, EventArgs e) {
+        private void WorkForm_Load(object sender, EventArgs e)
+        {
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e) {
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void RemoveButton_Click_1(object sender, EventArgs e)
+        {
 
         }
     }
