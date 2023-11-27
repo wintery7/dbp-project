@@ -2002,23 +2002,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\박민지\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\DeepCheeseBacon\\dbp-project\\deepcheesebacon\\deepcheesebacon.csproj",
+      "projectUniqueName": "C:\\Users\\박민지\\dbp-project\\deepcheesebacon\\deepcheesebacon.csproj",
       "projectName": "deepcheesebacon",
-      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\DeepCheeseBacon\\dbp-project\\deepcheesebacon\\deepcheesebacon.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\DeepCheeseBacon\\dbp-project\\deepcheesebacon\\obj\\",
+      "projectPath": "C:\\Users\\박민지\\dbp-project\\deepcheesebacon\\deepcheesebacon.csproj",
+      "packagesPath": "C:\\Users\\박민지\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\박민지\\dbp-project\\deepcheesebacon\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\박민지\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2027,6 +2027,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2081,7 +2082,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

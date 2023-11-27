@@ -1,4 +1,5 @@
-﻿using System;
+﻿using deepcheesebacon.Work;
+using System;
 
 namespace DeepCheeseBacon.SourceCode.MessageSystem
 {
@@ -30,76 +31,88 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
         /// </summary>
         private void InitializeComponent()
         {
-            listBoxMessageList = new System.Windows.Forms.ListBox();
-            label1 = new System.Windows.Forms.Label();
-            buttonRealTimeChat = new System.Windows.Forms.Button();
-            label2 = new System.Windows.Forms.Label();
-            buttonRefresh = new System.Windows.Forms.Button();
+            listBoxMessageList = new ListBox();
+            buttonRealTimeChat = new CustomButtonStyle();
+            customGroupBox2 = new CustomGroupBox();
+            refreshButton = new deepcheesebacon.ImageButton();
+            customGroupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // listBoxMessageList
             // 
             listBoxMessageList.FormattingEnabled = true;
-            listBoxMessageList.ItemHeight = 15;
-            listBoxMessageList.Location = new System.Drawing.Point(271, 75);
+            listBoxMessageList.ItemHeight = 20;
+            listBoxMessageList.Location = new Point(20, 54);
+            listBoxMessageList.Margin = new Padding(4);
             listBoxMessageList.Name = "listBoxMessageList";
-            listBoxMessageList.Size = new System.Drawing.Size(513, 499);
+            listBoxMessageList.Size = new Size(829, 444);
             listBoxMessageList.TabIndex = 0;
             listBoxMessageList.Click += listBoxMessageList_Click;
-            listBoxMessageList.SelectedIndexChanged += listBoxMessageList_SelectedIndexChanged;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(271, 45);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(59, 15);
-            label1.TabIndex = 1;
-            label1.Text = "쪽지 목록";
             // 
             // buttonRealTimeChat
             // 
-            buttonRealTimeChat.Location = new System.Drawing.Point(869, 455);
+            buttonRealTimeChat.BackColor = Color.FromArgb(94, 159, 242);
+            buttonRealTimeChat.BackgroundColor = Color.FromArgb(94, 159, 242);
+            buttonRealTimeChat.BorderColor = Color.PaleVioletRed;
+            buttonRealTimeChat.BorderRadius = 20;
+            buttonRealTimeChat.BorderSize = 0;
+            buttonRealTimeChat.FlatStyle = FlatStyle.Flat;
+            buttonRealTimeChat.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonRealTimeChat.ForeColor = Color.White;
+            buttonRealTimeChat.Location = new Point(675, 506);
+            buttonRealTimeChat.Margin = new Padding(4);
             buttonRealTimeChat.Name = "buttonRealTimeChat";
-            buttonRealTimeChat.Size = new System.Drawing.Size(135, 119);
+            buttonRealTimeChat.Size = new Size(174, 35);
             buttonRealTimeChat.TabIndex = 2;
             buttonRealTimeChat.Text = "실시간 채팅방 입장";
-            buttonRealTimeChat.UseVisualStyleBackColor = true;
+            buttonRealTimeChat.TextColor = Color.White;
+            buttonRealTimeChat.UseVisualStyleBackColor = false;
             buttonRealTimeChat.Click += buttonRealTimeChat_Click;
             // 
-            // label2
+            // customGroupBox2
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(549, 45);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(235, 15);
-            label2.TabIndex = 3;
-            label2.Text = "쪽지 리스트 더블 클릭시 해당 쪽지로 이동";
+            customGroupBox2.BackColor = Color.Transparent;
+            customGroupBox2.Controls.Add(refreshButton);
+            customGroupBox2.Controls.Add(listBoxMessageList);
+            customGroupBox2.Controls.Add(buttonRealTimeChat);
+            customGroupBox2.Font = new Font("맑은 고딕", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            customGroupBox2.Location = new Point(41, 36);
+            customGroupBox2.Margin = new Padding(4);
+            customGroupBox2.Name = "customGroupBox2";
+            customGroupBox2.Padding = new Padding(4);
+            customGroupBox2.Radious = 25;
+            customGroupBox2.Size = new Size(871, 549);
+            customGroupBox2.TabIndex = 29;
+            customGroupBox2.TabStop = false;
+            customGroupBox2.Text = "Message";
+            customGroupBox2.TitleBackColor = Color.FromArgb(94, 159, 242);
+            customGroupBox2.TitleFont = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            customGroupBox2.TitleForeColor = Color.White;
+            customGroupBox2.TitleHatchStyle = System.Drawing.Drawing2D.HatchStyle.Percent60;
             // 
-            // buttonRefresh
+            // refreshButton
             // 
-            buttonRefresh.Location = new System.Drawing.Point(800, 75);
-            buttonRefresh.Name = "buttonRefresh";
-            buttonRefresh.Size = new System.Drawing.Size(155, 35);
-            buttonRefresh.TabIndex = 4;
-            buttonRefresh.Text = "쪽지 목록 새로고침";
-            buttonRefresh.UseVisualStyleBackColor = true;
-            buttonRefresh.Click += buttonRefresh_Click;
+            refreshButton.BackgroundImage = deepcheesebacon.Properties.Resources.refresh;
+            refreshButton.BackgroundImageLayout = ImageLayout.Zoom;
+            refreshButton.Image_01 = deepcheesebacon.Properties.Resources.refresh;
+            refreshButton.Image_02 = deepcheesebacon.Properties.Resources.refreshoption;
+            refreshButton.Location = new Point(840, 5);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(23, 26);
+            refreshButton.TabIndex = 5;
+            refreshButton.Click += refreshbutton_click;
             // 
             // MessageLobbyForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1084, 661);
-            Controls.Add(buttonRefresh);
-            Controls.Add(label2);
-            Controls.Add(buttonRealTimeChat);
-            Controls.Add(label1);
-            Controls.Add(listBoxMessageList);
+            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(951, 616);
+            Controls.Add(customGroupBox2);
+            Margin = new Padding(4);
             Name = "MessageLobbyForm";
             Text = "MessageLobbyForm";
+            customGroupBox2.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -109,10 +122,9 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBoxMessageList;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonRealTimeChat;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonRefresh;
+        private ListBox listBoxMessageList;
+        private CustomGroupBox customGroupBox2;
+        private deepcheesebacon.ImageButton refreshButton;
+        private CustomButtonStyle buttonRealTimeChat;
     }
 }

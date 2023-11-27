@@ -1,4 +1,6 @@
-﻿namespace deepcheesebacon
+﻿using deepcheesebacon.Work;
+
+namespace deepcheesebacon
 {
     partial class LoginForm
     {
@@ -28,65 +30,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonLogin = new System.Windows.Forms.Button();
-            label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            textBoxEmail = new System.Windows.Forms.TextBox();
-            textBoxPassword = new System.Windows.Forms.TextBox();
+            buttonLogin = new CustomButtonStyle();
+            label1 = new Label();
+            label2 = new Label();
+            textBoxEmail = new TextBox();
+            textBoxPassword = new TextBox();
             SuspendLayout();
             // 
             // buttonLogin
             // 
-            buttonLogin.Location = new System.Drawing.Point(713, 218);
+            buttonLogin.BackColor = Color.FromArgb(94, 159, 242);
+            buttonLogin.BackgroundColor = Color.FromArgb(94, 159, 242);
+            buttonLogin.BorderColor = Color.PaleVioletRed;
+            buttonLogin.BorderRadius = 20;
+            buttonLogin.BorderSize = 0;
+            buttonLogin.FlatStyle = FlatStyle.Flat;
+            buttonLogin.Font = new Font("맑은 고딕", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonLogin.ForeColor = Color.White;
+            buttonLogin.Location = new Point(674, 215);
+            buttonLogin.Margin = new Padding(4);
             buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new System.Drawing.Size(100, 102);
+            buttonLogin.Size = new Size(129, 136);
             buttonLogin.TabIndex = 0;
             buttonLogin.Text = "Login";
-            buttonLogin.UseVisualStyleBackColor = true;
+            buttonLogin.TextColor = Color.White;
+            buttonLogin.UseVisualStyleBackColor = false;
             buttonLogin.Click += buttonLogin_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(312, 235);
+            label1.Location = new Point(158, 237);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(36, 15);
+            label1.Size = new Size(46, 20);
             label1.TabIndex = 1;
             label1.Text = "Email";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(312, 285);
+            label2.Location = new Point(158, 304);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(25, 15);
+            label2.Size = new Size(32, 20);
             label2.TabIndex = 2;
             label2.Text = "PW";
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new System.Drawing.Point(357, 232);
+            textBoxEmail.Location = new Point(216, 233);
+            textBoxEmail.Margin = new Padding(4);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new System.Drawing.Size(323, 23);
+            textBoxEmail.Size = new Size(414, 27);
             textBoxEmail.TabIndex = 3;
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new System.Drawing.Point(357, 282);
+            textBoxPassword.Location = new Point(216, 300);
+            textBoxPassword.Margin = new Padding(4);
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new System.Drawing.Size(323, 23);
+            textBoxPassword.Size = new Size(414, 27);
             textBoxPassword.TabIndex = 4;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1084, 661);
+            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(951, 616);
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxEmail);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(buttonLogin);
+            Margin = new Padding(4);
             Name = "LoginForm";
             Text = "LoginForm";
             ResumeLayout(false);
@@ -94,11 +111,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.TextBox textBoxPassword;
+        private Label label1;
+        private Label label2;
+        private TextBox textBoxEmail;
+        private TextBox textBoxPassword;
+        private CustomButtonStyle buttonLogin;
     }
 }

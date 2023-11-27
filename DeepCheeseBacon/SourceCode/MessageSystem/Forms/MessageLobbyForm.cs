@@ -47,19 +47,15 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
             }
         }
 
-        private void buttonRefresh_Click(object sender, EventArgs e)
-        {
-            LoadChattingList();
-        }
-
         private void buttonRealTimeChat_Click(object sender, EventArgs e)
         {
             // 실시간 채팅으로 넘어가는 코드 추가
         }
 
-        private void listBoxMessageList_SelectedIndexChanged(object sender, EventArgs e)
+        private void refreshbutton_click(object sender, EventArgs e)
         {
-
+            LoadChattingList();
         }
+
     }
 }

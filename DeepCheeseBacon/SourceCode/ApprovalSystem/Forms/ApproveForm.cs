@@ -66,7 +66,7 @@ namespace deepcheesebacon
                 new ApprovalApproveRequest()
                 {
                     approval = selectedApproval,
-                    
+
                 });
                 MessageBox.Show("결재완료되었습니다");
                 LoadTaskRequiringMyApprovalList();
