@@ -1,7 +1,7 @@
 ﻿using deepcheesebacon.Work;
 using System;
 
-namespace DeepCheeseBacon.SourceCode.MessageSystem
+namespace deepcheesebacon
 {
     partial class MessageLobbyForm
     {
@@ -32,6 +32,7 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
         private void InitializeComponent()
         {
             listBoxMessageList = new ListBox();
+
             buttonRealTimeChat = new CustomButtonStyle();
             customGroupBox2 = new CustomGroupBox();
             refreshButton = new deepcheesebacon.ImageButton();
@@ -41,6 +42,7 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
             // listBoxMessageList
             // 
             listBoxMessageList.FormattingEnabled = true;
+
             listBoxMessageList.ItemHeight = 20;
             listBoxMessageList.Location = new Point(20, 54);
             listBoxMessageList.Margin = new Padding(4);
@@ -71,6 +73,7 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
             // 
             // customGroupBox2
             // 
+
             customGroupBox2.BackColor = Color.Transparent;
             customGroupBox2.Controls.Add(refreshButton);
             customGroupBox2.Controls.Add(listBoxMessageList);
@@ -92,6 +95,7 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
             // 
             // refreshButton
             // 
+
             refreshButton.BackgroundImage = deepcheesebacon.Properties.Resources.refresh;
             refreshButton.BackgroundImageLayout = ImageLayout.Zoom;
             refreshButton.Image_01 = deepcheesebacon.Properties.Resources.refresh;
@@ -123,6 +127,7 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
         #endregion
 
         private ListBox listBoxMessageList;
+
         private CustomGroupBox customGroupBox2;
         private deepcheesebacon.ImageButton refreshButton;
         private CustomButtonStyle buttonRealTimeChat;
