@@ -10,16 +10,19 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace DeepCheeseBacon.SourceCode.MessageSystem
+namespace deepcheesebacon
 {
-    public partial class MessageLobbyForm : Form
+    partial class MessageLobbyForm : Form
     {
         MessageService messageService;
         DBManager dBManager;
         Dictionary<int, User> userDitionary;
         public MessageLobbyForm()
         {
+
             InitializeComponent();
+
+            Console.WriteLine("MessageLobbyFrom 실행");
 
             messageService = new MessageService();
 
@@ -31,11 +34,15 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
             List<string> chattingList = messageService.GetChattingList();
 
             listBoxMessageList.Items.Clear();
-
-            foreach (string email in chattingList)
+            if (chattingList != null && chattingList.Count > 0)
             {
-                listBoxMessageList.Items.Add(email);
+                foreach (string email in chattingList)
+                {
+                    listBoxMessageList.Items.Add(email);
+                }
             }
+
+
         }
 
         private void listBoxMessageList_Click(object sender, EventArgs e)
