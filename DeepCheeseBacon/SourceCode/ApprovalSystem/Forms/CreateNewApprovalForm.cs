@@ -50,6 +50,14 @@ namespace deepcheesebacon
                 int selectedApproverId;
                 if (firstApprovalIdDict.TryGetValue(comboBoxApproverList.SelectedItem.ToString(), out selectedApproverId))
                 {
+                    // 각 텍스트 박스의 텍스트 길이를 확인하여 비어 있는지 여부를 판단
+                    if (string.IsNullOrWhiteSpace(textBoxApprovalTitle.Text) ||
+                        string.IsNullOrWhiteSpace(textBoxApprovalDescription.Text))
+                    {
+                        MessageBox.Show("갤제 제목과 내용 입력란을 채워주세요.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return; 
+                    }
+
                     Approval approval = new Approval
                     {
                         Title = textBoxApprovalTitle.Text,
@@ -58,16 +66,15 @@ namespace deepcheesebacon
                         Comment = textBoxApprovalComment.Text,
                         RoleStatus = Role.FirstApprover,
                         Status = Approval.ApprovalStatus.Pending,
-                        ApproverId = selectedApproverId, // 선택한 항목의 ID 할당
-                        Memo = "", // 초기화
-                        FirstApproverId = 0, // 초기화
-                        SecondApproverId = 0, // 초기화
+                        ApproverId = selectedApproverId,
+                        Memo = "",
+                        FirstApproverId = 0,
+                        SecondApproverId = 0,
                         ApprovalDate = DateTime.Now,
                         RequestId = myinfo.userId
                     };
 
-
-                    if (ApprovalService.CreateApproval(approval) > 0) // 결재 요청에 성공한다면
+                    if (ApprovalService.CreateApproval(approval) > 0)
                     {
                         MessageBox.Show("결재 등록에 성공하였습니다.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Debug.WriteLine("등록된 결재를 승인할 승인자 ID: " + approval.ApproverId);

@@ -37,7 +37,7 @@
             // 
             // buttonLogin
             // 
-            buttonLogin.Location = new Point(457, 42);
+            buttonLogin.Location = new Point(644, 188);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(100, 102);
             buttonLogin.TabIndex = 0;
@@ -48,7 +48,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(56, 59);
+            label1.Location = new Point(243, 205);
             label1.Name = "label1";
             label1.Size = new Size(36, 15);
             label1.TabIndex = 1;
@@ -57,7 +57,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(56, 109);
+            label2.Location = new Point(243, 255);
             label2.Name = "label2";
             label2.Size = new Size(25, 15);
             label2.TabIndex = 2;
@@ -65,15 +65,16 @@
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(101, 56);
+            textBoxEmail.Location = new Point(288, 202);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(323, 23);
             textBoxEmail.TabIndex = 3;
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(101, 106);
+            textBoxPassword.Location = new Point(288, 252);
             textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.PasswordChar = '*';
             textBoxPassword.Size = new Size(323, 23);
             textBoxPassword.TabIndex = 4;
             // 
@@ -81,7 +82,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1084, 661);
+            ClientSize = new Size(962, 497);
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxEmail);
             Controls.Add(label2);

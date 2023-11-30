@@ -312,12 +312,14 @@ CREATE TABLE IF NOT EXISTS approval (
             try
             {
                 // 유저 ID를 사용하여 해당 유저에 관련된 "결재 중"인 결재를 검색
-                string query = "SELECT * FROM approval WHERE approver_id = @userId AND status = @status";
+                string query = "SELECT * FROM approval WHERE approver_id = @userId AND status = @status AND role_status = @userRole";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
                     cmd.Parameters.AddWithValue("@userId", userId);
                     cmd.Parameters.AddWithValue("@status", (int)Approval.ApprovalStatus.Pending);
+                    cmd.Parameters.AddWithValue("@userRole", (int)myInfo.role);
+
 
                     if (connection.State != ConnectionState.Open)
                     {

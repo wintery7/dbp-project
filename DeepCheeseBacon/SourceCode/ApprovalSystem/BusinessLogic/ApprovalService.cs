@@ -45,6 +45,7 @@ namespace deepcheesebacon.SourceCode.ApprovalSystem
                     case Role.FirstApprover:
                         request.approval.RoleStatus = Role.SecondApprover;
                         request.approval.FirstApproverId = request.approval.ApproverId;
+                        request.approval.ApproverId = 4; // 테스트 2차 승인자 한 명이라고 가정하고 4번 대입
                         break;
                     case Role.SecondApprover:
                         request.approval.RoleStatus = Role.Approved;

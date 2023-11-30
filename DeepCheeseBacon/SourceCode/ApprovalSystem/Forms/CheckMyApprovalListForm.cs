@@ -26,6 +26,10 @@ namespace deepcheesebacon
 
         private void CheckMyApprovalListForm_Load(object sender, EventArgs e)
         {
+            LoadLists();
+        }
+        private void LoadLists()
+        {
             LoadPendingApprovalList();
             LoadCompletedApprovalList();
             LoadTaskRequiringMyApprovalList();
@@ -169,6 +173,8 @@ namespace deepcheesebacon
         {
             ApproveForm approveForm = new ApproveForm();
             approveForm.ShowDialog();
+            LoadLists();
+            
         }
 
         private void listBoxMyApprovalProgressList_SelectedIndexChanged(object sender, EventArgs e)
