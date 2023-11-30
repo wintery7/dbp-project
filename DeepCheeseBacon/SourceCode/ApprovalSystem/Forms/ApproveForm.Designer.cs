@@ -1,4 +1,6 @@
-﻿namespace deepcheesebacon
+﻿using deepcheesebacon.Work;
+
+namespace deepcheesebacon
 {
     partial class ApproveForm
     {
@@ -28,82 +30,134 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonRejectApproval = new System.Windows.Forms.Button();
-            buttonApproveApproval = new System.Windows.Forms.Button();
-            listBoxTaskRequiringMyApprovalList = new System.Windows.Forms.ListBox();
-            label4 = new System.Windows.Forms.Label();
-            labelDateTime = new System.Windows.Forms.Label();
+            buttonRejectApproval = new CustomButtonStyle();
+            buttonApproveApproval = new CustomButtonStyle();
+            listBoxTaskRequiringMyApprovalList = new ListBox();
+            labelDateTime = new Label();
+            customGroupBox1 = new CustomGroupBox();
+            customGroupBox2 = new CustomGroupBox();
+            customGroupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // buttonRejectApproval
             // 
-            buttonRejectApproval.Location = new System.Drawing.Point(160, 190);
+            buttonRejectApproval.BackColor = Color.FromArgb(94, 159, 242);
+            buttonRejectApproval.BackgroundColor = Color.FromArgb(94, 159, 242);
+            buttonRejectApproval.BorderColor = Color.PaleVioletRed;
+            buttonRejectApproval.BorderRadius = 20;
+            buttonRejectApproval.BorderSize = 0;
+            buttonRejectApproval.FlatStyle = FlatStyle.Flat;
+            buttonRejectApproval.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonRejectApproval.ForeColor = Color.White;
+            buttonRejectApproval.Location = new Point(731, 547);
+            buttonRejectApproval.Margin = new Padding(4);
             buttonRejectApproval.Name = "buttonRejectApproval";
-            buttonRejectApproval.Size = new System.Drawing.Size(75, 23);
+            buttonRejectApproval.Size = new Size(96, 31);
             buttonRejectApproval.TabIndex = 11;
             buttonRejectApproval.Text = "반려";
-            buttonRejectApproval.UseVisualStyleBackColor = true;
+            buttonRejectApproval.TextColor = Color.White;
+            buttonRejectApproval.UseVisualStyleBackColor = false;
             buttonRejectApproval.Click += buttonRejectApproval_Click;
             // 
             // buttonApproveApproval
             // 
-            buttonApproveApproval.Location = new System.Drawing.Point(72, 190);
+            buttonApproveApproval.BackColor = Color.FromArgb(94, 159, 242);
+            buttonApproveApproval.BackgroundColor = Color.FromArgb(94, 159, 242);
+            buttonApproveApproval.BorderColor = Color.PaleVioletRed;
+            buttonApproveApproval.BorderRadius = 20;
+            buttonApproveApproval.BorderSize = 0;
+            buttonApproveApproval.FlatStyle = FlatStyle.Flat;
+            buttonApproveApproval.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonApproveApproval.ForeColor = Color.White;
+            buttonApproveApproval.Location = new Point(617, 547);
+            buttonApproveApproval.Margin = new Padding(4);
             buttonApproveApproval.Name = "buttonApproveApproval";
-            buttonApproveApproval.Size = new System.Drawing.Size(75, 23);
+            buttonApproveApproval.Size = new Size(96, 31);
             buttonApproveApproval.TabIndex = 10;
             buttonApproveApproval.Text = "결재";
-            buttonApproveApproval.UseVisualStyleBackColor = true;
+            buttonApproveApproval.TextColor = Color.White;
+            buttonApproveApproval.UseVisualStyleBackColor = false;
             buttonApproveApproval.Click += buttonApproveApproval_Click;
             // 
             // listBoxTaskRequiringMyApprovalList
             // 
             listBoxTaskRequiringMyApprovalList.FormattingEnabled = true;
-            listBoxTaskRequiringMyApprovalList.ItemHeight = 15;
-            listBoxTaskRequiringMyApprovalList.Location = new System.Drawing.Point(72, 90);
+            listBoxTaskRequiringMyApprovalList.ItemHeight = 20;
+            listBoxTaskRequiringMyApprovalList.Location = new Point(8, 48);
+            listBoxTaskRequiringMyApprovalList.Margin = new Padding(4);
             listBoxTaskRequiringMyApprovalList.Name = "listBoxTaskRequiringMyApprovalList";
-            listBoxTaskRequiringMyApprovalList.Size = new System.Drawing.Size(179, 94);
+            listBoxTaskRequiringMyApprovalList.Size = new Size(203, 444);
             listBoxTaskRequiringMyApprovalList.TabIndex = 13;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(72, 72);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(163, 15);
-            label4.TabIndex = 12;
-            label4.Text = "내가 결재해야할 업무 리스트";
             // 
             // labelDateTime
             // 
             labelDateTime.AutoSize = true;
-            labelDateTime.Location = new System.Drawing.Point(72, 234);
+            labelDateTime.Location = new Point(35, 552);
+            labelDateTime.Margin = new Padding(4, 0, 4, 0);
             labelDateTime.Name = "labelDateTime";
-            labelDateTime.Size = new System.Drawing.Size(66, 15);
+            labelDateTime.Size = new Size(82, 20);
             labelDateTime.TabIndex = 14;
             labelDateTime.Text = "결재 시각: ";
             // 
+            // customGroupBox1
+            // 
+            customGroupBox1.BackColor = Color.Transparent;
+            customGroupBox1.Controls.Add(listBoxTaskRequiringMyApprovalList);
+            customGroupBox1.Location = new Point(27, 23);
+            customGroupBox1.Margin = new Padding(4);
+            customGroupBox1.Name = "customGroupBox1";
+            customGroupBox1.Padding = new Padding(4);
+            customGroupBox1.Radious = 25;
+            customGroupBox1.Size = new Size(220, 503);
+            customGroupBox1.TabIndex = 28;
+            customGroupBox1.TabStop = false;
+            customGroupBox1.Text = "업무 리스트";
+            customGroupBox1.TitleBackColor = Color.FromArgb(94, 159, 242);
+            customGroupBox1.TitleFont = new Font("맑은 고딕", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            customGroupBox1.TitleForeColor = Color.White;
+            customGroupBox1.TitleHatchStyle = System.Drawing.Drawing2D.HatchStyle.Percent60;
+            // 
+            // customGroupBox2
+            // 
+            customGroupBox2.BackColor = Color.Transparent;
+            customGroupBox2.Location = new Point(278, 23);
+            customGroupBox2.Margin = new Padding(4);
+            customGroupBox2.Name = "customGroupBox2";
+            customGroupBox2.Padding = new Padding(4);
+            customGroupBox2.Radious = 25;
+            customGroupBox2.Size = new Size(549, 503);
+            customGroupBox2.TabIndex = 29;
+            customGroupBox2.TabStop = false;
+            customGroupBox2.Text = "업무 내용";
+            customGroupBox2.TitleBackColor = Color.FromArgb(94, 159, 242);
+            customGroupBox2.TitleFont = new Font("맑은 고딕", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            customGroupBox2.TitleForeColor = Color.White;
+            customGroupBox2.TitleHatchStyle = System.Drawing.Drawing2D.HatchStyle.Percent60;
+            // 
             // ApproveForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(800, 450);
+            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(856, 598);
+            Controls.Add(customGroupBox2);
+            Controls.Add(customGroupBox1);
             Controls.Add(labelDateTime);
-            Controls.Add(listBoxTaskRequiringMyApprovalList);
-            Controls.Add(label4);
             Controls.Add(buttonRejectApproval);
             Controls.Add(buttonApproveApproval);
+            Margin = new Padding(4);
             Name = "ApproveForm";
             Text = "ApproveForm";
+            customGroupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonRejectApproval;
-        private System.Windows.Forms.Button buttonApproveApproval;
-        private System.Windows.Forms.ListBox listBoxTaskRequiringMyApprovalList;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label labelDateTime;
+        private ListBox listBoxTaskRequiringMyApprovalList;
+        private Label labelDateTime;
+        private Work.CustomGroupBox customGroupBox1;
+        private CustomButtonStyle buttonRejectApproval;
+        private CustomButtonStyle buttonApproveApproval;
+        private CustomGroupBox customGroupBox2;
     }
 }

@@ -62,7 +62,7 @@ namespace deepcheesebacon
                     }
                 );
 
-         
+
 
             listBoxCompletedApprovalList.Items.Clear();
 

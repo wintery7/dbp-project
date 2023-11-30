@@ -28,60 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new System.Windows.Forms.Label();
-            listBoxMyApprovalProgressList = new System.Windows.Forms.ListBox();
-            label2 = new System.Windows.Forms.Label();
-            listBoxPendingApprovalList = new System.Windows.Forms.ListBox();
-            label3 = new System.Windows.Forms.Label();
-            listBoxCompletedApprovalList = new System.Windows.Forms.ListBox();
-            listBoxTaskRequiringMyApprovalList = new System.Windows.Forms.ListBox();
-            label4 = new System.Windows.Forms.Label();
-            buttonApproveApproval = new System.Windows.Forms.Button();
+            label1 = new Label();
+            listBoxMyApprovalProgressList = new ListBox();
+            label2 = new Label();
+            listBoxPendingApprovalList = new ListBox();
+            label3 = new Label();
+            listBoxCompletedApprovalList = new ListBox();
+            listBoxTaskRequiringMyApprovalList = new ListBox();
+            label4 = new Label();
+            buttonApproveApproval = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(73, 58);
+            label1.Location = new Point(94, 77);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(179, 15);
+            label1.Size = new Size(224, 20);
             label1.TabIndex = 0;
             label1.Text = "내가 등록한 결재들의 진행 사항";
             // 
             // listBoxMyApprovalProgressList
             // 
             listBoxMyApprovalProgressList.FormattingEnabled = true;
-            listBoxMyApprovalProgressList.ItemHeight = 15;
-            listBoxMyApprovalProgressList.Location = new System.Drawing.Point(73, 76);
+            listBoxMyApprovalProgressList.ItemHeight = 20;
+            listBoxMyApprovalProgressList.Location = new Point(94, 101);
+            listBoxMyApprovalProgressList.Margin = new Padding(4, 4, 4, 4);
             listBoxMyApprovalProgressList.Name = "listBoxMyApprovalProgressList";
-            listBoxMyApprovalProgressList.Size = new System.Drawing.Size(302, 94);
+            listBoxMyApprovalProgressList.Size = new Size(387, 124);
             listBoxMyApprovalProgressList.TabIndex = 1;
             listBoxMyApprovalProgressList.SelectedIndexChanged += listBoxMyApprovalProgressList_SelectedIndexChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(426, 58);
+            label2.Location = new Point(548, 77);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(179, 15);
+            label2.Size = new Size(224, 20);
             label2.TabIndex = 2;
             label2.Text = "내가 결재하였고 결재 중인 내역";
             // 
             // listBoxPendingApprovalList
             // 
             listBoxPendingApprovalList.FormattingEnabled = true;
-            listBoxPendingApprovalList.ItemHeight = 15;
-            listBoxPendingApprovalList.Location = new System.Drawing.Point(426, 76);
+            listBoxPendingApprovalList.ItemHeight = 20;
+            listBoxPendingApprovalList.Location = new Point(548, 101);
+            listBoxPendingApprovalList.Margin = new Padding(4, 4, 4, 4);
             listBoxPendingApprovalList.Name = "listBoxPendingApprovalList";
-            listBoxPendingApprovalList.Size = new System.Drawing.Size(290, 94);
+            listBoxPendingApprovalList.Size = new Size(372, 124);
             listBoxPendingApprovalList.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(426, 203);
+            label3.Location = new Point(548, 271);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(191, 15);
+            label3.Size = new Size(239, 20);
             label3.TabIndex = 4;
             label3.Text = "내가 결재해줬고 결재 완료된 내역";
             label3.Click += label3_Click;
@@ -89,35 +94,39 @@
             // listBoxCompletedApprovalList
             // 
             listBoxCompletedApprovalList.FormattingEnabled = true;
-            listBoxCompletedApprovalList.ItemHeight = 15;
-            listBoxCompletedApprovalList.Location = new System.Drawing.Point(426, 221);
+            listBoxCompletedApprovalList.ItemHeight = 20;
+            listBoxCompletedApprovalList.Location = new Point(548, 295);
+            listBoxCompletedApprovalList.Margin = new Padding(4, 4, 4, 4);
             listBoxCompletedApprovalList.Name = "listBoxCompletedApprovalList";
-            listBoxCompletedApprovalList.Size = new System.Drawing.Size(290, 94);
+            listBoxCompletedApprovalList.Size = new Size(372, 124);
             listBoxCompletedApprovalList.TabIndex = 5;
             // 
             // listBoxTaskRequiringMyApprovalList
             // 
             listBoxTaskRequiringMyApprovalList.FormattingEnabled = true;
-            listBoxTaskRequiringMyApprovalList.ItemHeight = 15;
-            listBoxTaskRequiringMyApprovalList.Location = new System.Drawing.Point(73, 221);
+            listBoxTaskRequiringMyApprovalList.ItemHeight = 20;
+            listBoxTaskRequiringMyApprovalList.Location = new Point(94, 295);
+            listBoxTaskRequiringMyApprovalList.Margin = new Padding(4, 4, 4, 4);
             listBoxTaskRequiringMyApprovalList.Name = "listBoxTaskRequiringMyApprovalList";
-            listBoxTaskRequiringMyApprovalList.Size = new System.Drawing.Size(302, 94);
+            listBoxTaskRequiringMyApprovalList.Size = new Size(387, 124);
             listBoxTaskRequiringMyApprovalList.TabIndex = 7;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(73, 203);
+            label4.Location = new Point(94, 271);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(163, 15);
+            label4.Size = new Size(204, 20);
             label4.TabIndex = 6;
             label4.Text = "내가 결재해야할 업무 리스트";
             // 
             // buttonApproveApproval
             // 
-            buttonApproveApproval.Location = new System.Drawing.Point(73, 340);
+            buttonApproveApproval.Location = new Point(94, 453);
+            buttonApproveApproval.Margin = new Padding(4, 4, 4, 4);
             buttonApproveApproval.Name = "buttonApproveApproval";
-            buttonApproveApproval.Size = new System.Drawing.Size(75, 23);
+            buttonApproveApproval.Size = new Size(96, 31);
             buttonApproveApproval.TabIndex = 8;
             buttonApproveApproval.Text = "결재하기";
             buttonApproveApproval.UseVisualStyleBackColor = true;
@@ -125,9 +134,9 @@
             // 
             // CheckMyApprovalListForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1084, 661);
+            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(951, 616);
             Controls.Add(buttonApproveApproval);
             Controls.Add(listBoxTaskRequiringMyApprovalList);
             Controls.Add(label4);
@@ -137,6 +146,7 @@
             Controls.Add(label2);
             Controls.Add(listBoxMyApprovalProgressList);
             Controls.Add(label1);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "CheckMyApprovalListForm";
             Text = "CheckMyApprovalListForm";
             Load += CheckMyApprovalListForm_Load;
@@ -146,14 +156,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBoxMyApprovalProgressList;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBoxPendingApprovalList;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox listBoxCompletedApprovalList;
-        private System.Windows.Forms.ListBox listBoxTaskRequiringMyApprovalList;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button buttonApproveApproval;
+        private Label label1;
+        private ListBox listBoxMyApprovalProgressList;
+        private Label label2;
+        private ListBox listBoxPendingApprovalList;
+        private Label label3;
+        private ListBox listBoxCompletedApprovalList;
+        private ListBox listBoxTaskRequiringMyApprovalList;
+        private Label label4;
+        private Button buttonApproveApproval;
     }
 }

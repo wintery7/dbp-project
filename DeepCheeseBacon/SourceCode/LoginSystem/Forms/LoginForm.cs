@@ -33,7 +33,7 @@ namespace deepcheesebacon
                 MessageBox.Show("로그인에 성공하였습니다");
 
                 // 로그인 후 실행할 메서드 작성
-                ApprovalSystemMainForm form = new ApprovalSystemMainForm(); 
+                ApprovalSystemMainForm form = new ApprovalSystemMainForm();
                 form.ShowDialog();
             }
             else
