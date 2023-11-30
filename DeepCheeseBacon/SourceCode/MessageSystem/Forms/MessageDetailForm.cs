@@ -20,14 +20,6 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem.Forms
         string opponentUserEmail;
         int opponentUserId;
 
-        public MessageDetailForm()
-        {
-            InitializeComponent();
-            dbManager = DBManager.GetDBManager();
-            myinfo = MyInfo.GetMyInfo();
-            LoadMessage();
-        }
-
         public MessageDetailForm(string opponentUserEmail)
         {
             InitializeComponent();
@@ -35,15 +27,17 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem.Forms
             myinfo = MyInfo.GetMyInfo();
             this.opponentUserEmail = opponentUserEmail;
             opponentUserId = ((User)dbManager.GetUserByEmail(opponentUserEmail)).UserId;
+            Console.WriteLine("otherUserId and email: " + opponentUserId + opponentUserEmail);
             LoadMessage();
         }
 
         private void LoadMessage()
         {
-            opponentUserId = 3; // 테스트용
+
             List<Message> messageList = dbManager.GetMessagesById(myinfo.userId, opponentUserId);
 
             listBoxChatBox.Items.Clear();
+
 
             foreach (Message message in messageList)
             {
@@ -73,7 +67,7 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem.Forms
             dbManager.SaveMessage(new Message
             {
                 senderId = myinfo.userId,
-                receiverId = 3, //  테스트용으로 3을 넣었음 원래는 receiverId = opponentUserId, 가 들어가야 됨
+                receiverId = opponentUserId,
                 content = textBoxInputMessage.Text,
             });
             LoadMessage();

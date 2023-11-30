@@ -28,19 +28,19 @@ partial class ApprovalSystemMainForm
     /// </summary>
     private void InitializeComponent()
     {
-        buttonCreateNewApproval = new System.Windows.Forms.Button();
-        buttonCheckMyApprovalList = new System.Windows.Forms.Button();
-        dataGridViewApprovalList = new System.Windows.Forms.DataGridView();
-        dataGridViewTaskSummary = new System.Windows.Forms.DataGridView();
+        buttonCreateNewApproval = new Button();
+        buttonCheckMyApprovalList = new Button();
+        dataGridViewApprovalList = new DataGridView();
+        dataGridViewTaskSummary = new DataGridView();
         ((System.ComponentModel.ISupportInitialize)dataGridViewApprovalList).BeginInit();
         ((System.ComponentModel.ISupportInitialize)dataGridViewTaskSummary).BeginInit();
         SuspendLayout();
         // 
         // buttonCreateNewApproval
         // 
-        buttonCreateNewApproval.Location = new System.Drawing.Point(53, 95);
+        buttonCreateNewApproval.Location = new Point(29, 38);
         buttonCreateNewApproval.Name = "buttonCreateNewApproval";
-        buttonCreateNewApproval.Size = new System.Drawing.Size(172, 23);
+        buttonCreateNewApproval.Size = new Size(172, 23);
         buttonCreateNewApproval.TabIndex = 0;
         buttonCreateNewApproval.Text = "신규 결재 등록";
         buttonCreateNewApproval.UseVisualStyleBackColor = true;
@@ -48,9 +48,9 @@ partial class ApprovalSystemMainForm
         // 
         // buttonCheckMyApprovalList
         // 
-        buttonCheckMyApprovalList.Location = new System.Drawing.Point(53, 332);
+        buttonCheckMyApprovalList.Location = new Point(29, 275);
         buttonCheckMyApprovalList.Name = "buttonCheckMyApprovalList";
-        buttonCheckMyApprovalList.Size = new System.Drawing.Size(172, 23);
+        buttonCheckMyApprovalList.Size = new Size(172, 23);
         buttonCheckMyApprovalList.TabIndex = 4;
         buttonCheckMyApprovalList.Text = "나의 결재 리스트 확인";
         buttonCheckMyApprovalList.UseVisualStyleBackColor = true;
@@ -58,26 +58,26 @@ partial class ApprovalSystemMainForm
         // 
         // dataGridViewApprovalList
         // 
-        dataGridViewApprovalList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridViewApprovalList.Location = new System.Drawing.Point(53, 133);
+        dataGridViewApprovalList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dataGridViewApprovalList.Location = new Point(29, 76);
         dataGridViewApprovalList.Name = "dataGridViewApprovalList";
         dataGridViewApprovalList.RowTemplate.Height = 25;
-        dataGridViewApprovalList.Size = new System.Drawing.Size(437, 150);
+        dataGridViewApprovalList.Size = new Size(437, 150);
         dataGridViewApprovalList.TabIndex = 5;
         // 
         // dataGridViewTaskSummary
         // 
-        dataGridViewTaskSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridViewTaskSummary.Location = new System.Drawing.Point(53, 361);
+        dataGridViewTaskSummary.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dataGridViewTaskSummary.Location = new Point(29, 304);
         dataGridViewTaskSummary.Name = "dataGridViewTaskSummary";
-        dataGridViewTaskSummary.Size = new System.Drawing.Size(437, 150);
+        dataGridViewTaskSummary.Size = new Size(437, 150);
         dataGridViewTaskSummary.TabIndex = 6;
         // 
         // ApprovalSystemMainForm
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(1084, 661);
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(1084, 661);
         Controls.Add(dataGridViewTaskSummary);
         Controls.Add(dataGridViewApprovalList);
         Controls.Add(buttonCheckMyApprovalList);
@@ -91,8 +91,8 @@ partial class ApprovalSystemMainForm
 
     #endregion
 
-    private System.Windows.Forms.Button buttonCreateNewApproval;
-    private System.Windows.Forms.Button buttonCheckMyApprovalList;
-    private System.Windows.Forms.DataGridView dataGridViewApprovalList;
-    private System.Windows.Forms.DataGridView dataGridViewTaskSummary;
+    private Button buttonCreateNewApproval;
+    private Button buttonCheckMyApprovalList;
+    private DataGridView dataGridViewApprovalList;
+    private DataGridView dataGridViewTaskSummary;
 }

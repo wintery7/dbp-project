@@ -18,6 +18,8 @@ namespace deepcheesebacon.SourceCode.MessageSystem.BusinessLogic
         }
         public List<string> GetChattingList()
         {
+            Console.WriteLine("GetChattingList 실행");
+
             return dbManager.GetChattingListByUserId(myInfo.userId);
         }
     }

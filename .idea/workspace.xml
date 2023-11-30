@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d7dc338-b0ed-45c2-88d5-c06e52b0523d" name="변경" comment="" />
+    <list default="true" id="0d7dc338-b0ed-45c2-88d5-c06e52b0523d" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/deepcheesebacon/FileContentIndex/0893a429-96fc-4645-9b7a-80b186d36705.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/deepcheesebacon/FileContentIndex/e2d1e71e-4a6a-42f2-a40a-030a5ea762a1.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/deepcheesebacon/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/deepcheesebacon/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/SourceCode/ApprovalSystem/DataAccess/DBManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/SourceCode/ApprovalSystem/DataAccess/DBManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/SourceCode/ApprovalSystem/Forms/CheckMyApprovalListForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/SourceCode/ApprovalSystem/Forms/CheckMyApprovalListForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/SourceCode/MessageSystem/BusinessLogic/MessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/SourceCode/MessageSystem/BusinessLogic/MessageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/SourceCode/MessageSystem/Forms/MessageLobbyForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/SourceCode/MessageSystem/Forms/MessageLobbyForm.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/SourceCode/MessageSystem/Forms/MessageLobbyForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/SourceCode/MessageSystem/Forms/MessageLobbyForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/UIForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/UIForm.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/UIForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/UIForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/Work/WorkMasterForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/Work/WorkMasterForm.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/bin/Debug/net6.0-windows/deepcheesebacon.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/bin/Debug/net6.0-windows/deepcheesebacon.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/bin/Debug/net6.0-windows/deepcheesebacon.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/bin/Debug/net6.0-windows/deepcheesebacon.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/bin/Debug/net6.0-windows/deepcheesebacon.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/bin/Debug/net6.0-windows/deepcheesebacon.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/deepcheesebacon.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/deepcheesebacon.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/DeepCheeseBacon.SourceCode.MessageSystem.MessageLobbyForm.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/ref/deepcheesebacon.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/ref/deepcheesebacon.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/refint/deepcheesebacon.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/refint/deepcheesebacon.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,15 +43,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
@@ -33,6 +66,8 @@
       <option name="presentableId" value="Default" />
       <updated>1700467992489</updated>
       <workItem from="1700467993720" duration="18000" />
+      <workItem from="1701061772352" duration="610000" />
+      <workItem from="1701080061151" duration="1198000" />
     </task>
     <servers />
   </component>

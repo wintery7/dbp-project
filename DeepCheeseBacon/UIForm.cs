@@ -1,4 +1,6 @@
-﻿namespace deepcheesebacon
+﻿using DeepCheeseBacon.SourceCode.MessageSystem;
+
+namespace deepcheesebacon
 {
     public partial class UIForm : Form
     {
@@ -41,7 +43,7 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new LoginForm(), sender);
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
@@ -53,6 +55,11 @@
         private void button2_Click(object sender, EventArgs e)
         {
             OpenChildForm(new ApprovalSystemMainForm(), sender);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new MessageLobbyForm(), sender);
         }
     }
 }

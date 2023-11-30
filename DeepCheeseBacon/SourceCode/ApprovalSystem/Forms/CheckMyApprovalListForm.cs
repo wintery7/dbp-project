@@ -112,37 +112,57 @@ namespace deepcheesebacon
         // 내가 등록한 결재들의 진행상황
         private void LoadMyApprovalProgressList()
         {
-            List<Approval> approvals = approvalService.GetMyApproval
-               (
-                   new MyApprovalProgressRequest
-                   {
-                       userId = myInfo.userId,
-                   }
-               );
-
-            listBoxMyApprovalProgressList.Items.Clear();
-
-            foreach (Approval approval in approvals)
+            try
             {
-                string title = approval.Title;
-                string status = "";
-                switch (approval.Status)
-                {
-                    case Approval.ApprovalStatus.Approved:
-                        status = "승인됨";
-                        break;
-                    case Approval.ApprovalStatus.Pending:
-                        status = "승인 보류중";
-                        break;
-                    case Approval.ApprovalStatus.Rejected:
-                        status = "반려됨";
-                        break;
-                }
-                string statusText = $"결재 제목: {title} / 진행 상태: {status} ";
+                List<Approval> approvals = approvalService.GetMyApproval
+                (
+                    new MyApprovalProgressRequest
+                    {
+                        userId = myInfo.userId,
+                    }
+                );
 
-                listBoxMyApprovalProgressList.Items.Add(statusText);
+                if (approvals == null)
+                {
+                    // approvals가 null인 경우 처리
+                    Console.WriteLine("Error: GetMyApproval returned null.");
+                    // 필요에 따라 사용자에게 예외 정보를 표시하거나 기타 조치를 취할 수 있습니다.
+                    return;
+                }
+
+                listBoxMyApprovalProgressList.Items.Clear();
+
+                foreach (Approval approval in approvals)
+                {
+                    string title = approval.Title;
+                    string status = "";
+
+                    switch (approval.Status)
+                    {
+                        case Approval.ApprovalStatus.Approved:
+                            status = "승인됨";
+                            break;
+                        case Approval.ApprovalStatus.Pending:
+                            status = "승인 보류중";
+                            break;
+                        case Approval.ApprovalStatus.Rejected:
+                            status = "반려됨";
+                            break;
+                    }
+
+                    string statusText = $"결재 제목: {title} / 진행 상태: {status} ";
+                    listBoxMyApprovalProgressList.Items.Add(statusText);
+                }
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리: GetMyApproval 메서드에서 발생한 예외를 콘솔에 출력하거나 다른 로깅 메커니즘을 사용할 수 있습니다.
+                Console.WriteLine($"Error in LoadMyApprovalProgressList: {ex.Message}");
+                // 필요에 따라 사용자에게 예외 정보를 표시하거나 기타 조치를 취할 수 있습니다.
             }
         }
+
+
 
 
         private void buttonApproveApproval_Click(object sender, EventArgs e)

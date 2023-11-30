@@ -77,7 +77,6 @@ C:\Users\PC\source\repos\deepcheesebacon\deepcheesebacon\obj\Debug\net6.0-window
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.csproj.AssemblyReference.cache
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.ApprovalSystemMainForm.resources
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\DeepCheeseBacon.SourceCode.MessageSystem.Forms.MessageDetailForm.resources
-C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\DeepCheeseBacon.SourceCode.MessageSystem.MessageLobbyForm.resources
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.UIForm.resources
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.Work.CustomButtonStyle.resources
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.WorkForm.resources
@@ -124,3 +123,4 @@ C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\bin\D
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.genruntimeconfig.cache
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\ref\deepcheesebacon.dll
+C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.MessageLobbyForm.resources

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DeepCheeseBacon.SourceCode.MessageSystem
+namespace deepcheesebacon
 {
     partial class MessageLobbyForm
     {
@@ -30,20 +30,20 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
         /// </summary>
         private void InitializeComponent()
         {
-            listBoxMessageList = new System.Windows.Forms.ListBox();
-            label1 = new System.Windows.Forms.Label();
-            buttonRealTimeChat = new System.Windows.Forms.Button();
-            label2 = new System.Windows.Forms.Label();
-            buttonRefresh = new System.Windows.Forms.Button();
+            listBoxMessageList = new ListBox();
+            label1 = new Label();
+            buttonRealTimeChat = new Button();
+            label2 = new Label();
+            buttonRefresh = new Button();
             SuspendLayout();
             // 
             // listBoxMessageList
             // 
             listBoxMessageList.FormattingEnabled = true;
             listBoxMessageList.ItemHeight = 15;
-            listBoxMessageList.Location = new System.Drawing.Point(271, 75);
+            listBoxMessageList.Location = new Point(32, 54);
             listBoxMessageList.Name = "listBoxMessageList";
-            listBoxMessageList.Size = new System.Drawing.Size(513, 499);
+            listBoxMessageList.Size = new Size(513, 499);
             listBoxMessageList.TabIndex = 0;
             listBoxMessageList.Click += listBoxMessageList_Click;
             listBoxMessageList.SelectedIndexChanged += listBoxMessageList_SelectedIndexChanged;
@@ -51,17 +51,17 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(271, 45);
+            label1.Location = new Point(32, 24);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(59, 15);
+            label1.Size = new Size(79, 15);
             label1.TabIndex = 1;
-            label1.Text = "쪽지 목록";
+            label1.Text = "대화상대목록";
             // 
             // buttonRealTimeChat
             // 
-            buttonRealTimeChat.Location = new System.Drawing.Point(869, 455);
+            buttonRealTimeChat.Location = new Point(561, 434);
             buttonRealTimeChat.Name = "buttonRealTimeChat";
-            buttonRealTimeChat.Size = new System.Drawing.Size(135, 119);
+            buttonRealTimeChat.Size = new Size(135, 119);
             buttonRealTimeChat.TabIndex = 2;
             buttonRealTimeChat.Text = "실시간 채팅방 입장";
             buttonRealTimeChat.UseVisualStyleBackColor = true;
@@ -70,17 +70,17 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(549, 45);
+            label2.Location = new Point(310, 24);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(235, 15);
+            label2.Size = new Size(235, 15);
             label2.TabIndex = 3;
             label2.Text = "쪽지 리스트 더블 클릭시 해당 쪽지로 이동";
             // 
             // buttonRefresh
             // 
-            buttonRefresh.Location = new System.Drawing.Point(800, 75);
+            buttonRefresh.Location = new Point(561, 54);
             buttonRefresh.Name = "buttonRefresh";
-            buttonRefresh.Size = new System.Drawing.Size(155, 35);
+            buttonRefresh.Size = new Size(155, 35);
             buttonRefresh.TabIndex = 4;
             buttonRefresh.Text = "쪽지 목록 새로고침";
             buttonRefresh.UseVisualStyleBackColor = true;
@@ -88,9 +88,9 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
             // 
             // MessageLobbyForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1084, 661);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1163, 763);
             Controls.Add(buttonRefresh);
             Controls.Add(label2);
             Controls.Add(buttonRealTimeChat);
@@ -109,10 +109,10 @@ namespace DeepCheeseBacon.SourceCode.MessageSystem
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBoxMessageList;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonRealTimeChat;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonRefresh;
+        private ListBox listBoxMessageList;
+        private Label label1;
+        private Button buttonRealTimeChat;
+        private Label label2;
+        private Button buttonRefresh;
     }
 }
