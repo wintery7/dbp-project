@@ -14,6 +14,7 @@ namespace deepcheesebacon
     public partial class LoginForm : Form
     {
         DBManager dbManager;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -22,25 +23,42 @@ namespace deepcheesebacon
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            User originUser = dbManager.GetUserByEmail(textBoxEmail.Text);
-            if (textBoxPassword.Text == originUser.Password)
+            try
             {
-                MyInfo myInfo = MyInfo.GetMyInfo();
-                myInfo.email = originUser.Email;
-                myInfo.userId = originUser.UserId;
-                myInfo.role = originUser.UserRole;
+                User originUser = dbManager.GetUserByEmail(textBoxEmail.Text);
 
-                MessageBox.Show("로그인에 성공하였습니다");
+                if (originUser != null)
+                {
+                    if (textBoxPassword.Text == originUser.Password)
+                    {
+                        MyInfo myInfo = MyInfo.GetMyInfo();
+                        myInfo.email = originUser.Email;
+                        myInfo.userId = originUser.UserId;
+                        myInfo.role = originUser.UserRole;
 
-                // 로그인 후 실행할 메서드 작성
-                ApprovalSystemMainForm form = new ApprovalSystemMainForm();
-                form.ShowDialog();
+                        MessageBox.Show("로그인에 성공하였습니다");
+                        this.Close();
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("로그인에 실패하였습니다");
+                        Console.WriteLine("비밀번호가 일치하지 않습니다");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("사용자를 찾을 수 없습니다");
+                    Console.WriteLine("사용자를 찾을 수 없습니다");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("로그인에 실패하였습니다");
-                Console.WriteLine("originUser.Password: " + originUser.Password);
+                // 가능한 구체적인 예외 종류를 기록하고 처리
+                MessageBox.Show($"오류 발생: {ex.Message}");
             }
         }
+
     }
 }
