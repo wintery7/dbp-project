@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using deepcheesebacon.SourceCode.ApprovalSystem;
 using deepcheesebacon.SourceCode.ApprovalSystem.Models;
-using deepcheesebacon.SourceCode.LoginSystem.MyInfo;
+using deepcheesebacon;
 
 namespace deepcheesebacon
 {
@@ -15,13 +15,13 @@ namespace deepcheesebacon
     public partial class ApproveForm : Form
     {
         ApprovalService approvalService = new ApprovalService();
-        MyInfo myInfo;
+        LoginedUserInfo myInfo;
         List<Approval> pendingApprovalList;
 
         public ApproveForm()
         {
             InitializeComponent();
-            myInfo = MyInfo.GetMyInfo();
+            myInfo = LoginedUserInfo.GetMyInfo();
             LoadTaskRequiringMyApprovalList();
             SetLabelDateTime();
         }

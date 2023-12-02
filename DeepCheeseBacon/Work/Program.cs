@@ -1,4 +1,6 @@
-namespace deepcheesebacon.Work
+
+
+namespace deepcheesebacon
 {
     internal static class Program
     {

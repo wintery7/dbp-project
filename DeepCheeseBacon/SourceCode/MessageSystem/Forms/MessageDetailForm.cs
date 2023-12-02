@@ -1,6 +1,5 @@
-﻿using deepcheesebacon.SourceCode.ApprovalSystem.DataAccess;
+﻿using deepcheesebacon;
 using deepcheesebacon.SourceCode.ApprovalSystem.Models;
-using deepcheesebacon.SourceCode.LoginSystem.MyInfo;
 using deepcheesebacon.SourceCode.MessageSystem.Models;
 using System;
 using System.Collections.Generic;
@@ -11,20 +10,20 @@ using System.Text;
 using System.Windows.Forms;
 using Message = deepcheesebacon.SourceCode.MessageSystem.Models.Message;
 
-namespace DeepCheeseBacon.SourceCode.MessageSystem.Forms
+namespace deepcheesebacon
 {
     public partial class MessageDetailForm : Form
     {
         DBManager dbManager;
-        MyInfo myinfo;
+        LoginedUserInfo myinfo;
         string opponentUserEmail;
         int opponentUserId;
 
         public MessageDetailForm(string opponentUserEmail)
         {
             InitializeComponent();
-            dbManager = DBManager.GetDBManager();
-            myinfo = MyInfo.GetMyInfo();
+            dbManager = DBManager.GetInstance();
+            myinfo = LoginedUserInfo.GetMyInfo();
             this.opponentUserEmail = opponentUserEmail;
             opponentUserId = ((User)dbManager.GetUserByEmail(opponentUserEmail)).UserId;
             Console.WriteLine("otherUserId and email: " + opponentUserId + opponentUserEmail);

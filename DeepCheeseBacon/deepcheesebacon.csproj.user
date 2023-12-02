@@ -4,6 +4,33 @@
     <Compile Update="ImageButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="ManagePanel\AttendanceReg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManagePanel\AttendanceView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManagePanel\Salary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManagePanel\SalaryShow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManagePanel\SubjectManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManagePanel\UserManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManagePanel\UserModify.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ManagePanel\UserReg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="SourceCode\ApprovalSystem\Forms\ApprovalSystemMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -19,13 +46,19 @@
     <Compile Update="SourceCode\ApprovalSystem\Forms\RejectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="SourceCode\LoginSystem\Forms\LoginForm.cs">
+    <Compile Update="LoginSystem\Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="SourceCode\MessageSystem\Forms\MessageDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="SourceCode\MessageSystem\Forms\MessageLobbyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SourceCode\MessageSystem\Forms\realtimeChatDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SourceCode\MessageSystem\Forms\realtimeChatRobby.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="UIForm.cs">

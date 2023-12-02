@@ -1,4 +1,4 @@
-﻿namespace DeepCheeseBacon.SourceCode.MessageSystem.Forms
+﻿namespace deepcheesebacon
 {
     partial class MessageDetailForm
     {

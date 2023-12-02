@@ -1,7 +1,5 @@
-﻿using deepcheesebacon.SourceCode.ApprovalSystem.DataAccess;
-using deepcheesebacon.SourceCode.ApprovalSystem.Models;
-using deepcheesebacon.SourceCode.MessageSystem.BusinessLogic;
-using DeepCheeseBacon.SourceCode.MessageSystem.Forms;
+﻿using deepcheesebacon.SourceCode.ApprovalSystem.Models;
+using deepcheesebacon;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Windows.Forms;
-using deepcheesebacon.SourceCode.ApprovalSystem.DataAccess;
 using deepcheesebacon.SourceCode.ApprovalSystem.Models;
-using deepcheesebacon.SourceCode.LoginSystem.MyInfo;
+using deepcheesebacon;
 using Microsoft.Extensions.Logging;
 using NLog;
 
 
-namespace deepcheesebacon.SourceCode.ApprovalSystem
+namespace deepcheesebacon
 {
     public class ApprovalService
     {
@@ -20,8 +19,8 @@ namespace deepcheesebacon.SourceCode.ApprovalSystem
 
         public ApprovalService()
         {
-            dB = DBManager.GetDBManager();
-            MyInfo loginUser = MyInfo.GetMyInfo();
+            dB = DBManager.GetInstance();
+            LoginedUserInfo loginUser = LoginedUserInfo.GetMyInfo();
 
         }
         public int CreateApproval(Approval request)
