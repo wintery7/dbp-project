@@ -15,8 +15,8 @@ namespace deepcheesebacon
             form.ShowDialog();
             while (LoginedUserInfo.loginedUserInfo.email.Equals("test"))
             {
-
-                LoginForm form = new LoginForm();
+                MessageBox.Show("로그인해주세요");
+                form = new LoginForm();
                 form.ShowDialog();
             }
 
