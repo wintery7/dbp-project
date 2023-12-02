@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using deepcheesebacon.SourceCode.ApprovalSystem;
 using deepcheesebacon.SourceCode.ApprovalSystem.Models;
-using deepcheesebacon.SourceCode.LoginSystem.MyInfo;
 
 namespace deepcheesebacon
 {
@@ -16,7 +15,7 @@ namespace deepcheesebacon
     {
         int userId = 1; // 로그인 한 유저의 아이디 임시로 1로 설정
         ApprovalService approvalService;
-        MyInfo myInfo = MyInfo.GetMyInfo();
+        LoginedUserInfo myInfo = LoginedUserInfo.GetMyInfo();
 
         public CheckMyApprovalListForm()
         {

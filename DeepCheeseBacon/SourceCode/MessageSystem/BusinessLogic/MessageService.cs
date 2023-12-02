@@ -1,20 +1,19 @@
-﻿using deepcheesebacon.SourceCode.ApprovalSystem.DataAccess;
-using deepcheesebacon.SourceCode.LoginSystem.MyInfo;
+﻿using deepcheesebacon;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace deepcheesebacon.SourceCode.MessageSystem.BusinessLogic
+namespace deepcheesebacon
 {
     internal class MessageService
     {
-        MyInfo myInfo;
+        LoginedUserInfo myInfo;
         DBManager dbManager;
 
         public MessageService()
         {
-            myInfo = MyInfo.GetMyInfo();
-            dbManager = DBManager.GetDBManager();
+            myInfo = LoginedUserInfo.GetMyInfo();
+            dbManager = DBManager.GetInstance();
         }
         public List<string> GetChattingList()
         {

@@ -5,28 +5,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
-using deepcheesebacon.SourceCode.ApprovalSystem.DataAccess;
 
 namespace deepcheesebacon
 {
     internal class ApiManager
     {
-        public static async Task CreateChatRoomAsync(int userId, int opponentUserId)
+        public static async Task<ChatRoom> CreateChatRoomAsync(string roomName)
         {
-            string roomName = "roomName";
-            DBManager db = DBManager.GetDBManager();
+            DBManager db = DBManager.GetInstance();
+
+            string url = "http://34.64.78.183:9090/chat";
+
+            string testUrl = "http://localhost:9090/chat";
 
             using (HttpClient client = new HttpClient())
             {
                 // 생성할 채팅방 객체 생성
-                ChatRoom chatRoom = new ChatRoom { Name = roomName };
+                ChatRoom chatRoom =  new ChatRoom{ Name = roomName };
 
                 // ChatRoom 객체를 JSON 문자열로 변환
                 string jsonContent = Newtonsoft.Json.JsonConvert.SerializeObject(chatRoom);
 
                 Console.WriteLine("api 실행");
                 // 서버의 ChatController에 POST 요청을 보냄
-                HttpResponseMessage response = await client.PostAsync("http://34.64.78.183:9090/chat",
+                HttpResponseMessage response = await client.PostAsync(url,
                     new StringContent(jsonContent, Encoding.UTF8, "application/json"));
 
                 if (response.IsSuccessStatusCode)
@@ -40,14 +42,65 @@ namespace deepcheesebacon
 
                     // 생성된 채팅방 정보를 사용하여 UI를 구성하거나 필요한 작업 수행
                     Console.WriteLine($"Room created with ID: {createdChatRoom.RoomId}");
-                    db.SaveRealChatRoomId(createdChatRoom.RoomId, userId, opponentUserId);
+                    return chatRoom;
 
                 }
                 else
                 {
                     Console.WriteLine($"Failed to create chat room. Status code: {response.StatusCode}");
+                    return null;
                 }
             }
         }
+
+        public static async Task<List<ChatRoom>> GetChatRoomsAsync()
+        {
+
+            string url = "http://34.64.78.183:9090/chat";
+
+            string testUrl = "http://localhost:9090/chat";
+
+            using (HttpClient client = new HttpClient())
+            {
+                Console.WriteLine("GetChatRoomsAsync API GET 실행");
+
+                // 서버의 ChatController에 GET 요청을 보냄
+                HttpResponseMessage response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // 응답으로 받은 데이터를 문자열로 변환
+                    string responseData = await response.Content.ReadAsStringAsync();
+
+                    // 서버에서 빈 배열을 반환할 경우 예외 처리
+                    if (responseData == "[]")
+                    {
+                        Console.WriteLine("No chat rooms found.");
+                        return new List<ChatRoom>(); // 빈 리스트 반환 또는 null 반환
+                    }
+
+                    // 문자열을 List<ChatRoom>으로 변환
+                    List<ChatRoom> chatRooms = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ChatRoom>>(responseData);
+
+                    foreach (var chatRoom in chatRooms)
+                    {
+                        Console.WriteLine($"Chat room retrieved with ID: {chatRoom.RoomId} name: {chatRoom.Name}");
+                    }
+
+                    Console.WriteLine("chatRooms length: " + chatRooms.Count);
+
+                    return chatRooms;
+                }
+                else
+                {
+                    Console.WriteLine($"Failed to retrieve chat rooms. Status code: {response.StatusCode}");
+                    return null;
+                }
+            }
+        }
+
+
+
+
     }
 }

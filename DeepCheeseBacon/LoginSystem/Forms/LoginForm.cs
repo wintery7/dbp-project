@@ -1,6 +1,4 @@
-﻿using deepcheesebacon.SourceCode.ApprovalSystem.DataAccess;
-using deepcheesebacon.SourceCode.ApprovalSystem.Models;
-using deepcheesebacon.SourceCode.LoginSystem.MyInfo;
+﻿using deepcheesebacon.SourceCode.ApprovalSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +16,7 @@ namespace deepcheesebacon
         public LoginForm()
         {
             InitializeComponent();
-            dbManager = DBManager.GetDBManager();
+            dbManager = DBManager.GetInstance();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -31,7 +29,7 @@ namespace deepcheesebacon
                 {
                     if (textBoxPassword.Text == originUser.Password)
                     {
-                        MyInfo myInfo = MyInfo.GetMyInfo();
+                        LoginedUserInfo myInfo = LoginedUserInfo.GetMyInfo();
                         myInfo.email = originUser.Email;
                         myInfo.userId = originUser.UserId;
                         myInfo.role = originUser.UserRole;

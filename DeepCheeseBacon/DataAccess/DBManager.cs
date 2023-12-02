@@ -1,5 +1,4 @@
 ﻿using deepcheesebacon.SourceCode.ApprovalSystem.Models;
-using deepcheesebacon.SourceCode.LoginSystem.MyInfo;
 using deepcheesebacon.SourceCode.MessageSystem.Models;
 using MySql.Data.MySqlClient;
 using System;
@@ -11,20 +10,20 @@ using System.Text;
 using System.Windows.Forms;
 using Message = deepcheesebacon.SourceCode.MessageSystem.Models.Message;
 
-namespace deepcheesebacon.SourceCode.ApprovalSystem.DataAccess
+namespace deepcheesebacon
 {
     public class DBManager
     {
         private static DBManager dB = new DBManager();
         MySqlConnection connection;
-        MyInfo myInfo = MyInfo.GetMyInfo();
+        LoginedUserInfo myInfo = LoginedUserInfo.GetMyInfo();
 
         private DBManager()
         {
             InitializeConnection();
         }
 
-        public static DBManager GetDBManager()
+        public static DBManager GetInstance()
         {
             return dB;
         }
@@ -763,13 +762,6 @@ CREATE TABLE IF NOT EXISTS approval (
             {
                 Console.WriteLine("Error getting user ID: " + ex.Message);
             }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-            }
 
             return -1; // 실패한 경우 -1을 반환하거나 예외 처리 방식을 조정할 수 있습니다.
         }
@@ -849,6 +841,436 @@ CREATE TABLE IF NOT EXISTS approval (
             }
 
             return messages;
+        }
+
+        public void InsertInfo(int resultNum, string email, string pw, string name, string gender, string pnum, string addr, int id, string date)
+        {
+            try
+            {
+                string query = "INSERT INTO user (user_role, email, password, name, gender, phone_number, address, department, birthDate) VALUES (@role, @email, @pw, @name, @gender, @pnum, @addr, @dep, @date)";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@role", resultNum);
+                com.Parameters.AddWithValue("@email", email);
+                com.Parameters.AddWithValue("@pw", pw);
+                com.Parameters.AddWithValue("@name", name);
+                com.Parameters.AddWithValue("@gender", gender);
+                com.Parameters.AddWithValue("@pnum", pnum);
+                com.Parameters.AddWithValue("@addr", addr);
+                com.Parameters.AddWithValue("@dep", id);
+                com.Parameters.AddWithValue("@date", date);
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+        }
+
+
+
+        // 콤보박스에 가져올 값 list에 넣음
+        public List<string> GetDepartment()
+        {
+            List<string> departmentList = new List<string>();
+            try
+            {
+                string query = "SELECT * FROM department";
+                MySqlCommand com = new MySqlCommand(query, connection);
+
+                using (MySqlDataReader reader = com.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string dName = reader["department_name"].ToString();
+                        departmentList.Add(dName);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+            return departmentList;
+        }
+
+
+
+        // 유저 관리에서 검색 버튼 누를 경우 (부서별 검색)
+        public DataSet GetUser_dep(string dep)
+        {
+            DataSet ds = new DataSet();
+
+            string query = "SELECT * FROM user WHERE department IN (SELECT id FROM department WHERE department_name like @dep)";
+            MySqlCommand com = new MySqlCommand(query, connection);
+            com.Parameters.AddWithValue("@dep", "%" + dep + "%");
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(com))
+            {
+                // 쿼리 결과를 dt에 넣기
+                da.Fill(ds);
+            }
+            return ds;
+
+        }
+
+
+        // 사원 관리에서 검색 버튼 누를 경우 (이름별 검색)
+        public DataSet GetUser_name(string name)
+        {
+            DataSet ds = new DataSet();
+
+            string query = "SELECT * FROM user WHERE name like @name";
+            MySqlCommand com = new MySqlCommand(query, connection);
+            com.Parameters.AddWithValue("@name", "%" + name + "%");
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(com))
+            {
+                // 쿼리 결과를 dt에 넣기
+                da.Fill(ds);
+            }
+            return ds;
+
+        }
+        public DataSet GetUser_date(string year)
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+
+                string query = "SELECT * FROM user WHERE TIMESTAMPDIFF(YEAR, birthDate, CURDATE()) = @year";
+
+                using (MySqlCommand com = new MySqlCommand(query, connection))
+                {
+                    com.Parameters.AddWithValue("@year", year);
+
+                    using (MySqlDataAdapter da = new MySqlDataAdapter(com))
+                    {
+                        // 쿼리 결과를 데이터셋에 넣기
+                        da.Fill(ds);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                // 예외 처리: 예외 정보를 로그로 남기고 사용자에게 메시지 표시
+                Console.WriteLine("GetUser_date 오류발생: " + e.Message);
+                MessageBox.Show("GetUser_date 오류발생: " + e.Message);
+            }
+
+            return ds;
+        }
+        // 부서관리에서 입력하는 학년과 과목이 db에 있는지 확인
+        public bool DepartCheck(string grade, string dep)
+        {
+            try
+            {
+                string query = "SELECT COUNT(*) FROM department WHERE grade = @grade AND department_name = @dep";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@grade", grade);
+                com.Parameters.AddWithValue("@dep", dep);
+
+                int result = Convert.ToInt32(com.ExecuteScalar());
+
+                com.ExecuteNonQuery();
+
+                return result > 0;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+                return false;
+            }
+
+        }
+
+        // 과목관리 등록 누를 경우
+        public void DepartInsert(string dep_id, string grade, string dep)
+        {
+            try
+            {
+                string query = "INSERT INTO department (department_id, grade, department_name) VALUES (@dep_id, @grade, @dep)";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@dep_id", dep_id);
+                com.Parameters.AddWithValue("@grade", grade);
+                com.Parameters.AddWithValue("@dep", dep);
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+
+        }
+
+        // 과목 관리 수정 누를 경우
+        public void DepartModify(string id, string dep_id, string grade, string dep)
+        {
+            try
+            {
+                string query = "UPDATE department SET department_id = @dep_id, grade = @grade, department_name = @dep WHERE id = @id";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@dep_id", dep_id);
+                com.Parameters.AddWithValue("@grade", grade);
+                com.Parameters.AddWithValue("@dep", dep);
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+        }
+
+        // department_id 값의 마지막 숫자 가져오기
+        public int Department_IdCheck(string pre_grade, string pre_dep)
+        {
+            int result = -1;
+            try
+            {
+                string query = "SELECT substring(department_id, 3, 1)  FROM department WHERE grade = @grade AND department_name = @dep";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@grade", pre_grade);
+                com.Parameters.AddWithValue("@dep", pre_dep);
+
+                object objresult = com.ExecuteScalar();
+
+                if (objresult != null)
+                {
+                    result = Convert.ToInt32(objresult);
+                }
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+
+            }
+            return result;
+        }
+
+        // department_id 값의 마지막 숫자 중 가장 큰 수 가져오기
+        public int Department_IdMaxCheck()
+        {
+            int maxId = -1;
+
+            try
+            {
+                string query = "SELECT MAX(substring(department_id, 3, 1)) FROM department";
+                MySqlCommand com = new MySqlCommand(query, connection);
+
+                // ExecuteScalar를 사용하여 결과를 가져옴
+                object objResult = com.ExecuteScalar();
+
+                if (objResult != null && objResult != DBNull.Value) // 결과가 null이 아니면 변환하여 저장
+                {
+                    maxId = Convert.ToInt32(objResult);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+
+            return maxId; // 결과 반환
+        }
+
+        // 과목 관리 삭제 누를 경우 
+        public void DepartDelete(string grade, string dep)
+        {
+            try
+            {
+                string query = "DELETE FROM department WHERE grade = @grade AND department_name = @dep";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@grade", grade);
+                com.Parameters.AddWithValue("@dep", dep);
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+            }
+        }
+
+
+        // 부서 테이블 datagridview에 출력
+        public DataSet ViewTable()
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+
+                string query = "SELECT * FROM department";
+
+                using (MySqlDataAdapter da = new MySqlDataAdapter(query, connection))
+                {
+                    da.Fill(ds);
+                }
+
+                return ds;
+            }
+            catch (Exception e)
+            {
+                // 예외 처리: 예외 정보를 로그로 남기고 사용자에게 메시지 표시
+                Console.WriteLine("ViewTable 오류발생: " + e.Message);
+                MessageBox.Show("ViewTable 오류발생: " + e.Message);
+
+                return ds; // 빈 DataSet 반환 또는 필요에 따라 null 반환
+            }
+        }
+
+
+        // user 테이블 datagridview에 출력
+        public DataSet ViewTableUser()
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM user";
+
+                using (MySqlDataAdapter da = new MySqlDataAdapter(query, connection))
+                {
+                    da.Fill(ds, "UserTable"); // "UserTable"은 DataTable의 이름입니다.
+                }
+
+                return ds;
+            }
+            catch (Exception e)
+            {
+                // 예외 처리: 예외 정보를 로그로 남기고 사용자에게 메시지 표시
+                Console.WriteLine("ViewTableUser 오류발생: " + e.Message);
+                MessageBox.Show("ViewTableUser 오류발생: " + e.Message);
+
+                return ds; // 빈 DataSet 반환 또는 필요에 따라 null 반환
+            }
+            
+        }
+
+
+        // 사원 수정에서 수정버튼 누를 경우 
+        public void UserModify(int role, string email, string pw, string name, string gender, string pnum, string addr, int id, string date)
+        {
+            try
+            {
+                string query = "UPDATE user SET user_role = @role, password = @pw, name = @name, gender = @gender, phone_number = @pnum, address = @addr, department = @dep, birthDate = @date WHERE email = @email";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@role", role);
+                com.Parameters.AddWithValue("@email", email);
+                com.Parameters.AddWithValue("@pw", pw);
+                com.Parameters.AddWithValue("@name", name);
+                com.Parameters.AddWithValue("@gender", gender);
+                com.Parameters.AddWithValue("@pnum", pnum);
+                com.Parameters.AddWithValue("@addr", addr);
+                com.Parameters.AddWithValue("@dep", id);
+                com.Parameters.AddWithValue("@date", date);
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+        }
+
+        public void UserDeleteData(string deleteUserId)
+        {
+            try
+            {
+
+                // SQL 쿼리문
+                string query = "DELETE FROM user WHERE user_id = @deleteUserId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    // 매개변수 추가
+                    command.Parameters.AddWithValue("@deleteUserId", deleteUserId);
+
+                    // 쿼리 실행
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                // 예외 처리: 예외 정보를 로그로 남기고 사용자에게 메시지 표시
+                Console.WriteLine("UserDeleteData 오류발생: " + e.Message);
+                MessageBox.Show("UserDeleteData 오류발생: " + e.Message);
+            }
+        }
+
+
+        // 출근 버튼 누를경우 attendace_log 테이블에 출근시간까지 데이터 넣기
+        public void GoWorkInsert(int userid, string date, string intime)
+        {
+            try
+            {
+                string query = "INSERT INTO AttendanceLog(user_id, attendDate, check_in_time) VALUES (@userid, @date, @in_time)";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@userid", userid);
+                com.Parameters.AddWithValue("@date", date);
+                com.Parameters.AddWithValue("@in_time", intime);
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+        }
+
+
+        // 퇴근 버튼 누를 경우  attendace_log 테이블에 퇴근 시간 데이터 넣기
+        public void OffWorkInsert(int userid, string date, string outtime)
+        {
+            try
+            {
+                string query = "UPDATE AttendanceLog SET check_out_time  = @outtime WHERE user_id = @name AND attendDate = @date";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@name", userid);
+                com.Parameters.AddWithValue("@date", date);
+                com.Parameters.AddWithValue("@outtime", outtime);
+
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+        }
+
+
+
+        public DataSet AttendanceViewTable()
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                // SQL 쿼리문
+                string query = "SELECT * FROM AttendanceLog";
+
+                using (MySqlDataAdapter da = new MySqlDataAdapter(query, connection))
+                {
+                    // 데이터셋에 테이블 추가
+                    da.Fill(ds, "AttendanceLogTable");
+                }
+            }
+            catch (Exception e)
+            {
+                // 예외 처리: 예외 정보를 로그로 남기고 사용자에게 메시지 표시
+                Console.WriteLine("AttendanceViewTable 오류발생: " + e.Message);
+                MessageBox.Show("AttendanceViewTable 오류발생: " + e.Message);
+            }
+
+            return ds;
         }
 
     }

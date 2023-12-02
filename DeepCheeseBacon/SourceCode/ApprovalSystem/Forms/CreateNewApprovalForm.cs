@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using deepcheesebacon.SourceCode.ApprovalSystem;
 using deepcheesebacon.SourceCode.ApprovalSystem.Models;
-using deepcheesebacon.SourceCode.LoginSystem.MyInfo;
+using deepcheesebacon;
 
 namespace deepcheesebacon
 {
@@ -18,13 +18,13 @@ namespace deepcheesebacon
         ApprovalService ApprovalService;
         List<(int, string)> firstApproverIdList;
         Dictionary<string, int> firstApprovalIdDict; // 딕셔너리 필드 추가
-        MyInfo myinfo;
+        LoginedUserInfo myinfo;
 
         public CreateNewApprovalForm()
         {
             InitializeComponent();
             ApprovalService = new ApprovalService();
-            myinfo = MyInfo.GetMyInfo();
+            myinfo = LoginedUserInfo.GetMyInfo();
             SetApproverList();
         }
 
