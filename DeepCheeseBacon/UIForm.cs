@@ -13,12 +13,12 @@ namespace deepcheesebacon
 
             LoginForm form = new LoginForm();
             form.ShowDialog();
-            while (LoginedUserInfo.loginedUserInfo.email.Equals("test"))
+            /*while (LoginedUserInfo.loginedUserInfo.email.Equals("test"))
             {
                 MessageBox.Show("로그인해주세요");
                 form = new LoginForm();
                 form.ShowDialog();
-            }
+            }*/ // 테스트를 위해 주석 
 
             myInfo = LoginedUserInfo.GetMyInfo();
 
