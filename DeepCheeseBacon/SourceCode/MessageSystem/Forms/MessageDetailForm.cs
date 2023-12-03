@@ -44,7 +44,7 @@ namespace deepcheesebacon
 
                 if (message.senderId == myinfo.userId)
                 {
-                    displayMessage = $"{message.content}";
+                    displayMessage = $"나: {message.content}";
                     int spacesCount = Math.Max(0, 50 - displayMessage.Length); // 길이가 음수가 되지 않도록 Math.Max 사용
                     listBoxChatBox.Items.Add(new String(' ', spacesCount) + displayMessage);
                 }

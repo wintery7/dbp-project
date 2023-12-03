@@ -91,6 +91,8 @@
             Controls.Add(listBoxChatBox);
             Name = "realtimeChatDetailForm";
             Text = "realtimeChatDetailForm";
+            FormClosing += realtimeChatDetailForm_FormClosing;
+            Leave += realtimeChatDetailForm_Leave;
             ResumeLayout(false);
             PerformLayout();
         }

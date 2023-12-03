@@ -93,7 +93,7 @@
             buttonCreateChatRoom.Text = "채팅방 생성";
             buttonCreateChatRoom.TextColor = Color.White;
             buttonCreateChatRoom.UseVisualStyleBackColor = false;
-            buttonCreateChatRoom.Click += buttonCreateChatRoom_Click;
+            buttonCreateChatRoom.Click += buttonCreateChatRoom_ClickAsync;
             // 
             // listBoxMessageList
             // 

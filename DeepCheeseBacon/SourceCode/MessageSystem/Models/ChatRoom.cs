@@ -1,4 +1,5 @@
 ﻿using MySqlX.XDevAPI;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -18,15 +19,29 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Models
         {
             string jsonString = Name;
 
-            // JSON 문자열을 JObject로 파싱
-            JObject jsonObject = JObject.Parse(jsonString);
+            if(Name != null)
+            {
+                try
+                {
+                    JObject jsonObject = JObject.Parse(jsonString);
 
-            // "Name" 속성 값 얻기
-            string nameValue = (string)jsonObject["Name"];
+                    // "Name" 속성 값 얻기
+                    string nameValue = (string)jsonObject["Name"];
 
-            Console.WriteLine("ToString 실행" + nameValue); // 출력: qq        }
+                    return nameValue;
+                }
+                catch (JsonReaderException)
+                {
+                    string modifiedString = jsonString.Replace("\"", "");
+                    Console.WriteLine(modifiedString);
 
-            return nameValue;
+
+                    // JSON 파싱 중 에러가 발생하면 그냥 입력된 문자열 그대로 반환
+                    return modifiedString;
+                }
+            }
+            Console.WriteLine("빈 문자열 반환");
+            return "";
         }
     }
 }
