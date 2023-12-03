@@ -76,6 +76,12 @@ namespace deepcheesebacon
 
                     if (ApprovalService.CreateApproval(approval) > 0)
                     {
+                        textBoxApprovalTitle.Clear();
+                        textBoxApprovalDescription.Clear();
+                        textBoxApprovalRelatedTask.Clear();
+                        textBoxApprovalComment.Clear();
+                        
+
                         MessageBox.Show("결재 등록에 성공하였습니다.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Debug.WriteLine("등록된 결재를 승인할 승인자 ID: " + approval.ApproverId);
                     }

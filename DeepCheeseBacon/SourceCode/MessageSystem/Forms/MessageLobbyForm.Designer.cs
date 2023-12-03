@@ -32,22 +32,19 @@ namespace deepcheesebacon
         private void InitializeComponent()
         {
             listBoxMessageList = new ListBox();
-
             buttonRealTimeChat = new CustomButtonStyle();
             customGroupBox2 = new CustomGroupBox();
-            refreshButton = new deepcheesebacon.ImageButton();
+            refreshButton = new ImageButton();
             customGroupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // listBoxMessageList
             // 
             listBoxMessageList.FormattingEnabled = true;
-
-            listBoxMessageList.ItemHeight = 20;
-            listBoxMessageList.Location = new Point(20, 54);
-            listBoxMessageList.Margin = new Padding(4);
+            listBoxMessageList.ItemHeight = 15;
+            listBoxMessageList.Location = new Point(16, 40);
             listBoxMessageList.Name = "listBoxMessageList";
-            listBoxMessageList.Size = new Size(829, 444);
+            listBoxMessageList.Size = new Size(646, 334);
             listBoxMessageList.TabIndex = 0;
             listBoxMessageList.Click += listBoxMessageList_Click;
             // 
@@ -61,10 +58,9 @@ namespace deepcheesebacon
             buttonRealTimeChat.FlatStyle = FlatStyle.Flat;
             buttonRealTimeChat.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             buttonRealTimeChat.ForeColor = Color.White;
-            buttonRealTimeChat.Location = new Point(675, 506);
-            buttonRealTimeChat.Margin = new Padding(4);
+            buttonRealTimeChat.Location = new Point(516, 380);
             buttonRealTimeChat.Name = "buttonRealTimeChat";
-            buttonRealTimeChat.Size = new Size(174, 35);
+            buttonRealTimeChat.Size = new Size(146, 26);
             buttonRealTimeChat.TabIndex = 2;
             buttonRealTimeChat.Text = "실시간 채팅방 입장";
             buttonRealTimeChat.TextColor = Color.White;
@@ -73,18 +69,15 @@ namespace deepcheesebacon
             // 
             // customGroupBox2
             // 
-
             customGroupBox2.BackColor = Color.Transparent;
             customGroupBox2.Controls.Add(refreshButton);
             customGroupBox2.Controls.Add(listBoxMessageList);
             customGroupBox2.Controls.Add(buttonRealTimeChat);
             customGroupBox2.Font = new Font("맑은 고딕", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            customGroupBox2.Location = new Point(41, 36);
-            customGroupBox2.Margin = new Padding(4);
+            customGroupBox2.Location = new Point(32, 27);
             customGroupBox2.Name = "customGroupBox2";
-            customGroupBox2.Padding = new Padding(4);
             customGroupBox2.Radious = 25;
-            customGroupBox2.Size = new Size(871, 549);
+            customGroupBox2.Size = new Size(677, 412);
             customGroupBox2.TabIndex = 29;
             customGroupBox2.TabStop = false;
             customGroupBox2.Text = "Message";
@@ -95,24 +88,23 @@ namespace deepcheesebacon
             // 
             // refreshButton
             // 
-
-            refreshButton.BackgroundImage = deepcheesebacon.Properties.Resources.refresh;
+            refreshButton.BackgroundImage = Properties.Resources.refresh;
             refreshButton.BackgroundImageLayout = ImageLayout.Zoom;
-            refreshButton.Image_01 = deepcheesebacon.Properties.Resources.refresh;
-            refreshButton.Image_02 = deepcheesebacon.Properties.Resources.refreshoption;
-            refreshButton.Location = new Point(840, 5);
+            refreshButton.Image_01 = Properties.Resources.refresh;
+            refreshButton.Image_02 = Properties.Resources.refreshoption;
+            refreshButton.Location = new Point(653, 4);
+            refreshButton.Margin = new Padding(2, 2, 2, 2);
             refreshButton.Name = "refreshButton";
-            refreshButton.Size = new Size(23, 26);
+            refreshButton.Size = new Size(18, 20);
             refreshButton.TabIndex = 5;
             refreshButton.Click += refreshbutton_click;
             // 
             // MessageLobbyForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(951, 616);
+            ClientSize = new Size(740, 462);
             Controls.Add(customGroupBox2);
-            Margin = new Padding(4);
             Name = "MessageLobbyForm";
             Text = "MessageLobbyForm";
             customGroupBox2.ResumeLayout(false);

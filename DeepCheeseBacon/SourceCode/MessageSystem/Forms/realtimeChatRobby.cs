@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.DirectoryServices;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace deepcheesebacon
     public partial class realtimeChatRobby : Form
     {
         List<ChatRoom> chatRooms;
+        ChatRoom tempChatRoom;
+        bool isFirst = true;
 
         public realtimeChatRobby()
         {
@@ -44,6 +47,15 @@ namespace deepcheesebacon
             else
             {
                 Console.WriteLine("Failed to retrieve chat rooms.");
+
+                /*if (!listBoxMessageList.Items.Contains(tempChatRoom) && isFirst)
+                {
+                    await Task.Delay(100);
+
+                    listBoxMessageList.Items.Add (tempChatRoom);
+                }
+                isFirst = false;*/
+
             }
         }
 
@@ -62,13 +74,17 @@ namespace deepcheesebacon
             }
         }
 
-        private void buttonCreateChatRoom_Click(object sender, EventArgs e)
+        private async void buttonCreateChatRoom_ClickAsync(object sender, EventArgs e)
         {
-            
+            CreateButtonClieck();
+        }
 
+        private async Task CreateButtonClieck()
+        {
             if (textBoxRoomName.Text != null && !textBoxRoomName.Text.Equals(""))
             {
-                ApiManager.CreateChatRoomAsync(textBoxRoomName.Text);
+                tempChatRoom = await ApiManager.CreateChatRoomAsync(textBoxRoomName.Text);
+
                 LoadChatList();
                 textBoxRoomName.Clear();
                 MessageBox.Show("채팅방 생성 완료");

@@ -143,5 +143,35 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
             Console.WriteLine("메시지 전송 성공");
             textBoxInputMessage.Clear();
         }
+
+        private void realtimeChatDetailForm_Leave(object sender, EventArgs e)
+        {
+        }
+
+        private async Task CloseWebSocketAsync()
+        {
+            try
+            {
+                if (clientWebSocket != null && clientWebSocket.State == WebSocketState.Open)
+                {
+                    // 연결 종료 이유와 상태 코드 지정
+                    WebSocketCloseStatus closeStatus = WebSocketCloseStatus.NormalClosure;
+                    string statusDescription = "Closed by client.";
+
+                    // WebSocket 종료
+                    await clientWebSocket.CloseAsync(closeStatus, statusDescription, CancellationToken.None);
+
+                    Console.WriteLine("WebSocket closed.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to close WebSocket: {ex.Message}");
+            }
+        }
+
+        private void realtimeChatDetailForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
     }
 }

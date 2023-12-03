@@ -24,7 +24,7 @@ namespace deepcheesebacon
                 ChatRoom chatRoom =  new ChatRoom{ Name = roomName };
 
                 // ChatRoom 객체를 JSON 문자열로 변환
-                string jsonContent = Newtonsoft.Json.JsonConvert.SerializeObject(chatRoom);
+                string jsonContent = Newtonsoft.Json.JsonConvert.SerializeObject(roomName);
 
                 Console.WriteLine("api 실행");
                 // 서버의 ChatController에 POST 요청을 보냄
@@ -41,7 +41,7 @@ namespace deepcheesebacon
                     ChatRoom createdChatRoom = Newtonsoft.Json.JsonConvert.DeserializeObject<ChatRoom>(responseData);
 
                     // 생성된 채팅방 정보를 사용하여 UI를 구성하거나 필요한 작업 수행
-                    Console.WriteLine($"Room created with ID: {createdChatRoom.RoomId}");
+                    Console.WriteLine($"Room created with ID: {createdChatRoom.RoomId} Name: {createdChatRoom.Name}");
                     return chatRoom;
 
                 }
@@ -93,7 +93,7 @@ namespace deepcheesebacon
                 }
                 else
                 {
-                    Console.WriteLine($"Failed to retrieve chat rooms. Status code: {response.StatusCode}");
+                    Console.WriteLine($"Failed to retrieve chat rooms. Status code: {response}");
                     return null;
                 }
             }
