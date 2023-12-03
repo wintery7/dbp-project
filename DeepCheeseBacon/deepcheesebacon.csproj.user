@@ -13,9 +13,6 @@
     <Compile Update="ManagePanel\Salary.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="ManagePanel\SalaryShow.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="ManagePanel\SubjectManage.cs">
       <SubType>UserControl</SubType>
     </Compile>

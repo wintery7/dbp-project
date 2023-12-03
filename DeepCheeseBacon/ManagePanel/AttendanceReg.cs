@@ -77,8 +77,57 @@ namespace deepcheesebacon
             int userid = GetUserId(UserNameText.Text);
             string date = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             string outtime = string.Format(DateTime.Now.ToString("HH:mm:ss"));
+            DateTime checkouttime = Convert.ToDateTime(outtime);
 
             dbManager.OffWorkInsert(userid, date, outtime);
+            var salaryResult = dbManager.Getsalary(userid);
+            int real_gross_pay = salaryResult.gross_pay;
+            int real_base_pay = salaryResult.base_pay;
+            DayOfWeek wk = DateTime.Today.DayOfWeek;
+            double worktime = dbManager.GetWorktime(userid, date);
+            int base_pay = Convert.ToInt32(worktime * 9620);
+            int add_pay = 0;
+            if (wk != DayOfWeek.Saturday || wk != DayOfWeek.Sunday)
+            {
+                if (checkouttime.TimeOfDay >= TimeSpan.Parse("18:00:00") && checkouttime.TimeOfDay < TimeSpan.Parse("22:00:00"))
+                {
+                    TimeSpan fixedTime = TimeSpan.Parse("18:00:00");
+                    add_pay = Convert.ToInt32((checkouttime.TimeOfDay - fixedTime).TotalHours * 9620 * 0.5);
+                }
+                else if (checkouttime.TimeOfDay >= TimeSpan.Parse("22:00:00") && checkouttime.TimeOfDay < TimeSpan.Parse("24:00:00"))
+                {
+                    TimeSpan fixedTime = TimeSpan.Parse("22:00:00");
+                    add_pay = Convert.ToInt32((checkouttime.TimeOfDay - fixedTime).TotalHours * 9620) + 19240;
+                }
+            }
+            else
+            {
+                if (checkouttime.TimeOfDay >= TimeSpan.Parse("09:00:00") && checkouttime.TimeOfDay < TimeSpan.Parse("18:00:00"))
+                {
+                    TimeSpan fixedTime = TimeSpan.Parse("09:00:00");
+                    add_pay = Convert.ToInt32((checkouttime.TimeOfDay - fixedTime).TotalHours * 9620 * 0.5);
+                }
+                else if (checkouttime.TimeOfDay >= TimeSpan.Parse("18:00:00") && checkouttime.TimeOfDay < TimeSpan.Parse("22:00:00"))
+                {
+                    TimeSpan fixedTime = TimeSpan.Parse("18:00:00");
+                    add_pay = Convert.ToInt32((checkouttime.TimeOfDay - fixedTime).TotalHours * 9620) + 43290;
+                }
+                else if (checkouttime.TimeOfDay >= TimeSpan.Parse("22:00:00") && checkouttime.TimeOfDay < TimeSpan.Parse("24:00:00"))
+                {
+                    TimeSpan fixedTime = TimeSpan.Parse("22:00:00");
+                    add_pay = Convert.ToInt32((checkouttime.TimeOfDay - fixedTime).TotalHours * 9620 * 1.5) + 81770;
+                }
+            }
+            int gross_pay = base_pay + add_pay;
+            real_base_pay += base_pay;
+            real_gross_pay += gross_pay;
+            int n_pension = Convert.ToInt32(real_gross_pay * 0.045);
+            int n_hinsurance = Convert.ToInt32(real_gross_pay * 0.03545);
+            int n_long_hinsurance = Convert.ToInt32(real_gross_pay * 0.009082 * 0.5);
+            int e_insurance = Convert.ToInt32(real_gross_pay * 0.009);
+            int net_pay = Convert.ToInt32(real_gross_pay - n_pension - n_hinsurance - n_long_hinsurance - e_insurance);
+
+            dbManager.InsertPay(userid, real_gross_pay, real_base_pay, n_pension, n_hinsurance, n_long_hinsurance, e_insurance, net_pay);
         }
 
 /*

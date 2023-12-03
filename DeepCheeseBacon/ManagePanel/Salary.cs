@@ -12,14 +12,17 @@ namespace deepcheesebacon
 {
     public partial class Salary : UserControl
     {
+        private DBManager dbManager;
         public Salary()
         {
             InitializeComponent();
+            dbManager = DBManager.GetInstance();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Salary_Load(object sender, EventArgs e)
         {
-
+            DataSet dataset = dbManager.ViewTableSalary();
+            payView.DataSource = dataset.Tables[0];
         }
     }
 }

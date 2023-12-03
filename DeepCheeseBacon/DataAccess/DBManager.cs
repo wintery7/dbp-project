@@ -4,6 +4,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
@@ -1254,23 +1255,150 @@ CREATE TABLE IF NOT EXISTS approval (
 
             try
             {
-                // SQL 쿼리문
                 string query = "SELECT * FROM AttendanceLog";
 
                 using (MySqlDataAdapter da = new MySqlDataAdapter(query, connection))
                 {
-                    // 데이터셋에 테이블 추가
                     da.Fill(ds, "AttendanceLogTable");
                 }
             }
             catch (Exception e)
             {
-                // 예외 처리: 예외 정보를 로그로 남기고 사용자에게 메시지 표시
-                Console.WriteLine("AttendanceViewTable 오류발생: " + e.Message);
                 MessageBox.Show("AttendanceViewTable 오류발생: " + e.Message);
             }
 
             return ds;
+        }
+
+        // 급여내역서 산출
+        public DataSet ViewTableSalary()
+        {
+            DataSet ds = new DataSet();
+
+            try
+            {
+                string query = "SELECT * FROM sert_salary";
+
+                using (MySqlDataAdapter da = new MySqlDataAdapter(query, connection))
+                {
+                    da.Fill(ds);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("ViewTableSalary 오류발생: " + e.Message);
+            }
+            return ds;
+        }
+
+        // 업무 시간 산출
+        public double GetWorktime(int userid, string date)
+        {
+            try
+            {
+                string query = "SELECT check_in_time, check_out_time FROM AttendanceLog WHERE user_id = @name AND attendDate = @date";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                double totalWorktime = 0;
+
+                com.Parameters.AddWithValue("@name", userid);
+                com.Parameters.AddWithValue("@date", date);
+                MySqlDataReader reader = com.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string intime = reader.GetString("check_in_time");
+                    DateTime checkintime = Convert.ToDateTime(intime);
+                    string outtime = reader.GetString("check_out_time");
+                    DateTime checkouttime = Convert.ToDateTime(outtime);
+
+                    // Calculate the time difference for each record and accumulate
+                    totalWorktime = (checkouttime - checkintime).TotalHours;
+                }
+
+                reader.Close(); // Close the reader before returning
+
+                return totalWorktime;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("GetWorkTime 오류발생: " + e.Message);
+                return 0; // Return 0 or another appropriate value in case of an error
+            }
+        }
+
+        // 급여내역서 user 등록
+        public void InsertSalary(string user_id)
+        {
+            try
+            {
+                string query = "INSERT INTO sert_salary (email) VALUES (@user_id)";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@user_id", user_id);
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("InsertSalary 오류발생: " + e.Message);
+            }
+        }
+
+        // 총 급여, 기본급 return
+        public (int gross_pay, int base_pay) Getsalary(int userid)
+        {
+            try
+            {
+                int gross_pay = 0, base_pay = 0;  // Initialize variables
+
+                string query = "SELECT gross_pay, base_pay FROM sert_salary WHERE user_id = @name";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@name", userid);
+                MySqlDataReader reader = com.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    // Check if "gross_pay" is not DBNull before converting
+                    if (!reader.IsDBNull(reader.GetOrdinal("gross_pay")))
+                        gross_pay = Convert.ToInt32(reader.GetString("gross_pay"));
+
+                    // Check if "base_pay" is not DBNull before converting
+                    if (!reader.IsDBNull(reader.GetOrdinal("base_pay")))
+                        base_pay = Convert.ToInt32(reader.GetString("base_pay"));
+                }
+
+                reader.Close(); // Close the reader before returning
+
+                return (gross_pay, base_pay);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Getsalary 오류발생: " + e.Message);
+                return (0, 0); // Return a tuple with default values or handle the error accordingly
+            }
+        }
+
+        // 급여 입력
+        public void InsertPay(int userid, int gross_pay, int base_pay, int n_pension, int n_hinsurance, int n_long_hinsurance, int e_insurance, int net_pay)
+        {
+            try
+            {
+                string query = "UPDATE sert_salary SET gross_pay = @gross_pay AND base_pay = @base_pay AND n_pension = @n_pension AND n_hinsurance = @n_hinsurance AND n_long_hinsurance = @n_long_hinsurance AND e_insurance = @e_insurance AND net_pay = @net_pay WHERE user_id = @name";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@userid", userid);
+                com.Parameters.AddWithValue("@gross_pay", gross_pay);
+                com.Parameters.AddWithValue("@base_pay", base_pay);
+                com.Parameters.AddWithValue("@n_pension", n_pension);
+                com.Parameters.AddWithValue("@n_hinsurance", n_hinsurance);
+                com.Parameters.AddWithValue("@n_long_hinsurance", n_long_hinsurance);
+                com.Parameters.AddWithValue("@e_insurance", e_insurance);
+                com.Parameters.AddWithValue("@net_pay", net_pay);
+
+                com.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("InsertPay 오류발생: " + e.Message);
+            }
         }
 
     }
