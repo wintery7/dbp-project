@@ -15,10 +15,12 @@ namespace deepcheesebacon
 {
     public partial class AttendanceReg : UserControl
     {
+        LoginedUserInfo myInfo;
         private DBManager dbManager;
 
         public AttendanceReg()
         {
+            myInfo = LoginedUserInfo.GetMyInfo();
             InitializeComponent();
             dbManager = DBManager.GetInstance();
             
@@ -75,16 +77,21 @@ namespace deepcheesebacon
         private void OffWorkBtn_Click(object sender, EventArgs e)
         {
             int userid = GetUserId(UserNameText.Text);
-            string date = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            DateTime date = dateTimePicker1.Value;
             string outtime = string.Format(DateTime.Now.ToString("HH:mm:ss"));
             DateTime checkouttime = Convert.ToDateTime(outtime);
 
-            dbManager.OffWorkInsert(userid, date, outtime);
-            var salaryResult = dbManager.Getsalary(userid);
+            dbManager.OffWorkInsert(userid, date.ToString("yyyy-MM-dd"), outtime);
+            if (dateTimePicker1.Value == new DateTime(date.Year, date.Month, 1))
+            {
+                dbManager.InsertSalary(myInfo.userId, dateTimePicker1.Value.Month);
+            }
+
+            var salaryResult = dbManager.Getsalary(myInfo.userId, dateTimePicker1.Value.Month);
             int real_gross_pay = salaryResult.gross_pay;
             int real_base_pay = salaryResult.base_pay;
             DayOfWeek wk = DateTime.Today.DayOfWeek;
-            double worktime = dbManager.GetWorktime(userid, date);
+            double worktime = dbManager.GetWorktime(myInfo.userId, date.ToString("yyyy-MM-dd"));
             int base_pay = Convert.ToInt32(worktime * 9620);
             int add_pay = 0;
             if (wk != DayOfWeek.Saturday || wk != DayOfWeek.Sunday)
@@ -127,7 +134,7 @@ namespace deepcheesebacon
             int e_insurance = Convert.ToInt32(real_gross_pay * 0.009);
             int net_pay = Convert.ToInt32(real_gross_pay - n_pension - n_hinsurance - n_long_hinsurance - e_insurance);
 
-            dbManager.InsertPay(userid, real_gross_pay, real_base_pay, n_pension, n_hinsurance, n_long_hinsurance, e_insurance, net_pay);
+            dbManager.InsertPay(myInfo.userId, real_gross_pay, real_base_pay, n_pension, n_hinsurance, n_long_hinsurance, e_insurance, net_pay, dateTimePicker1.Value.Month);
         }
 
 /*

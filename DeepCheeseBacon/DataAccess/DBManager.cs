@@ -1271,15 +1271,17 @@ CREATE TABLE IF NOT EXISTS approval (
         }
 
         // 급여내역서 산출
-        public DataSet ViewTableSalary()
+        public DataSet ViewTableSalary(string month)
         {
             DataSet ds = new DataSet();
 
             try
             {
-                string query = "SELECT * FROM sert_salary";
+                string query = "SELECT * FROM sert_salary WHERE monthofdate = @month";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@month", month);
 
-                using (MySqlDataAdapter da = new MySqlDataAdapter(query, connection))
+                using (MySqlDataAdapter da = new MySqlDataAdapter(com))
                 {
                     da.Fill(ds);
                 }
@@ -1327,13 +1329,14 @@ CREATE TABLE IF NOT EXISTS approval (
         }
 
         // 급여내역서 user 등록
-        public void InsertSalary(string user_id)
+        public void InsertSalary(int user_id, int month)
         {
             try
             {
-                string query = "INSERT INTO sert_salary (email) VALUES (@user_id)";
+                string query = "INSERT INTO sert_salary (email, monthofdate) VALUES (@user_id, @month)";
                 MySqlCommand com = new MySqlCommand(query, connection);
                 com.Parameters.AddWithValue("@user_id", user_id);
+                com.Parameters.AddWithValue("@month", month);
 
                 com.ExecuteNonQuery();
             }
@@ -1344,15 +1347,16 @@ CREATE TABLE IF NOT EXISTS approval (
         }
 
         // 총 급여, 기본급 return
-        public (int gross_pay, int base_pay) Getsalary(int userid)
+        public (int gross_pay, int base_pay) Getsalary(int userid, int month)
         {
             try
             {
                 int gross_pay = 0, base_pay = 0;  // Initialize variables
 
-                string query = "SELECT gross_pay, base_pay FROM sert_salary WHERE user_id = @name";
+                string query = "SELECT gross_pay, base_pay FROM sert_salary WHERE user_id = @name AND monthofdate = @month";
                 MySqlCommand com = new MySqlCommand(query, connection);
                 com.Parameters.AddWithValue("@name", userid);
+                com.Parameters.AddWithValue("@monthofdate", month);
                 MySqlDataReader reader = com.ExecuteReader();
 
                 while (reader.Read())
@@ -1378,13 +1382,14 @@ CREATE TABLE IF NOT EXISTS approval (
         }
 
         // 급여 입력
-        public void InsertPay(int userid, int gross_pay, int base_pay, int n_pension, int n_hinsurance, int n_long_hinsurance, int e_insurance, int net_pay)
+        public void InsertPay(int userid, int gross_pay, int base_pay, int n_pension, int n_hinsurance, int n_long_hinsurance, int e_insurance, int net_pay, int month)
         {
             try
             {
-                string query = "UPDATE sert_salary SET gross_pay = @gross_pay AND base_pay = @base_pay AND n_pension = @n_pension AND n_hinsurance = @n_hinsurance AND n_long_hinsurance = @n_long_hinsurance AND e_insurance = @e_insurance AND net_pay = @net_pay WHERE user_id = @name";
+                string query = "UPDATE sert_salary SET gross_pay = @gross_pay AND base_pay = @base_pay AND n_pension = @n_pension AND n_hinsurance = @n_hinsurance AND n_long_hinsurance = @n_long_hinsurance AND e_insurance = @e_insurance AND net_pay = @net_pay WHERE user_id = @name AND monthofdate = @month";
                 MySqlCommand com = new MySqlCommand(query, connection);
                 com.Parameters.AddWithValue("@userid", userid);
+                com.Parameters.AddWithValue("@month", month);
                 com.Parameters.AddWithValue("@gross_pay", gross_pay);
                 com.Parameters.AddWithValue("@base_pay", base_pay);
                 com.Parameters.AddWithValue("@n_pension", n_pension);

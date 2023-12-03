@@ -31,6 +31,9 @@
             payView = new DataGridView();
             panel1 = new Panel();
             label1 = new Label();
+            SelectMonth = new ComboBox();
+            label6 = new Label();
+            prt_btn = new Button();
             ((System.ComponentModel.ISupportInitialize)payView).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -38,10 +41,10 @@
             // payView
             // 
             payView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            payView.Location = new Point(22, 196);
+            payView.Location = new Point(22, 260);
             payView.Name = "payView";
             payView.RowHeadersWidth = 51;
-            payView.Size = new Size(931, 601);
+            payView.Size = new Size(931, 537);
             payView.TabIndex = 66;
             // 
             // panel1
@@ -65,10 +68,44 @@
             label1.TabIndex = 0;
             label1.Text = "급여내역서";
             // 
+            // SelectMonth
+            // 
+            SelectMonth.FormattingEnabled = true;
+            SelectMonth.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
+            SelectMonth.Location = new Point(22, 198);
+            SelectMonth.Name = "SelectMonth";
+            SelectMonth.Size = new Size(99, 33);
+            SelectMonth.TabIndex = 67;
+            SelectMonth.SelectedIndexChanged += SelectMonth_SelectedIndexChanged;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(127, 198);
+            label6.Name = "label6";
+            label6.Size = new Size(161, 30);
+            label6.TabIndex = 68;
+            label6.Text = "월 급여 내역서";
+            // 
+            // prt_btn
+            // 
+            prt_btn.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            prt_btn.Location = new Point(730, 194);
+            prt_btn.Name = "prt_btn";
+            prt_btn.Size = new Size(223, 37);
+            prt_btn.TabIndex = 69;
+            prt_btn.Text = "급여내역서 산출";
+            prt_btn.UseVisualStyleBackColor = true;
+            prt_btn.Click += prt_btn_Click;
+            // 
             // Salary
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(prt_btn);
+            Controls.Add(label6);
+            Controls.Add(SelectMonth);
             Controls.Add(payView);
             Controls.Add(panel1);
             Name = "Salary";
@@ -78,6 +115,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -97,5 +135,8 @@
         private Label label2;
         private Panel panel1;
         private Label label1;
+        private ComboBox SelectMonth;
+        private Label label6;
+        private Button prt_btn;
     }
 }
