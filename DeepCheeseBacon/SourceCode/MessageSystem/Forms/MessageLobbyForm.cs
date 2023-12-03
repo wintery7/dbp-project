@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using deepcheesebacon.SourceCode.MessageSystem.Forms;
 
 namespace deepcheesebacon
 {
@@ -63,5 +64,10 @@ namespace deepcheesebacon
             LoadChattingList();
         }
 
+        private void customButtonStyle1_Click(object sender, EventArgs e)
+        {
+            MessageInBoxForm form = new MessageInBoxForm();
+            form.ShowDialog();
+        }
     }
 }

@@ -34,6 +34,7 @@ namespace deepcheesebacon
             listBoxMessageList = new ListBox();
             buttonRealTimeChat = new CustomButtonStyle();
             customGroupBox2 = new CustomGroupBox();
+            customButtonStyle1 = new CustomButtonStyle();
             refreshButton = new ImageButton();
             customGroupBox2.SuspendLayout();
             SuspendLayout();
@@ -70,6 +71,7 @@ namespace deepcheesebacon
             // customGroupBox2
             // 
             customGroupBox2.BackColor = Color.Transparent;
+            customGroupBox2.Controls.Add(customButtonStyle1);
             customGroupBox2.Controls.Add(refreshButton);
             customGroupBox2.Controls.Add(listBoxMessageList);
             customGroupBox2.Controls.Add(buttonRealTimeChat);
@@ -80,11 +82,30 @@ namespace deepcheesebacon
             customGroupBox2.Size = new Size(677, 412);
             customGroupBox2.TabIndex = 29;
             customGroupBox2.TabStop = false;
-            customGroupBox2.Text = "Message";
+            customGroupBox2.Text = "쪽지";
             customGroupBox2.TitleBackColor = Color.FromArgb(94, 159, 242);
             customGroupBox2.TitleFont = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point);
             customGroupBox2.TitleForeColor = Color.White;
             customGroupBox2.TitleHatchStyle = System.Drawing.Drawing2D.HatchStyle.Percent60;
+            // 
+            // customButtonStyle1
+            // 
+            customButtonStyle1.BackColor = Color.FromArgb(94, 159, 242);
+            customButtonStyle1.BackgroundColor = Color.FromArgb(94, 159, 242);
+            customButtonStyle1.BorderColor = Color.PaleVioletRed;
+            customButtonStyle1.BorderRadius = 20;
+            customButtonStyle1.BorderSize = 0;
+            customButtonStyle1.FlatStyle = FlatStyle.Flat;
+            customButtonStyle1.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            customButtonStyle1.ForeColor = Color.White;
+            customButtonStyle1.Location = new Point(16, 380);
+            customButtonStyle1.Name = "customButtonStyle1";
+            customButtonStyle1.Size = new Size(146, 26);
+            customButtonStyle1.TabIndex = 6;
+            customButtonStyle1.Text = "받은 쪽지 모아보기";
+            customButtonStyle1.TextColor = Color.White;
+            customButtonStyle1.UseVisualStyleBackColor = false;
+            customButtonStyle1.Click += customButtonStyle1_Click;
             // 
             // refreshButton
             // 
@@ -93,7 +114,7 @@ namespace deepcheesebacon
             refreshButton.Image_01 = Properties.Resources.refresh;
             refreshButton.Image_02 = Properties.Resources.refreshoption;
             refreshButton.Location = new Point(653, 4);
-            refreshButton.Margin = new Padding(2, 2, 2, 2);
+            refreshButton.Margin = new Padding(2);
             refreshButton.Name = "refreshButton";
             refreshButton.Size = new Size(18, 20);
             refreshButton.TabIndex = 5;
@@ -123,5 +144,6 @@ namespace deepcheesebacon
         private CustomGroupBox customGroupBox2;
         private deepcheesebacon.ImageButton refreshButton;
         private CustomButtonStyle buttonRealTimeChat;
+        private CustomButtonStyle customButtonStyle1;
     }
 }
