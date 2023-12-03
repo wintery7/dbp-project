@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LoginSystem\\Forms",
+    "\\LoginSystem\\LoginedUserInfo"
   ],
   "SelectedNode": "\\DeepCheeseBacon.sln",
   "PreviewInSolutionExplorer": false

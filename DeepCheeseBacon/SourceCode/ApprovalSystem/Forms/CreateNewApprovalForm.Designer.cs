@@ -1,4 +1,4 @@
-﻿using deepcheesebacon.Work;
+﻿using deepcheesebacon.Customizing;
 using System.Windows.Forms;
 
 namespace deepcheesebacon
@@ -32,16 +32,12 @@ namespace deepcheesebacon
         private void InitializeComponent()
         {
             buttonCreateApproval = new CustomButtonStyle();
-            textBoxApprovalTitle = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            textBoxApprovalDescription = new TextBox();
-            textBoxApprovalRelatedTask = new TextBox();
             label4 = new Label();
-            label5 = new Label();
-            textBoxApprovalComment = new TextBox();
-            comboBoxApproverList = new ComboBox();
+            comboBoxApproverList = new CustomComboBox();
+            textBoxApprovalTitle = new CustomTextBox();
+            textBoxApprovalDescription = new CustomTextBox();
+            textBoxApprovalComment = new CustomTextBox();
+            textBoxApprovalRelatedTask = new CustomTextBox();
             SuspendLayout();
             // 
             // buttonCreateApproval
@@ -64,61 +60,6 @@ namespace deepcheesebacon
             buttonCreateApproval.UseVisualStyleBackColor = false;
             buttonCreateApproval.Click += buttonCreateApproval_Click;
             // 
-            // textBoxApprovalTitle
-            // 
-            textBoxApprovalTitle.Location = new Point(49, 51);
-            textBoxApprovalTitle.Margin = new Padding(4);
-            textBoxApprovalTitle.Name = "textBoxApprovalTitle";
-            textBoxApprovalTitle.Size = new Size(855, 27);
-            textBoxApprovalTitle.TabIndex = 3;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(49, 27);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(74, 20);
-            label1.TabIndex = 4;
-            label1.Text = "결재 제목";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(324, 550);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(74, 20);
-            label2.TabIndex = 5;
-            label2.Text = "관련 업무";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(49, 95);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(74, 20);
-            label3.TabIndex = 6;
-            label3.Text = "결재 내용";
-            // 
-            // textBoxApprovalDescription
-            // 
-            textBoxApprovalDescription.Location = new Point(49, 119);
-            textBoxApprovalDescription.Margin = new Padding(4);
-            textBoxApprovalDescription.Multiline = true;
-            textBoxApprovalDescription.Name = "textBoxApprovalDescription";
-            textBoxApprovalDescription.Size = new Size(855, 289);
-            textBoxApprovalDescription.TabIndex = 7;
-            // 
-            // textBoxApprovalRelatedTask
-            // 
-            textBoxApprovalRelatedTask.Location = new Point(421, 548);
-            textBoxApprovalRelatedTask.Margin = new Padding(4);
-            textBoxApprovalRelatedTask.Name = "textBoxApprovalRelatedTask";
-            textBoxApprovalRelatedTask.Size = new Size(251, 27);
-            textBoxApprovalRelatedTask.TabIndex = 8;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -129,49 +70,120 @@ namespace deepcheesebacon
             label4.TabIndex = 9;
             label4.Text = "결재자 지정";
             // 
-            // label5
+            // comboBoxApproverList
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(49, 412);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(89, 20);
-            label5.TabIndex = 11;
-            label5.Text = "결재 코멘트";
+            comboBoxApproverList.BackColor = Color.FromArgb(94, 159, 242);
+            comboBoxApproverList.BorderColor = Color.FromArgb(242, 242, 242);
+            comboBoxApproverList.BorderSize = 1;
+            comboBoxApproverList.Font = new Font("맑은 고딕", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxApproverList.ForeColor = Color.DimGray;
+            comboBoxApproverList.FormattingEnabled = true;
+            comboBoxApproverList.IconColor = Color.White;
+            comboBoxApproverList.ListBackColor = Color.FromArgb(230, 228, 245);
+            comboBoxApproverList.ListTextColor = Color.DimGray;
+            comboBoxApproverList.Location = new Point(146, 547);
+            comboBoxApproverList.Margin = new Padding(4);
+            comboBoxApproverList.MinimumSize = new Size(170, 0);
+            comboBoxApproverList.Name = "comboBoxApproverList";
+            comboBoxApproverList.Size = new Size(170, 31);
+            comboBoxApproverList.TabIndex = 13;
+            comboBoxApproverList.Texts = "";
+            // 
+            // textBoxApprovalTitle
+            // 
+            textBoxApprovalTitle.BackColor = SystemColors.Window;
+            textBoxApprovalTitle.BorderColor = Color.FromArgb(94, 159, 242);
+            textBoxApprovalTitle.BorderFocusColor = Color.FromArgb(4, 96, 217);
+            textBoxApprovalTitle.BorderRadius = 0;
+            textBoxApprovalTitle.BorderSize = 2;
+            textBoxApprovalTitle.Font = new Font("맑은 고딕", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxApprovalTitle.ForeColor = Color.DimGray;
+            textBoxApprovalTitle.Location = new Point(49, 38);
+            textBoxApprovalTitle.Multiline = false;
+            textBoxApprovalTitle.Name = "textBoxApprovalTitle";
+            textBoxApprovalTitle.Padding = new Padding(10, 7, 10, 7);
+            textBoxApprovalTitle.PasswordChar = false;
+            textBoxApprovalTitle.PlaceholderColor = Color.DarkGray;
+            textBoxApprovalTitle.PlaceholderText = "제목을 입력해주세요.";
+            textBoxApprovalTitle.Size = new Size(855, 36);
+            textBoxApprovalTitle.TabIndex = 14;
+            textBoxApprovalTitle.Texts = "";
+            textBoxApprovalTitle.UnderlinedStyle = true;
+            // 
+            // textBoxApprovalDescription
+            // 
+            textBoxApprovalDescription.BackColor = SystemColors.Window;
+            textBoxApprovalDescription.BorderColor = Color.FromArgb(94, 159, 242);
+            textBoxApprovalDescription.BorderFocusColor = Color.FromArgb(4, 96, 217);
+            textBoxApprovalDescription.BorderRadius = 0;
+            textBoxApprovalDescription.BorderSize = 2;
+            textBoxApprovalDescription.Font = new Font("맑은 고딕", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxApprovalDescription.ForeColor = Color.DimGray;
+            textBoxApprovalDescription.Location = new Point(49, 95);
+            textBoxApprovalDescription.Multiline = true;
+            textBoxApprovalDescription.Name = "textBoxApprovalDescription";
+            textBoxApprovalDescription.Padding = new Padding(10, 7, 10, 7);
+            textBoxApprovalDescription.PasswordChar = false;
+            textBoxApprovalDescription.PlaceholderColor = Color.DarkGray;
+            textBoxApprovalDescription.PlaceholderText = "내용을 입력하세요.";
+            textBoxApprovalDescription.Size = new Size(855, 330);
+            textBoxApprovalDescription.TabIndex = 15;
+            textBoxApprovalDescription.Texts = "";
+            textBoxApprovalDescription.UnderlinedStyle = false;
             // 
             // textBoxApprovalComment
             // 
-            textBoxApprovalComment.Location = new Point(49, 436);
-            textBoxApprovalComment.Margin = new Padding(4);
+            textBoxApprovalComment.BackColor = SystemColors.Window;
+            textBoxApprovalComment.BorderColor = Color.FromArgb(94, 159, 242);
+            textBoxApprovalComment.BorderFocusColor = Color.FromArgb(4, 96, 217);
+            textBoxApprovalComment.BorderRadius = 0;
+            textBoxApprovalComment.BorderSize = 2;
+            textBoxApprovalComment.Font = new Font("맑은 고딕", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxApprovalComment.ForeColor = Color.DimGray;
+            textBoxApprovalComment.Location = new Point(49, 444);
             textBoxApprovalComment.Multiline = true;
             textBoxApprovalComment.Name = "textBoxApprovalComment";
-            textBoxApprovalComment.Size = new Size(855, 81);
-            textBoxApprovalComment.TabIndex = 12;
+            textBoxApprovalComment.Padding = new Padding(10, 7, 10, 7);
+            textBoxApprovalComment.PasswordChar = false;
+            textBoxApprovalComment.PlaceholderColor = Color.DarkGray;
+            textBoxApprovalComment.PlaceholderText = "코멘트를 남겨보세요!";
+            textBoxApprovalComment.Size = new Size(855, 84);
+            textBoxApprovalComment.TabIndex = 16;
+            textBoxApprovalComment.Texts = "";
+            textBoxApprovalComment.UnderlinedStyle = false;
             // 
-            // comboBoxApproverList
+            // textBoxApprovalRelatedTask
             // 
-            comboBoxApproverList.FormattingEnabled = true;
-            comboBoxApproverList.Location = new Point(146, 547);
-            comboBoxApproverList.Margin = new Padding(4);
-            comboBoxApproverList.Name = "comboBoxApproverList";
-            comboBoxApproverList.Size = new Size(154, 28);
-            comboBoxApproverList.TabIndex = 13;
+            textBoxApprovalRelatedTask.BackColor = SystemColors.Window;
+            textBoxApprovalRelatedTask.BorderColor = Color.FromArgb(94, 159, 242);
+            textBoxApprovalRelatedTask.BorderFocusColor = Color.FromArgb(4, 96, 217);
+            textBoxApprovalRelatedTask.BorderRadius = 0;
+            textBoxApprovalRelatedTask.BorderSize = 2;
+            textBoxApprovalRelatedTask.Font = new Font("맑은 고딕", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxApprovalRelatedTask.ForeColor = Color.DimGray;
+            textBoxApprovalRelatedTask.Location = new Point(374, 542);
+            textBoxApprovalRelatedTask.Multiline = false;
+            textBoxApprovalRelatedTask.Name = "textBoxApprovalRelatedTask";
+            textBoxApprovalRelatedTask.Padding = new Padding(10, 7, 10, 7);
+            textBoxApprovalRelatedTask.PasswordChar = false;
+            textBoxApprovalRelatedTask.PlaceholderColor = Color.DarkGray;
+            textBoxApprovalRelatedTask.PlaceholderText = "관련 업무를 작성하세요.";
+            textBoxApprovalRelatedTask.Size = new Size(312, 36);
+            textBoxApprovalRelatedTask.TabIndex = 17;
+            textBoxApprovalRelatedTask.Texts = "";
+            textBoxApprovalRelatedTask.UnderlinedStyle = true;
             // 
             // CreateNewApprovalForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(951, 616);
-            Controls.Add(comboBoxApproverList);
-            Controls.Add(textBoxApprovalComment);
-            Controls.Add(label5);
-            Controls.Add(label4);
             Controls.Add(textBoxApprovalRelatedTask);
+            Controls.Add(textBoxApprovalComment);
             Controls.Add(textBoxApprovalDescription);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(textBoxApprovalTitle);
+            Controls.Add(comboBoxApproverList);
+            Controls.Add(label4);
             Controls.Add(buttonCreateApproval);
             Margin = new Padding(4);
             Name = "CreateNewApprovalForm";
@@ -181,20 +193,16 @@ namespace deepcheesebacon
         }
 
         #endregion
-        private TextBox textBoxApprovalTitle;
         private Button button2;
         private Button button3;
         private TextBox textBox1;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private TextBox textBoxApprovalDescription;
         private TextBox textBox2;
-        private TextBox textBoxApprovalRelatedTask;
         private Label label4;
-        private Label label5;
-        private TextBox textBoxApprovalComment;
-        private ComboBox comboBoxApproverList;
         private CustomButtonStyle buttonCreateApproval;
+        private CustomComboBox comboBoxApproverList;
+        private CustomTextBox textBoxApprovalTitle;
+        private CustomTextBox textBoxApprovalDescription;
+        private CustomTextBox textBoxApprovalComment;
+        private CustomTextBox textBoxApprovalRelatedTask;
     }
 }

@@ -1,8 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="ImageButton.cs">
+    <Compile Update="Customizing\CustomComboBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Customizing\CustomDatePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Customizing\CustomTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Customizing\ImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="LoginSystem\Forms\LoginForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="ManagePanel\AttendanceReg.cs">
       <SubType>UserControl</SubType>
@@ -46,9 +58,6 @@
     <Compile Update="SourceCode\ApprovalSystem\Forms\RejectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LoginSystem\Forms\LoginForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="SourceCode\MessageSystem\Forms\MessageDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,10 +73,10 @@
     <Compile Update="UIForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Work\CustomButtonStyle.cs">
+    <Compile Update="Customizing\CustomButtonStyle.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Work\CustomGroupBox.cs">
+    <Compile Update="Customizing\CustomGroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Work\WorkForm.cs">

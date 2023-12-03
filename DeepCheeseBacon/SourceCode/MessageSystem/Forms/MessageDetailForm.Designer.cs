@@ -1,4 +1,6 @@
-﻿namespace deepcheesebacon
+﻿using deepcheesebacon.Customizing;
+
+namespace deepcheesebacon
 {
     partial class MessageDetailForm
     {
@@ -28,79 +30,103 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBoxChatBox = new System.Windows.Forms.ListBox();
-            textBoxInputMessage = new System.Windows.Forms.TextBox();
-            buttonSendMessage = new System.Windows.Forms.Button();
-            label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            buttonRefresh = new System.Windows.Forms.Button();
+            listBoxChatBox = new ListBox();
+            textBoxInputMessage = new TextBox();
+            buttonSendMessage = new CustomButtonStyle();
+            label1 = new Label();
+            label2 = new Label();
+            buttonRefresh = new CustomButtonStyle();
             SuspendLayout();
             // 
             // listBoxChatBox
             // 
+            listBoxChatBox.ForeColor = Color.Black;
             listBoxChatBox.FormattingEnabled = true;
-            listBoxChatBox.ItemHeight = 15;
-            listBoxChatBox.Location = new System.Drawing.Point(116, 27);
+            listBoxChatBox.ItemHeight = 20;
+            listBoxChatBox.Location = new Point(149, 36);
+            listBoxChatBox.Margin = new Padding(4);
             listBoxChatBox.Name = "listBoxChatBox";
-            listBoxChatBox.Size = new System.Drawing.Size(262, 334);
+            listBoxChatBox.Size = new Size(336, 444);
             listBoxChatBox.TabIndex = 0;
             // 
             // textBoxInputMessage
             // 
-            textBoxInputMessage.Location = new System.Drawing.Point(116, 387);
+            textBoxInputMessage.Location = new Point(149, 516);
+            textBoxInputMessage.Margin = new Padding(4);
             textBoxInputMessage.Name = "textBoxInputMessage";
-            textBoxInputMessage.Size = new System.Drawing.Size(262, 23);
+            textBoxInputMessage.Size = new Size(336, 27);
             textBoxInputMessage.TabIndex = 1;
             // 
             // buttonSendMessage
             // 
-            buttonSendMessage.Location = new System.Drawing.Point(406, 386);
+            buttonSendMessage.BackColor = SystemColors.Window;
+            buttonSendMessage.BackgroundColor = SystemColors.Window;
+            buttonSendMessage.BorderColor = Color.FromArgb(4, 96, 217);
+            buttonSendMessage.BorderRadius = 10;
+            buttonSendMessage.BorderSize = 2;
+            buttonSendMessage.FlatStyle = FlatStyle.Flat;
+            buttonSendMessage.ForeColor = Color.DarkBlue;
+            buttonSendMessage.Location = new Point(522, 515);
+            buttonSendMessage.Margin = new Padding(4);
             buttonSendMessage.Name = "buttonSendMessage";
-            buttonSendMessage.Size = new System.Drawing.Size(75, 23);
+            buttonSendMessage.Size = new Size(96, 31);
             buttonSendMessage.TabIndex = 2;
             buttonSendMessage.Text = "전송";
-            buttonSendMessage.UseVisualStyleBackColor = true;
+            buttonSendMessage.TextColor = Color.DarkBlue;
+            buttonSendMessage.UseVisualStyleBackColor = false;
             buttonSendMessage.Click += buttonSendMessage_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(39, 390);
+            label1.Location = new Point(50, 520);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(71, 15);
+            label1.Size = new Size(89, 20);
             label1.TabIndex = 3;
             label1.Text = "메시지 입력";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(116, 9);
+            label2.Location = new Point(149, 12);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(43, 15);
+            label2.Size = new Size(54, 20);
             label2.TabIndex = 4;
             label2.Text = "대화창";
             // 
             // buttonRefresh
             // 
-            buttonRefresh.Location = new System.Drawing.Point(406, 319);
+            buttonRefresh.BackColor = SystemColors.Window;
+            buttonRefresh.BackgroundColor = SystemColors.Window;
+            buttonRefresh.BorderColor = Color.FromArgb(4, 96, 217);
+            buttonRefresh.BorderRadius = 10;
+            buttonRefresh.BorderSize = 2;
+            buttonRefresh.FlatStyle = FlatStyle.Flat;
+            buttonRefresh.ForeColor = Color.DarkBlue;
+            buttonRefresh.Location = new Point(522, 425);
+            buttonRefresh.Margin = new Padding(4);
             buttonRefresh.Name = "buttonRefresh";
-            buttonRefresh.Size = new System.Drawing.Size(75, 42);
+            buttonRefresh.Size = new Size(96, 56);
             buttonRefresh.TabIndex = 5;
             buttonRefresh.Text = "새로고침";
-            buttonRefresh.UseVisualStyleBackColor = true;
+            buttonRefresh.TextColor = Color.DarkBlue;
+            buttonRefresh.UseVisualStyleBackColor = false;
             buttonRefresh.Click += buttonRefresh_Click;
             // 
             // MessageDetailForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1084, 661);
+            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1394, 881);
             Controls.Add(buttonRefresh);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(buttonSendMessage);
             Controls.Add(textBoxInputMessage);
             Controls.Add(listBoxChatBox);
+            Margin = new Padding(4);
             Name = "MessageDetailForm";
             Text = "]";
             ResumeLayout(false);
@@ -109,11 +135,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBoxChatBox;
-        private System.Windows.Forms.TextBox textBoxInputMessage;
-        private System.Windows.Forms.Button buttonSendMessage;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonRefresh;
+        private ListBox listBoxChatBox;
+        private TextBox textBoxInputMessage;
+        private Label label1;
+        private Label label2;
+        private CustomButtonStyle buttonSendMessage;
+        private CustomButtonStyle buttonRefresh;
     }
 }

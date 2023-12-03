@@ -86,7 +86,7 @@ namespace deepcheesebacon
                 tempChatRoom = await ApiManager.CreateChatRoomAsync(textBoxRoomName.Text);
 
                 LoadChatList();
-                textBoxRoomName.Clear();
+                textBoxRoomName.ClearText();
                 MessageBox.Show("채팅방 생성 완료");
             }
             else

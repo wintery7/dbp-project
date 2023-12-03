@@ -1,4 +1,4 @@
-﻿using deepcheesebacon.Work;
+﻿using deepcheesebacon.Customizing;
 
 namespace deepcheesebacon;
 
@@ -46,7 +46,7 @@ partial class ApprovalSystemMainForm
         // 
         buttonCreateNewApproval.BackColor = Color.FromArgb(94, 159, 242);
         buttonCreateNewApproval.BackgroundColor = Color.FromArgb(94, 159, 242);
-        buttonCreateNewApproval.BorderColor = Color.PaleVioletRed;
+        buttonCreateNewApproval.BorderColor = Color.FromArgb(4, 96, 217);
         buttonCreateNewApproval.BorderRadius = 20;
         buttonCreateNewApproval.BorderSize = 0;
         buttonCreateNewApproval.FlatStyle = FlatStyle.Flat;
@@ -66,7 +66,7 @@ partial class ApprovalSystemMainForm
         // 
         buttonCheckMyApprovalList.BackColor = Color.FromArgb(94, 159, 242);
         buttonCheckMyApprovalList.BackgroundColor = Color.FromArgb(94, 159, 242);
-        buttonCheckMyApprovalList.BorderColor = Color.PaleVioletRed;
+        buttonCheckMyApprovalList.BorderColor = Color.FromArgb(4, 96, 217);
         buttonCheckMyApprovalList.BorderRadius = 20;
         buttonCheckMyApprovalList.BorderSize = 0;
         buttonCheckMyApprovalList.FlatStyle = FlatStyle.Flat;
