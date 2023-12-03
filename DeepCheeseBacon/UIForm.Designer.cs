@@ -145,7 +145,7 @@
             MainPanel.BackColor = SystemColors.ButtonShadow;
             MainPanel.Location = new Point(209, 0);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(754, 497);
+            MainPanel.Size = new Size(1049, 703);
             MainPanel.TabIndex = 31;
             MainPanel.Paint += MainPanel_Paint;
             // 

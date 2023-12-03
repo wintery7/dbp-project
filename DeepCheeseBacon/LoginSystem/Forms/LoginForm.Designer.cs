@@ -33,6 +33,7 @@
             label2 = new Label();
             textBoxEmail = new TextBox();
             textBoxPassword = new TextBox();
+            checkBoxAutoLogin = new CheckBox();
             SuspendLayout();
             // 
             // buttonLogin
@@ -78,11 +79,23 @@
             textBoxPassword.Size = new Size(323, 23);
             textBoxPassword.TabIndex = 4;
             // 
+            // checkBoxAutoLogin
+            // 
+            checkBoxAutoLogin.AutoSize = true;
+            checkBoxAutoLogin.Location = new Point(644, 313);
+            checkBoxAutoLogin.Name = "checkBoxAutoLogin";
+            checkBoxAutoLogin.Size = new Size(90, 19);
+            checkBoxAutoLogin.TabIndex = 5;
+            checkBoxAutoLogin.Text = "자동 로그인";
+            checkBoxAutoLogin.UseVisualStyleBackColor = true;
+            checkBoxAutoLogin.CheckedChanged += checkBoxAutoLogin_CheckedChanged;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(962, 497);
+            Controls.Add(checkBoxAutoLogin);
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxEmail);
             Controls.Add(label2);
@@ -90,6 +103,7 @@
             Controls.Add(buttonLogin);
             Name = "LoginForm";
             Text = "LoginForm";
+            FormClosing += LoginForm_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -101,5 +115,6 @@
         private Label label2;
         private TextBox textBoxEmail;
         private TextBox textBoxPassword;
+        private CheckBox checkBoxAutoLogin;
     }
 }

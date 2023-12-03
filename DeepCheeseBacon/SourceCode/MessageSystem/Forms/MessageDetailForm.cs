@@ -1,6 +1,7 @@
 ﻿using deepcheesebacon;
 using deepcheesebacon.SourceCode.ApprovalSystem.Models;
 using deepcheesebacon.SourceCode.MessageSystem.Models;
+using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +9,6 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Message = deepcheesebacon.SourceCode.MessageSystem.Models.Message;
 
 namespace deepcheesebacon
 {
@@ -28,6 +28,7 @@ namespace deepcheesebacon
             opponentUserId = ((User)dbManager.GetUserByEmail(opponentUserEmail)).UserId;
             Console.WriteLine("otherUserId and email: " + opponentUserId + opponentUserEmail);
             LoadMessage();
+            AcceptButton = buttonSendMessage;
         }
 
         private void LoadMessage()
@@ -70,6 +71,14 @@ namespace deepcheesebacon
                 content = textBoxInputMessage.Text,
             });
             LoadMessage();
+
+
+        }
+
+        // 클라이언트에게 쪽지 알림을 보내는 메서드
+        public void NotifyNewMessage(string userId, string message)
+        {
+            //Clients.User(userId).newMessageNotification(message);
         }
 
         private void buttonRefresh_Click(object sender, EventArgs e)
