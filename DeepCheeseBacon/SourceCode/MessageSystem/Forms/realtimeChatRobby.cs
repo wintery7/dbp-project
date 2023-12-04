@@ -94,5 +94,9 @@ namespace deepcheesebacon
                 MessageBox.Show("생성할 채팅방 이름을 입력해주세요.");
             }
         }
+
+        private void realtimeChatRobby_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
     }
 }

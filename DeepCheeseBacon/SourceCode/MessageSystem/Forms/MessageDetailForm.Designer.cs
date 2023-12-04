@@ -69,6 +69,7 @@ namespace deepcheesebacon
             buttonRefresh.Name = "buttonRefresh";
             buttonRefresh.Size = new Size(29, 32);
             buttonRefresh.TabIndex = 29;
+            buttonRefresh.Click += buttonRefresh_Click;
             // 
             // buttonSendMessage
             // 
@@ -87,6 +88,7 @@ namespace deepcheesebacon
             buttonSendMessage.Text = "전송";
             buttonSendMessage.TextColor = Color.DarkBlue;
             buttonSendMessage.UseVisualStyleBackColor = false;
+            buttonSendMessage.Click += buttonSendMessage_Click;
             // 
             // textBoxInputMessage
             // 

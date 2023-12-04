@@ -173,6 +173,7 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
 
         private void realtimeChatDetailForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            CloseWebSocketAsync();
         }
     }
 }
