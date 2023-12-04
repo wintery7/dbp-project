@@ -136,7 +136,7 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
         private void buttonSendMessage_Click(object sender, EventArgs e)
         {
             // 텍스트 박스에서 메시지 가져오기
-            string message = textBoxInputMessage.Text;
+            string message = textBoxInputMessage.Texts;
 
             // 메시지 전송
             SendMessageAsync("TALK", roomId, nickName, message);

@@ -63,13 +63,13 @@ namespace deepcheesebacon
         {
             if (listBoxMessageList.SelectedIndex != -1)
             {
-                if (textBoxNickName.Text == null || textBoxNickName.Text.Equals(""))
+                if (textBoxNickName.Texts == null || textBoxNickName.Texts.Equals(""))
                 {
                     MessageBox.Show("사용할 별명을 입력해주세요");
                     return;
                 }
 
-                realtimeChatDetailForm form = new realtimeChatDetailForm(((ChatRoom)listBoxMessageList.SelectedItem).RoomId, textBoxNickName.Text);
+                realtimeChatDetailForm form = new realtimeChatDetailForm(((ChatRoom)listBoxMessageList.SelectedItem).RoomId, textBoxNickName.Texts);
                 form.ShowDialog();
             }
         }
@@ -81,9 +81,9 @@ namespace deepcheesebacon
 
         private async Task CreateButtonClieck()
         {
-            if (textBoxRoomName.Text != null && !textBoxRoomName.Text.Equals(""))
+            if (textBoxRoomName.Texts != null && !textBoxRoomName.Texts.Equals(""))
             {
-                tempChatRoom = await ApiManager.CreateChatRoomAsync(textBoxRoomName.Text);
+                tempChatRoom = await ApiManager.CreateChatRoomAsync(textBoxRoomName.Texts);
 
                 LoadChatList();
                 textBoxRoomName.ClearText();

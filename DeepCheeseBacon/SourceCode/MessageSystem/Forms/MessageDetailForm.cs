@@ -68,7 +68,7 @@ namespace deepcheesebacon
             {
                 senderId = myinfo.userId,
                 receiverId = opponentUserId,
-                content = textBoxInputMessage.Text,
+                content = textBoxInputMessage.Texts,
             });
             LoadMessage();
 
