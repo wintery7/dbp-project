@@ -1473,18 +1473,22 @@ CREATE TABLE IF NOT EXISTS approval (
             }
         }
         // 급여내역서 산출
-        public DataSet ViewTableSalary()
+        public DataSet ViewTableSalary(string month)
         {
             DataSet ds = new DataSet();
 
             try
             {
-                string query = "SELECT * FROM sert_salary";
+                string query = "SELECT * FROM sert_salary WHERE monthofdate = @month";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@month", month);
 
-                using (MySqlDataAdapter da = new MySqlDataAdapter(query, connection))
+                using (MySqlDataAdapter da = new MySqlDataAdapter(com))
                 {
                     da.Fill(ds);
                 }
+
+                return ds;
             }
             catch (Exception e)
             {

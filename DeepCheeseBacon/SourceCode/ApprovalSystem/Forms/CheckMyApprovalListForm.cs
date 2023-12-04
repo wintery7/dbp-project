@@ -32,7 +32,7 @@ namespace deepcheesebacon
             LoadPendingApprovalList();
             LoadCompletedApprovalList();
             LoadTaskRequiringMyApprovalList();
-            LoadMyApprovalProgressList();
+            //LoadMyApprovalProgressList();
         }
 
         // 내가 결재해야하는 업무 리스트 불러오기
@@ -113,6 +113,7 @@ namespace deepcheesebacon
         }
 
         // 내가 등록한 결재들의 진행상황
+        /*
         private void LoadMyApprovalProgressList()
         {
             try
@@ -163,7 +164,7 @@ namespace deepcheesebacon
                 Console.WriteLine($"Error in LoadMyApprovalProgressList: {ex.Message}");
                 // 필요에 따라 사용자에게 예외 정보를 표시하거나 기타 조치를 취할 수 있습니다.
             }
-        }
+        }*/
 
 
 

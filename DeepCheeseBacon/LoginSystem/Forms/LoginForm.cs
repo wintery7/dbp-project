@@ -22,8 +22,8 @@ namespace deepcheesebacon
             if (loginData != null && loginData.isAutoLoad)
             {
                 checkBoxAutoLogin.Checked = loginData.isAutoLoad;
-                textBoxEmail.Text = loginData.email;
-                textBoxPassword.Text = loginData.password;
+                textBoxEmail.Texts = loginData.email;
+                textBoxPassword.Texts = loginData.password;
             }
         }
 
@@ -31,11 +31,11 @@ namespace deepcheesebacon
         {
             try
             {
-                User originUser = dbManager.GetUserByEmail(textBoxEmail.Text);
+                User originUser = dbManager.GetUserByEmail(textBoxEmail.Texts);
 
                 if (originUser != null)
                 {
-                    if (textBoxPassword.Text == originUser.Password)
+                    if (textBoxPassword.Texts == originUser.Password)
                     {
                         LoginedUserInfo myInfo = LoginedUserInfo.GetMyInfo();
                         myInfo.email = originUser.Email;
@@ -77,8 +77,8 @@ namespace deepcheesebacon
                 dbManager.SetAutoLogin(new LoginData
                 {
                     isAutoLoad = checkBoxAutoLogin.Checked,
-                    email = textBoxEmail.Text,
-                    password = textBoxPassword.Text,
+                    email = textBoxEmail.Texts,
+                    password = textBoxPassword.Texts,
                 });
             }
         }
