@@ -137,7 +137,6 @@ namespace deepcheesebacon
             if(resultNum != -1)  // 유효한 enum 값일 경우 db에 저장
             {
                 dbManager.InsertInfo(resultNum, email, pw, name, gender, pnum, addr, id, date);
-                
             }
            
 

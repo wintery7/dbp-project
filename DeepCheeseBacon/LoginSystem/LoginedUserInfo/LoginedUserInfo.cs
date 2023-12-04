@@ -14,8 +14,5 @@ namespace deepcheesebacon
         public Role role = Role.Requester;
 
         public static LoginedUserInfo GetMyInfo() { return loginedUserInfo; }
-
-
-
     }
 }

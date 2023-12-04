@@ -33,6 +33,9 @@ namespace deepcheesebacon
             buttonLogin = new CustomButtonStyle();
             textBoxEmail = new CustomTextBox();
             textBoxPassword = new CustomTextBox();
+            label1 = new Label();
+            label2 = new Label();
+            checkBoxAutoLogin = new CheckBox();
             SuspendLayout();
             // 
             // buttonLogin
@@ -97,23 +100,54 @@ namespace deepcheesebacon
             textBoxPassword.Texts = "";
             textBoxPassword.UnderlinedStyle = false;
             // 
+            // label1
+            // 
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(100, 23);
+            label1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(100, 23);
+            label2.TabIndex = 0;
+            // 
+            // checkBoxAutoLogin
+            // 
+            checkBoxAutoLogin.AutoSize = true;
+            checkBoxAutoLogin.Location = new Point(689, 400);
+            checkBoxAutoLogin.Name = "checkBoxAutoLogin";
+            checkBoxAutoLogin.Size = new Size(111, 24);
+            checkBoxAutoLogin.TabIndex = 5;
+            checkBoxAutoLogin.Text = "자동 로그인";
+            checkBoxAutoLogin.UseVisualStyleBackColor = true;
+            checkBoxAutoLogin.CheckedChanged += checkBoxAutoLogin_CheckedChanged;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1237, 663);
+            ClientSize = new Size(962, 497);
+            Controls.Add(checkBoxAutoLogin);
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxEmail);
             Controls.Add(buttonLogin);
             Margin = new Padding(4);
             Name = "LoginForm";
             Text = "LoginForm";
+            FormClosing += LoginForm_FormClosing;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private CustomButtonStyle buttonLogin;
         private CustomTextBox textBoxEmail;
         private CustomTextBox textBoxPassword;
+        private Label label1;
+        private Label label2;
+        private CheckBox checkBoxAutoLogin;
     }
 }

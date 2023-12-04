@@ -25,6 +25,7 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
             ConnectWebSocketAsync();
 
             this.nickName = nickNmae;
+            AcceptButton = buttonSendMessage;
         }
 
         private async Task ConnectWebSocketAsync()

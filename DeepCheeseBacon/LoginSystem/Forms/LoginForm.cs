@@ -1,4 +1,5 @@
-﻿using deepcheesebacon.SourceCode.ApprovalSystem.Models;
+﻿using deepcheesebacon.LoginSystem.Models;
+using deepcheesebacon.SourceCode.ApprovalSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,13 @@ namespace deepcheesebacon
         {
             InitializeComponent();
             dbManager = DBManager.GetInstance();
+            LoginData loginData = dbManager.GetLoginData();
+            if (loginData != null && loginData.isAutoLoad)
+            {
+                checkBoxAutoLogin.Checked = loginData.isAutoLoad;
+                textBoxEmail.Text = loginData.email;
+                textBoxPassword.Text = loginData.password;
+            }
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -58,5 +66,21 @@ namespace deepcheesebacon
             }
         }
 
+        private void checkBoxAutoLogin_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (checkBoxAutoLogin.Checked)
+            {
+                dbManager.SetAutoLogin(new LoginData
+                {
+                    isAutoLoad = checkBoxAutoLogin.Checked,
+                    email = textBoxEmail.Text,
+                    password = textBoxPassword.Text,
+                });
+            }
+        }
     }
 }
