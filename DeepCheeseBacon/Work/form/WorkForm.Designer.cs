@@ -1,5 +1,5 @@
 ﻿using deepcheesebacon.Customizing;
-using deepcheesebacon.Work;
+using deepcheesebacon.work.src;
 
 namespace deepcheesebacon
 {
@@ -48,9 +48,6 @@ namespace deepcheesebacon
             customGroupBox2 = new CustomGroupBox();
             customGroupBox3 = new CustomGroupBox();
             customGroupBox4 = new CustomGroupBox();
-            menuStrip1 = new MenuStrip();
-            편집ToolStripMenuItem = new ToolStripMenuItem();
-            WorkMasterButton = new ToolStripMenuItem();
             label1 = new Label();
             DeleteButton = new CustomButtonStyle();
             EditButton = new CustomButtonStyle();
@@ -58,12 +55,12 @@ namespace deepcheesebacon
             RegisterButton = new CustomButtonStyle();
             KeywordSearchButton = new CustomButtonStyle();
             Reload = new CustomButtonStyle();
+            WorkMasterButton = new CustomButtonStyle();
             ((System.ComponentModel.ISupportInitialize)WorkView).BeginInit();
             customGroupBox1.SuspendLayout();
             customGroupBox2.SuspendLayout();
             customGroupBox3.SuspendLayout();
             customGroupBox4.SuspendLayout();
-            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // TopCatergoryLabel
@@ -140,7 +137,6 @@ namespace deepcheesebacon
             WorkDetailBox.Size = new Size(1100, 91);
             WorkDetailBox.TabIndex = 8;
             WorkDetailBox.Text = "";
-            WorkDetailBox.TextChanged += WorkDetailBox_TextChanged;
             // 
             // WorkView
             // 
@@ -154,7 +150,6 @@ namespace deepcheesebacon
             WorkView.RowTemplate.Height = 25;
             WorkView.Size = new Size(1472, 463);
             WorkView.TabIndex = 12;
-            WorkView.CellContentClick += WorkView_CellContentClick;
             // 
             // TopCategoryCombo
             // 
@@ -164,7 +159,6 @@ namespace deepcheesebacon
             TopCategoryCombo.Name = "TopCategoryCombo";
             TopCategoryCombo.Size = new Size(238, 40);
             TopCategoryCombo.TabIndex = 18;
-            TopCategoryCombo.SelectedIndexChanged += TopCategoryCombo_SelectedIndexChanged;
             TopCategoryCombo.Click += TopCategoryCombo_Click;
             // 
             // MiddleCategoryCombo
@@ -175,7 +169,6 @@ namespace deepcheesebacon
             MiddleCategoryCombo.Name = "MiddleCategoryCombo";
             MiddleCategoryCombo.Size = new Size(238, 40);
             MiddleCategoryCombo.TabIndex = 19;
-            MiddleCategoryCombo.SelectedIndexChanged += MiddleCategoryCombo_SelectedIndexChanged;
             MiddleCategoryCombo.Click += MiddleCategoryCombo_Click;
             // 
             // BottomCategoryCombo
@@ -227,7 +220,6 @@ namespace deepcheesebacon
             customGroupBox1.TitleFont = new Font("맑은 고딕", 17F, FontStyle.Bold, GraphicsUnit.Point);
             customGroupBox1.TitleForeColor = Color.White;
             customGroupBox1.TitleHatchStyle = System.Drawing.Drawing2D.HatchStyle.Percent60;
-            customGroupBox1.Enter += customGroupBox1_Enter;
             // 
             // customGroupBox2
             // 
@@ -289,38 +281,14 @@ namespace deepcheesebacon
             customGroupBox4.TitleForeColor = Color.White;
             customGroupBox4.TitleHatchStyle = System.Drawing.Drawing2D.HatchStyle.Percent60;
             // 
-            // menuStrip1
-            // 
-            menuStrip1.BackColor = Color.FromArgb(224, 224, 224);
-            menuStrip1.ImageScalingSize = new Size(32, 32);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { 편집ToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1502, 40);
-            menuStrip1.TabIndex = 31;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // 편집ToolStripMenuItem
-            // 
-            편집ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { WorkMasterButton });
-            편집ToolStripMenuItem.Name = "편집ToolStripMenuItem";
-            편집ToolStripMenuItem.Size = new Size(82, 36);
-            편집ToolStripMenuItem.Text = "편집";
-            // 
-            // WorkMasterButton
-            // 
-            WorkMasterButton.Name = "WorkMasterButton";
-            WorkMasterButton.Size = new Size(331, 44);
-            WorkMasterButton.Text = "업무 마스터 편집";
-            WorkMasterButton.Click += WorkMasterButton_Click;
-            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(11, 469);
+            label1.Font = new Font("맑은 고딕", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(15, 450);
             label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(37, 32);
+            label1.Size = new Size(54, 47);
             label1.TabIndex = 37;
             label1.Text = "ID";
             // 
@@ -370,7 +338,7 @@ namespace deepcheesebacon
             // 
             WorkId.Font = new Font("맑은 고딕", 13F, FontStyle.Regular, GraphicsUnit.Point);
             WorkId.FormattingEnabled = true;
-            WorkId.Location = new Point(60, 450);
+            WorkId.Location = new Point(70, 450);
             WorkId.Margin = new Padding(6);
             WorkId.Name = "WorkId";
             WorkId.Size = new Size(303, 55);
@@ -441,12 +409,34 @@ namespace deepcheesebacon
             Reload.UseVisualStyleBackColor = false;
             Reload.Click += Reload_Click;
             // 
+            // WorkMasterButton
+            // 
+            WorkMasterButton.BackColor = Color.FromArgb(94, 159, 242);
+            WorkMasterButton.BackgroundColor = Color.FromArgb(94, 159, 242);
+            WorkMasterButton.BorderColor = Color.PaleVioletRed;
+            WorkMasterButton.BorderRadius = 20;
+            WorkMasterButton.BorderSize = 0;
+            WorkMasterButton.FlatAppearance.BorderSize = 0;
+            WorkMasterButton.FlatStyle = FlatStyle.Flat;
+            WorkMasterButton.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            WorkMasterButton.ForeColor = Color.White;
+            WorkMasterButton.Location = new Point(838, 995);
+            WorkMasterButton.Margin = new Padding(6);
+            WorkMasterButton.Name = "WorkMasterButton";
+            WorkMasterButton.Size = new Size(368, 57);
+            WorkMasterButton.TabIndex = 44;
+            WorkMasterButton.Text = "업무 마스터 편집";
+            WorkMasterButton.TextColor = Color.White;
+            WorkMasterButton.UseVisualStyleBackColor = false;
+            WorkMasterButton.Click += WorkMasterButton_Click_1;
+            // 
             // WorkForm
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 242, 242);
             ClientSize = new Size(1502, 1067);
+            Controls.Add(WorkMasterButton);
             Controls.Add(Reload);
             Controls.Add(KeywordSearchButton);
             Controls.Add(RegisterButton);
@@ -460,20 +450,15 @@ namespace deepcheesebacon
             Controls.Add(customGroupBox1);
             Controls.Add(TimeSearchButton);
             Controls.Add(WorkView);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
             Margin = new Padding(6);
             Name = "WorkForm";
             Text = "Form1";
-            Load += WorkForm_Load;
             ((System.ComponentModel.ISupportInitialize)WorkView).EndInit();
             customGroupBox1.ResumeLayout(false);
             customGroupBox2.ResumeLayout(false);
             customGroupBox3.ResumeLayout(false);
             customGroupBox3.PerformLayout();
             customGroupBox4.ResumeLayout(false);
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -501,9 +486,6 @@ namespace deepcheesebacon
         private CustomGroupBox customGroupBox2;
         private CustomGroupBox customGroupBox3;
         private CustomGroupBox customGroupBox4;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem 편집ToolStripMenuItem;
-        private ToolStripMenuItem WorkMasterButton;
         private Label label1;
         private CustomButtonStyle DeleteButton;
         private CustomButtonStyle EditButton;
@@ -511,5 +493,6 @@ namespace deepcheesebacon
         private CustomButtonStyle RegisterButton;
         private CustomButtonStyle KeywordSearchButton;
         private CustomButtonStyle Reload;
+        private CustomButtonStyle WorkMasterButton;
     }
 }

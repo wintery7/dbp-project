@@ -1,10 +1,4 @@
-
-
-using Microsoft.Owin.Hosting;
-using Owin;
-
-
-namespace deepcheesebacon
+namespace deepcheesebacon.work.src
 {
     internal static class Program
     {

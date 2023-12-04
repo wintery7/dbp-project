@@ -100,7 +100,6 @@ namespace deepcheesebacon
             MiddleCategoryBox.Name = "MiddleCategoryBox";
             MiddleCategoryBox.Size = new Size(310, 39);
             MiddleCategoryBox.TabIndex = 2;
-            MiddleCategoryBox.TextChanged += MiddleCategoryBox_TextChanged;
             // 
             // TopCategoryBox
             // 
@@ -165,7 +164,6 @@ namespace deepcheesebacon
             MiddleCategoryEdit.Name = "MiddleCategoryEdit";
             MiddleCategoryEdit.Size = new Size(310, 39);
             MiddleCategoryEdit.TabIndex = 17;
-            MiddleCategoryEdit.TextChanged += MiddleCategoryEdit_TextChanged;
             // 
             // TopCategoryEdit
             // 

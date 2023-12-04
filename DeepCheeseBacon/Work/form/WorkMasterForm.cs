@@ -1,4 +1,4 @@
-﻿using deepcheesebacon.Work;
+﻿using deepcheesebacon.work.src;
 using MySql.Data.MySqlClient;
 
 namespace deepcheesebacon
@@ -39,6 +39,7 @@ namespace deepcheesebacon
             string middleCategory = MiddleCategoryBox.Text;
             string bottomCategory = BottomCategoryBox.Text;
 
+            // 입력이 하나라도 없는 경우
             if (topCategory == "" || middleCategory == "" || bottomCategory == "")
             {
                 log.Here("잘못된 입력입니다.");
@@ -54,6 +55,7 @@ namespace deepcheesebacon
                 string result = dr.GetString("result");
 
                 dr.Close();
+                // 이미 존재하는 Category는 등록하지 않음
                 if (result == "1")
                 {
                     log.Here("Is Exist");
@@ -91,6 +93,7 @@ namespace deepcheesebacon
             string middleCategory = MiddleCategoryEdit.Text;
             string bottomCategory = BottomCategoryEdit.Text;
 
+            // 하나 이상 입력이 없는 경우
             if (topCategory == "" || middleCategory == "" || bottomCategory == "")
             {
                 log.Here("잘못된 입력입니다.");
@@ -111,22 +114,13 @@ namespace deepcheesebacon
             LoadCategoryList();
         }
 
-        private void MiddleCategoryEdit_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MiddleCategoryBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        /* CategoryID Click */
+        /* ----- CategoryID Click ----- */
         private void CategoryID_Click(object sender, EventArgs e)
         {
             LoadCategoryId();
         }
 
+        /* Load CategoryId */
         private void LoadCategoryId()
         {
             MySqlDataReader dr = db.Select("category_id").From("work_category").Exec();
@@ -140,12 +134,13 @@ namespace deepcheesebacon
             dr.Close();
         }
 
-        /* CategoryID Index Changed */
+        /* ----- CategoryID Index Changed ----- */
         private void CategoryID_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadCategoryInfo(CategoryID.Text);
         }
 
+        /* Load Category Infomation */
         private void LoadCategoryInfo(string categoryId)
         {
             if (categoryId == "")
