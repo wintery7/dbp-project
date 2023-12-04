@@ -30,32 +30,45 @@ namespace deepcheesebacon
         /// </summary>
         private void InitializeComponent()
         {
-            listBoxChatBox = new ListBox();
-            textBoxInputMessage = new TextBox();
+            customGroupBox1 = new CustomGroupBox();
+            buttonRefresh = new ImageButton();
             buttonSendMessage = new CustomButtonStyle();
-            label1 = new Label();
-            label2 = new Label();
-            buttonRefresh = new CustomButtonStyle();
+            textBoxInputMessage = new CustomTextBox();
+            listBoxChatBox = new ListBox();
+            customGroupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // listBoxChatBox
+            // customGroupBox1
             // 
-            listBoxChatBox.ForeColor = Color.Black;
-            listBoxChatBox.FormattingEnabled = true;
-            listBoxChatBox.ItemHeight = 20;
-            listBoxChatBox.Location = new Point(149, 36);
-            listBoxChatBox.Margin = new Padding(4);
-            listBoxChatBox.Name = "listBoxChatBox";
-            listBoxChatBox.Size = new Size(336, 444);
-            listBoxChatBox.TabIndex = 0;
+            customGroupBox1.BackColor = Color.Transparent;
+            customGroupBox1.Controls.Add(buttonRefresh);
+            customGroupBox1.Controls.Add(buttonSendMessage);
+            customGroupBox1.Controls.Add(textBoxInputMessage);
+            customGroupBox1.Controls.Add(listBoxChatBox);
+            customGroupBox1.Location = new Point(33, 27);
+            customGroupBox1.Margin = new Padding(4);
+            customGroupBox1.Name = "customGroupBox1";
+            customGroupBox1.Padding = new Padding(4);
+            customGroupBox1.Radious = 25;
+            customGroupBox1.Size = new Size(953, 546);
+            customGroupBox1.TabIndex = 28;
+            customGroupBox1.TabStop = false;
+            customGroupBox1.Text = "Message";
+            customGroupBox1.TitleBackColor = Color.FromArgb(94, 159, 242);
+            customGroupBox1.TitleFont = new Font("맑은 고딕", 17F, FontStyle.Bold, GraphicsUnit.Point);
+            customGroupBox1.TitleForeColor = Color.White;
+            customGroupBox1.TitleHatchStyle = System.Drawing.Drawing2D.HatchStyle.Percent60;
             // 
-            // textBoxInputMessage
+            // buttonRefresh
             // 
-            textBoxInputMessage.Location = new Point(149, 516);
-            textBoxInputMessage.Margin = new Padding(4);
-            textBoxInputMessage.Name = "textBoxInputMessage";
-            textBoxInputMessage.Size = new Size(336, 27);
-            textBoxInputMessage.TabIndex = 1;
+            buttonRefresh.BackgroundImage = Properties.Resources.refresh;
+            buttonRefresh.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonRefresh.Image_01 = Properties.Resources.refresh;
+            buttonRefresh.Image_02 = Properties.Resources.refreshoption;
+            buttonRefresh.Location = new Point(915, 5);
+            buttonRefresh.Name = "buttonRefresh";
+            buttonRefresh.Size = new Size(29, 32);
+            buttonRefresh.TabIndex = 29;
             // 
             // buttonSendMessage
             // 
@@ -66,80 +79,63 @@ namespace deepcheesebacon
             buttonSendMessage.BorderSize = 2;
             buttonSendMessage.FlatStyle = FlatStyle.Flat;
             buttonSendMessage.ForeColor = Color.DarkBlue;
-            buttonSendMessage.Location = new Point(522, 515);
+            buttonSendMessage.Location = new Point(843, 500);
             buttonSendMessage.Margin = new Padding(4);
             buttonSendMessage.Name = "buttonSendMessage";
-            buttonSendMessage.Size = new Size(96, 31);
-            buttonSendMessage.TabIndex = 2;
+            buttonSendMessage.Size = new Size(102, 36);
+            buttonSendMessage.TabIndex = 8;
             buttonSendMessage.Text = "전송";
             buttonSendMessage.TextColor = Color.DarkBlue;
             buttonSendMessage.UseVisualStyleBackColor = false;
-            buttonSendMessage.Click += buttonSendMessage_Click;
             // 
-            // label1
+            // textBoxInputMessage
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(50, 520);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(89, 20);
-            label1.TabIndex = 3;
-            label1.Text = "메시지 입력";
+            textBoxInputMessage.BackColor = SystemColors.Window;
+            textBoxInputMessage.BorderColor = Color.FromArgb(224, 224, 224);
+            textBoxInputMessage.BorderFocusColor = Color.FromArgb(4, 96, 217);
+            textBoxInputMessage.BorderRadius = 0;
+            textBoxInputMessage.BorderSize = 1;
+            textBoxInputMessage.Font = new Font("맑은 고딕", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxInputMessage.ForeColor = Color.DimGray;
+            textBoxInputMessage.Location = new Point(12, 500);
+            textBoxInputMessage.Multiline = false;
+            textBoxInputMessage.Name = "textBoxInputMessage";
+            textBoxInputMessage.Padding = new Padding(10, 7, 10, 7);
+            textBoxInputMessage.PasswordChar = false;
+            textBoxInputMessage.PlaceholderColor = Color.DarkGray;
+            textBoxInputMessage.PlaceholderText = "채팅을 입력해주세요!";
+            textBoxInputMessage.Size = new Size(934, 36);
+            textBoxInputMessage.TabIndex = 28;
+            textBoxInputMessage.Texts = "";
+            textBoxInputMessage.UnderlinedStyle = false;
             // 
-            // label2
+            // listBoxChatBox
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(149, 12);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(54, 20);
-            label2.TabIndex = 4;
-            label2.Text = "대화창";
-            // 
-            // buttonRefresh
-            // 
-            buttonRefresh.BackColor = SystemColors.Window;
-            buttonRefresh.BackgroundColor = SystemColors.Window;
-            buttonRefresh.BorderColor = Color.FromArgb(4, 96, 217);
-            buttonRefresh.BorderRadius = 10;
-            buttonRefresh.BorderSize = 2;
-            buttonRefresh.FlatStyle = FlatStyle.Flat;
-            buttonRefresh.ForeColor = Color.DarkBlue;
-            buttonRefresh.Location = new Point(522, 425);
-            buttonRefresh.Margin = new Padding(4);
-            buttonRefresh.Name = "buttonRefresh";
-            buttonRefresh.Size = new Size(96, 56);
-            buttonRefresh.TabIndex = 5;
-            buttonRefresh.Text = "새로고침";
-            buttonRefresh.TextColor = Color.DarkBlue;
-            buttonRefresh.UseVisualStyleBackColor = false;
-            buttonRefresh.Click += buttonRefresh_Click;
+            listBoxChatBox.FormattingEnabled = true;
+            listBoxChatBox.ItemHeight = 20;
+            listBoxChatBox.Location = new Point(11, 52);
+            listBoxChatBox.Margin = new Padding(4);
+            listBoxChatBox.Name = "listBoxChatBox";
+            listBoxChatBox.Size = new Size(934, 484);
+            listBoxChatBox.TabIndex = 6;
             // 
             // MessageDetailForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1394, 881);
-            Controls.Add(buttonRefresh);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(buttonSendMessage);
-            Controls.Add(textBoxInputMessage);
-            Controls.Add(listBoxChatBox);
+            ClientSize = new Size(1029, 600);
+            Controls.Add(customGroupBox1);
             Margin = new Padding(4);
             Name = "MessageDetailForm";
-            Text = "]";
+            customGroupBox1.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private ListBox listBoxChatBox;
-        private TextBox textBoxInputMessage;
-        private Label label1;
-        private Label label2;
+        private CustomGroupBox customGroupBox1;
         private CustomButtonStyle buttonSendMessage;
-        private CustomButtonStyle buttonRefresh;
+        private CustomTextBox textBoxInputMessage;
+        private ListBox listBoxChatBox;
+        private ImageButton buttonRefresh;
     }
 }

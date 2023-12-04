@@ -142,7 +142,7 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
             SendMessageAsync("TALK", roomId, nickName, message);
 
             Console.WriteLine("메시지 전송 성공");
-            textBoxInputMessage.Clear();
+            textBoxInputMessage.ClearText();
         }
 
         private void realtimeChatDetailForm_Leave(object sender, EventArgs e)

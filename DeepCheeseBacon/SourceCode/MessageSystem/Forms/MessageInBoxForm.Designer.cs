@@ -29,125 +29,102 @@
         private void InitializeComponent()
         {
             listBoxMessage = new ListBox();
-            label1 = new Label();
-            textBoxEmail = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            textBoxContent = new TextBox();
-            buttonSearchByTitle = new Button();
-            buttonSearchByContent = new Button();
+            buttonSearchByContent = new Customizing.CustomButtonStyle();
+            textBoxEmail = new Customizing.CustomTextBox();
+            textBoxContent = new Customizing.CustomTextBox();
             SuspendLayout();
             // 
             // listBoxMessage
             // 
             listBoxMessage.FormattingEnabled = true;
-            listBoxMessage.ItemHeight = 15;
-            listBoxMessage.Location = new Point(12, 49);
+            listBoxMessage.ItemHeight = 20;
+            listBoxMessage.Location = new Point(15, 76);
+            listBoxMessage.Margin = new Padding(4);
             listBoxMessage.Name = "listBoxMessage";
-            listBoxMessage.Size = new Size(431, 334);
+            listBoxMessage.Size = new Size(618, 444);
             listBoxMessage.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 31);
-            label1.Name = "label1";
-            label1.Size = new Size(71, 15);
-            label1.TabIndex = 1;
-            label1.Text = "받은 쪽지들";
-            // 
-            // textBoxEmail
-            // 
-            textBoxEmail.Location = new Point(594, 97);
-            textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(134, 23);
-            textBoxEmail.TabIndex = 2;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(510, 51);
-            label2.Name = "label2";
-            label2.Size = new Size(59, 15);
-            label2.TabIndex = 3;
-            label2.Text = "쪽지 검색";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(461, 100);
-            label3.Name = "label3";
-            label3.Size = new Size(127, 15);
-            label3.TabIndex = 4;
-            label3.Text = "쪽지 보낸 사람 이메일";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(529, 196);
-            label4.Name = "label4";
-            label4.Size = new Size(59, 15);
-            label4.TabIndex = 6;
-            label4.Text = "쪽지 내용";
-            // 
-            // textBoxContent
-            // 
-            textBoxContent.Location = new Point(594, 193);
-            textBoxContent.Name = "textBoxContent";
-            textBoxContent.Size = new Size(134, 23);
-            textBoxContent.TabIndex = 5;
-            // 
-            // buttonSearchByTitle
-            // 
-            buttonSearchByTitle.Location = new Point(461, 126);
-            buttonSearchByTitle.Name = "buttonSearchByTitle";
-            buttonSearchByTitle.Size = new Size(267, 28);
-            buttonSearchByTitle.TabIndex = 7;
-            buttonSearchByTitle.Text = "검색";
-            buttonSearchByTitle.UseVisualStyleBackColor = true;
-            buttonSearchByTitle.Click += buttonSearchByTitle_Click;
             // 
             // buttonSearchByContent
             // 
-            buttonSearchByContent.Location = new Point(461, 222);
+            buttonSearchByContent.BackColor = Color.FromArgb(50, 122, 217);
+            buttonSearchByContent.BackgroundColor = Color.FromArgb(50, 122, 217);
+            buttonSearchByContent.BorderColor = Color.FromArgb(4, 96, 217);
+            buttonSearchByContent.BorderRadius = 20;
+            buttonSearchByContent.BorderSize = 0;
+            buttonSearchByContent.FlatStyle = FlatStyle.Flat;
+            buttonSearchByContent.ForeColor = Color.White;
+            buttonSearchByContent.Location = new Point(546, 22);
+            buttonSearchByContent.Margin = new Padding(4);
             buttonSearchByContent.Name = "buttonSearchByContent";
-            buttonSearchByContent.Size = new Size(267, 28);
+            buttonSearchByContent.Size = new Size(87, 37);
             buttonSearchByContent.TabIndex = 8;
             buttonSearchByContent.Text = "검색";
-            buttonSearchByContent.UseVisualStyleBackColor = true;
+            buttonSearchByContent.TextColor = Color.White;
+            buttonSearchByContent.UseVisualStyleBackColor = false;
             buttonSearchByContent.Click += buttonSearchByContent_Click;
+            // 
+            // textBoxEmail
+            // 
+            textBoxEmail.BackColor = SystemColors.Window;
+            textBoxEmail.BorderColor = Color.FromArgb(50, 122, 217);
+            textBoxEmail.BorderFocusColor = Color.FromArgb(4, 96, 217);
+            textBoxEmail.BorderRadius = 0;
+            textBoxEmail.BorderSize = 2;
+            textBoxEmail.Font = new Font("맑은 고딕", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxEmail.ForeColor = Color.DimGray;
+            textBoxEmail.Location = new Point(15, 22);
+            textBoxEmail.Multiline = false;
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Padding = new Padding(10, 7, 10, 7);
+            textBoxEmail.PasswordChar = false;
+            textBoxEmail.PlaceholderColor = Color.DarkGray;
+            textBoxEmail.PlaceholderText = "보낸사람의 이메일을 입력하세요.";
+            textBoxEmail.Size = new Size(271, 36);
+            textBoxEmail.TabIndex = 9;
+            textBoxEmail.Texts = "";
+            textBoxEmail.UnderlinedStyle = true;
+            // 
+            // textBoxContent
+            // 
+            textBoxContent.BackColor = SystemColors.Window;
+            textBoxContent.BorderColor = Color.FromArgb(50, 122, 217);
+            textBoxContent.BorderFocusColor = Color.FromArgb(4, 96, 217);
+            textBoxContent.BorderRadius = 0;
+            textBoxContent.BorderSize = 2;
+            textBoxContent.Font = new Font("맑은 고딕", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxContent.ForeColor = Color.DimGray;
+            textBoxContent.Location = new Point(292, 22);
+            textBoxContent.Multiline = false;
+            textBoxContent.Name = "textBoxContent";
+            textBoxContent.Padding = new Padding(10, 7, 10, 7);
+            textBoxContent.PasswordChar = false;
+            textBoxContent.PlaceholderColor = Color.DarkGray;
+            textBoxContent.PlaceholderText = "내용을 입력하세요.";
+            textBoxContent.Size = new Size(247, 36);
+            textBoxContent.TabIndex = 10;
+            textBoxContent.Texts = "";
+            textBoxContent.UnderlinedStyle = true;
             // 
             // MessageInBoxForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(740, 462);
-            Controls.Add(buttonSearchByContent);
-            Controls.Add(buttonSearchByTitle);
-            Controls.Add(label4);
+            ClientSize = new Size(648, 533);
             Controls.Add(textBoxContent);
-            Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(textBoxEmail);
-            Controls.Add(label1);
+            Controls.Add(buttonSearchByContent);
             Controls.Add(listBoxMessage);
+            Margin = new Padding(4);
             Name = "MessageInBoxForm";
             Text = "MessageInBoxForm";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private ListBox listBoxMessage;
-        private Label label1;
-        private TextBox textBoxEmail;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private TextBox textBoxContent;
-        private Button buttonSearchByTitle;
-        private Button buttonSearchByContent;
+        private Customizing.CustomButtonStyle buttonSearchByContent;
+        private Customizing.CustomTextBox textBoxEmail;
+        private Customizing.CustomTextBox textBoxContent;
     }
 }

@@ -34,7 +34,7 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
 
         }
 
-        private void buttonSearchByTitle_Click(object sender, EventArgs e)
+        private void SearchByTitle()
         {
             if (textBoxEmail.Text.IsNullOrEmpty())
             {
@@ -70,9 +70,20 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
 
         private void buttonSearchByContent_Click(object sender, EventArgs e)
         {
-            if (textBoxContent.Text.IsNullOrEmpty())
+            if (!textBoxContent.Text.IsNullOrEmpty() && !textBoxEmail.Text.IsNullOrEmpty())
             {
-                MessageBox.Show("검색할 내용을 입력해주세요.");
+                MessageBox.Show("한 개의 항목만 적어주세요");
+                return;
+            }
+            else if (textBoxContent.Text.IsNullOrEmpty() && textBoxEmail.Text.IsNullOrEmpty())
+            {
+                MessageBox.Show("검색할 항목을 적어주세요.");
+                return;
+            }
+
+            if (textBoxContent.Text.IsNullOrEmpty() && !textBoxEmail.Text.IsNullOrEmpty())
+            {
+                SearchByTitle();
             }
             else
             {
