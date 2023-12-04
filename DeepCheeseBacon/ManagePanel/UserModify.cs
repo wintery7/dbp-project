@@ -42,7 +42,7 @@ namespace deepcheesebacon
             RoleLoad(id);
             DepLoad(id);
             PnumLoad(id);
-            AddrLoad(id);           
+            AddrLoad(id);
         }
 
         private void LoadComboBox()
@@ -153,11 +153,11 @@ namespace deepcheesebacon
 
                     string query = "SELECT email FROM user WHERE user_id = @id";
                     MySqlCommand com = new MySqlCommand(query, con);
-                    com.Parameters.AddWithValue("@id",id);
+                    com.Parameters.AddWithValue("@id", id);
 
                     object result = com.ExecuteScalar();
-        
-                    if(result != null)
+
+                    if (result != null)
                     {
                         emailText.Text = result.ToString();
                     }
@@ -318,16 +318,16 @@ namespace deepcheesebacon
 
                     if (result != null)
                     {
-                        
-                        if((int)result == 0)
+
+                        if ((int)result == 0)
                         {
                             roleText.Text = "원장";
                         }
-                        else if((int)result == 1)
+                        else if ((int)result == 1)
                         {
                             roleText.Text = "강사";
                         }
-                        else if((int)result == 2)
+                        else if ((int)result == 2)
                         {
                             roleText.Text = "보조강사";
                         }
@@ -508,6 +508,11 @@ namespace deepcheesebacon
                 addrText.Text = "";
                 addrText.ForeColor = Color.Black;
             }
+        }
+
+        private void addrText_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -113,13 +113,13 @@ namespace deepcheesebacon
             string depid = comboBox1.Text; // 201, 102
             int id = GetDepId(depid);
             int resultNum = -1; // 초기 값 설정
-            
+
             // 입력한 텍스트박스 확인 후
             if (Enum.TryParse(role, out Role result))
             {
-                switch(result)
+                switch (result)
                 {
-                   case Role.원장:
+                    case Role.원장:
                         resultNum = 0;
                         break;
                     case Role.강사:
@@ -134,12 +134,12 @@ namespace deepcheesebacon
                 }
             }
             // 직급 부분에 숫자로 저장
-            if(resultNum != -1)  // 유효한 enum 값일 경우 db에 저장
+            if (resultNum != -1)  // 유효한 enum 값일 경우 db에 저장
             {
                 dbManager.InsertInfo(resultNum, email, pw, name, gender, pnum, addr, id, date);
                 dbManager.InsertSalary(email); //급여내역서에도 직원 입력
             }
-           
+
 
             roleText.Text = "직급";
             roleText.ForeColor = Color.Silver;
@@ -257,5 +257,9 @@ namespace deepcheesebacon
 
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿
+using System.Diagnostics;
 using System.Timers;
 
 namespace deepcheesebacon
@@ -14,6 +15,7 @@ namespace deepcheesebacon
         {
             InitializeComponent();
             db = DBManager.GetInstance();
+
 
             activeForm = null;
 
@@ -93,7 +95,7 @@ namespace deepcheesebacon
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
