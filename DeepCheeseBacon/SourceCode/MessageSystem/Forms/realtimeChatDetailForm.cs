@@ -126,6 +126,9 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
 
                 // 전송
                 await clientWebSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
+
+                Console.WriteLine("메시지 전송 성공");
+
             }
             catch (Exception ex)
             {
@@ -141,7 +144,6 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
             // 메시지 전송
             SendMessageAsync("TALK", roomId, nickName, message);
 
-            Console.WriteLine("메시지 전송 성공");
             textBoxInputMessage.Clear();
         }
 

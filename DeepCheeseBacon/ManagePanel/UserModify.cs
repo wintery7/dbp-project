@@ -42,7 +42,7 @@ namespace deepcheesebacon
             RoleLoad(id);
             DepLoad(id);
             PnumLoad(id);
-            AddrLoad(id);           
+            AddrLoad(id);
         }
 
         private void LoadComboBox()
@@ -111,8 +111,36 @@ namespace deepcheesebacon
 
         private void EmailLoad(string id)
         {
+<<<<<<< HEAD
             string email = dbManager.Email(id);
             emailText.Text = email;
+=======
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(strconn))
+                {
+                    con.Open();
+
+                    string query = "SELECT email FROM user WHERE user_id = @id";
+                    MySqlCommand com = new MySqlCommand(query, con);
+                    com.Parameters.AddWithValue("@id", id);
+
+                    object result = com.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        emailText.Text = result.ToString();
+                    }
+
+                    com.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+>>>>>>> cd520c7e0d0821db823e3c81f95361f15cb545a5
         }
         private void PwLoad(string id)
         {
@@ -137,8 +165,48 @@ namespace deepcheesebacon
         }
         private void RoleLoad(string id)
         {
+<<<<<<< HEAD
             string role = dbManager.Role(id);
             roleText.Text = role;
+=======
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(strconn))
+                {
+                    con.Open();
+
+                    string query = "SELECT user_role FROM user WHERE user_id = @id";
+                    MySqlCommand com = new MySqlCommand(query, con);
+                    com.Parameters.AddWithValue("@id", id);
+
+                    object result = com.ExecuteScalar();
+
+                    if (result != null)
+                    {
+
+                        if ((int)result == 0)
+                        {
+                            roleText.Text = "원장";
+                        }
+                        else if ((int)result == 1)
+                        {
+                            roleText.Text = "강사";
+                        }
+                        else if ((int)result == 2)
+                        {
+                            roleText.Text = "보조강사";
+                        }
+                    }
+
+                    com.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+>>>>>>> cd520c7e0d0821db823e3c81f95361f15cb545a5
         }
         private void DepLoad(string id)
         {
@@ -235,6 +303,11 @@ namespace deepcheesebacon
                 addrText.Text = "";
                 addrText.ForeColor = Color.Black;
             }
+        }
+
+        private void addrText_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

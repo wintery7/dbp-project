@@ -43,9 +43,10 @@
             // 
             // modifyBtn
             // 
-            modifyBtn.Location = new Point(270, 509);
+            modifyBtn.Location = new Point(210, 382);
+            modifyBtn.Margin = new Padding(2, 2, 2, 2);
             modifyBtn.Name = "modifyBtn";
-            modifyBtn.Size = new Size(343, 46);
+            modifyBtn.Size = new Size(267, 34);
             modifyBtn.TabIndex = 59;
             modifyBtn.Text = "수정";
             modifyBtn.UseVisualStyleBackColor = true;
@@ -55,19 +56,21 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.Red;
-            label2.Location = new Point(270, 79);
+            label2.Location = new Point(210, 59);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(150, 20);
+            label2.Size = new Size(120, 15);
             label2.TabIndex = 58;
             label2.Text = "* 이메일은 변경 불가";
             // 
             // nameText
             // 
             nameText.ForeColor = Color.Silver;
-            nameText.Location = new Point(270, 206);
+            nameText.Location = new Point(210, 154);
+            nameText.Margin = new Padding(2, 2, 2, 2);
             nameText.Multiline = true;
             nameText.Name = "nameText";
-            nameText.Size = new Size(343, 35);
+            nameText.Size = new Size(268, 27);
             nameText.TabIndex = 49;
             nameText.Text = "이름";
             nameText.Enter += nameText_Enter;
@@ -75,21 +78,24 @@
             // addrText
             // 
             addrText.ForeColor = Color.Silver;
-            addrText.Location = new Point(270, 452);
+            addrText.Location = new Point(210, 339);
+            addrText.Margin = new Padding(2, 2, 2, 2);
             addrText.Multiline = true;
             addrText.Name = "addrText";
-            addrText.Size = new Size(343, 35);
+            addrText.Size = new Size(268, 27);
             addrText.TabIndex = 51;
             addrText.Text = "주소";
+            addrText.TextChanged += addrText_TextChanged;
             addrText.Enter += addrText_Enter;
             // 
             // pnumText
             // 
             pnumText.ForeColor = Color.Silver;
-            pnumText.Location = new Point(270, 411);
+            pnumText.Location = new Point(210, 308);
+            pnumText.Margin = new Padding(2, 2, 2, 2);
             pnumText.Multiline = true;
             pnumText.Name = "pnumText";
-            pnumText.Size = new Size(343, 35);
+            pnumText.Size = new Size(268, 27);
             pnumText.TabIndex = 52;
             pnumText.Text = "전화번호";
             pnumText.Enter += pnumText_Enter;
@@ -97,10 +103,11 @@
             // roleText
             // 
             roleText.ForeColor = Color.Silver;
-            roleText.Location = new Point(270, 329);
+            roleText.Location = new Point(210, 247);
+            roleText.Margin = new Padding(2, 2, 2, 2);
             roleText.Multiline = true;
             roleText.Name = "roleText";
-            roleText.Size = new Size(343, 35);
+            roleText.Size = new Size(268, 27);
             roleText.TabIndex = 53;
             roleText.Text = "직급";
             roleText.Enter += roleText_Enter;
@@ -108,10 +115,11 @@
             // genderText
             // 
             genderText.ForeColor = Color.Silver;
-            genderText.Location = new Point(270, 288);
+            genderText.Location = new Point(210, 216);
+            genderText.Margin = new Padding(2, 2, 2, 2);
             genderText.Multiline = true;
             genderText.Name = "genderText";
-            genderText.Size = new Size(343, 35);
+            genderText.Size = new Size(268, 27);
             genderText.TabIndex = 54;
             genderText.Text = "성별";
             genderText.Enter += genderText_Enter;
@@ -119,10 +127,11 @@
             // dateText
             // 
             dateText.ForeColor = Color.Silver;
-            dateText.Location = new Point(270, 247);
+            dateText.Location = new Point(210, 185);
+            dateText.Margin = new Padding(2, 2, 2, 2);
             dateText.Multiline = true;
             dateText.Name = "dateText";
-            dateText.Size = new Size(343, 35);
+            dateText.Size = new Size(268, 27);
             dateText.TabIndex = 55;
             dateText.Text = "생년월일";
             dateText.Enter += dateText_Enter;
@@ -130,10 +139,11 @@
             // pwText
             // 
             pwText.ForeColor = Color.Silver;
-            pwText.Location = new Point(270, 143);
+            pwText.Location = new Point(210, 107);
+            pwText.Margin = new Padding(2, 2, 2, 2);
             pwText.Multiline = true;
             pwText.Name = "pwText";
-            pwText.Size = new Size(343, 35);
+            pwText.Size = new Size(268, 27);
             pwText.TabIndex = 56;
             pwText.Text = "비밀번호";
             pwText.Enter += pwText_Enter;
@@ -141,10 +151,11 @@
             // emailText
             // 
             emailText.ForeColor = Color.Silver;
-            emailText.Location = new Point(270, 102);
+            emailText.Location = new Point(210, 76);
+            emailText.Margin = new Padding(2, 2, 2, 2);
             emailText.Multiline = true;
             emailText.Name = "emailText";
-            emailText.Size = new Size(343, 35);
+            emailText.Size = new Size(268, 27);
             emailText.TabIndex = 57;
             emailText.Text = "이메일";
             emailText.Enter += emailText_Enter;
@@ -154,15 +165,16 @@
             comboBox1.BackColor = Color.WhiteSmoke;
             comboBox1.ForeColor = Color.Silver;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(270, 377);
+            comboBox1.Location = new Point(210, 283);
+            comboBox1.Margin = new Padding(2, 2, 2, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(343, 28);
+            comboBox1.Size = new Size(268, 23);
             comboBox1.TabIndex = 60;
             comboBox1.Text = "담당과목";
             // 
             // UserModify
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(comboBox1);
             Controls.Add(modifyBtn);
@@ -175,8 +187,9 @@
             Controls.Add(dateText);
             Controls.Add(pwText);
             Controls.Add(emailText);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "UserModify";
-            Size = new Size(879, 653);
+            Size = new Size(684, 490);
             ResumeLayout(false);
             PerformLayout();
         }
