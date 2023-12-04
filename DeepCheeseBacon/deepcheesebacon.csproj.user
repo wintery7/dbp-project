@@ -82,6 +82,9 @@
     <Compile Update="Work\WorkForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Work\WorkManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Work\WorkMasterForm.cs">
       <SubType>Form</SubType>
     </Compile>

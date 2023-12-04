@@ -57,7 +57,7 @@ namespace deepcheesebacon
 
             }
 
-            textBoxInputMessage.ClearText();
+            textBoxInputMessage.Clear();
             listBoxChatBox.SelectedIndex = listBoxChatBox.Items.Count - 1;
 
         }
@@ -68,7 +68,7 @@ namespace deepcheesebacon
             {
                 senderId = myinfo.userId,
                 receiverId = opponentUserId,
-                content = textBoxInputMessage.Texts,
+                content = textBoxInputMessage.Text,
             });
             LoadMessage();
 

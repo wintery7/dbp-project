@@ -284,3 +284,4 @@ C:\Users\박민지\Documents\GitHub\dbp-project\deepcheesebacon\bin\Debug\net6.0
 C:\Users\박민지\Documents\GitHub\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.csproj.CopyComplete
 C:\Users\박민지\Documents\GitHub\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.genruntimeconfig.cache
 C:\Users\박민지\Documents\GitHub\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\ref\deepcheesebacon.dll
+C:\Users\박민지\Documents\GitHub\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.Work.WorkManager.resources

@@ -40,6 +40,7 @@
             textBox1.Size = new Size(230, 22);
             textBox1.TabIndex = 0;
             textBox1.Click += textBox1_Click;
+            textBox1.MouseClick += textBox1_MouseClick;
             textBox1.TextChanged += textBox1_TextChanged;
             textBox1.Enter += textBox1_Enter;
             textBox1.KeyPress += textBox1_KeyPress;

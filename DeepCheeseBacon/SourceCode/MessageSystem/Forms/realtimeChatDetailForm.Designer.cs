@@ -33,7 +33,7 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
             listBoxChatBox = new ListBox();
             buttonSendMessage = new CustomButtonStyle();
             customGroupBox1 = new CustomGroupBox();
-            textBoxInputMessage = new CustomTextBox();
+            textBoxInputMessage = new TextBox();
             customGroupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,7 +44,7 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
             listBoxChatBox.Location = new Point(11, 52);
             listBoxChatBox.Margin = new Padding(4);
             listBoxChatBox.Name = "listBoxChatBox";
-            listBoxChatBox.Size = new Size(934, 484);
+            listBoxChatBox.Size = new Size(934, 444);
             listBoxChatBox.TabIndex = 6;
             // 
             // buttonSendMessage
@@ -69,8 +69,8 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
             // customGroupBox1
             // 
             customGroupBox1.BackColor = Color.Transparent;
-            customGroupBox1.Controls.Add(buttonSendMessage);
             customGroupBox1.Controls.Add(textBoxInputMessage);
+            customGroupBox1.Controls.Add(buttonSendMessage);
             customGroupBox1.Controls.Add(listBoxChatBox);
             customGroupBox1.Location = new Point(40, 26);
             customGroupBox1.Margin = new Padding(4);
@@ -88,24 +88,14 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
             // 
             // textBoxInputMessage
             // 
-            textBoxInputMessage.BackColor = SystemColors.Window;
-            textBoxInputMessage.BorderColor = Color.FromArgb(224, 224, 224);
-            textBoxInputMessage.BorderFocusColor = Color.FromArgb(4, 96, 217);
-            textBoxInputMessage.BorderRadius = 0;
-            textBoxInputMessage.BorderSize = 1;
-            textBoxInputMessage.Font = new Font("맑은 고딕", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxInputMessage.ForeColor = Color.DimGray;
-            textBoxInputMessage.Location = new Point(12, 500);
-            textBoxInputMessage.Multiline = false;
+            textBoxInputMessage.BorderStyle = BorderStyle.None;
+            textBoxInputMessage.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxInputMessage.Location = new Point(11, 500);
+            textBoxInputMessage.Multiline = true;
             textBoxInputMessage.Name = "textBoxInputMessage";
-            textBoxInputMessage.Padding = new Padding(10, 7, 10, 7);
-            textBoxInputMessage.PasswordChar = false;
-            textBoxInputMessage.PlaceholderColor = Color.DarkGray;
             textBoxInputMessage.PlaceholderText = "채팅을 입력해주세요!";
-            textBoxInputMessage.Size = new Size(934, 36);
-            textBoxInputMessage.TabIndex = 28;
-            textBoxInputMessage.Texts = "";
-            textBoxInputMessage.UnderlinedStyle = false;
+            textBoxInputMessage.Size = new Size(830, 36);
+            textBoxInputMessage.TabIndex = 31;
             // 
             // realtimeChatDetailForm
             // 
@@ -119,14 +109,15 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
             FormClosing += realtimeChatDetailForm_FormClosing;
             Leave += realtimeChatDetailForm_Leave;
             customGroupBox1.ResumeLayout(false);
+            customGroupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private ListBox listBoxChatBox;
-        private CustomTextBox textBoxInputMessage;
         private CustomButtonStyle buttonSendMessage;
         private CustomGroupBox customGroupBox1;
+        private TextBox textBoxInputMessage;
     }
 }

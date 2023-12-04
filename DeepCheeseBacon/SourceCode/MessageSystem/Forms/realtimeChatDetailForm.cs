@@ -136,13 +136,13 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
         private void buttonSendMessage_Click(object sender, EventArgs e)
         {
             // 텍스트 박스에서 메시지 가져오기
-            string message = textBoxInputMessage.Texts;
+            string message = textBoxInputMessage.Text;
 
             // 메시지 전송
             SendMessageAsync("TALK", roomId, nickName, message);
 
             Console.WriteLine("메시지 전송 성공");
-            textBoxInputMessage.ClearText();
+            textBoxInputMessage.Clear();
         }
 
         private void realtimeChatDetailForm_Leave(object sender, EventArgs e)

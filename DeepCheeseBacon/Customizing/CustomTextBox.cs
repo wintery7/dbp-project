@@ -26,6 +26,7 @@ namespace deepcheesebacon.Customizing
         private string placeholderText = "";
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
+        private bool isPlaceholderSet = false;
 
         //Default Event
         public event EventHandler _TextChanged;
@@ -280,8 +281,10 @@ namespace deepcheesebacon.Customizing
                 textBox1.ForeColor = placeholderColor;
                 if (isPasswordChar)
                     textBox1.UseSystemPasswordChar = false;
+                isPlaceholderSet = false;
             }
         }
+
         private void RemovePlaceholder()
         {
             if (isPlaceholder && placeholderText != "")
@@ -291,6 +294,7 @@ namespace deepcheesebacon.Customizing
                 textBox1.ForeColor = this.ForeColor;
                 if (isPasswordChar)
                     textBox1.UseSystemPasswordChar = true;
+                isPlaceholderSet = true;
             }
         }
         private GraphicsPath GetFigurePath(Rectangle rect, int radius)
@@ -344,8 +348,24 @@ namespace deepcheesebacon.Customizing
 
         private void textBox1_Click(object sender, EventArgs e)
         {
+            if (!isPlaceholderSet)
+            {
+                RemovePlaceholder();
+                isPlaceholderSet = true;
+            }
             this.OnClick(e);
         }
+
+        private void textBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (!isPlaceholderSet)
+            {
+                RemovePlaceholder();
+                isPlaceholderSet = true;
+            }
+            this.OnMouseClick(e);
+        }
+
         private void textBox1_MouseEnter(object sender, EventArgs e)
         {
             this.OnMouseEnter(e);
@@ -356,6 +376,11 @@ namespace deepcheesebacon.Customizing
         }
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!isPlaceholderSet)
+            {
+                RemovePlaceholder();
+                isPlaceholderSet = true;
+            }
             this.OnKeyPress(e);
         }
 
@@ -369,7 +394,11 @@ namespace deepcheesebacon.Customizing
         {
             isFocused = false;
             this.Invalidate();
-            SetPlaceholder();
+            if (!textBox1.Focused)
+            {
+                isPlaceholderSet = true;
+            }
+
         }
     }
 }
