@@ -1,4 +1,6 @@
-﻿namespace deepcheesebacon
+﻿using deepcheesebacon.Customizing;
+
+namespace deepcheesebacon
 {
     partial class realtimeChatRobby
     {
@@ -28,13 +30,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            customGroupBox2 = new Work.CustomGroupBox();
-            label1 = new Label();
-            textBoxRoomName = new TextBox();
-            buttonCreateChatRoom = new Work.CustomButtonStyle();
+            customGroupBox2 = new CustomGroupBox();
+            buttonCreateChatRoom = new CustomButtonStyle();
             listBoxMessageList = new ListBox();
-            label2 = new Label();
-            textBoxNickName = new TextBox();
+            textBoxNickName = new CustomTextBox();
+            textBoxRoomName = new CustomTextBox();
             customGroupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,16 +42,16 @@
             // 
             customGroupBox2.BackColor = Color.Transparent;
             customGroupBox2.Controls.Add(textBoxNickName);
-            customGroupBox2.Controls.Add(label2);
-            customGroupBox2.Controls.Add(label1);
             customGroupBox2.Controls.Add(textBoxRoomName);
             customGroupBox2.Controls.Add(buttonCreateChatRoom);
             customGroupBox2.Controls.Add(listBoxMessageList);
             customGroupBox2.Font = new Font("맑은 고딕", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            customGroupBox2.Location = new Point(62, 19);
+            customGroupBox2.Location = new Point(80, 25);
+            customGroupBox2.Margin = new Padding(4, 4, 4, 4);
             customGroupBox2.Name = "customGroupBox2";
+            customGroupBox2.Padding = new Padding(4, 4, 4, 4);
             customGroupBox2.Radious = 25;
-            customGroupBox2.Size = new Size(677, 412);
+            customGroupBox2.Size = new Size(870, 549);
             customGroupBox2.TabIndex = 30;
             customGroupBox2.TabStop = false;
             customGroupBox2.Text = "실시간 채팅방";
@@ -59,22 +59,6 @@
             customGroupBox2.TitleFont = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point);
             customGroupBox2.TitleForeColor = Color.White;
             customGroupBox2.TitleHatchStyle = System.Drawing.Drawing2D.HatchStyle.Percent60;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(232, 383);
-            label1.Name = "label1";
-            label1.Size = new Size(111, 15);
-            label1.TabIndex = 5;
-            label1.Text = "생성할 채팅방 이름";
-            // 
-            // textBoxRoomName
-            // 
-            textBoxRoomName.Location = new Point(349, 380);
-            textBoxRoomName.Name = "textBoxRoomName";
-            textBoxRoomName.Size = new Size(203, 23);
-            textBoxRoomName.TabIndex = 4;
             // 
             // buttonCreateChatRoom
             // 
@@ -86,9 +70,10 @@
             buttonCreateChatRoom.FlatStyle = FlatStyle.Flat;
             buttonCreateChatRoom.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             buttonCreateChatRoom.ForeColor = Color.White;
-            buttonCreateChatRoom.Location = new Point(558, 380);
+            buttonCreateChatRoom.Location = new Point(717, 507);
+            buttonCreateChatRoom.Margin = new Padding(4, 4, 4, 4);
             buttonCreateChatRoom.Name = "buttonCreateChatRoom";
-            buttonCreateChatRoom.Size = new Size(104, 26);
+            buttonCreateChatRoom.Size = new Size(134, 35);
             buttonCreateChatRoom.TabIndex = 3;
             buttonCreateChatRoom.Text = "채팅방 생성";
             buttonCreateChatRoom.TextColor = Color.White;
@@ -98,50 +83,75 @@
             // listBoxMessageList
             // 
             listBoxMessageList.FormattingEnabled = true;
-            listBoxMessageList.ItemHeight = 15;
-            listBoxMessageList.Location = new Point(16, 40);
+            listBoxMessageList.ItemHeight = 20;
+            listBoxMessageList.Location = new Point(21, 53);
+            listBoxMessageList.Margin = new Padding(4, 4, 4, 4);
             listBoxMessageList.Name = "listBoxMessageList";
-            listBoxMessageList.Size = new Size(646, 334);
+            listBoxMessageList.Size = new Size(829, 444);
             listBoxMessageList.TabIndex = 0;
             listBoxMessageList.SelectedIndexChanged += listBoxMessageList_SelectedIndexChanged;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(6, 383);
-            label2.Name = "label2";
-            label2.Size = new Size(71, 15);
-            label2.TabIndex = 6;
-            label2.Text = "사용할 별명";
-            // 
             // textBoxNickName
             // 
-            textBoxNickName.Location = new Point(83, 380);
+            textBoxNickName.BackColor = SystemColors.Window;
+            textBoxNickName.BorderColor = Color.FromArgb(94, 159, 242);
+            textBoxNickName.BorderFocusColor = Color.FromArgb(4, 96, 217);
+            textBoxNickName.BorderRadius = 0;
+            textBoxNickName.BorderSize = 3;
+            textBoxNickName.Font = new Font("맑은 고딕", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxNickName.ForeColor = Color.DimGray;
+            textBoxNickName.Location = new Point(22, 504);
+            textBoxNickName.Multiline = false;
             textBoxNickName.Name = "textBoxNickName";
-            textBoxNickName.Size = new Size(143, 23);
-            textBoxNickName.TabIndex = 7;
+            textBoxNickName.Padding = new Padding(10, 7, 10, 7);
+            textBoxNickName.PasswordChar = false;
+            textBoxNickName.PlaceholderColor = Color.DarkGray;
+            textBoxNickName.PlaceholderText = "닉네임을 입력하세요";
+            textBoxNickName.Size = new Size(182, 36);
+            textBoxNickName.TabIndex = 31;
+            textBoxNickName.Texts = "";
+            textBoxNickName.UnderlinedStyle = true;
+            // 
+            // textBoxRoomName
+            // 
+            textBoxRoomName.BackColor = SystemColors.Window;
+            textBoxRoomName.BorderColor = Color.FromArgb(94, 159, 242);
+            textBoxRoomName.BorderFocusColor = Color.FromArgb(4, 96, 217);
+            textBoxRoomName.BorderRadius = 0;
+            textBoxRoomName.BorderSize = 3;
+            textBoxRoomName.Font = new Font("맑은 고딕", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxRoomName.ForeColor = Color.DimGray;
+            textBoxRoomName.Location = new Point(233, 504);
+            textBoxRoomName.Multiline = false;
+            textBoxRoomName.Name = "textBoxRoomName";
+            textBoxRoomName.Padding = new Padding(10, 7, 10, 7);
+            textBoxRoomName.PasswordChar = false;
+            textBoxRoomName.PlaceholderColor = Color.DarkGray;
+            textBoxRoomName.PlaceholderText = "채팅방 이름을 정해주세요!";
+            textBoxRoomName.Size = new Size(301, 36);
+            textBoxRoomName.TabIndex = 32;
+            textBoxRoomName.Texts = "";
+            textBoxRoomName.UnderlinedStyle = true;
             // 
             // realtimeChatRobby
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1029, 600);
             Controls.Add(customGroupBox2);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "realtimeChatRobby";
             Text = "realtimeChatRobby";
             customGroupBox2.ResumeLayout(false);
-            customGroupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Work.CustomGroupBox customGroupBox2;
+        private CustomGroupBox customGroupBox2;
         private ListBox listBoxMessageList;
-        private Work.CustomButtonStyle buttonCreateChatRoom;
-        private Label label1;
-        private TextBox textBoxRoomName;
-        private Label label2;
-        private TextBox textBoxNickName;
+        private CustomButtonStyle buttonCreateChatRoom;
+        private CustomTextBox textBoxNickName;
+        private CustomTextBox textBoxRoomName;
     }
 }

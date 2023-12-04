@@ -30,12 +30,12 @@ partial class ApprovalSystemMainForm
     /// </summary>
     private void InitializeComponent()
     {
-        buttonCreateNewApproval = new CustomButtonStyle();
-        buttonCheckMyApprovalList = new CustomButtonStyle();
+        buttonCreateNewApproval = new Customizing.CustomButtonStyle();
+        buttonCheckMyApprovalList = new Customizing.CustomButtonStyle();
         dataGridViewApprovalList = new DataGridView();
         dataGridViewTaskSummary = new DataGridView();
-        customGroupBox1 = new CustomGroupBox();
-        customGroupBox2 = new CustomGroupBox();
+        customGroupBox1 = new Customizing.CustomGroupBox();
+        customGroupBox2 = new Customizing.CustomGroupBox();
         ((System.ComponentModel.ISupportInitialize)dataGridViewApprovalList).BeginInit();
         ((System.ComponentModel.ISupportInitialize)dataGridViewTaskSummary).BeginInit();
         customGroupBox1.SuspendLayout();
@@ -161,8 +161,8 @@ partial class ApprovalSystemMainForm
     #endregion
     private DataGridView dataGridViewApprovalList;
     private DataGridView dataGridViewTaskSummary;
-    private CustomButtonStyle buttonCreateNewApproval;
-    private CustomButtonStyle buttonCheckMyApprovalList;
-    private CustomGroupBox customGroupBox1;
-    private CustomGroupBox customGroupBox2;
+    private Customizing.CustomButtonStyle buttonCreateNewApproval;
+    private Customizing.CustomButtonStyle buttonCheckMyApprovalList;
+    private Customizing.CustomGroupBox customGroupBox1;
+    private Customizing.CustomGroupBox customGroupBox2;
 }

@@ -1,4 +1,5 @@
-﻿using deepcheesebacon.Work;
+﻿using deepcheesebacon.Customizing;
+using deepcheesebacon.Work;
 using System;
 
 namespace deepcheesebacon
@@ -142,7 +143,7 @@ namespace deepcheesebacon
         private ListBox listBoxMessageList;
 
         private CustomGroupBox customGroupBox2;
-        private deepcheesebacon.ImageButton refreshButton;
+        private ImageButton refreshButton;
         private CustomButtonStyle buttonRealTimeChat;
         private CustomButtonStyle customButtonStyle1;
     }
