@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             pMain = new Panel();
-            panel1 = new Panel();
-            label1 = new Label();
             panelMenu = new Panel();
             AttendancelogBtn = new Button();
             AttendRegBtn = new Button();
@@ -39,40 +37,16 @@
             UserManageBtn = new Button();
             UserRegBtn = new Button();
             panelLogo = new Panel();
-            pMain.SuspendLayout();
-            panel1.SuspendLayout();
             panelMenu.SuspendLayout();
             SuspendLayout();
             // 
             // pMain
             // 
             pMain.BackColor = Color.FromArgb(242, 242, 242);
-            pMain.Controls.Add(panel1);
             pMain.Location = new Point(205, 0);
             pMain.Name = "pMain";
             pMain.Size = new Size(879, 653);
             pMain.TabIndex = 9;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.SteelBlue;
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(879, 132);
-            panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("맑은 고딕", 15F);
-            label1.ForeColor = SystemColors.HighlightText;
-            label1.Location = new Point(398, 45);
-            label1.Name = "label1";
-            label1.Size = new Size(88, 35);
-            label1.TabIndex = 0;
-            label1.Text = "HOME";
             // 
             // panelMenu
             // 
@@ -193,9 +167,6 @@
             Controls.Add(panelMenu);
             Name = "form";
             Text = "Form1";
-            pMain.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panelMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -203,8 +174,6 @@
         #endregion
 
         private Panel pMain;
-        private Panel panel1;
-        private Label label1;
         private Panel panelMenu;
         private Button AttendRegBtn;
         private Button SalaryBtn;

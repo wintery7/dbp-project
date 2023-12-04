@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace deepcheesebacon
@@ -792,7 +793,7 @@ CREATE TABLE IF NOT EXISTS approval (
 
                     }
                     int rowsAffected = cmd.ExecuteNonQuery();
-                    if(rowsAffected != 0)
+                    if (rowsAffected != 0)
                     {
                         // 메시지 저장 성공하면 알람 테이블에도 저장
                         using (MySqlCommand alertCommand = new MySqlCommand(alertQuery, connection))
@@ -803,7 +804,7 @@ CREATE TABLE IF NOT EXISTS approval (
 
                             int rowsAffectedAlert = alertCommand.ExecuteNonQuery();
 
-                            if(rowsAffectedAlert != 0)
+                            if (rowsAffectedAlert != 0)
                             {
                                 Console.WriteLine("알림 등록 성공");
                             }
@@ -896,7 +897,348 @@ CREATE TABLE IF NOT EXISTS approval (
             }
         }
 
+        // db에서 department 테이블의 id 값 가져오기
+        public int GetDepId(string depid)
+        {
+            int id = -1;
 
+            try
+            {
+
+                string query = "SELECT id FROM department WHERE department_name = @dep_name";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@dep_name", depid);
+
+                // ExecuteScalar를 사용하여 결과를 가져옴
+                object objResult = com.ExecuteScalar();
+
+                if (objResult != null && objResult != DBNull.Value)
+                {
+                    id = Convert.ToInt32(objResult);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+
+            return id;
+        }
+
+        // db에서 user 테이블의 user_id 값 가져오기
+        public int GetUserId(string email)
+        {
+            int userid = -1;
+
+            try
+            {
+
+                string query = "SELECT user_id FROM user WHERE email = @email";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@email", email);
+
+                // ExecuteScalar를 사용하여 결과를 가져옴
+                object objResult = com.ExecuteScalar();
+
+                if (objResult != null && objResult != DBNull.Value)
+                {
+                    userid = Convert.ToInt32(objResult);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+
+            return userid;
+        }
+
+
+        public string Email(string id)
+        {
+            string email = null;
+            try
+            {
+
+                string query = "SELECT email FROM user WHERE user_id = @id";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@id", id);
+
+                object result = com.ExecuteScalar();
+
+                if (result != null)
+                {
+                    if(email != null)
+                    {
+                        email = result.ToString();
+                    }
+                   
+                }
+
+                com.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+            return email;
+        }
+
+
+        private string MaskString(string original)
+        {
+            int length = original.Length;
+            // 길이만큼 * 로 바꿈
+            string maskedString = new string('*', length);
+
+            return maskedString;
+        }
+
+        public string Pw(string id)
+        {
+            try
+            {
+
+                string query = "SELECT password FROM user WHERE user_id = @id";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@id", id);
+
+                object result = com.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    // 데이터베이스에서 가져온 값에 대해 마스킹 적용
+                    return MaskString(result.ToString());
+                }
+
+                return string.Empty; // 데이터가 없을 경우 빈 문자열 반환 또는 다른 기본값 설정
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+                return string.Empty; // 오류 발생 시 빈 문자열 반환 또는 다른 기본값 설정
+            }
+        }
+
+
+        public string Name(string id)
+        {
+            string name = null;
+            try
+            {
+
+                    string query = "SELECT name FROM user WHERE user_id = @id";
+                    MySqlCommand com = new MySqlCommand(query, connection);
+                    com.Parameters.AddWithValue("@id", id);
+
+                    object result = com.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                    if(name != null)
+                    {
+                        name = result.ToString();
+
+                    }
+
+                    }
+
+                    com.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+            return name;
+        }
+
+        public string Date(string id)
+        {
+            string date = null;
+            try
+            {
+
+                    string query = "SELECT DATE_FORMAT(birthDate,'%Y-%m-%d') FROM user WHERE user_id = @id";
+                    MySqlCommand com = new MySqlCommand(query, connection);
+                    com.Parameters.AddWithValue("@id", id);
+
+                    object result = com.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                    if(date !=null)
+                    {
+                        date = result.ToString();
+                    }
+                        
+                    }
+
+                    com.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+            return date;
+        }
+
+        public string Gender(string id)
+        {
+            string gender = null;
+            try
+            {
+
+                    string query = "SELECT gender FROM user WHERE user_id = @id";
+                    MySqlCommand com = new MySqlCommand(query, connection);
+                    com.Parameters.AddWithValue("@id", id);
+
+                    object result = com.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        gender = result.ToString();
+                    }
+
+                    com.ExecuteNonQuery();
+ 
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+            return gender;
+        }
+
+        public string Role(string id)
+        {
+            string role = null;
+            try
+            {
+
+                    string query = "SELECT user_role FROM user WHERE user_id = @id";
+                    MySqlCommand com = new MySqlCommand(query, connection);
+                    com.Parameters.AddWithValue("@id", id);
+
+                    object result = com.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                    if(role !=null)
+                    {
+                        if ((int)result == 0)
+                        {
+                            role = "원장";
+                        }
+                        else if ((int)result == 1)
+                        {
+                            role = "강사";
+                        }
+                        else if ((int)result == 2)
+                        {
+                            role = "보조강사";
+                        }
+                    }
+
+                       
+                    }
+
+                    com.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+            return role;
+        }
+
+        public string Dep(string id)
+        {
+            string dep = null;
+            try
+            {
+
+                    string query = "SELECT department_name FROM department WHERE id IN (SELECT department FROM user WHERE user_id = @id)";
+                    MySqlCommand com = new MySqlCommand(query, connection);
+                    com.Parameters.AddWithValue("@id", id);
+
+                    object result = com.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                    if(dep != null)
+                    {
+                        dep = result.ToString();
+                    }
+                        
+                    }
+
+                    com.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+            return dep;
+        }
+        public string Pnum(string id)
+        {
+            string pnum = null;
+            try
+            {
+
+                    string query = "SELECT phone_number FROM user WHERE user_id = @id";
+                    MySqlCommand com = new MySqlCommand(query, connection);
+                    com.Parameters.AddWithValue("@id", id);
+
+                    object result = com.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        pnum = result.ToString();
+                    }
+
+                    com.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+            return pnum;
+        }
+
+        public string Addr(string id)
+        {
+            string addr = null;
+            try
+            {
+
+                    string query = "SELECT address FROM user WHERE user_id = @id";
+                    MySqlCommand com = new MySqlCommand(query, connection);
+                    com.Parameters.AddWithValue("@id", id);
+
+                    object result = com.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        addr = result.ToString();
+                    }
+
+                    com.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+            return addr;
+        }
 
         // 콤보박스에 가져올 값 list에 넣음
         public List<string> GetDepartment()
@@ -1183,6 +1525,23 @@ CREATE TABLE IF NOT EXISTS approval (
             
         }
 
+        public DataSet ViewTableAttend(int userid)
+        {
+            DataSet ds = new DataSet();
+
+
+                string query = "SELECT attendDate, check_in_time, check_out_time FROM AttendanceLog WHERE user_id = @id ";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@id", userid);
+
+                using (MySqlDataAdapter da = new MySqlDataAdapter(com))
+                {
+                    da.Fill(ds);
+                }
+
+                return ds;
+            
+        }
 
         // 사원 수정에서 수정버튼 누를 경우 
         public void UserModify(int role, string email, string pw, string name, string gender, string pnum, string addr, int id, string date)
