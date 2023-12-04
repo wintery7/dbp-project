@@ -488,10 +488,12 @@ CREATE TABLE IF NOT EXISTS approval (
 
             try
             {
-                string query = "SELECT user_id, email FROM user WHERE user_role = 1";
+                string query = "SELECT user_id, email FROM user WHERE user_role = @userRole";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
+                    cmd.Parameters.AddWithValue("@userRole", ((int)LoginedUserInfo.loginedUserInfo.role) + 1);
+
                     if (connection.State != ConnectionState.Open)
                     {
                         connection.Open();
@@ -771,8 +773,8 @@ CREATE TABLE IF NOT EXISTS approval (
 
         internal bool SaveMessage(Message message)
         {
-            string query = "INSERT INTO message (sender_id, receiver_id, content, sent_at) " +
-                            "VALUES (@senderId, @receiverId, @content, @sentAt)";
+            string query = "INSERT INTO message (sender_id, receiver_id, content, sent_at, title) " +
+                            "VALUES (@senderId, @receiverId, @content, @sentAt, @title)";
 
             string alertQuery = "INSERT INTO alert (user_id) " +
                         "VALUES (@receiverId)";
@@ -785,6 +787,7 @@ CREATE TABLE IF NOT EXISTS approval (
                     cmd.Parameters.AddWithValue("@receiverId", message.receiverId);
                     cmd.Parameters.AddWithValue("@content", message.content);
                     cmd.Parameters.AddWithValue("@sentAt", message.sentAt);
+                    cmd.Parameters.AddWithValue("@title", message.title);
 
                     if (connection.State != ConnectionState.Open)
                     {
@@ -856,8 +859,14 @@ CREATE TABLE IF NOT EXISTS approval (
                                 senderId = reader.GetInt32("sender_id"),
                                 receiverId = reader.GetInt32("receiver_id"),
                                 content = reader.GetString("content"),
-                                sentAt = reader.GetDateTime("sent_at")
+                                sentAt = reader.GetDateTime("sent_at"),
+                                isChecked = reader.GetBoolean("isChecked") // isChecked 값을 추가
                             };
+
+                            if(message.receiverId == LoginedUserInfo.loginedUserInfo.userId)
+                            {
+                                message.isChecked = true;
+                            }
 
                             messages.Add(message);
                         }
@@ -1416,9 +1425,13 @@ CREATE TABLE IF NOT EXISTS approval (
                                 senderId = reader.GetInt32("sender_id"),
                                 receiverId = reader.GetInt32("receiver_id"),
                                 content = reader.GetString("content"),
-                                sentAt = reader.GetDateTime("sent_at")
+                                sentAt = reader.GetDateTime("sent_at"),
+                                isChecked = reader.GetBoolean("isChecked"),
                             };
-
+                            if (message.receiverId == LoginedUserInfo.loginedUserInfo.userId)
+                            {
+                                message.isChecked = true;
+                            }
                             messages.Add(message);
                         }
                     }
