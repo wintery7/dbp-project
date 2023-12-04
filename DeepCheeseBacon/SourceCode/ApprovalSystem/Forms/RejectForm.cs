@@ -22,7 +22,7 @@ namespace deepcheesebacon
 
         private void buttonRejectApproval_Click(object sender, EventArgs e)
         {
-            memo = textBoxMemo.Text;
+            memo = textBoxMemo.Texts;
             DialogResult = DialogResult.OK;
             Close();
         }

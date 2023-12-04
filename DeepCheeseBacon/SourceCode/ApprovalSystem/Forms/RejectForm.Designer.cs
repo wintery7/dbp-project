@@ -1,4 +1,4 @@
-﻿using deepcheesebacon.Work;
+﻿using deepcheesebacon.Customizing;
 
 namespace deepcheesebacon
 {
@@ -30,20 +30,9 @@ namespace deepcheesebacon
         /// </summary>
         private void InitializeComponent()
         {
-            label4 = new Label();
             buttonRejectApproval = new CustomButtonStyle();
-            textBoxMemo = new TextBox();
+            textBoxMemo = new CustomTextBox();
             SuspendLayout();
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(33, 9);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(129, 20);
-            label4.TabIndex = 16;
-            label4.Text = "반려 시 메모 작성";
             // 
             // buttonRejectApproval
             // 
@@ -67,12 +56,24 @@ namespace deepcheesebacon
             // 
             // textBoxMemo
             // 
-            textBoxMemo.Location = new Point(33, 33);
-            textBoxMemo.Margin = new Padding(4);
+            textBoxMemo.BackColor = SystemColors.Window;
+            textBoxMemo.BorderColor = Color.FromArgb(94, 159, 242);
+            textBoxMemo.BorderFocusColor = Color.FromArgb(4, 96, 217);
+            textBoxMemo.BorderRadius = 0;
+            textBoxMemo.BorderSize = 2;
+            textBoxMemo.Font = new Font("맑은 고딕", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxMemo.ForeColor = Color.DimGray;
+            textBoxMemo.Location = new Point(41, 40);
             textBoxMemo.Multiline = true;
             textBoxMemo.Name = "textBoxMemo";
-            textBoxMemo.Size = new Size(492, 180);
-            textBoxMemo.TabIndex = 17;
+            textBoxMemo.Padding = new Padding(10, 7, 10, 7);
+            textBoxMemo.PasswordChar = false;
+            textBoxMemo.PlaceholderColor = Color.DarkGray;
+            textBoxMemo.PlaceholderText = "반려 사유를 작성해주세요.";
+            textBoxMemo.Size = new Size(484, 163);
+            textBoxMemo.TabIndex = 18;
+            textBoxMemo.Texts = "";
+            textBoxMemo.UnderlinedStyle = false;
             // 
             // RejectForm
             // 
@@ -80,20 +81,16 @@ namespace deepcheesebacon
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(556, 277);
             Controls.Add(textBoxMemo);
-            Controls.Add(label4);
             Controls.Add(buttonRejectApproval);
             Margin = new Padding(4);
             Name = "RejectForm";
             Text = "RejectForm";
             Load += RejectForm_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label4;
-        private TextBox textBoxMemo;
+        private CustomTextBox textBoxMemo;
         private CustomButtonStyle buttonRejectApproval;
     }
 }

@@ -1,4 +1,4 @@
-﻿using deepcheesebacon.Work;
+﻿using deepcheesebacon.Customizing;
 
 namespace deepcheesebacon
 {
@@ -43,16 +43,16 @@ namespace deepcheesebacon
             // 
             buttonRejectApproval.BackColor = Color.FromArgb(94, 159, 242);
             buttonRejectApproval.BackgroundColor = Color.FromArgb(94, 159, 242);
-            buttonRejectApproval.BorderColor = Color.PaleVioletRed;
-            buttonRejectApproval.BorderRadius = 20;
+            buttonRejectApproval.BorderColor = Color.FromArgb(4, 96, 217);
+            buttonRejectApproval.BorderRadius = 10;
             buttonRejectApproval.BorderSize = 0;
             buttonRejectApproval.FlatStyle = FlatStyle.Flat;
-            buttonRejectApproval.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonRejectApproval.Font = new Font("맑은 고딕", 10F, FontStyle.Bold, GraphicsUnit.Point);
             buttonRejectApproval.ForeColor = Color.White;
             buttonRejectApproval.Location = new Point(731, 547);
             buttonRejectApproval.Margin = new Padding(4);
             buttonRejectApproval.Name = "buttonRejectApproval";
-            buttonRejectApproval.Size = new Size(96, 31);
+            buttonRejectApproval.Size = new Size(96, 35);
             buttonRejectApproval.TabIndex = 11;
             buttonRejectApproval.Text = "반려";
             buttonRejectApproval.TextColor = Color.White;
@@ -63,16 +63,16 @@ namespace deepcheesebacon
             // 
             buttonApproveApproval.BackColor = Color.FromArgb(94, 159, 242);
             buttonApproveApproval.BackgroundColor = Color.FromArgb(94, 159, 242);
-            buttonApproveApproval.BorderColor = Color.PaleVioletRed;
-            buttonApproveApproval.BorderRadius = 20;
+            buttonApproveApproval.BorderColor = Color.FromArgb(4, 96, 217);
+            buttonApproveApproval.BorderRadius = 10;
             buttonApproveApproval.BorderSize = 0;
             buttonApproveApproval.FlatStyle = FlatStyle.Flat;
-            buttonApproveApproval.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonApproveApproval.Font = new Font("맑은 고딕", 10F, FontStyle.Bold, GraphicsUnit.Point);
             buttonApproveApproval.ForeColor = Color.White;
             buttonApproveApproval.Location = new Point(617, 547);
             buttonApproveApproval.Margin = new Padding(4);
             buttonApproveApproval.Name = "buttonApproveApproval";
-            buttonApproveApproval.Size = new Size(96, 31);
+            buttonApproveApproval.Size = new Size(96, 35);
             buttonApproveApproval.TabIndex = 10;
             buttonApproveApproval.Text = "결재";
             buttonApproveApproval.TextColor = Color.White;
@@ -155,7 +155,7 @@ namespace deepcheesebacon
         #endregion
         private ListBox listBoxTaskRequiringMyApprovalList;
         private Label labelDateTime;
-        private Work.CustomGroupBox customGroupBox1;
+        private CustomGroupBox customGroupBox1;
         private CustomButtonStyle buttonRejectApproval;
         private CustomButtonStyle buttonApproveApproval;
         private CustomGroupBox customGroupBox2;

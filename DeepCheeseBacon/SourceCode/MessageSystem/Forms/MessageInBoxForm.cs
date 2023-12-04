@@ -34,15 +34,15 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
 
         }
 
-        private void buttonSearchByTitle_Click(object sender, EventArgs e)
+        private void SearchByTitle()
         {
-            if (textBoxEmail.Text.IsNullOrEmpty())
+            if (textBoxEmail.Texts.IsNullOrEmpty())
             {
                 MessageBox.Show("검색할 이메일을 입력해주세요.");
             }
             else
             {
-                User user = db.GetUserByEmail(textBoxEmail.Text);
+                User user = db.GetUserByEmail(textBoxEmail.Texts);
                 int searchingId;
                 if (user != null)
                 {
@@ -70,9 +70,20 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
 
         private void buttonSearchByContent_Click(object sender, EventArgs e)
         {
-            if (textBoxContent.Text.IsNullOrEmpty())
+            if (!textBoxContent.Texts.IsNullOrEmpty() && !textBoxEmail.Texts.IsNullOrEmpty())
             {
-                MessageBox.Show("검색할 내용을 입력해주세요.");
+                MessageBox.Show("한 개의 항목만 적어주세요");
+                return;
+            }
+            else if (textBoxContent.Texts.IsNullOrEmpty() && textBoxEmail.Texts.IsNullOrEmpty())
+            {
+                MessageBox.Show("검색할 항목을 적어주세요.");
+                return;
+            }
+
+            if (textBoxContent.Texts.IsNullOrEmpty() && !textBoxEmail.Texts.IsNullOrEmpty())
+            {
+                SearchByTitle();
             }
             else
             {
@@ -80,7 +91,7 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
 
                 foreach (Message message in messages)
                 {
-                    if (message.content.Contains(textBoxContent.Text))
+                    if (message.content.Contains(textBoxContent.Texts))
                     {
                         listBoxMessage.Items.Add(message);
                     }

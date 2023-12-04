@@ -1,4 +1,6 @@
-﻿namespace deepcheesebacon
+﻿using deepcheesebacon.Customizing;
+
+namespace deepcheesebacon
 {
     partial class CheckMyApprovalListForm
     {
@@ -28,42 +30,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            listBoxMyApprovalProgressList = new ListBox();
             label2 = new Label();
             listBoxPendingApprovalList = new ListBox();
             label3 = new Label();
             listBoxCompletedApprovalList = new ListBox();
             listBoxTaskRequiringMyApprovalList = new ListBox();
             label4 = new Label();
-            buttonApproveApproval = new Button();
+            buttonApproveApproval = new CustomButtonStyle();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(94, 77);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(224, 20);
-            label1.TabIndex = 0;
-            label1.Text = "내가 등록한 결재들의 진행 사항";
-            // 
-            // listBoxMyApprovalProgressList
-            // 
-            listBoxMyApprovalProgressList.FormattingEnabled = true;
-            listBoxMyApprovalProgressList.ItemHeight = 20;
-            listBoxMyApprovalProgressList.Location = new Point(94, 101);
-            listBoxMyApprovalProgressList.Margin = new Padding(4, 4, 4, 4);
-            listBoxMyApprovalProgressList.Name = "listBoxMyApprovalProgressList";
-            listBoxMyApprovalProgressList.Size = new Size(387, 124);
-            listBoxMyApprovalProgressList.TabIndex = 1;
-            listBoxMyApprovalProgressList.SelectedIndexChanged += listBoxMyApprovalProgressList_SelectedIndexChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(548, 77);
+            label2.Location = new Point(337, 64);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(224, 20);
@@ -74,16 +53,16 @@
             // 
             listBoxPendingApprovalList.FormattingEnabled = true;
             listBoxPendingApprovalList.ItemHeight = 20;
-            listBoxPendingApprovalList.Location = new Point(548, 101);
-            listBoxPendingApprovalList.Margin = new Padding(4, 4, 4, 4);
+            listBoxPendingApprovalList.Location = new Point(337, 108);
+            listBoxPendingApprovalList.Margin = new Padding(4);
             listBoxPendingApprovalList.Name = "listBoxPendingApprovalList";
-            listBoxPendingApprovalList.Size = new Size(372, 124);
+            listBoxPendingApprovalList.Size = new Size(270, 464);
             listBoxPendingApprovalList.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(548, 271);
+            label3.Location = new Point(34, 64);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(239, 20);
@@ -95,26 +74,26 @@
             // 
             listBoxCompletedApprovalList.FormattingEnabled = true;
             listBoxCompletedApprovalList.ItemHeight = 20;
-            listBoxCompletedApprovalList.Location = new Point(548, 295);
-            listBoxCompletedApprovalList.Margin = new Padding(4, 4, 4, 4);
+            listBoxCompletedApprovalList.Location = new Point(34, 108);
+            listBoxCompletedApprovalList.Margin = new Padding(4);
             listBoxCompletedApprovalList.Name = "listBoxCompletedApprovalList";
-            listBoxCompletedApprovalList.Size = new Size(372, 124);
+            listBoxCompletedApprovalList.Size = new Size(270, 464);
             listBoxCompletedApprovalList.TabIndex = 5;
             // 
             // listBoxTaskRequiringMyApprovalList
             // 
             listBoxTaskRequiringMyApprovalList.FormattingEnabled = true;
             listBoxTaskRequiringMyApprovalList.ItemHeight = 20;
-            listBoxTaskRequiringMyApprovalList.Location = new Point(94, 295);
-            listBoxTaskRequiringMyApprovalList.Margin = new Padding(4, 4, 4, 4);
+            listBoxTaskRequiringMyApprovalList.Location = new Point(643, 108);
+            listBoxTaskRequiringMyApprovalList.Margin = new Padding(4);
             listBoxTaskRequiringMyApprovalList.Name = "listBoxTaskRequiringMyApprovalList";
-            listBoxTaskRequiringMyApprovalList.Size = new Size(387, 124);
+            listBoxTaskRequiringMyApprovalList.Size = new Size(270, 384);
             listBoxTaskRequiringMyApprovalList.TabIndex = 7;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(94, 271);
+            label4.Location = new Point(643, 64);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(204, 20);
@@ -123,13 +102,21 @@
             // 
             // buttonApproveApproval
             // 
-            buttonApproveApproval.Location = new Point(94, 453);
-            buttonApproveApproval.Margin = new Padding(4, 4, 4, 4);
+            buttonApproveApproval.BackColor = SystemColors.Window;
+            buttonApproveApproval.BackgroundColor = SystemColors.Window;
+            buttonApproveApproval.BorderColor = Color.FromArgb(4, 96, 217);
+            buttonApproveApproval.BorderRadius = 10;
+            buttonApproveApproval.BorderSize = 2;
+            buttonApproveApproval.FlatStyle = FlatStyle.Flat;
+            buttonApproveApproval.ForeColor = Color.DarkBlue;
+            buttonApproveApproval.Location = new Point(720, 522);
+            buttonApproveApproval.Margin = new Padding(4);
             buttonApproveApproval.Name = "buttonApproveApproval";
-            buttonApproveApproval.Size = new Size(96, 31);
+            buttonApproveApproval.Size = new Size(127, 50);
             buttonApproveApproval.TabIndex = 8;
             buttonApproveApproval.Text = "결재하기";
-            buttonApproveApproval.UseVisualStyleBackColor = true;
+            buttonApproveApproval.TextColor = Color.DarkBlue;
+            buttonApproveApproval.UseVisualStyleBackColor = false;
             buttonApproveApproval.Click += buttonApproveApproval_Click;
             // 
             // CheckMyApprovalListForm
@@ -144,9 +131,7 @@
             Controls.Add(label3);
             Controls.Add(listBoxPendingApprovalList);
             Controls.Add(label2);
-            Controls.Add(listBoxMyApprovalProgressList);
-            Controls.Add(label1);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "CheckMyApprovalListForm";
             Text = "CheckMyApprovalListForm";
             Load += CheckMyApprovalListForm_Load;
@@ -155,15 +140,12 @@
         }
 
         #endregion
-
-        private Label label1;
-        private ListBox listBoxMyApprovalProgressList;
         private Label label2;
         private ListBox listBoxPendingApprovalList;
         private Label label3;
         private ListBox listBoxCompletedApprovalList;
         private ListBox listBoxTaskRequiringMyApprovalList;
         private Label label4;
-        private Button buttonApproveApproval;
+        private CustomButtonStyle buttonApproveApproval;
     }
 }

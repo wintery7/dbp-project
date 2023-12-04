@@ -50,20 +50,24 @@ namespace deepcheesebacon
                 int selectedApproverId;
                 if (firstApprovalIdDict.TryGetValue(comboBoxApproverList.SelectedItem.ToString(), out selectedApproverId))
                 {
+
+                    Console.WriteLine("title: " + textBoxApprovalTitle.Texts + " || content: " + textBoxApprovalDescription.Texts);
+
                     // 각 텍스트 박스의 텍스트 길이를 확인하여 비어 있는지 여부를 판단
-                    if (string.IsNullOrWhiteSpace(textBoxApprovalTitle.Text) ||
-                        string.IsNullOrWhiteSpace(textBoxApprovalDescription.Text))
+                    if (string.IsNullOrEmpty(textBoxApprovalTitle.Texts) ||
+                        string.IsNullOrEmpty(textBoxApprovalDescription.Texts))
                     {
-                        MessageBox.Show("갤제 제목과 내용 입력란을 채워주세요.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        MessageBox.Show("결재 제목과 내용 입력란을 채워주세요.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return; 
                     }
 
                     Approval approval = new Approval
                     {
-                        Title = textBoxApprovalTitle.Text,
-                        Description = textBoxApprovalDescription.Text,
-                        RelatedTask = textBoxApprovalRelatedTask.Text,
-                        Comment = textBoxApprovalComment.Text,
+                        Title = textBoxApprovalTitle.Texts,
+                        Description = textBoxApprovalDescription.Texts,
+                        RelatedTask = textBoxApprovalRelatedTask.Texts,
+                        Comment = textBoxApprovalComment.Texts,
                         RoleStatus = Role.FirstApprover,
                         Status = Approval.ApprovalStatus.Pending,
                         ApproverId = selectedApproverId,
@@ -76,10 +80,10 @@ namespace deepcheesebacon
 
                     if (ApprovalService.CreateApproval(approval) > 0)
                     {
-                        textBoxApprovalTitle.Clear();
-                        textBoxApprovalDescription.Clear();
-                        textBoxApprovalRelatedTask.Clear();
-                        textBoxApprovalComment.Clear();
+                        textBoxApprovalTitle.ClearText();
+                        textBoxApprovalDescription.ClearText();
+                        textBoxApprovalRelatedTask.ClearText();
+                        textBoxApprovalComment.ClearText();
                         
 
                         MessageBox.Show("결재 등록에 성공하였습니다.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
