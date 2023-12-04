@@ -57,7 +57,7 @@ namespace deepcheesebacon
 
             }
 
-            textBoxInputMessage.Clear();
+            textBoxInputMessage.ClearText();
             listBoxChatBox.SelectedIndex = listBoxChatBox.Items.Count - 1;
 
         }
