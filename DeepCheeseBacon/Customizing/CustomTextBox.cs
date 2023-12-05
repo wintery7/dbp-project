@@ -147,6 +147,7 @@ namespace deepcheesebacon.Customizing
             }
             set
             {
+                /*
                 if (string.IsNullOrWhiteSpace(value))
                 {
                     SetPlaceholder();
@@ -160,9 +161,14 @@ namespace deepcheesebacon.Customizing
                     else
                     {
                         textBox1.Text = value;
-                        SetPlaceholder();
+                        RemovePlaceholder();
                     }
                 }
+                */
+                textBox1.Text = value;
+                isPlaceholder = false; // Set isPlaceholder to false
+                SetPlaceholder();
+
             }
         }
 
