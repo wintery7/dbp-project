@@ -92,7 +92,7 @@ namespace deepcheesebacon
             textBoxPassword.Multiline = false;
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Padding = new Padding(10, 7, 10, 7);
-            textBoxPassword.PasswordChar = false;
+            textBoxPassword.PasswordChar = true;
             textBoxPassword.PlaceholderColor = Color.DarkGray;
             textBoxPassword.PlaceholderText = "비밀번호를 입력해주세요.";
             textBoxPassword.Size = new Size(438, 36);
@@ -138,6 +138,7 @@ namespace deepcheesebacon
             Name = "LoginForm";
             Text = "LoginForm";
             FormClosing += LoginForm_FormClosing;
+            Load += LoginForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

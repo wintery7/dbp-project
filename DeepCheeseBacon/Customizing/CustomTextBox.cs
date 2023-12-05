@@ -147,28 +147,9 @@ namespace deepcheesebacon.Customizing
             }
             set
             {
-                /*
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    SetPlaceholder();
-                }
-                else
-                {
-                    if (PlaceholderText != "Email을 입력해주세요." || PlaceholderText != "비밀번호를 입력해주세요.")
-                    {
-                        textBox1.Text = PlaceholderText;
-                    }
-                    else
-                    {
-                        textBox1.Text = value;
-                        RemovePlaceholder();
-                    }
-                }
-                */
                 textBox1.Text = value;
                 isPlaceholder = false; // Set isPlaceholder to false
                 SetPlaceholder();
-
             }
         }
 
