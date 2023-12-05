@@ -1,6 +1,4 @@
-﻿using deepcheesebacon.Customizing;
-
-namespace deepcheesebacon
+﻿namespace deepcheesebacon
 {
     partial class SubjectManage
     {
@@ -31,10 +29,10 @@ namespace deepcheesebacon
         private void InitializeComponent()
         {
             label2 = new Label();
-            modifyBtn = new CustomButtonStyle();
-            deleteBtn = new CustomButtonStyle();
+            modifyBtn = new Button();
+            deleteBtn = new Button();
             dataGridView1 = new DataGridView();
-            departmentBtn = new CustomButtonStyle();
+            departmentBtn = new Button();
             label3 = new Label();
             gradeText = new TextBox();
             departmentText = new TextBox();
@@ -45,7 +43,7 @@ namespace deepcheesebacon
             // 
             label2.AutoSize = true;
             label2.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(98, 245);
+            label2.Location = new Point(117, 212);
             label2.Name = "label2";
             label2.Size = new Size(88, 25);
             label2.TabIndex = 36;
@@ -53,46 +51,28 @@ namespace deepcheesebacon
             // 
             // modifyBtn
             // 
-            modifyBtn.BackColor = Color.FromArgb(94, 159, 242);
-            modifyBtn.BackgroundColor = Color.FromArgb(94, 159, 242);
-            modifyBtn.BorderColor = Color.RoyalBlue;
-            modifyBtn.BorderRadius = 20;
-            modifyBtn.BorderSize = 0;
-            modifyBtn.FlatStyle = FlatStyle.Flat;
-            modifyBtn.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            modifyBtn.ForeColor = Color.White;
-            modifyBtn.Location = new Point(541, 388);
+            modifyBtn.Location = new Point(532, 370);
             modifyBtn.Name = "modifyBtn";
             modifyBtn.Size = new Size(113, 43);
             modifyBtn.TabIndex = 38;
             modifyBtn.Text = "수정";
-            modifyBtn.TextColor = Color.White;
-            modifyBtn.UseVisualStyleBackColor = false;
+            modifyBtn.UseVisualStyleBackColor = true;
             modifyBtn.Click += modifyBtn_Click;
             // 
             // deleteBtn
             // 
-            deleteBtn.BackColor = Color.FromArgb(94, 159, 242);
-            deleteBtn.BackgroundColor = Color.FromArgb(94, 159, 242);
-            deleteBtn.BorderColor = Color.RoyalBlue;
-            deleteBtn.BorderRadius = 20;
-            deleteBtn.BorderSize = 0;
-            deleteBtn.FlatStyle = FlatStyle.Flat;
-            deleteBtn.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            deleteBtn.ForeColor = Color.White;
-            deleteBtn.Location = new Point(706, 388);
+            deleteBtn.Location = new Point(697, 370);
             deleteBtn.Name = "deleteBtn";
             deleteBtn.Size = new Size(113, 43);
             deleteBtn.TabIndex = 39;
             deleteBtn.Text = "삭제";
-            deleteBtn.TextColor = Color.White;
-            deleteBtn.UseVisualStyleBackColor = false;
+            deleteBtn.UseVisualStyleBackColor = true;
             deleteBtn.Click += deleteBtn_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(307, 159);
+            dataGridView1.Location = new Point(326, 126);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(561, 181);
@@ -102,28 +82,19 @@ namespace deepcheesebacon
             // 
             // departmentBtn
             // 
-            departmentBtn.BackColor = Color.FromArgb(94, 159, 242);
-            departmentBtn.BackgroundColor = Color.FromArgb(94, 159, 242);
-            departmentBtn.BorderColor = Color.RoyalBlue;
-            departmentBtn.BorderRadius = 20;
-            departmentBtn.BorderSize = 0;
-            departmentBtn.FlatStyle = FlatStyle.Flat;
-            departmentBtn.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            departmentBtn.ForeColor = Color.White;
-            departmentBtn.Location = new Point(374, 388);
+            departmentBtn.Location = new Point(365, 370);
             departmentBtn.Name = "departmentBtn";
             departmentBtn.Size = new Size(113, 43);
             departmentBtn.TabIndex = 41;
             departmentBtn.Text = "등록";
-            departmentBtn.TextColor = Color.White;
-            departmentBtn.UseVisualStyleBackColor = false;
+            departmentBtn.UseVisualStyleBackColor = true;
             departmentBtn.Click += departmentBtn_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(98, 155);
+            label3.Location = new Point(117, 122);
             label3.Name = "label3";
             label3.Size = new Size(88, 25);
             label3.TabIndex = 42;
@@ -131,7 +102,7 @@ namespace deepcheesebacon
             // 
             // gradeText
             // 
-            gradeText.Location = new Point(98, 183);
+            gradeText.Location = new Point(117, 150);
             gradeText.Multiline = true;
             gradeText.Name = "gradeText";
             gradeText.Size = new Size(156, 41);
@@ -139,7 +110,7 @@ namespace deepcheesebacon
             // 
             // departmentText
             // 
-            departmentText.Location = new Point(98, 273);
+            departmentText.Location = new Point(117, 240);
             departmentText.Multiline = true;
             departmentText.Name = "departmentText";
             departmentText.Size = new Size(156, 41);
@@ -158,7 +129,7 @@ namespace deepcheesebacon
             Controls.Add(modifyBtn);
             Controls.Add(label2);
             Name = "SubjectManage";
-            Size = new Size(966, 520);
+            Size = new Size(983, 521);
             Load += SubjectManage_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -167,10 +138,10 @@ namespace deepcheesebacon
 
         #endregion
         private Label label2;
-        private CustomButtonStyle modifyBtn;
-        private CustomButtonStyle deleteBtn;
+        private Button modifyBtn;
+        private Button deleteBtn;
         private DataGridView dataGridView1;
-        private CustomButtonStyle departmentBtn;
+        private Button departmentBtn;
         private Label label3;
         private TextBox gradeText;
         private TextBox departmentText;

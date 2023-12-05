@@ -31,7 +31,7 @@ namespace deepcheesebacon
 
             LoadComboBox();
         }
-
+       
 
         // combobox에 department 테이블의 department_name을 로드
         private void LoadComboBox()
@@ -65,7 +65,7 @@ namespace deepcheesebacon
 
         }
 
-
+      
         // 등록버튼 누르면 db에 정보 저장
         private void regBtn_Click(object sender, EventArgs e)
         {
@@ -77,8 +77,11 @@ namespace deepcheesebacon
             string pnum = pnumText.Text;
             string addr = addrText.Text;
             string date = dateText.Text;
-            string depid = comboBox1.Text; // 201, 102
-            int id = dbManager.GetDepId(depid);
+            string depid = comboBox1.Text; // ex) 수학(100)
+            string depid1 = depid.Substring(0, depid.IndexOf("("));
+            string num = depid.Substring(depid.IndexOf("(")+1, 1);
+            int id = dbManager.GetDepIdNum(depid1, num);
+
             int resultNum = -1; // 초기 값 설정
 
             // 입력한 텍스트박스 확인 후

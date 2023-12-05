@@ -1,5 +1,4 @@
 ﻿using deepcheesebacon.Customizing;
-
 namespace deepcheesebacon
 {
     partial class Salary
@@ -31,74 +30,75 @@ namespace deepcheesebacon
         private void InitializeComponent()
         {
             payView = new DataGridView();
-            SelectMonth = new ComboBox();
-            label6 = new Label();
             prt_btn = new CustomButtonStyle();
+            label1 = new Label();
+            SelectMonth = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)payView).BeginInit();
             SuspendLayout();
             // 
             // payView
             // 
             payView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            payView.Location = new Point(14, 68);
+            payView.Location = new Point(161, 62);
             payView.Margin = new Padding(3, 2, 3, 2);
             payView.Name = "payView";
             payView.RowHeadersWidth = 51;
-            payView.Size = new Size(939, 437);
+            payView.Size = new Size(704, 439);
             payView.TabIndex = 66;
-            // 
-            // SelectMonth
-            // 
-            SelectMonth.FormattingEnabled = true;
-            SelectMonth.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            SelectMonth.Location = new Point(14, 18);
-            SelectMonth.Margin = new Padding(3, 2, 3, 2);
-            SelectMonth.Name = "SelectMonth";
-            SelectMonth.Size = new Size(90, 28);
-            SelectMonth.TabIndex = 67;
-            SelectMonth.SelectedIndexChanged += SelectMonth_SelectedIndexChanged;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(108, 18);
-            label6.Name = "label6";
-            label6.Size = new Size(140, 25);
-            label6.TabIndex = 68;
-            label6.Text = "월 급여 내역서";
             // 
             // prt_btn
             // 
             prt_btn.BackColor = Color.FromArgb(94, 159, 242);
             prt_btn.BackgroundColor = Color.FromArgb(94, 159, 242);
-            prt_btn.BorderColor = Color.RoyalBlue;
+            prt_btn.BorderColor = Color.PaleVioletRed;
             prt_btn.BorderRadius = 20;
             prt_btn.BorderSize = 0;
+            prt_btn.FlatAppearance.BorderSize = 0;
             prt_btn.FlatStyle = FlatStyle.Flat;
-            prt_btn.Font = new Font("맑은 고딕", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            prt_btn.Font = new Font("맑은 고딕", 11F, FontStyle.Bold, GraphicsUnit.Point);
             prt_btn.ForeColor = Color.White;
-            prt_btn.Location = new Point(752, 15);
-            prt_btn.Margin = new Padding(3, 2, 3, 2);
+            prt_btn.Location = new Point(667, 9);
+            prt_btn.Margin = new Padding(4, 3, 4, 3);
             prt_btn.Name = "prt_btn";
-            prt_btn.Size = new Size(201, 49);
-            prt_btn.TabIndex = 69;
-            prt_btn.Text = "급여내역서 산출";
+            prt_btn.Size = new Size(198, 32);
+            prt_btn.TabIndex = 21;
+            prt_btn.Text = "급여 내역서 산출";
             prt_btn.TextColor = Color.White;
             prt_btn.UseVisualStyleBackColor = false;
             prt_btn.Click += prt_btn_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(349, 13);
+            label1.Name = "label1";
+            label1.Size = new Size(133, 25);
+            label1.TabIndex = 68;
+            label1.Text = "월 급여내역서";
+            // 
+            // SelectMonth
+            // 
+            SelectMonth.FormattingEnabled = true;
+            SelectMonth.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
+            SelectMonth.Location = new Point(161, 14);
+            SelectMonth.Margin = new Padding(3, 2, 3, 2);
+            SelectMonth.Name = "SelectMonth";
+            SelectMonth.Size = new Size(164, 28);
+            SelectMonth.TabIndex = 69;
+            SelectMonth.SelectedIndexChanged += SelectMonth_SelectedIndexChanged;
             // 
             // Salary
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(prt_btn);
-            Controls.Add(label6);
             Controls.Add(SelectMonth);
+            Controls.Add(label1);
+            Controls.Add(prt_btn);
             Controls.Add(payView);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Salary";
-            Size = new Size(966, 520);
+            Size = new Size(983, 521);
             Load += Salary_Load;
             ((System.ComponentModel.ISupportInitialize)payView).EndInit();
             ResumeLayout(false);
@@ -107,21 +107,9 @@ namespace deepcheesebacon
 
         #endregion
 
-        private ListBox listBox1;
         private DataGridView payView;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private ComboBox SelectMonth;
-        private Label label6;
         private CustomButtonStyle prt_btn;
+        private Label label1;
+        private ComboBox SelectMonth;
     }
 }
