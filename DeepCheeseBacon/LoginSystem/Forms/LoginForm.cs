@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
@@ -36,6 +37,10 @@ namespace deepcheesebacon
             try
             {
                 User originUser = dbManager.GetUserByEmail(textBoxEmail.Texts);
+
+                string hashedPassword = ComputeSHA256Hash(textBoxPassword.Texts);
+                Console.WriteLine("비밀번호: " + hashedPassword);
+
 
                 if (originUser != null)
                 {
@@ -97,6 +102,25 @@ namespace deepcheesebacon
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
+        private string ComputeSHA256Hash(string input)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                // 입력 문자열을 바이트 배열로 변환
+                byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+
+                // 해시 계산
+                byte[] hashBytes = sha256.ComputeHash(inputBytes);
+
+                // 바이트 배열을 문자열로 변환하여 반환
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    builder.Append(hashBytes[i].ToString("x2")); // 각 바이트를 16진수 문자열로 변환
+                }
+
+                return builder.ToString();
+            }
         }
     }
 }
