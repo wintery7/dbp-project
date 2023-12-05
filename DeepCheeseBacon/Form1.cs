@@ -16,23 +16,8 @@ namespace deepcheesebacon
             InitializeComponent();
         }
 
-
-
-        private void MenuColor(object sender)
-        {
-            if (lastClickedItem != null)
-            {
-                lastClickedItem.BackColor = Color.SteelBlue;
-            }
-
-            Button menu = (Button)sender;
-            menu.BackColor = Color.SkyBlue;
-            lastClickedItem = menu;
-        }
-
         private void UserRegBtn_Click(object sender, EventArgs e)
         {
-            MenuColor((Button)sender);
 
             pMain.Controls.Clear();
             pMain.Controls.Add(userReg);
@@ -40,7 +25,6 @@ namespace deepcheesebacon
 
         private void UserManageBtn_Click(object sender, EventArgs e)
         {
-            MenuColor((Button)sender);
 
             pMain.Controls.Clear();
             pMain.Controls.Add(userManage);
@@ -48,7 +32,6 @@ namespace deepcheesebacon
 
         private void SubjectManageBtn_Click(object sender, EventArgs e)
         {
-            MenuColor((Button)sender);
 
             pMain.Controls.Clear();
             pMain.Controls.Add(subjectManage);
@@ -57,7 +40,6 @@ namespace deepcheesebacon
 
         private void SalaryBtn_Click(object sender, EventArgs e)
         {
-            MenuColor((Button)sender);
 
             pMain.Controls.Clear();
             pMain.Controls.Add(salary);
@@ -65,7 +47,6 @@ namespace deepcheesebacon
 
         private void AttendRegBtn_Click(object sender, EventArgs e)
         {
-            MenuColor((Button)sender);
 
             pMain.Controls.Clear();
             pMain.Controls.Add(attendanceView);
@@ -74,11 +55,14 @@ namespace deepcheesebacon
         private void AttendancelogBtn_Click(object sender, EventArgs e)
         {
 
-            MenuColor((Button)sender);
 
             pMain.Controls.Clear();
             pMain.Controls.Add(attendanceReg);
         }
 
+        private void panelLogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

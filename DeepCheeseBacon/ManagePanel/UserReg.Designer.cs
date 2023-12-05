@@ -1,6 +1,4 @@
-﻿using deepcheesebacon.Customizing;
-
-namespace deepcheesebacon
+﻿namespace deepcheesebacon
 {
     partial class UserReg
     {
@@ -30,7 +28,7 @@ namespace deepcheesebacon
         /// </summary>
         private void InitializeComponent()
         {
-            regBtn = new CustomButtonStyle();
+            regBtn = new Button();
             nameText = new TextBox();
             addrText = new TextBox();
             pnumText = new TextBox();
@@ -44,26 +42,18 @@ namespace deepcheesebacon
             // 
             // regBtn
             // 
-            regBtn.BackColor = SystemColors.Window;
-            regBtn.BackgroundColor = SystemColors.Window;
-            regBtn.BorderColor = Color.FromArgb(94, 159, 242);
-            regBtn.BorderRadius = 10;
-            regBtn.BorderSize = 2;
-            regBtn.FlatStyle = FlatStyle.Flat;
-            regBtn.ForeColor = Color.DarkBlue;
-            regBtn.Location = new Point(509, 316);
+            regBtn.Location = new Point(344, 433);
             regBtn.Name = "regBtn";
             regBtn.Size = new Size(343, 45);
             regBtn.TabIndex = 47;
             regBtn.Text = "등록";
-            regBtn.TextColor = Color.DarkBlue;
-            regBtn.UseVisualStyleBackColor = false;
+            regBtn.UseVisualStyleBackColor = true;
             regBtn.Click += regBtn_Click;
             // 
             // nameText
             // 
             nameText.ForeColor = Color.Silver;
-            nameText.Location = new Point(113, 246);
+            nameText.Location = new Point(344, 135);
             nameText.Multiline = true;
             nameText.Name = "nameText";
             nameText.Size = new Size(343, 35);
@@ -74,7 +64,7 @@ namespace deepcheesebacon
             // addrText
             // 
             addrText.ForeColor = Color.Silver;
-            addrText.Location = new Point(509, 264);
+            addrText.Location = new Point(344, 381);
             addrText.Multiline = true;
             addrText.Name = "addrText";
             addrText.Size = new Size(343, 35);
@@ -85,7 +75,7 @@ namespace deepcheesebacon
             // pnumText
             // 
             pnumText.ForeColor = Color.Silver;
-            pnumText.Location = new Point(509, 222);
+            pnumText.Location = new Point(344, 339);
             pnumText.Multiline = true;
             pnumText.Name = "pnumText";
             pnumText.Size = new Size(343, 35);
@@ -96,7 +86,7 @@ namespace deepcheesebacon
             // genderText
             // 
             genderText.ForeColor = Color.Silver;
-            genderText.Location = new Point(113, 328);
+            genderText.Location = new Point(344, 217);
             genderText.Multiline = true;
             genderText.Name = "genderText";
             genderText.Size = new Size(343, 35);
@@ -107,7 +97,7 @@ namespace deepcheesebacon
             // dateText
             // 
             dateText.ForeColor = Color.Silver;
-            dateText.Location = new Point(113, 288);
+            dateText.Location = new Point(344, 177);
             dateText.Multiline = true;
             dateText.Name = "dateText";
             dateText.Size = new Size(343, 35);
@@ -118,7 +108,7 @@ namespace deepcheesebacon
             // pwText
             // 
             pwText.ForeColor = Color.Silver;
-            pwText.Location = new Point(113, 184);
+            pwText.Location = new Point(344, 73);
             pwText.Multiline = true;
             pwText.Name = "pwText";
             pwText.Size = new Size(343, 35);
@@ -129,7 +119,7 @@ namespace deepcheesebacon
             // emailText
             // 
             emailText.ForeColor = Color.Silver;
-            emailText.Location = new Point(113, 142);
+            emailText.Location = new Point(344, 31);
             emailText.Multiline = true;
             emailText.Name = "emailText";
             emailText.Size = new Size(343, 35);
@@ -140,7 +130,7 @@ namespace deepcheesebacon
             // roleText
             // 
             roleText.ForeColor = Color.Silver;
-            roleText.Location = new Point(509, 141);
+            roleText.Location = new Point(344, 258);
             roleText.Multiline = true;
             roleText.Name = "roleText";
             roleText.Size = new Size(343, 35);
@@ -153,7 +143,7 @@ namespace deepcheesebacon
             comboBox1.BackColor = Color.WhiteSmoke;
             comboBox1.ForeColor = Color.Silver;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(509, 182);
+            comboBox1.Location = new Point(344, 299);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(343, 28);
             comboBox1.TabIndex = 61;
@@ -175,7 +165,7 @@ namespace deepcheesebacon
             Controls.Add(dateText);
             Controls.Add(pwText);
             Name = "UserReg";
-            Size = new Size(966, 520);
+            Size = new Size(983, 521);
             Load += UserReg_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -183,7 +173,7 @@ namespace deepcheesebacon
 
         #endregion
 
-        private CustomButtonStyle regBtn;
+        private Button regBtn;
         private TextBox nameText;
         private TextBox addrText;
         private TextBox pnumText;

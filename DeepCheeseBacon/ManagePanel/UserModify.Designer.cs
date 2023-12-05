@@ -1,6 +1,4 @@
-﻿using deepcheesebacon.Customizing;
-
-namespace deepcheesebacon
+﻿namespace deepcheesebacon
 {
     partial class UserModify
     {
@@ -30,7 +28,7 @@ namespace deepcheesebacon
         /// </summary>
         private void InitializeComponent()
         {
-            modifyBtn = new CustomButtonStyle();
+            modifyBtn = new Button();
             label2 = new Label();
             nameText = new TextBox();
             addrText = new TextBox();
@@ -45,27 +43,19 @@ namespace deepcheesebacon
             // 
             // modifyBtn
             // 
-            modifyBtn.BackColor = SystemColors.Window;
-            modifyBtn.BackgroundColor = SystemColors.Window;
-            modifyBtn.BorderColor = Color.FromArgb(94, 159, 242);
-            modifyBtn.BorderRadius = 10;
-            modifyBtn.BorderSize = 2;
-            modifyBtn.FlatStyle = FlatStyle.Flat;
-            modifyBtn.ForeColor = Color.DarkBlue;
-            modifyBtn.Location = new Point(520, 328);
+            modifyBtn.Location = new Point(315, 452);
             modifyBtn.Name = "modifyBtn";
             modifyBtn.Size = new Size(343, 45);
             modifyBtn.TabIndex = 59;
             modifyBtn.Text = "수정";
-            modifyBtn.TextColor = Color.DarkBlue;
-            modifyBtn.UseVisualStyleBackColor = false;
+            modifyBtn.UseVisualStyleBackColor = true;
             modifyBtn.Click += modifyBtn_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.Red;
-            label2.Location = new Point(95, 126);
+            label2.Location = new Point(315, 22);
             label2.Name = "label2";
             label2.Size = new Size(150, 20);
             label2.TabIndex = 58;
@@ -74,7 +64,7 @@ namespace deepcheesebacon
             // nameText
             // 
             nameText.ForeColor = Color.Silver;
-            nameText.Location = new Point(95, 252);
+            nameText.Location = new Point(315, 148);
             nameText.Multiline = true;
             nameText.Name = "nameText";
             nameText.Size = new Size(343, 35);
@@ -85,7 +75,7 @@ namespace deepcheesebacon
             // addrText
             // 
             addrText.ForeColor = Color.Silver;
-            addrText.Location = new Point(520, 271);
+            addrText.Location = new Point(315, 395);
             addrText.Multiline = true;
             addrText.Name = "addrText";
             addrText.Size = new Size(343, 35);
@@ -97,7 +87,7 @@ namespace deepcheesebacon
             // pnumText
             // 
             pnumText.ForeColor = Color.Silver;
-            pnumText.Location = new Point(520, 230);
+            pnumText.Location = new Point(315, 354);
             pnumText.Multiline = true;
             pnumText.Name = "pnumText";
             pnumText.Size = new Size(343, 35);
@@ -108,7 +98,7 @@ namespace deepcheesebacon
             // roleText
             // 
             roleText.ForeColor = Color.Silver;
-            roleText.Location = new Point(520, 148);
+            roleText.Location = new Point(315, 272);
             roleText.Multiline = true;
             roleText.Name = "roleText";
             roleText.Size = new Size(343, 35);
@@ -119,7 +109,7 @@ namespace deepcheesebacon
             // genderText
             // 
             genderText.ForeColor = Color.Silver;
-            genderText.Location = new Point(95, 335);
+            genderText.Location = new Point(315, 231);
             genderText.Multiline = true;
             genderText.Name = "genderText";
             genderText.Size = new Size(343, 35);
@@ -130,7 +120,7 @@ namespace deepcheesebacon
             // dateText
             // 
             dateText.ForeColor = Color.Silver;
-            dateText.Location = new Point(95, 294);
+            dateText.Location = new Point(315, 190);
             dateText.Multiline = true;
             dateText.Name = "dateText";
             dateText.Size = new Size(343, 35);
@@ -141,7 +131,7 @@ namespace deepcheesebacon
             // pwText
             // 
             pwText.ForeColor = Color.Silver;
-            pwText.Location = new Point(95, 190);
+            pwText.Location = new Point(315, 86);
             pwText.Multiline = true;
             pwText.Name = "pwText";
             pwText.Size = new Size(343, 35);
@@ -152,7 +142,7 @@ namespace deepcheesebacon
             // emailText
             // 
             emailText.ForeColor = Color.Silver;
-            emailText.Location = new Point(95, 148);
+            emailText.Location = new Point(315, 44);
             emailText.Multiline = true;
             emailText.Name = "emailText";
             emailText.Size = new Size(343, 35);
@@ -165,7 +155,7 @@ namespace deepcheesebacon
             comboBox1.BackColor = Color.WhiteSmoke;
             comboBox1.ForeColor = Color.Silver;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(520, 196);
+            comboBox1.Location = new Point(315, 320);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(343, 28);
             comboBox1.TabIndex = 60;
@@ -187,14 +177,14 @@ namespace deepcheesebacon
             Controls.Add(pwText);
             Controls.Add(emailText);
             Name = "UserModify";
-            Size = new Size(966, 520);
+            Size = new Size(983, 521);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private CustomButtonStyle modifyBtn;
+        private Button modifyBtn;
         private Label label2;
         private TextBox nameText;
         private TextBox addrText;

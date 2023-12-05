@@ -71,7 +71,7 @@ namespace deepcheesebacon
         {
 
             string id = userIdText.Text;
-
+      
             // UserModify 화면 뜨도록
             this.Controls.Clear();
             UserModify userModify = new UserModify(id);

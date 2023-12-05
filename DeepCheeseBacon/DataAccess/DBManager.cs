@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Diagnostics;
 using System.Drawing;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
@@ -940,7 +941,7 @@ CREATE TABLE IF NOT EXISTS approval (
             }
         }
 
-        // db에서 department 테이블의 id 값 가져오기
+        // db에서 name 비교해서 department 테이블의 id 값 가져오기
         public int GetDepId(string depid)
         {
             int id = -1;
@@ -948,10 +949,39 @@ CREATE TABLE IF NOT EXISTS approval (
             try
             {
 
+
                 string query = "SELECT id FROM department WHERE department_name = @dep_name";
                 MySqlCommand com = new MySqlCommand(query, connection);
                 com.Parameters.AddWithValue("@dep_name", depid);
+                // ExecuteScalar를 사용하여 결과를 가져옴
+                object objResult = com.ExecuteScalar();
 
+                if (objResult != null && objResult != DBNull.Value)
+                {
+                    id = Convert.ToInt32(objResult);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("오류발생: " + e.Message);
+            }
+
+            return id;
+        }
+
+        // db에서 name, grade 비교해서 department 테이블의 id 값 가져오기
+        public int GetDepIdNum(string depid, string num)
+        {
+            int id = -1;
+
+            try
+            {
+
+                string query = "SELECT id FROM department WHERE department_name = @dep_name AND grade = @num";
+                MySqlCommand com = new MySqlCommand(query, connection);
+                com.Parameters.AddWithValue("@dep_name", depid);
+                com.Parameters.AddWithValue("@num", num);
                 // ExecuteScalar를 사용하여 결과를 가져옴
                 object objResult = com.ExecuteScalar();
 
@@ -1013,10 +1043,8 @@ CREATE TABLE IF NOT EXISTS approval (
 
                 if (result != null)
                 {
-                    if (email != null)
-                    {
-                        email = result.ToString();
-                    }
+
+                    email = result.ToString();
 
                 }
 
@@ -1082,12 +1110,8 @@ CREATE TABLE IF NOT EXISTS approval (
 
                 if (result != null)
                 {
-                    if (name != null)
-                    {
-                        name = result.ToString();
-
-                    }
-
+                    Debug.WriteLine("name");
+                    name = result.ToString();
                 }
 
                 com.ExecuteNonQuery();
@@ -1113,11 +1137,8 @@ CREATE TABLE IF NOT EXISTS approval (
 
                 if (result != null)
                 {
-                    if (date != null)
-                    {
-                        date = result.ToString();
-                    }
-
+                    Debug.WriteLine("date");
+                    date = result.ToString();
                 }
 
                 com.ExecuteNonQuery();
@@ -1144,6 +1165,7 @@ CREATE TABLE IF NOT EXISTS approval (
 
                 if (result != null)
                 {
+                    Debug.WriteLine("gender");
                     gender = result.ToString();
                 }
 
@@ -1171,21 +1193,20 @@ CREATE TABLE IF NOT EXISTS approval (
 
                 if (result != null)
                 {
-                    if (role != null)
+
+                    if ((int)result == 0)
                     {
-                        if ((int)result == 0)
-                        {
-                            role = "원장";
-                        }
-                        else if ((int)result == 1)
-                        {
-                            role = "강사";
-                        }
-                        else if ((int)result == 2)
-                        {
-                            role = "보조강사";
-                        }
+                        role = "원장";
                     }
+                    else if ((int)result == 1)
+                    {
+                        role = "강사";
+                    }
+                    else if ((int)result == 2)
+                    {
+                        role = "보조강사";
+                    }
+
 
 
                 }
@@ -1214,10 +1235,9 @@ CREATE TABLE IF NOT EXISTS approval (
 
                 if (result != null)
                 {
-                    if (dep != null)
-                    {
-                        dep = result.ToString();
-                    }
+
+                    dep = result.ToString();
+
 
                 }
 
@@ -1297,7 +1317,9 @@ CREATE TABLE IF NOT EXISTS approval (
                     while (reader.Read())
                     {
                         string dName = reader["department_name"].ToString();
-                        departmentList.Add(dName);
+                        string dId = reader["department_id"].ToString();
+                        string load = dName + "(" + dId + ")";
+                        departmentList.Add(load);
                     }
                 }
             }
@@ -1315,7 +1337,7 @@ CREATE TABLE IF NOT EXISTS approval (
         {
             DataSet ds = new DataSet();
 
-            string query = "SELECT * FROM user WHERE department IN (SELECT id FROM department WHERE department_name like @dep)";
+            string query = "SELECT user_id as '아이디', user_role as '직급', email as '이메일', password as '비밀번호', name as '이름', gender as '성별', phone_number as '전화번호', address as '주소', department as '과목', birthDate as '생년월일' FROM user WHERE department IN (SELECT id FROM department WHERE department_name like @dep)";
             MySqlCommand com = new MySqlCommand(query, connection);
             com.Parameters.AddWithValue("@dep", "%" + dep + "%");
 
@@ -1334,7 +1356,7 @@ CREATE TABLE IF NOT EXISTS approval (
         {
             DataSet ds = new DataSet();
 
-            string query = "SELECT * FROM user WHERE name like @name";
+            string query = "SELECT user_id as '아이디', user_role as '직급', email as '이메일', password as '비밀번호', name as '이름', gender as '성별', phone_number as '전화번호', address as '주소', department as '과목', birthDate as '생년월일'  FROM user WHERE name like @name";
             MySqlCommand com = new MySqlCommand(query, connection);
             com.Parameters.AddWithValue("@name", "%" + name + "%");
 
@@ -1346,6 +1368,7 @@ CREATE TABLE IF NOT EXISTS approval (
             return ds;
 
         }
+        // 나이별 검색
         public DataSet GetUser_date(string year)
         {
             DataSet ds = new DataSet();
@@ -1353,7 +1376,7 @@ CREATE TABLE IF NOT EXISTS approval (
             try
             {
 
-                string query = "SELECT * FROM user WHERE TIMESTAMPDIFF(YEAR, birthDate, CURDATE()) = @year";
+                string query = "SELECT user_id as '아이디', user_role as '직급', email as '이메일', password as '비밀번호', name as '이름', gender as '성별', phone_number as '전화번호', address as '주소', department as '과목', birthDate as '생년월일'  FROM user WHERE TIMESTAMPDIFF(YEAR, birthDate, CURDATE()) = @year";
 
                 using (MySqlCommand com = new MySqlCommand(query, connection))
                 {
@@ -1519,7 +1542,7 @@ CREATE TABLE IF NOT EXISTS approval (
             try
             {
 
-                string query = "SELECT * FROM department";
+                string query = "SELECT id as '아이디', department_id as '과목번호', grade as '학년', department_name as '과목명' FROM department";
 
                 using (MySqlDataAdapter da = new MySqlDataAdapter(query, connection))
                 {
@@ -1546,7 +1569,7 @@ CREATE TABLE IF NOT EXISTS approval (
 
             try
             {
-                connection.Open();
+                //connection.Open();
 
                 string query = "SELECT * FROM user";
 
@@ -1604,6 +1627,7 @@ CREATE TABLE IF NOT EXISTS approval (
                 com.Parameters.AddWithValue("@date", date);
 
                 com.ExecuteNonQuery();
+                MessageBox.Show("성공적으로 수정되었습니다!");
             }
             catch (Exception e)
             {
@@ -1675,6 +1699,24 @@ CREATE TABLE IF NOT EXISTS approval (
             {
                 MessageBox.Show("오류발생: " + e.Message);
             }
+        }
+
+        public bool checkSalarySertMonth(int user_id, int month)
+        {
+            string query = $"select count(*) as number from sert_salary where user_id = {user_id} AND monthofdate = {month}";
+            int numberOfData = 0;
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                numberOfData = Convert.ToInt32(reader.GetOrdinal("number"));
+            }
+            reader.Close();
+            if (numberOfData == 0)
+            {
+                return true;
+            }
+            return false;
         }
 
 

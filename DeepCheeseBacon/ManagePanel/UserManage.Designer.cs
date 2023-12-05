@@ -1,6 +1,4 @@
-﻿using deepcheesebacon.Customizing;
-
-namespace deepcheesebacon
+﻿namespace deepcheesebacon
 {
     partial class UserManage
     {
@@ -31,25 +29,25 @@ namespace deepcheesebacon
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            SubjectSearchBtn = new CustomButtonStyle();
+            SubjectSearchBtn = new Button();
             nameText = new TextBox();
             label3 = new Label();
             label4 = new Label();
             dateText = new TextBox();
             depText = new TextBox();
             label2 = new Label();
-            NameSearchBtn = new CustomButtonStyle();
-            AgeSearchBtn = new CustomButtonStyle();
+            NameSearchBtn = new Button();
+            AgeSearchBtn = new Button();
             userIdText = new TextBox();
-            ModifyBtn = new CustomButtonStyle();
-            DeleteBtn = new CustomButtonStyle();
+            ModifyBtn = new Button();
+            DeleteBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(100, 187);
+            dataGridView1.Location = new Point(110, 171);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(789, 206);
@@ -58,25 +56,17 @@ namespace deepcheesebacon
             // 
             // SubjectSearchBtn
             // 
-            SubjectSearchBtn.BackColor = SystemColors.Window;
-            SubjectSearchBtn.BackgroundColor = SystemColors.Window;
-            SubjectSearchBtn.BorderColor = Color.FromArgb(94, 159, 242);
-            SubjectSearchBtn.BorderRadius = 10;
-            SubjectSearchBtn.BorderSize = 2;
-            SubjectSearchBtn.FlatStyle = FlatStyle.Flat;
-            SubjectSearchBtn.ForeColor = Color.DarkBlue;
-            SubjectSearchBtn.Location = new Point(262, 151);
+            SubjectSearchBtn.Location = new Point(272, 135);
             SubjectSearchBtn.Name = "SubjectSearchBtn";
             SubjectSearchBtn.Size = new Size(97, 30);
             SubjectSearchBtn.TabIndex = 44;
             SubjectSearchBtn.Text = "검색";
-            SubjectSearchBtn.TextColor = Color.DarkBlue;
-            SubjectSearchBtn.UseVisualStyleBackColor = false;
+            SubjectSearchBtn.UseVisualStyleBackColor = true;
             SubjectSearchBtn.Click += SearchBtn_Click;
             // 
             // nameText
             // 
-            nameText.Location = new Point(368, 150);
+            nameText.Location = new Point(378, 134);
             nameText.Multiline = true;
             nameText.Name = "nameText";
             nameText.Size = new Size(155, 31);
@@ -86,7 +76,7 @@ namespace deepcheesebacon
             // 
             label3.AutoSize = true;
             label3.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(368, 122);
+            label3.Location = new Point(378, 106);
             label3.Name = "label3";
             label3.Size = new Size(50, 25);
             label3.TabIndex = 39;
@@ -96,7 +86,7 @@ namespace deepcheesebacon
             // 
             label4.AutoSize = true;
             label4.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(636, 122);
+            label4.Location = new Point(646, 106);
             label4.Name = "label4";
             label4.Size = new Size(50, 25);
             label4.TabIndex = 40;
@@ -104,7 +94,7 @@ namespace deepcheesebacon
             // 
             // dateText
             // 
-            dateText.Location = new Point(636, 150);
+            dateText.Location = new Point(646, 134);
             dateText.Multiline = true;
             dateText.Name = "dateText";
             dateText.Size = new Size(150, 31);
@@ -112,7 +102,7 @@ namespace deepcheesebacon
             // 
             // depText
             // 
-            depText.Location = new Point(100, 150);
+            depText.Location = new Point(110, 134);
             depText.Multiline = true;
             depText.Name = "depText";
             depText.Size = new Size(156, 31);
@@ -122,7 +112,7 @@ namespace deepcheesebacon
             // 
             label2.AutoSize = true;
             label2.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(100, 122);
+            label2.Location = new Point(110, 106);
             label2.Name = "label2";
             label2.Size = new Size(88, 25);
             label2.TabIndex = 38;
@@ -130,43 +120,27 @@ namespace deepcheesebacon
             // 
             // NameSearchBtn
             // 
-            NameSearchBtn.BackColor = SystemColors.Window;
-            NameSearchBtn.BackgroundColor = SystemColors.Window;
-            NameSearchBtn.BorderColor = Color.FromArgb(94, 159, 242);
-            NameSearchBtn.BorderRadius = 10;
-            NameSearchBtn.BorderSize = 2;
-            NameSearchBtn.FlatStyle = FlatStyle.Flat;
-            NameSearchBtn.ForeColor = Color.DarkBlue;
-            NameSearchBtn.Location = new Point(529, 151);
+            NameSearchBtn.Location = new Point(539, 135);
             NameSearchBtn.Name = "NameSearchBtn";
             NameSearchBtn.Size = new Size(97, 30);
             NameSearchBtn.TabIndex = 51;
             NameSearchBtn.Text = "검색";
-            NameSearchBtn.TextColor = Color.DarkBlue;
-            NameSearchBtn.UseVisualStyleBackColor = false;
+            NameSearchBtn.UseVisualStyleBackColor = true;
             NameSearchBtn.Click += NameSearchBtn_Click;
             // 
             // AgeSearchBtn
             // 
-            AgeSearchBtn.BackColor = SystemColors.Window;
-            AgeSearchBtn.BackgroundColor = SystemColors.Window;
-            AgeSearchBtn.BorderColor = Color.FromArgb(94, 159, 242);
-            AgeSearchBtn.BorderRadius = 10;
-            AgeSearchBtn.BorderSize = 2;
-            AgeSearchBtn.FlatStyle = FlatStyle.Flat;
-            AgeSearchBtn.ForeColor = Color.DarkBlue;
-            AgeSearchBtn.Location = new Point(792, 151);
+            AgeSearchBtn.Location = new Point(802, 135);
             AgeSearchBtn.Name = "AgeSearchBtn";
             AgeSearchBtn.Size = new Size(97, 30);
             AgeSearchBtn.TabIndex = 53;
             AgeSearchBtn.Text = "검색";
-            AgeSearchBtn.TextColor = Color.DarkBlue;
-            AgeSearchBtn.UseVisualStyleBackColor = false;
+            AgeSearchBtn.UseVisualStyleBackColor = true;
             AgeSearchBtn.Click += AgeSearchBtn_Click;
             // 
             // userIdText
             // 
-            userIdText.Location = new Point(598, 399);
+            userIdText.Location = new Point(608, 383);
             userIdText.Multiline = true;
             userIdText.Name = "userIdText";
             userIdText.Size = new Size(85, 31);
@@ -174,38 +148,22 @@ namespace deepcheesebacon
             // 
             // ModifyBtn
             // 
-            ModifyBtn.BackColor = SystemColors.Window;
-            ModifyBtn.BackgroundColor = SystemColors.Window;
-            ModifyBtn.BorderColor = Color.FromArgb(94, 159, 242);
-            ModifyBtn.BorderRadius = 10;
-            ModifyBtn.BorderSize = 2;
-            ModifyBtn.FlatStyle = FlatStyle.Flat;
-            ModifyBtn.ForeColor = Color.DarkBlue;
-            ModifyBtn.Location = new Point(689, 400);
+            ModifyBtn.Location = new Point(699, 384);
             ModifyBtn.Name = "ModifyBtn";
             ModifyBtn.Size = new Size(97, 30);
             ModifyBtn.TabIndex = 59;
             ModifyBtn.Text = "수정";
-            ModifyBtn.TextColor = Color.DarkBlue;
-            ModifyBtn.UseVisualStyleBackColor = false;
+            ModifyBtn.UseVisualStyleBackColor = true;
             ModifyBtn.Click += ModifyBtn_Click;
             // 
             // DeleteBtn
             // 
-            DeleteBtn.BackColor = SystemColors.Window;
-            DeleteBtn.BackgroundColor = SystemColors.Window;
-            DeleteBtn.BorderColor = Color.FromArgb(94, 159, 242);
-            DeleteBtn.BorderRadius = 10;
-            DeleteBtn.BorderSize = 2;
-            DeleteBtn.FlatStyle = FlatStyle.Flat;
-            DeleteBtn.ForeColor = Color.DarkBlue;
-            DeleteBtn.Location = new Point(792, 400);
+            DeleteBtn.Location = new Point(802, 384);
             DeleteBtn.Name = "DeleteBtn";
             DeleteBtn.Size = new Size(97, 30);
             DeleteBtn.TabIndex = 60;
             DeleteBtn.Text = "삭제";
-            DeleteBtn.TextColor = Color.DarkBlue;
-            DeleteBtn.UseVisualStyleBackColor = false;
+            DeleteBtn.UseVisualStyleBackColor = true;
             DeleteBtn.Click += DeleteBtn_Click;
             // 
             // UserManage
@@ -226,7 +184,7 @@ namespace deepcheesebacon
             Controls.Add(label3);
             Controls.Add(label2);
             Name = "UserManage";
-            Size = new Size(966, 520);
+            Size = new Size(983, 521);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -235,17 +193,17 @@ namespace deepcheesebacon
         #endregion
 
         private DataGridView dataGridView1;
-        private CustomButtonStyle SubjectSearchBtn;
+        private Button SubjectSearchBtn;
         private TextBox nameText;
         private Label label3;
         private Label label4;
         private TextBox dateText;
         private TextBox depText;
         private Label label2;
-        private CustomButtonStyle NameSearchBtn;
-        private CustomButtonStyle AgeSearchBtn;
+        private Button NameSearchBtn;
+        private Button AgeSearchBtn;
         private TextBox userIdText;
-        private CustomButtonStyle ModifyBtn;
-        private CustomButtonStyle DeleteBtn;
+        private Button ModifyBtn;
+        private Button DeleteBtn;
     }
 }

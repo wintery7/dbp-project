@@ -1,6 +1,4 @@
-﻿using deepcheesebacon.Customizing;
-
-namespace deepcheesebacon
+﻿namespace deepcheesebacon
 {
     partial class AttendanceReg
     {
@@ -31,64 +29,46 @@ namespace deepcheesebacon
         private void InitializeComponent()
         {
             dateTimePicker1 = new DateTimePicker();
-            GoWorkBtn = new CustomButtonStyle();
-            OffWorkBtn = new CustomButtonStyle();
+            GoWorkBtn = new Button();
+            OffWorkBtn = new Button();
             dataGridView2 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(201, 93);
+            dateTimePicker1.Location = new Point(245, 86);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(231, 27);
             dateTimePicker1.TabIndex = 40;
             // 
             // GoWorkBtn
             // 
-            GoWorkBtn.BackColor = Color.FromArgb(94, 159, 242);
-            GoWorkBtn.BackgroundColor = Color.FromArgb(94, 159, 242);
-            GoWorkBtn.BorderColor = Color.RoyalBlue;
-            GoWorkBtn.BorderRadius = 20;
-            GoWorkBtn.BorderSize = 0;
-            GoWorkBtn.FlatStyle = FlatStyle.Flat;
-            GoWorkBtn.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            GoWorkBtn.ForeColor = Color.White;
-            GoWorkBtn.Location = new Point(530, 387);
+            GoWorkBtn.Location = new Point(245, 331);
             GoWorkBtn.Name = "GoWorkBtn";
             GoWorkBtn.Size = new Size(102, 43);
             GoWorkBtn.TabIndex = 41;
             GoWorkBtn.Text = "출근";
-            GoWorkBtn.TextColor = Color.White;
-            GoWorkBtn.UseVisualStyleBackColor = false;
+            GoWorkBtn.UseVisualStyleBackColor = true;
             GoWorkBtn.Click += GoWorkBtn_Click;
             // 
             // OffWorkBtn
             // 
-            OffWorkBtn.BackColor = Color.FromArgb(94, 159, 242);
-            OffWorkBtn.BackgroundColor = Color.FromArgb(94, 159, 242);
-            OffWorkBtn.BorderColor = Color.RoyalBlue;
-            OffWorkBtn.BorderRadius = 20;
-            OffWorkBtn.BorderSize = 0;
-            OffWorkBtn.FlatStyle = FlatStyle.Flat;
-            OffWorkBtn.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            OffWorkBtn.ForeColor = Color.White;
-            OffWorkBtn.Location = new Point(639, 387);
+            OffWorkBtn.Location = new Point(354, 331);
             OffWorkBtn.Name = "OffWorkBtn";
             OffWorkBtn.Size = new Size(102, 43);
             OffWorkBtn.TabIndex = 44;
             OffWorkBtn.Text = "퇴근";
-            OffWorkBtn.TextColor = Color.White;
-            OffWorkBtn.UseVisualStyleBackColor = false;
+            OffWorkBtn.UseVisualStyleBackColor = true;
             OffWorkBtn.Click += OffWorkBtn_Click;
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(201, 144);
+            dataGridView2.Location = new Point(245, 137);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(540, 223);
+            dataGridView2.Size = new Size(481, 176);
             dataGridView2.TabIndex = 45;
             // 
             // AttendanceReg
@@ -100,15 +80,15 @@ namespace deepcheesebacon
             Controls.Add(GoWorkBtn);
             Controls.Add(dateTimePicker1);
             Name = "AttendanceReg";
-            Size = new Size(966, 520);
+            Size = new Size(983, 521);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private DateTimePicker dateTimePicker1;
-        private CustomButtonStyle GoWorkBtn;
-        private CustomButtonStyle OffWorkBtn;
+        private Button GoWorkBtn;
+        private Button OffWorkBtn;
         private DataGridView dataGridView2;
     }
 }
