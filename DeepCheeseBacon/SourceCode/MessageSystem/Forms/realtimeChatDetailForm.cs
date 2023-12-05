@@ -34,10 +34,9 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
 
             string url = "ws://34.64.78.183:9090/ws/chat";
 
-            string testUrl = "ws://localhost:9090/ws/chat";
 
             // WebSocket 서버 주소
-            Uri serverUri = new Uri(testUrl);
+            Uri serverUri = new Uri(url);
 
             try
             {
