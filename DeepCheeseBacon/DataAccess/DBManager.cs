@@ -872,8 +872,6 @@ CREATE TABLE IF NOT EXISTS approval (
 
                 foreach (Message message in messages)
                 {
-                    Console.WriteLine($"receiver id: {message.receiverId} || my id: {LoginedUserInfo.loginedUserInfo.userId} ");
-
                     if (message.receiverId == LoginedUserInfo.loginedUserInfo.userId)
                     {
                         if (!message.isChecked)
