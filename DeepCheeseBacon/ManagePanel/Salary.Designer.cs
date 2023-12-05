@@ -42,7 +42,7 @@ namespace deepcheesebacon
             payView.Location = new Point(22, 196);
             payView.Name = "payView";
             payView.RowHeadersWidth = 51;
-            payView.Size = new Size(931, 601);
+            payView.Size = new Size(744, 601);
             payView.TabIndex = 66;
             // 
             // prt_btn
@@ -56,7 +56,7 @@ namespace deepcheesebacon
             prt_btn.FlatStyle = FlatStyle.Flat;
             prt_btn.Font = new Font("맑은 고딕", 11F, FontStyle.Bold, GraphicsUnit.Point);
             prt_btn.ForeColor = Color.White;
-            prt_btn.Location = new Point(733, 118);
+            prt_btn.Location = new Point(546, 123);
             prt_btn.Margin = new Padding(4);
             prt_btn.Name = "prt_btn";
             prt_btn.Size = new Size(220, 40);
