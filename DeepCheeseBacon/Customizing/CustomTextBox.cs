@@ -148,7 +148,11 @@ namespace deepcheesebacon.Customizing
             set
             {
                 textBox1.Text = value;
-                isPlaceholder = false; // Set isPlaceholder to false
+                if (textBox1.Text == "Email을 입력해주세요." || textBox1.Text == "비밀번호를 입력해주세요.")
+                {
+                    isPlaceholder = true; // Set isPlaceholder to false
+                }
+                else isPlaceholder = false; // Set isPlaceholder to false
                 SetPlaceholder();
             }
         }

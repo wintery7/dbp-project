@@ -72,6 +72,7 @@ namespace deepcheesebacon
 
         private void checkBoxAutoLogin_CheckedChanged(object sender, EventArgs e)
         {
+            
         }
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -83,6 +84,12 @@ namespace deepcheesebacon
                     isAutoLoad = checkBoxAutoLogin.Checked,
                     email = textBoxEmail.Texts,
                     password = textBoxPassword.Texts,
+                });
+            } else if (!checkBoxAutoLogin.Checked)
+            {
+                dbManager.SetAutoLogin(new LoginData
+                {
+                    isAutoLoad = checkBoxAutoLogin.Checked,
                 });
             }
         }
