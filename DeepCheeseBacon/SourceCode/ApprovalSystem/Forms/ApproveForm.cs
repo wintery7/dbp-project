@@ -50,6 +50,12 @@ namespace deepcheesebacon
 
         private void buttonApproveApproval_Click(object sender, EventArgs e)
         {
+            if(listBoxTaskRequiringMyApprovalList.SelectedIndex == -1)
+            {
+                MessageBox.Show("결재하실 목록을 선택해주세요");
+                return;
+            }
+
             Approval selectedApproval = null; 
 
             foreach (Approval approval in pendingApprovalList)
@@ -113,6 +119,12 @@ namespace deepcheesebacon
 
         private void buttonRejectApproval_Click(object sender, EventArgs e)
         {
+            if(listBoxTaskRequiringMyApprovalList.SelectedIndex == -1)
+            {
+                MessageBox.Show("반려하실 결재를 선택해주세요");
+                return;
+            }
+
             RejectForm rejectForm = new RejectForm();
             int approvalId;
             string memo;
