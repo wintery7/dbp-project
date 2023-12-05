@@ -66,75 +66,75 @@ namespace deepcheesebacon
             // TopCatergoryLabel
             // 
             TopCatergoryLabel.AutoSize = true;
-            TopCatergoryLabel.Location = new Point(12, 79);
-            TopCatergoryLabel.Margin = new Padding(6, 0, 6, 0);
+            TopCatergoryLabel.Location = new Point(8, 49);
+            TopCatergoryLabel.Margin = new Padding(4, 0, 4, 0);
             TopCatergoryLabel.Name = "TopCatergoryLabel";
-            TopCatergoryLabel.Size = new Size(86, 32);
+            TopCatergoryLabel.Size = new Size(54, 20);
             TopCatergoryLabel.TabIndex = 0;
             TopCatergoryLabel.Text = "대분류";
             // 
             // MiddleCategoryLabel
             // 
             MiddleCategoryLabel.AutoSize = true;
-            MiddleCategoryLabel.Location = new Point(262, 79);
-            MiddleCategoryLabel.Margin = new Padding(6, 0, 6, 0);
+            MiddleCategoryLabel.Location = new Point(168, 49);
+            MiddleCategoryLabel.Margin = new Padding(4, 0, 4, 0);
             MiddleCategoryLabel.Name = "MiddleCategoryLabel";
-            MiddleCategoryLabel.Size = new Size(86, 32);
+            MiddleCategoryLabel.Size = new Size(54, 20);
             MiddleCategoryLabel.TabIndex = 1;
             MiddleCategoryLabel.Text = "중분류";
             // 
             // BottomCategoryLabel
             // 
             BottomCategoryLabel.AutoSize = true;
-            BottomCategoryLabel.Location = new Point(512, 79);
-            BottomCategoryLabel.Margin = new Padding(6, 0, 6, 0);
+            BottomCategoryLabel.Location = new Point(329, 49);
+            BottomCategoryLabel.Margin = new Padding(4, 0, 4, 0);
             BottomCategoryLabel.Name = "BottomCategoryLabel";
-            BottomCategoryLabel.Size = new Size(86, 32);
+            BottomCategoryLabel.Size = new Size(54, 20);
             BottomCategoryLabel.TabIndex = 2;
             BottomCategoryLabel.Text = "소분류";
             // 
             // StartTime
             // 
             StartTime.Format = DateTimePickerFormat.Time;
-            StartTime.Location = new Point(11, 141);
-            StartTime.Margin = new Padding(6);
+            StartTime.Location = new Point(7, 88);
+            StartTime.Margin = new Padding(4, 4, 4, 4);
             StartTime.Name = "StartTime";
-            StartTime.Size = new Size(309, 39);
+            StartTime.Size = new Size(200, 27);
             StartTime.TabIndex = 1;
             // 
             // StartDay
             // 
             StartDay.Format = DateTimePickerFormat.Short;
-            StartDay.Location = new Point(11, 90);
-            StartDay.Margin = new Padding(6);
+            StartDay.Location = new Point(7, 56);
+            StartDay.Margin = new Padding(4, 4, 4, 4);
             StartDay.Name = "StartDay";
-            StartDay.Size = new Size(309, 39);
+            StartDay.Size = new Size(200, 27);
             StartDay.TabIndex = 0;
             // 
             // EndTime
             // 
             EndTime.Format = DateTimePickerFormat.Time;
-            EndTime.Location = new Point(11, 141);
-            EndTime.Margin = new Padding(6);
+            EndTime.Location = new Point(7, 88);
+            EndTime.Margin = new Padding(4, 4, 4, 4);
             EndTime.Name = "EndTime";
-            EndTime.Size = new Size(308, 39);
+            EndTime.Size = new Size(199, 27);
             EndTime.TabIndex = 12;
             // 
             // EndDay
             // 
             EndDay.Format = DateTimePickerFormat.Short;
-            EndDay.Location = new Point(11, 90);
-            EndDay.Margin = new Padding(6);
+            EndDay.Location = new Point(7, 56);
+            EndDay.Margin = new Padding(4, 4, 4, 4);
             EndDay.Name = "EndDay";
-            EndDay.Size = new Size(308, 39);
+            EndDay.Size = new Size(199, 27);
             EndDay.TabIndex = 2;
             // 
             // WorkDetailBox
             // 
-            WorkDetailBox.Location = new Point(12, 79);
-            WorkDetailBox.Margin = new Padding(6);
+            WorkDetailBox.Location = new Point(8, 49);
+            WorkDetailBox.Margin = new Padding(4, 4, 4, 4);
             WorkDetailBox.Name = "WorkDetailBox";
-            WorkDetailBox.Size = new Size(1100, 91);
+            WorkDetailBox.Size = new Size(709, 58);
             WorkDetailBox.TabIndex = 8;
             WorkDetailBox.Text = "";
             // 
@@ -142,42 +142,42 @@ namespace deepcheesebacon
             // 
             WorkView.BackgroundColor = Color.White;
             WorkView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            WorkView.Location = new Point(15, 519);
-            WorkView.Margin = new Padding(6);
+            WorkView.Location = new Point(10, 324);
+            WorkView.Margin = new Padding(4, 4, 4, 4);
             WorkView.Name = "WorkView";
             WorkView.ReadOnly = true;
             WorkView.RowHeadersWidth = 82;
             WorkView.RowTemplate.Height = 25;
-            WorkView.Size = new Size(1472, 463);
+            WorkView.Size = new Size(946, 289);
             WorkView.TabIndex = 12;
             // 
             // TopCategoryCombo
             // 
             TopCategoryCombo.FormattingEnabled = true;
-            TopCategoryCombo.Location = new Point(12, 117);
-            TopCategoryCombo.Margin = new Padding(6);
+            TopCategoryCombo.Location = new Point(8, 73);
+            TopCategoryCombo.Margin = new Padding(4, 4, 4, 4);
             TopCategoryCombo.Name = "TopCategoryCombo";
-            TopCategoryCombo.Size = new Size(238, 40);
+            TopCategoryCombo.Size = new Size(154, 28);
             TopCategoryCombo.TabIndex = 18;
             TopCategoryCombo.Click += TopCategoryCombo_Click;
             // 
             // MiddleCategoryCombo
             // 
             MiddleCategoryCombo.FormattingEnabled = true;
-            MiddleCategoryCombo.Location = new Point(262, 117);
-            MiddleCategoryCombo.Margin = new Padding(6);
+            MiddleCategoryCombo.Location = new Point(168, 73);
+            MiddleCategoryCombo.Margin = new Padding(4, 4, 4, 4);
             MiddleCategoryCombo.Name = "MiddleCategoryCombo";
-            MiddleCategoryCombo.Size = new Size(238, 40);
+            MiddleCategoryCombo.Size = new Size(154, 28);
             MiddleCategoryCombo.TabIndex = 19;
             MiddleCategoryCombo.Click += MiddleCategoryCombo_Click;
             // 
             // BottomCategoryCombo
             // 
             BottomCategoryCombo.FormattingEnabled = true;
-            BottomCategoryCombo.Location = new Point(512, 117);
-            BottomCategoryCombo.Margin = new Padding(6);
+            BottomCategoryCombo.Location = new Point(329, 73);
+            BottomCategoryCombo.Margin = new Padding(4, 4, 4, 4);
             BottomCategoryCombo.Name = "BottomCategoryCombo";
-            BottomCategoryCombo.Size = new Size(238, 40);
+            BottomCategoryCombo.Size = new Size(154, 28);
             BottomCategoryCombo.TabIndex = 20;
             BottomCategoryCombo.Click += BottomCategoryCombo_Click;
             // 
@@ -192,10 +192,10 @@ namespace deepcheesebacon
             TimeSearchButton.FlatStyle = FlatStyle.Flat;
             TimeSearchButton.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             TimeSearchButton.ForeColor = Color.White;
-            TimeSearchButton.Location = new Point(656, 450);
-            TimeSearchButton.Margin = new Padding(6);
+            TimeSearchButton.Location = new Point(422, 281);
+            TimeSearchButton.Margin = new Padding(4, 4, 4, 4);
             TimeSearchButton.Name = "TimeSearchButton";
-            TimeSearchButton.Size = new Size(269, 57);
+            TimeSearchButton.Size = new Size(173, 36);
             TimeSearchButton.TabIndex = 21;
             TimeSearchButton.Text = "날짜 검색";
             TimeSearchButton.TextColor = Color.White;
@@ -207,12 +207,12 @@ namespace deepcheesebacon
             customGroupBox1.BackColor = Color.Transparent;
             customGroupBox1.Controls.Add(StartTime);
             customGroupBox1.Controls.Add(StartDay);
-            customGroupBox1.Location = new Point(796, 49);
-            customGroupBox1.Margin = new Padding(6);
+            customGroupBox1.Location = new Point(512, 31);
+            customGroupBox1.Margin = new Padding(4, 4, 4, 4);
             customGroupBox1.Name = "customGroupBox1";
-            customGroupBox1.Padding = new Padding(6);
+            customGroupBox1.Padding = new Padding(4, 4, 4, 4);
             customGroupBox1.Radious = 25;
-            customGroupBox1.Size = new Size(343, 195);
+            customGroupBox1.Size = new Size(220, 122);
             customGroupBox1.TabIndex = 26;
             customGroupBox1.TabStop = false;
             customGroupBox1.Text = "시작 시간";
@@ -226,12 +226,12 @@ namespace deepcheesebacon
             customGroupBox2.BackColor = Color.Transparent;
             customGroupBox2.Controls.Add(EndDay);
             customGroupBox2.Controls.Add(EndTime);
-            customGroupBox2.Location = new Point(1156, 49);
-            customGroupBox2.Margin = new Padding(6);
+            customGroupBox2.Location = new Point(743, 31);
+            customGroupBox2.Margin = new Padding(4, 4, 4, 4);
             customGroupBox2.Name = "customGroupBox2";
-            customGroupBox2.Padding = new Padding(6);
+            customGroupBox2.Padding = new Padding(4, 4, 4, 4);
             customGroupBox2.Radious = 25;
-            customGroupBox2.Size = new Size(331, 195);
+            customGroupBox2.Size = new Size(213, 122);
             customGroupBox2.TabIndex = 27;
             customGroupBox2.TabStop = false;
             customGroupBox2.Text = "종료 시간";
@@ -249,12 +249,12 @@ namespace deepcheesebacon
             customGroupBox3.Controls.Add(TopCatergoryLabel);
             customGroupBox3.Controls.Add(MiddleCategoryLabel);
             customGroupBox3.Controls.Add(BottomCategoryLabel);
-            customGroupBox3.Location = new Point(15, 49);
-            customGroupBox3.Margin = new Padding(6);
+            customGroupBox3.Location = new Point(10, 31);
+            customGroupBox3.Margin = new Padding(4, 4, 4, 4);
             customGroupBox3.Name = "customGroupBox3";
-            customGroupBox3.Padding = new Padding(6);
+            customGroupBox3.Padding = new Padding(4, 4, 4, 4);
             customGroupBox3.Radious = 25;
-            customGroupBox3.Size = new Size(769, 195);
+            customGroupBox3.Size = new Size(494, 122);
             customGroupBox3.TabIndex = 28;
             customGroupBox3.TabStop = false;
             customGroupBox3.Text = "업무 카테고리";
@@ -267,12 +267,12 @@ namespace deepcheesebacon
             // 
             customGroupBox4.BackColor = Color.Transparent;
             customGroupBox4.Controls.Add(WorkDetailBox);
-            customGroupBox4.Location = new Point(15, 256);
-            customGroupBox4.Margin = new Padding(6);
+            customGroupBox4.Location = new Point(10, 160);
+            customGroupBox4.Margin = new Padding(4, 4, 4, 4);
             customGroupBox4.Name = "customGroupBox4";
-            customGroupBox4.Padding = new Padding(6);
+            customGroupBox4.Padding = new Padding(4, 4, 4, 4);
             customGroupBox4.Radious = 25;
-            customGroupBox4.Size = new Size(1124, 182);
+            customGroupBox4.Size = new Size(723, 114);
             customGroupBox4.TabIndex = 29;
             customGroupBox4.TabStop = false;
             customGroupBox4.Text = "업무 내용 키워드";
@@ -285,10 +285,10 @@ namespace deepcheesebacon
             // 
             label1.AutoSize = true;
             label1.Font = new Font("맑은 고딕", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(15, 450);
-            label1.Margin = new Padding(6, 0, 6, 0);
+            label1.Location = new Point(10, 281);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(54, 47);
+            label1.Size = new Size(35, 30);
             label1.TabIndex = 37;
             label1.Text = "ID";
             // 
@@ -303,10 +303,10 @@ namespace deepcheesebacon
             DeleteButton.FlatStyle = FlatStyle.Flat;
             DeleteButton.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             DeleteButton.ForeColor = Color.White;
-            DeleteButton.Location = new Point(937, 450);
-            DeleteButton.Margin = new Padding(6);
+            DeleteButton.Location = new Point(602, 281);
+            DeleteButton.Margin = new Padding(4, 4, 4, 4);
             DeleteButton.Name = "DeleteButton";
-            DeleteButton.Size = new Size(269, 57);
+            DeleteButton.Size = new Size(173, 36);
             DeleteButton.TabIndex = 39;
             DeleteButton.Text = "삭제";
             DeleteButton.TextColor = Color.White;
@@ -324,10 +324,10 @@ namespace deepcheesebacon
             EditButton.FlatStyle = FlatStyle.Flat;
             EditButton.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             EditButton.ForeColor = Color.White;
-            EditButton.Location = new Point(1218, 450);
-            EditButton.Margin = new Padding(6);
+            EditButton.Location = new Point(783, 281);
+            EditButton.Margin = new Padding(4, 4, 4, 4);
             EditButton.Name = "EditButton";
-            EditButton.Size = new Size(269, 57);
+            EditButton.Size = new Size(173, 36);
             EditButton.TabIndex = 38;
             EditButton.Text = "수정";
             EditButton.TextColor = Color.White;
@@ -338,10 +338,10 @@ namespace deepcheesebacon
             // 
             WorkId.Font = new Font("맑은 고딕", 13F, FontStyle.Regular, GraphicsUnit.Point);
             WorkId.FormattingEnabled = true;
-            WorkId.Location = new Point(70, 450);
-            WorkId.Margin = new Padding(6);
+            WorkId.Location = new Point(45, 281);
+            WorkId.Margin = new Padding(4, 4, 4, 4);
             WorkId.Name = "WorkId";
-            WorkId.Size = new Size(303, 55);
+            WorkId.Size = new Size(196, 38);
             WorkId.TabIndex = 40;
             WorkId.SelectedIndexChanged += WorkId_SelectedIndexChanged;
             WorkId.Click += WorkId_Click;
@@ -357,10 +357,10 @@ namespace deepcheesebacon
             RegisterButton.FlatStyle = FlatStyle.Flat;
             RegisterButton.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             RegisterButton.ForeColor = Color.White;
-            RegisterButton.Location = new Point(1156, 256);
-            RegisterButton.Margin = new Padding(6);
+            RegisterButton.Location = new Point(743, 160);
+            RegisterButton.Margin = new Padding(4, 4, 4, 4);
             RegisterButton.Name = "RegisterButton";
-            RegisterButton.Size = new Size(331, 182);
+            RegisterButton.Size = new Size(213, 114);
             RegisterButton.TabIndex = 41;
             RegisterButton.Text = "등록";
             RegisterButton.TextColor = Color.White;
@@ -378,10 +378,10 @@ namespace deepcheesebacon
             KeywordSearchButton.FlatStyle = FlatStyle.Flat;
             KeywordSearchButton.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             KeywordSearchButton.ForeColor = Color.White;
-            KeywordSearchButton.Location = new Point(375, 450);
-            KeywordSearchButton.Margin = new Padding(6);
+            KeywordSearchButton.Location = new Point(241, 281);
+            KeywordSearchButton.Margin = new Padding(4, 4, 4, 4);
             KeywordSearchButton.Name = "KeywordSearchButton";
-            KeywordSearchButton.Size = new Size(269, 57);
+            KeywordSearchButton.Size = new Size(173, 36);
             KeywordSearchButton.TabIndex = 42;
             KeywordSearchButton.Text = "키워드 검색";
             KeywordSearchButton.TextColor = Color.White;
@@ -399,10 +399,10 @@ namespace deepcheesebacon
             Reload.FlatStyle = FlatStyle.Flat;
             Reload.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             Reload.ForeColor = Color.White;
-            Reload.Location = new Point(1218, 994);
-            Reload.Margin = new Padding(6);
+            Reload.Location = new Point(776, 618);
+            Reload.Margin = new Padding(4, 4, 4, 4);
             Reload.Name = "Reload";
-            Reload.Size = new Size(269, 57);
+            Reload.Size = new Size(173, 36);
             Reload.TabIndex = 43;
             Reload.Text = "Reload";
             Reload.TextColor = Color.White;
@@ -420,10 +420,10 @@ namespace deepcheesebacon
             WorkMasterButton.FlatStyle = FlatStyle.Flat;
             WorkMasterButton.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             WorkMasterButton.ForeColor = Color.White;
-            WorkMasterButton.Location = new Point(838, 995);
-            WorkMasterButton.Margin = new Padding(6);
+            WorkMasterButton.Location = new Point(532, 618);
+            WorkMasterButton.Margin = new Padding(4, 4, 4, 4);
             WorkMasterButton.Name = "WorkMasterButton";
-            WorkMasterButton.Size = new Size(368, 57);
+            WorkMasterButton.Size = new Size(237, 36);
             WorkMasterButton.TabIndex = 44;
             WorkMasterButton.Text = "업무 마스터 편집";
             WorkMasterButton.TextColor = Color.White;
@@ -432,10 +432,10 @@ namespace deepcheesebacon
             // 
             // WorkForm
             // 
-            AutoScaleDimensions = new SizeF(14F, 32F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 242, 242);
-            ClientSize = new Size(1502, 1067);
+            ClientSize = new Size(966, 659);
             Controls.Add(WorkMasterButton);
             Controls.Add(Reload);
             Controls.Add(KeywordSearchButton);
@@ -450,7 +450,7 @@ namespace deepcheesebacon
             Controls.Add(customGroupBox1);
             Controls.Add(TimeSearchButton);
             Controls.Add(WorkView);
-            Margin = new Padding(6);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "WorkForm";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)WorkView).EndInit();

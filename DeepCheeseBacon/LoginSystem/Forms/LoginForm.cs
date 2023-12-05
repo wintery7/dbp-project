@@ -24,6 +24,9 @@ namespace deepcheesebacon
                 checkBoxAutoLogin.Checked = loginData.isAutoLoad;
                 textBoxEmail.Texts = loginData.email;
                 textBoxPassword.Texts = loginData.password;
+
+                Console.WriteLine("id:" + textBoxEmail.Texts);
+                Console.WriteLine("pw:" + textBoxPassword.Texts);
             }
         }
 
