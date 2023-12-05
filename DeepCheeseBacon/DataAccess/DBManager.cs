@@ -1671,10 +1671,14 @@ CREATE TABLE IF NOT EXISTS approval (
 
             try
             {
+                string machineName = Environment.MachineName;
                 // 가장 최근에 등록된 행을 가져오는 쿼리
-                string query = "SELECT isAutoLoad, email, password FROM auto_login ORDER BY id DESC LIMIT 1";
+                string query = "SELECT isAutoLoad, email, password FROM auto_login WHERE machine_name = @machineName ORDER BY id DESC LIMIT 1";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@machineName", machineName);
+
+
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
@@ -1705,13 +1709,14 @@ CREATE TABLE IF NOT EXISTS approval (
             try
             {
                 // 사용자의 로그인 정보를 데이터베이스에 삽입하는 쿼리
-                string insertQuery = "INSERT INTO auto_login (isAutoLoad, email, password) VALUES (@isAutoLoad, @email, @password)";
+                string insertQuery = "INSERT INTO auto_login (isAutoLoad, email, password, machine_name ) VALUES (@isAutoLoad, @email, @password, @machineName)";
                 using (MySqlCommand insertCommand = new MySqlCommand(insertQuery, connection))
                 {
                     // 쿼리에 필요한 매개변수 설정
                     insertCommand.Parameters.AddWithValue("@isAutoLoad", loginData.isAutoLoad);
                     insertCommand.Parameters.AddWithValue("@email", loginData.email);
                     insertCommand.Parameters.AddWithValue("@password", loginData.password);
+                    insertCommand.Parameters.AddWithValue("@machineName", loginData.machineName);
 
                     // 쿼리 실행
                     insertCommand.ExecuteNonQuery();

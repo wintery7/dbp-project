@@ -11,6 +11,7 @@ namespace deepcheesebacon.LoginSystem.Models
         public bool isAutoLoad { get; set; }
         public string email { get; set; }
         public string password { get; set; }
+        public string machineName { get; set; }
 
     }
 }

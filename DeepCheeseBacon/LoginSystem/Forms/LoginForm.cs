@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
@@ -37,10 +38,14 @@ namespace deepcheesebacon
             {
                 User originUser = dbManager.GetUserByEmail(textBoxEmail.Texts);
 
+                string hashPassword = ComputeSHA256Hash(textBoxPassword.Texts);
+                Console.WriteLine(hashPassword);
+
                 if (originUser != null)
                 {
-                    if (textBoxPassword.Texts == originUser.Password)
+                    if (hashPassword == originUser.Password)
                     {
+
                         LoginedUserInfo myInfo = LoginedUserInfo.GetMyInfo();
                         myInfo.email = originUser.Email;
                         myInfo.userId = originUser.UserId;
@@ -79,11 +84,15 @@ namespace deepcheesebacon
         {
             if (checkBoxAutoLogin.Checked)
             {
+                string machineName = Environment.MachineName;
+
                 dbManager.SetAutoLogin(new LoginData
                 {
                     isAutoLoad = checkBoxAutoLogin.Checked,
                     email = textBoxEmail.Texts,
                     password = textBoxPassword.Texts,
+                    machineName = machineName,
+
                 });
             } else if (!checkBoxAutoLogin.Checked)
             {
@@ -91,6 +100,27 @@ namespace deepcheesebacon
                 {
                     isAutoLoad = checkBoxAutoLogin.Checked,
                 });
+            }
+        }
+
+        static string ComputeSHA256Hash(string input)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                // 문자열을 바이트 배열로 변환
+                byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+
+                // 해시값 계산
+                byte[] hashBytes = sha256.ComputeHash(inputBytes);
+
+                // 해시값을 16진수 문자열로 변환
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    builder.Append(hashBytes[i].ToString("x2"));
+                }
+
+                return builder.ToString();
             }
         }
 
