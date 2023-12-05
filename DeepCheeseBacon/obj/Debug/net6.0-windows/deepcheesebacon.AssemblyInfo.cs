@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("deepcheesebacon")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54d4e484dab4390704fb6b3ebb3e3c4fa6e1e6aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("deepcheesebacon")]
 [assembly: System.Reflection.AssemblyTitleAttribute("deepcheesebacon")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
