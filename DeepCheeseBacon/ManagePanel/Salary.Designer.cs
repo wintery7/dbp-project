@@ -34,6 +34,7 @@ namespace deepcheesebacon
             SelectMonth = new ComboBox();
             label6 = new Label();
             prt_btn = new CustomButtonStyle();
+
             ((System.ComponentModel.ISupportInitialize)payView).BeginInit();
             SuspendLayout();
             // 
@@ -47,6 +48,7 @@ namespace deepcheesebacon
             payView.Size = new Size(939, 437);
             payView.TabIndex = 66;
             // 
+
             // SelectMonth
             // 
             SelectMonth.FormattingEnabled = true;
@@ -88,15 +90,18 @@ namespace deepcheesebacon
             prt_btn.UseVisualStyleBackColor = false;
             prt_btn.Click += prt_btn_Click;
             // 
+
             // Salary
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(prt_btn);
-            Controls.Add(label6);
             Controls.Add(SelectMonth);
+            Controls.Add(label1);
+            Controls.Add(prt_btn);
             Controls.Add(payView);
+
             Margin = new Padding(3, 2, 3, 2);
+
             Name = "Salary";
             Size = new Size(966, 520);
             Load += Salary_Load;
@@ -107,7 +112,6 @@ namespace deepcheesebacon
 
         #endregion
 
-        private ListBox listBox1;
         private DataGridView payView;
         private TextBox textBox4;
         private TextBox textBox3;
@@ -123,5 +127,6 @@ namespace deepcheesebacon
         private ComboBox SelectMonth;
         private Label label6;
         private CustomButtonStyle prt_btn;
+
     }
 }
