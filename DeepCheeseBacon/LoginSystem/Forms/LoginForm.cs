@@ -27,7 +27,7 @@ namespace deepcheesebacon
                 textBoxPassword.PasswordChar = true;
 
                 Console.WriteLine("id:" + textBoxEmail.Texts);
-                Console.WriteLine("pw:" + textBoxPassword.Texts);
+                Console.WriteLine("pw:" + textBoxPassword.Texts); 
             }
         }
 

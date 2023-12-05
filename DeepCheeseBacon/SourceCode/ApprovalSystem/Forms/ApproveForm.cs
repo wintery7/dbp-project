@@ -50,7 +50,7 @@ namespace deepcheesebacon
 
         private void buttonApproveApproval_Click(object sender, EventArgs e)
         {
-            Approval selectedApproval = null;
+            Approval selectedApproval = null; 
 
             foreach (Approval approval in pendingApprovalList)
             {
