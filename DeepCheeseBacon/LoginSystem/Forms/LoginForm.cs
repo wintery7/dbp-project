@@ -98,7 +98,7 @@ namespace deepcheesebacon
             {
                 dbManager.SetAutoLogin(new LoginData
                 {
-                    isAutoLoad = checkBoxAutoLogin.Checked,
+                    isAutoLoad = checkBoxAutoLogin.Checked, 
                 });
             }
         }
