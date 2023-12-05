@@ -75,7 +75,7 @@ namespace deepcheesebacon
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(checkBoxAutoLogin.Checked)
+            if (checkBoxAutoLogin.Checked)
             {
                 dbManager.SetAutoLogin(new LoginData
                 {
@@ -85,5 +85,6 @@ namespace deepcheesebacon
                 });
             }
         }
+
     }
 }

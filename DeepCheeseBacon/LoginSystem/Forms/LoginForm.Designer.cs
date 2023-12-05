@@ -76,7 +76,7 @@ namespace deepcheesebacon
             textBoxEmail.PlaceholderText = "Email을 입력해주세요.";
             textBoxEmail.Size = new Size(438, 36);
             textBoxEmail.TabIndex = 5;
-            textBoxEmail.Texts = "";
+            textBoxEmail.Texts = "Email을 입력해주세요.";
             textBoxEmail.UnderlinedStyle = false;
             // 
             // textBoxPassword
@@ -97,7 +97,7 @@ namespace deepcheesebacon
             textBoxPassword.PlaceholderText = "비밀번호를 입력해주세요.";
             textBoxPassword.Size = new Size(438, 36);
             textBoxPassword.TabIndex = 6;
-            textBoxPassword.Texts = "";
+            textBoxPassword.Texts = "비밀번호를 입력해주세요.";
             textBoxPassword.UnderlinedStyle = false;
             // 
             // label1
