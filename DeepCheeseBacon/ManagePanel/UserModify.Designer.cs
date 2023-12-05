@@ -1,4 +1,6 @@
-﻿namespace deepcheesebacon
+﻿using deepcheesebacon.Customizing;
+
+namespace deepcheesebacon
 {
     partial class UserModify
     {
@@ -28,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            modifyBtn = new Button();
+            modifyBtn = new CustomButtonStyle();
             label2 = new Label();
             nameText = new TextBox();
             addrText = new TextBox();
@@ -43,12 +45,20 @@
             // 
             // modifyBtn
             // 
+            modifyBtn.BackColor = SystemColors.Window;
+            modifyBtn.BackgroundColor = SystemColors.Window;
+            modifyBtn.BorderColor = Color.FromArgb(94, 159, 242);
+            modifyBtn.BorderRadius = 10;
+            modifyBtn.BorderSize = 2;
+            modifyBtn.FlatStyle = FlatStyle.Flat;
+            modifyBtn.ForeColor = Color.DarkBlue;
             modifyBtn.Location = new Point(520, 328);
             modifyBtn.Name = "modifyBtn";
             modifyBtn.Size = new Size(343, 45);
             modifyBtn.TabIndex = 59;
             modifyBtn.Text = "수정";
-            modifyBtn.UseVisualStyleBackColor = true;
+            modifyBtn.TextColor = Color.DarkBlue;
+            modifyBtn.UseVisualStyleBackColor = false;
             modifyBtn.Click += modifyBtn_Click;
             // 
             // label2
@@ -184,7 +194,7 @@
 
         #endregion
 
-        private Button modifyBtn;
+        private CustomButtonStyle modifyBtn;
         private Label label2;
         private TextBox nameText;
         private TextBox addrText;

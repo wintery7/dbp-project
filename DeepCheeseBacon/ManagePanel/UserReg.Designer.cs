@@ -1,4 +1,6 @@
-﻿namespace deepcheesebacon
+﻿using deepcheesebacon.Customizing;
+
+namespace deepcheesebacon
 {
     partial class UserReg
     {
@@ -28,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            regBtn = new Button();
+            regBtn = new CustomButtonStyle();
             nameText = new TextBox();
             addrText = new TextBox();
             pnumText = new TextBox();
@@ -42,12 +44,20 @@
             // 
             // regBtn
             // 
+            regBtn.BackColor = SystemColors.Window;
+            regBtn.BackgroundColor = SystemColors.Window;
+            regBtn.BorderColor = Color.FromArgb(94, 159, 242);
+            regBtn.BorderRadius = 10;
+            regBtn.BorderSize = 2;
+            regBtn.FlatStyle = FlatStyle.Flat;
+            regBtn.ForeColor = Color.DarkBlue;
             regBtn.Location = new Point(509, 316);
             regBtn.Name = "regBtn";
             regBtn.Size = new Size(343, 45);
             regBtn.TabIndex = 47;
             regBtn.Text = "등록";
-            regBtn.UseVisualStyleBackColor = true;
+            regBtn.TextColor = Color.DarkBlue;
+            regBtn.UseVisualStyleBackColor = false;
             regBtn.Click += regBtn_Click;
             // 
             // nameText
@@ -173,7 +183,7 @@
 
         #endregion
 
-        private Button regBtn;
+        private CustomButtonStyle regBtn;
         private TextBox nameText;
         private TextBox addrText;
         private TextBox pnumText;
