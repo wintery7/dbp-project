@@ -29,28 +29,27 @@
         private void InitializeComponent()
         {
             pMain = new Panel();
-            panelMenu = new Panel();
+            panelMenu = new FlowLayoutPanel();
             AttendancelogBtn = new Button();
             AttendRegBtn = new Button();
             SalaryBtn = new Button();
             SubjectManageBtn = new Button();
             UserManageBtn = new Button();
             UserRegBtn = new Button();
-            panelLogo = new Panel();
             panelMenu.SuspendLayout();
             SuspendLayout();
             // 
             // pMain
             // 
             pMain.BackColor = Color.FromArgb(242, 242, 242);
-            pMain.Location = new Point(228, 0);
-            pMain.Margin = new Padding(3, 4, 3, 4);
+            pMain.Location = new Point(0, 135);
             pMain.Name = "pMain";
-            pMain.Size = new Size(977, 816);
+            pMain.Size = new Size(966, 520);
             pMain.TabIndex = 9;
             // 
             // panelMenu
             // 
+            panelMenu.AutoScroll = true;
             panelMenu.BackColor = Color.FromArgb(94, 159, 242);
             panelMenu.Controls.Add(AttendancelogBtn);
             panelMenu.Controls.Add(AttendRegBtn);
@@ -58,14 +57,14 @@
             panelMenu.Controls.Add(SubjectManageBtn);
             panelMenu.Controls.Add(UserManageBtn);
             panelMenu.Controls.Add(UserRegBtn);
-            panelMenu.Controls.Add(panelLogo);
-            panelMenu.Dock = DockStyle.Left;
+            panelMenu.Dock = DockStyle.Top;
+            panelMenu.FlowDirection = FlowDirection.RightToLeft;
             panelMenu.ForeColor = SystemColors.ControlText;
             panelMenu.Location = new Point(0, 0);
-            panelMenu.Margin = new Padding(3, 4, 3, 4);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(229, 816);
+            panelMenu.Size = new Size(966, 129);
             panelMenu.TabIndex = 8;
+            panelMenu.WrapContents = false;
             // 
             // AttendancelogBtn
             // 
@@ -74,10 +73,10 @@
             AttendancelogBtn.FlatStyle = FlatStyle.Flat;
             AttendancelogBtn.Font = new Font("맑은 고딕", 11F, FontStyle.Bold, GraphicsUnit.Point);
             AttendancelogBtn.ForeColor = SystemColors.HighlightText;
-            AttendancelogBtn.Location = new Point(0, 705);
+            AttendancelogBtn.Location = new Point(1133, 4);
             AttendancelogBtn.Margin = new Padding(3, 4, 3, 4);
             AttendancelogBtn.Name = "AttendancelogBtn";
-            AttendancelogBtn.Size = new Size(229, 108);
+            AttendancelogBtn.Size = new Size(220, 100);
             AttendancelogBtn.TabIndex = 15;
             AttendancelogBtn.Text = "출퇴근";
             AttendancelogBtn.UseVisualStyleBackColor = true;
@@ -90,10 +89,10 @@
             AttendRegBtn.FlatStyle = FlatStyle.Flat;
             AttendRegBtn.Font = new Font("맑은 고딕", 11F, FontStyle.Bold, GraphicsUnit.Point);
             AttendRegBtn.ForeColor = SystemColors.HighlightText;
-            AttendRegBtn.Location = new Point(0, 597);
+            AttendRegBtn.Location = new Point(907, 4);
             AttendRegBtn.Margin = new Padding(3, 4, 3, 4);
             AttendRegBtn.Name = "AttendRegBtn";
-            AttendRegBtn.Size = new Size(229, 108);
+            AttendRegBtn.Size = new Size(220, 100);
             AttendRegBtn.TabIndex = 0;
             AttendRegBtn.Text = "사원 출근부";
             AttendRegBtn.UseVisualStyleBackColor = true;
@@ -106,10 +105,10 @@
             SalaryBtn.FlatStyle = FlatStyle.Flat;
             SalaryBtn.Font = new Font("맑은 고딕", 11F, FontStyle.Bold, GraphicsUnit.Point);
             SalaryBtn.ForeColor = SystemColors.HighlightText;
-            SalaryBtn.Location = new Point(0, 489);
+            SalaryBtn.Location = new Point(681, 4);
             SalaryBtn.Margin = new Padding(3, 4, 3, 4);
             SalaryBtn.Name = "SalaryBtn";
-            SalaryBtn.Size = new Size(229, 108);
+            SalaryBtn.Size = new Size(220, 100);
             SalaryBtn.TabIndex = 13;
             SalaryBtn.Text = "급여내역서";
             SalaryBtn.UseVisualStyleBackColor = true;
@@ -122,10 +121,10 @@
             SubjectManageBtn.FlatStyle = FlatStyle.Flat;
             SubjectManageBtn.Font = new Font("맑은 고딕", 11F, FontStyle.Bold, GraphicsUnit.Point);
             SubjectManageBtn.ForeColor = SystemColors.HighlightText;
-            SubjectManageBtn.Location = new Point(0, 381);
+            SubjectManageBtn.Location = new Point(455, 4);
             SubjectManageBtn.Margin = new Padding(3, 4, 3, 4);
             SubjectManageBtn.Name = "SubjectManageBtn";
-            SubjectManageBtn.Size = new Size(229, 108);
+            SubjectManageBtn.Size = new Size(220, 100);
             SubjectManageBtn.TabIndex = 10;
             SubjectManageBtn.Text = "과목관리";
             SubjectManageBtn.UseVisualStyleBackColor = true;
@@ -138,10 +137,10 @@
             UserManageBtn.FlatStyle = FlatStyle.Flat;
             UserManageBtn.Font = new Font("맑은 고딕", 11F, FontStyle.Bold, GraphicsUnit.Point);
             UserManageBtn.ForeColor = SystemColors.HighlightText;
-            UserManageBtn.Location = new Point(0, 273);
+            UserManageBtn.Location = new Point(229, 4);
             UserManageBtn.Margin = new Padding(3, 4, 3, 4);
             UserManageBtn.Name = "UserManageBtn";
-            UserManageBtn.Size = new Size(229, 108);
+            UserManageBtn.Size = new Size(220, 100);
             UserManageBtn.TabIndex = 9;
             UserManageBtn.Text = "사원관리";
             UserManageBtn.UseVisualStyleBackColor = true;
@@ -154,33 +153,22 @@
             UserRegBtn.FlatStyle = FlatStyle.Flat;
             UserRegBtn.Font = new Font("맑은 고딕", 11F, FontStyle.Bold, GraphicsUnit.Point);
             UserRegBtn.ForeColor = SystemColors.HighlightText;
-            UserRegBtn.Location = new Point(0, 165);
+            UserRegBtn.Location = new Point(3, 4);
             UserRegBtn.Margin = new Padding(3, 4, 3, 4);
             UserRegBtn.Name = "UserRegBtn";
-            UserRegBtn.Size = new Size(229, 108);
+            UserRegBtn.Size = new Size(220, 100);
             UserRegBtn.TabIndex = 8;
             UserRegBtn.Text = "사원등록";
             UserRegBtn.UseVisualStyleBackColor = true;
             UserRegBtn.Click += UserRegBtn_Click;
             // 
-            // panelLogo
-            // 
-            panelLogo.BackColor = Color.FromArgb(94, 159, 242);
-            panelLogo.Dock = DockStyle.Top;
-            panelLogo.Location = new Point(0, 0);
-            panelLogo.Margin = new Padding(3, 4, 3, 4);
-            panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(229, 165);
-            panelLogo.TabIndex = 0;
-            // 
             // form
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1202, 816);
+            ClientSize = new Size(966, 659);
             Controls.Add(pMain);
             Controls.Add(panelMenu);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "form";
             Text = "Form1";
             panelMenu.ResumeLayout(false);
@@ -190,13 +178,12 @@
         #endregion
 
         private Panel pMain;
-        private Panel panelMenu;
+        private FlowLayoutPanel panelMenu;
         private Button AttendRegBtn;
         private Button SalaryBtn;
         private Button SubjectManageBtn;
         private Button UserManageBtn;
         private Button UserRegBtn;
-        private Panel panelLogo;
         private Button AttendancelogBtn;
     }
 }

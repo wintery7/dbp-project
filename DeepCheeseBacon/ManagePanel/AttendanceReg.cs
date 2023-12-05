@@ -23,14 +23,14 @@ namespace deepcheesebacon
             myInfo = LoginedUserInfo.GetMyInfo();
             InitializeComponent();
             dbManager = DBManager.GetInstance();
-            
+
         }
-       
+
 
         // 출근 버튼 누를 경우
         private void GoWorkBtn_Click(object sender, EventArgs e)
         {
-            int userid = dbManager.GetUserId(LoginedUserInfo.loginedUserInfo.email); 
+            int userid = dbManager.GetUserId(LoginedUserInfo.loginedUserInfo.email);
             string date = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             string intime = string.Format(DateTime.Now.ToString("HH:mm:ss"));
 
@@ -39,7 +39,7 @@ namespace deepcheesebacon
             DataSet dataset = dbManager.ViewTableAttend(userid);
             dataGridView2.DataSource = dataset.Tables[0];
         }
-     
+
 
         // 퇴근 버튼 누를 경우
         private void OffWorkBtn_Click(object sender, EventArgs e)

@@ -31,7 +31,7 @@ namespace deepcheesebacon
 
             LoadComboBox();
         }
-       
+
 
         // combobox에 department 테이블의 department_name을 로드
         private void LoadComboBox()
@@ -65,7 +65,7 @@ namespace deepcheesebacon
 
         }
 
-      
+
         // 등록버튼 누르면 db에 정보 저장
         private void regBtn_Click(object sender, EventArgs e)
         {

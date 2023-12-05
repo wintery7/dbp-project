@@ -43,19 +43,17 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(34, 184);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(98, 245);
             label2.Name = "label2";
-            label2.Size = new Size(69, 20);
+            label2.Size = new Size(88, 25);
             label2.TabIndex = 36;
             label2.Text = "과목등록";
             // 
             // modifyBtn
             // 
-            modifyBtn.Location = new Point(357, 302);
-            modifyBtn.Margin = new Padding(2, 2, 2, 2);
+            modifyBtn.Location = new Point(513, 403);
             modifyBtn.Name = "modifyBtn";
-            modifyBtn.Size = new Size(88, 32);
+            modifyBtn.Size = new Size(113, 43);
             modifyBtn.TabIndex = 38;
             modifyBtn.Text = "수정";
             modifyBtn.UseVisualStyleBackColor = true;
@@ -63,10 +61,9 @@
             // 
             // deleteBtn
             // 
-            deleteBtn.Location = new Point(485, 302);
-            deleteBtn.Margin = new Padding(2, 2, 2, 2);
+            deleteBtn.Location = new Point(678, 403);
             deleteBtn.Name = "deleteBtn";
-            deleteBtn.Size = new Size(88, 32);
+            deleteBtn.Size = new Size(113, 43);
             deleteBtn.TabIndex = 39;
             deleteBtn.Text = "삭제";
             deleteBtn.UseVisualStyleBackColor = true;
@@ -75,21 +72,19 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(197, 119);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Location = new Point(307, 159);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(436, 136);
+            dataGridView1.Size = new Size(561, 181);
             dataGridView1.TabIndex = 40;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // departmentBtn
             // 
-            departmentBtn.Location = new Point(227, 302);
-            departmentBtn.Margin = new Padding(2, 2, 2, 2);
+            departmentBtn.Location = new Point(346, 403);
             departmentBtn.Name = "departmentBtn";
-            departmentBtn.Size = new Size(88, 32);
+            departmentBtn.Size = new Size(113, 43);
             departmentBtn.TabIndex = 41;
             departmentBtn.Text = "등록";
             departmentBtn.UseVisualStyleBackColor = true;
@@ -99,34 +94,31 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(34, 116);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(98, 155);
             label3.Name = "label3";
-            label3.Size = new Size(69, 20);
+            label3.Size = new Size(88, 25);
             label3.TabIndex = 42;
             label3.Text = "담당학년";
             // 
             // gradeText
             // 
-            gradeText.Location = new Point(34, 137);
-            gradeText.Margin = new Padding(2, 2, 2, 2);
+            gradeText.Location = new Point(98, 183);
             gradeText.Multiline = true;
             gradeText.Name = "gradeText";
-            gradeText.Size = new Size(122, 32);
+            gradeText.Size = new Size(156, 41);
             gradeText.TabIndex = 46;
             // 
             // departmentText
             // 
-            departmentText.Location = new Point(34, 205);
-            departmentText.Margin = new Padding(2, 2, 2, 2);
+            departmentText.Location = new Point(98, 273);
             departmentText.Multiline = true;
             departmentText.Name = "departmentText";
-            departmentText.Size = new Size(122, 32);
+            departmentText.Size = new Size(156, 41);
             departmentText.TabIndex = 47;
             // 
             // SubjectManage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(departmentText);
             Controls.Add(gradeText);
@@ -136,9 +128,8 @@
             Controls.Add(deleteBtn);
             Controls.Add(modifyBtn);
             Controls.Add(label2);
-            Margin = new Padding(2, 2, 2, 2);
             Name = "SubjectManage";
-            Size = new Size(684, 490);
+            Size = new Size(966, 520);
             Load += SubjectManage_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

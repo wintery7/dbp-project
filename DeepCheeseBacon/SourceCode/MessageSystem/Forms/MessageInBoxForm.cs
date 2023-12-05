@@ -94,14 +94,14 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
 
                 foreach (Message message in messages)
                 {
-                    if(message.title != null)
+                    if (message.title != null)
                     {
                         if (message.title.Contains(textBoxTitle.Texts))
                         {
                             listBoxMessage.Items.Add(message);
                         }
                     }
-                    
+
                 }
                 MessageBox.Show("검색 성공하였습니다!");
             }
@@ -109,6 +109,11 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
             {
                 MessageBox.Show("하나의 텍스트를 입력하여 주십시오.");
             }
+        }
+
+        private void textBoxContent__TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

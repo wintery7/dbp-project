@@ -35,10 +35,9 @@
             // 
             // AttendTimeBtn
             // 
-            AttendTimeBtn.Location = new Point(82, 78);
-            AttendTimeBtn.Margin = new Padding(2, 2, 2, 2);
+            AttendTimeBtn.Location = new Point(36, 48);
             AttendTimeBtn.Name = "AttendTimeBtn";
-            AttendTimeBtn.Size = new Size(89, 22);
+            AttendTimeBtn.Size = new Size(138, 29);
             AttendTimeBtn.TabIndex = 43;
             AttendTimeBtn.Text = "출퇴근 시간";
             AttendTimeBtn.UseVisualStyleBackColor = true;
@@ -47,23 +46,21 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(82, 115);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Location = new Point(36, 97);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(516, 263);
+            dataGridView1.Size = new Size(892, 351);
             dataGridView1.TabIndex = 42;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // AttendanceView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(AttendTimeBtn);
             Controls.Add(dataGridView1);
-            Margin = new Padding(2, 2, 2, 2);
             Name = "AttendanceView";
-            Size = new Size(684, 490);
+            Size = new Size(966, 520);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }

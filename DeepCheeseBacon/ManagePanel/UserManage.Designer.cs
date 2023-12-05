@@ -47,7 +47,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(40, 217);
+            dataGridView1.Location = new Point(100, 187);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(789, 206);
@@ -56,7 +56,7 @@
             // 
             // SubjectSearchBtn
             // 
-            SubjectSearchBtn.Location = new Point(202, 181);
+            SubjectSearchBtn.Location = new Point(262, 151);
             SubjectSearchBtn.Name = "SubjectSearchBtn";
             SubjectSearchBtn.Size = new Size(97, 30);
             SubjectSearchBtn.TabIndex = 44;
@@ -66,7 +66,7 @@
             // 
             // nameText
             // 
-            nameText.Location = new Point(308, 180);
+            nameText.Location = new Point(368, 150);
             nameText.Multiline = true;
             nameText.Name = "nameText";
             nameText.Size = new Size(155, 31);
@@ -75,8 +75,8 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("맑은 고딕", 11F);
-            label3.Location = new Point(308, 152);
+            label3.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(368, 122);
             label3.Name = "label3";
             label3.Size = new Size(50, 25);
             label3.TabIndex = 39;
@@ -85,8 +85,8 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("맑은 고딕", 11F);
-            label4.Location = new Point(576, 152);
+            label4.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(636, 122);
             label4.Name = "label4";
             label4.Size = new Size(50, 25);
             label4.TabIndex = 40;
@@ -94,7 +94,7 @@
             // 
             // dateText
             // 
-            dateText.Location = new Point(576, 180);
+            dateText.Location = new Point(636, 150);
             dateText.Multiline = true;
             dateText.Name = "dateText";
             dateText.Size = new Size(150, 31);
@@ -102,7 +102,7 @@
             // 
             // depText
             // 
-            depText.Location = new Point(40, 180);
+            depText.Location = new Point(100, 150);
             depText.Multiline = true;
             depText.Name = "depText";
             depText.Size = new Size(156, 31);
@@ -111,8 +111,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("맑은 고딕", 11F);
-            label2.Location = new Point(40, 152);
+            label2.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(100, 122);
             label2.Name = "label2";
             label2.Size = new Size(88, 25);
             label2.TabIndex = 38;
@@ -120,7 +120,7 @@
             // 
             // NameSearchBtn
             // 
-            NameSearchBtn.Location = new Point(469, 181);
+            NameSearchBtn.Location = new Point(529, 151);
             NameSearchBtn.Name = "NameSearchBtn";
             NameSearchBtn.Size = new Size(97, 30);
             NameSearchBtn.TabIndex = 51;
@@ -130,7 +130,7 @@
             // 
             // AgeSearchBtn
             // 
-            AgeSearchBtn.Location = new Point(732, 181);
+            AgeSearchBtn.Location = new Point(792, 151);
             AgeSearchBtn.Name = "AgeSearchBtn";
             AgeSearchBtn.Size = new Size(97, 30);
             AgeSearchBtn.TabIndex = 53;
@@ -140,7 +140,7 @@
             // 
             // userIdText
             // 
-            userIdText.Location = new Point(538, 429);
+            userIdText.Location = new Point(598, 399);
             userIdText.Multiline = true;
             userIdText.Name = "userIdText";
             userIdText.Size = new Size(85, 31);
@@ -148,7 +148,7 @@
             // 
             // ModifyBtn
             // 
-            ModifyBtn.Location = new Point(629, 430);
+            ModifyBtn.Location = new Point(689, 400);
             ModifyBtn.Name = "ModifyBtn";
             ModifyBtn.Size = new Size(97, 30);
             ModifyBtn.TabIndex = 59;
@@ -158,7 +158,7 @@
             // 
             // DeleteBtn
             // 
-            DeleteBtn.Location = new Point(732, 430);
+            DeleteBtn.Location = new Point(792, 400);
             DeleteBtn.Name = "DeleteBtn";
             DeleteBtn.Size = new Size(97, 30);
             DeleteBtn.TabIndex = 60;
@@ -184,7 +184,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Name = "UserManage";
-            Size = new Size(879, 653);
+            Size = new Size(966, 520);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

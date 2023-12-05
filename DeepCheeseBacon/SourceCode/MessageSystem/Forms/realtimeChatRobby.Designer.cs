@@ -54,7 +54,7 @@ namespace deepcheesebacon
             customGroupBox2.Size = new Size(870, 549);
             customGroupBox2.TabIndex = 30;
             customGroupBox2.TabStop = false;
-            customGroupBox2.Text = "실시간 채팅방";
+            customGroupBox2.Text = "실시간 익명 채팅방";
             customGroupBox2.TitleBackColor = Color.FromArgb(94, 159, 242);
             customGroupBox2.TitleFont = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point);
             customGroupBox2.TitleForeColor = Color.White;

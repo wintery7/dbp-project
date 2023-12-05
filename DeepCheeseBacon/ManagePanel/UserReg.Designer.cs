@@ -42,10 +42,9 @@
             // 
             // regBtn
             // 
-            regBtn.Location = new Point(202, 380);
-            regBtn.Margin = new Padding(2, 2, 2, 2);
+            regBtn.Location = new Point(509, 316);
             regBtn.Name = "regBtn";
-            regBtn.Size = new Size(267, 34);
+            regBtn.Size = new Size(343, 45);
             regBtn.TabIndex = 47;
             regBtn.Text = "등록";
             regBtn.UseVisualStyleBackColor = true;
@@ -54,11 +53,10 @@
             // nameText
             // 
             nameText.ForeColor = Color.Silver;
-            nameText.Location = new Point(202, 157);
-            nameText.Margin = new Padding(2, 2, 2, 2);
+            nameText.Location = new Point(113, 246);
             nameText.Multiline = true;
             nameText.Name = "nameText";
-            nameText.Size = new Size(268, 27);
+            nameText.Size = new Size(343, 35);
             nameText.TabIndex = 38;
             nameText.Text = "이름";
             nameText.Enter += nameText_Enter;
@@ -66,11 +64,10 @@
             // addrText
             // 
             addrText.ForeColor = Color.Silver;
-            addrText.Location = new Point(202, 341);
-            addrText.Margin = new Padding(2, 2, 2, 2);
+            addrText.Location = new Point(509, 264);
             addrText.Multiline = true;
             addrText.Name = "addrText";
-            addrText.Size = new Size(268, 27);
+            addrText.Size = new Size(343, 35);
             addrText.TabIndex = 40;
             addrText.Text = "주소";
             addrText.Enter += addrText_Enter;
@@ -78,11 +75,10 @@
             // pnumText
             // 
             pnumText.ForeColor = Color.Silver;
-            pnumText.Location = new Point(202, 310);
-            pnumText.Margin = new Padding(2, 2, 2, 2);
+            pnumText.Location = new Point(509, 222);
             pnumText.Multiline = true;
             pnumText.Name = "pnumText";
-            pnumText.Size = new Size(268, 27);
+            pnumText.Size = new Size(343, 35);
             pnumText.TabIndex = 41;
             pnumText.Text = "전화번호";
             pnumText.Enter += pnumText_Enter;
@@ -90,11 +86,10 @@
             // genderText
             // 
             genderText.ForeColor = Color.Silver;
-            genderText.Location = new Point(202, 218);
-            genderText.Margin = new Padding(2, 2, 2, 2);
+            genderText.Location = new Point(113, 328);
             genderText.Multiline = true;
             genderText.Name = "genderText";
-            genderText.Size = new Size(268, 27);
+            genderText.Size = new Size(343, 35);
             genderText.TabIndex = 43;
             genderText.Text = "성별";
             genderText.Enter += genderText_Enter;
@@ -102,11 +97,10 @@
             // dateText
             // 
             dateText.ForeColor = Color.Silver;
-            dateText.Location = new Point(202, 188);
-            dateText.Margin = new Padding(2, 2, 2, 2);
+            dateText.Location = new Point(113, 288);
             dateText.Multiline = true;
             dateText.Name = "dateText";
-            dateText.Size = new Size(268, 27);
+            dateText.Size = new Size(343, 35);
             dateText.TabIndex = 44;
             dateText.Text = "생년월일";
             dateText.Enter += dateText_Enter;
@@ -114,11 +108,10 @@
             // pwText
             // 
             pwText.ForeColor = Color.Silver;
-            pwText.Location = new Point(202, 110);
-            pwText.Margin = new Padding(2, 2, 2, 2);
+            pwText.Location = new Point(113, 184);
             pwText.Multiline = true;
             pwText.Name = "pwText";
-            pwText.Size = new Size(268, 27);
+            pwText.Size = new Size(343, 35);
             pwText.TabIndex = 45;
             pwText.Text = "비밀번호";
             pwText.Enter += pwText_Enter;
@@ -126,11 +119,10 @@
             // emailText
             // 
             emailText.ForeColor = Color.Silver;
-            emailText.Location = new Point(202, 79);
-            emailText.Margin = new Padding(2, 2, 2, 2);
+            emailText.Location = new Point(113, 142);
             emailText.Multiline = true;
             emailText.Name = "emailText";
-            emailText.Size = new Size(268, 27);
+            emailText.Size = new Size(343, 35);
             emailText.TabIndex = 48;
             emailText.Text = "이메일";
             emailText.Enter += emailText_Enter;
@@ -138,11 +130,10 @@
             // roleText
             // 
             roleText.ForeColor = Color.Silver;
-            roleText.Location = new Point(202, 249);
-            roleText.Margin = new Padding(2, 2, 2, 2);
+            roleText.Location = new Point(509, 141);
             roleText.Multiline = true;
             roleText.Name = "roleText";
-            roleText.Size = new Size(268, 27);
+            roleText.Size = new Size(343, 35);
             roleText.TabIndex = 51;
             roleText.Text = "직급";
             roleText.Enter += roleText_Enter;
@@ -152,17 +143,16 @@
             comboBox1.BackColor = Color.WhiteSmoke;
             comboBox1.ForeColor = Color.Silver;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(202, 280);
-            comboBox1.Margin = new Padding(2, 2, 2, 2);
+            comboBox1.Location = new Point(509, 182);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(268, 23);
+            comboBox1.Size = new Size(343, 28);
             comboBox1.TabIndex = 61;
             comboBox1.Text = "담당과목";
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // UserReg
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(comboBox1);
             Controls.Add(roleText);
@@ -174,9 +164,8 @@
             Controls.Add(genderText);
             Controls.Add(dateText);
             Controls.Add(pwText);
-            Margin = new Padding(2, 2, 2, 2);
             Name = "UserReg";
-            Size = new Size(684, 490);
+            Size = new Size(966, 520);
             Load += UserReg_Load;
             ResumeLayout(false);
             PerformLayout();

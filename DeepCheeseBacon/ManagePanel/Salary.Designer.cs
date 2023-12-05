@@ -29,52 +29,30 @@
         private void InitializeComponent()
         {
             payView = new DataGridView();
-            panel1 = new Panel();
-            label1 = new Label();
             SelectMonth = new ComboBox();
             label6 = new Label();
             prt_btn = new Button();
             ((System.ComponentModel.ISupportInitialize)payView).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // payView
             // 
             payView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            payView.Location = new Point(22, 260);
+            payView.Location = new Point(14, 68);
+            payView.Margin = new Padding(3, 2, 3, 2);
             payView.Name = "payView";
             payView.RowHeadersWidth = 51;
-            payView.Size = new Size(931, 537);
+            payView.Size = new Size(939, 437);
             payView.TabIndex = 66;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.SteelBlue;
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(977, 165);
-            panel1.TabIndex = 54;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("맑은 고딕", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.HighlightText;
-            label1.Location = new Point(453, 62);
-            label1.Name = "label1";
-            label1.Size = new Size(168, 41);
-            label1.TabIndex = 0;
-            label1.Text = "급여내역서";
             // 
             // SelectMonth
             // 
             SelectMonth.FormattingEnabled = true;
             SelectMonth.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            SelectMonth.Location = new Point(22, 198);
+            SelectMonth.Location = new Point(14, 18);
+            SelectMonth.Margin = new Padding(3, 2, 3, 2);
             SelectMonth.Name = "SelectMonth";
-            SelectMonth.Size = new Size(99, 33);
+            SelectMonth.Size = new Size(90, 28);
             SelectMonth.TabIndex = 67;
             SelectMonth.SelectedIndexChanged += SelectMonth_SelectedIndexChanged;
             // 
@@ -82,18 +60,19 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(127, 198);
+            label6.Location = new Point(108, 18);
             label6.Name = "label6";
-            label6.Size = new Size(161, 30);
+            label6.Size = new Size(140, 25);
             label6.TabIndex = 68;
             label6.Text = "월 급여 내역서";
             // 
             // prt_btn
             // 
             prt_btn.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            prt_btn.Location = new Point(730, 194);
+            prt_btn.Location = new Point(752, 15);
+            prt_btn.Margin = new Padding(3, 2, 3, 2);
             prt_btn.Name = "prt_btn";
-            prt_btn.Size = new Size(223, 37);
+            prt_btn.Size = new Size(201, 30);
             prt_btn.TabIndex = 69;
             prt_btn.Text = "급여내역서 산출";
             prt_btn.UseVisualStyleBackColor = true;
@@ -101,19 +80,17 @@
             // 
             // Salary
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(prt_btn);
             Controls.Add(label6);
             Controls.Add(SelectMonth);
             Controls.Add(payView);
-            Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Salary";
-            Size = new Size(977, 817);
+            Size = new Size(966, 520);
             Load += Salary_Load;
             ((System.ComponentModel.ISupportInitialize)payView).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,8 +110,6 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Panel panel1;
-        private Label label1;
         private ComboBox SelectMonth;
         private Label label6;
         private Button prt_btn;
