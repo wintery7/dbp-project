@@ -34,29 +34,23 @@ namespace deepcheesebacon
 
         private void LoadMessage()
         {
-
             List<Message> messageList = dbManager.GetMessagesById(myinfo.userId, opponentUserId);
-
             listBoxChatBox.Items.Clear();
 
-
+            int listBoxWidth = 150; // 리스트박스의 폭
             foreach (Message message in messageList)
             {
                 string displayMessage;
-                string checkMessage = null;
-                if (message.isChecked)
-                {
-                    checkMessage = "확인함";
-                }
-                else
-                {
-                    checkMessage = "확인안함";
-                }
+                string checkMessage = message.isChecked ? "확인함" : "확인안함";
 
                 if (message.senderId == myinfo.userId)
                 {
                     displayMessage = $"나: {message.content}    {checkMessage}";
-                    int spacesCount = Math.Max(0, 50 - displayMessage.Length); // 길이가 음수가 되지 않도록 Math.Max 사용
+
+                    // 길이가 음수가 되지 않도록 Math.Max 사용
+                    int spacesCount = Math.Max(0, listBoxWidth - displayMessage.Length);
+
+                    // 오른쪽 정렬을 위해 공백을 추가
                     listBoxChatBox.Items.Add(new String(' ', spacesCount) + displayMessage);
                 }
                 else
@@ -64,12 +58,10 @@ namespace deepcheesebacon
                     displayMessage = $"상대: {message.content}    {checkMessage}";
                     listBoxChatBox.Items.Add(displayMessage);
                 }
-
             }
 
             textBoxInputMessage.Clear();
             listBoxChatBox.SelectedIndex = listBoxChatBox.Items.Count - 1;
-
         }
 
         private void buttonSendMessage_Click(object sender, EventArgs e)

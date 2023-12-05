@@ -5,41 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d7dc338-b0ed-45c2-88d5-c06e52b0523d" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.vs/deepcheesebacon/FileContentIndex/94644823-39a7-4318-b36c-09f2f18f8ebb.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/deepcheesebacon.metadata.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/deepcheesebacon.metadata.v7.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/deepcheesebacon.projects.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/deepcheesebacon.projects.v7.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/deepcheesebacon/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/deepcheesebacon/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/deepcheesebacon/FileContentIndex/7f953eb1-b54b-41ce-b96a-75f79e789751.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/deepcheesebacon/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/deepcheesebacon/v17/.futdcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/deepcheesebacon/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/deepcheesebacon/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/deepcheesebacon/v17/HierarchyCache.v1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/deepcheesebacon/v17/HierarchyCache.v1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/DataAccess/DBManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/DataAccess/DBManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/ManagePanel/AttendanceReg.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/ManagePanel/AttendanceReg.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/ManagePanel/Salary.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/ManagePanel/Salary.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/ManagePanel/Salary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/ManagePanel/Salary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/ManagePanel/SalaryShow.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/ManagePanel/SalaryShow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/ManagePanel/SalaryShow.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/ManagePanel/UserReg.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/ManagePanel/UserReg.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/bin/Debug/net6.0-windows/deepcheesebacon.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/bin/Debug/net6.0-windows/deepcheesebacon.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/bin/Debug/net6.0-windows/deepcheesebacon.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/bin/Debug/net6.0-windows/deepcheesebacon.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/bin/Debug/net6.0-windows/deepcheesebacon.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/bin/Debug/net6.0-windows/deepcheesebacon.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/deepcheesebacon.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/deepcheesebacon.csproj.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.csproj.GenerateResource.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.designer.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.designer.runtimeconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.genruntimeconfig.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/deepcheesebacon.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/ref/deepcheesebacon.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/ref/deepcheesebacon.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/refint/deepcheesebacon.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/Debug/net6.0-windows/refint/deepcheesebacon.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeepCheeseBacon/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DeepCheeseBacon/obj/project.nuget.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +46,7 @@
       <workItem from="1701061772352" duration="610000" />
       <workItem from="1701080061151" duration="1198000" />
       <workItem from="1701612639831" duration="228000" />
+      <workItem from="1701774859524" duration="299000" />
     </task>
     <servers />
   </component>

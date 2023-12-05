@@ -29,6 +29,8 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
             messages = db.GetMessagesByUserId(LoginedUserInfo.loginedUserInfo.userId);
             foreach (Message message in messages)
             {
+                Console.WriteLine("message 내용: " + message.title);
+
                 listBoxMessage.Items.Add(message);
             }
 
@@ -58,8 +60,10 @@ namespace deepcheesebacon.SourceCode.MessageSystem.Forms
 
                 foreach (Message message in messages)
                 {
+
                     if (message.senderId.Equals(searchingId))
                     {
+
                         listBoxMessage.Items.Add(message);
                     }
                 }
