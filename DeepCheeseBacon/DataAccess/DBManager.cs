@@ -617,7 +617,8 @@ CREATE TABLE IF NOT EXISTS approval (
                            "   WHEN status = 1 THEN '승인됨' " +
                            "   WHEN status = 2 THEN '반려됨' " +
                            "   ELSE '알 수 없음' " +
-                           "END AS status " +
+                           "END AS status, " +
+                           "memo " +
                            "FROM approval " +
                            "WHERE request_id = @myId";
 
@@ -639,6 +640,7 @@ CREATE TABLE IF NOT EXISTS approval (
 
                         dt.Columns["status"].ColumnName = "결재 상태";
                         dt.Columns["title"].ColumnName = "결재 제목";
+                        dt.Columns["memo"].ColumnName = "반려 메모";
 
                         InitializeDataGridView(dataGridViewApprovalList);
                         dataGridViewApprovalList.DataSource = dt;
