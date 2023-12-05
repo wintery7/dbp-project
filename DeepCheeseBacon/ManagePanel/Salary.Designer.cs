@@ -1,4 +1,6 @@
-﻿namespace deepcheesebacon
+﻿using deepcheesebacon.Customizing;
+
+namespace deepcheesebacon
 {
     partial class Salary
     {
@@ -31,7 +33,7 @@
             payView = new DataGridView();
             SelectMonth = new ComboBox();
             label6 = new Label();
-            prt_btn = new Button();
+            prt_btn = new CustomButtonStyle();
             ((System.ComponentModel.ISupportInitialize)payView).BeginInit();
             SuspendLayout();
             // 
@@ -68,14 +70,22 @@
             // 
             // prt_btn
             // 
-            prt_btn.Font = new Font("맑은 고딕", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            prt_btn.BackColor = Color.FromArgb(94, 159, 242);
+            prt_btn.BackgroundColor = Color.FromArgb(94, 159, 242);
+            prt_btn.BorderColor = Color.RoyalBlue;
+            prt_btn.BorderRadius = 20;
+            prt_btn.BorderSize = 0;
+            prt_btn.FlatStyle = FlatStyle.Flat;
+            prt_btn.Font = new Font("맑은 고딕", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            prt_btn.ForeColor = Color.White;
             prt_btn.Location = new Point(752, 15);
             prt_btn.Margin = new Padding(3, 2, 3, 2);
             prt_btn.Name = "prt_btn";
-            prt_btn.Size = new Size(201, 30);
+            prt_btn.Size = new Size(201, 49);
             prt_btn.TabIndex = 69;
             prt_btn.Text = "급여내역서 산출";
-            prt_btn.UseVisualStyleBackColor = true;
+            prt_btn.TextColor = Color.White;
+            prt_btn.UseVisualStyleBackColor = false;
             prt_btn.Click += prt_btn_Click;
             // 
             // Salary
@@ -112,6 +122,6 @@
         private Label label2;
         private ComboBox SelectMonth;
         private Label label6;
-        private Button prt_btn;
+        private CustomButtonStyle prt_btn;
     }
 }

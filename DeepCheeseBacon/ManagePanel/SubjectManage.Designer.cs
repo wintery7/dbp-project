@@ -1,4 +1,6 @@
-﻿namespace deepcheesebacon
+﻿using deepcheesebacon.Customizing;
+
+namespace deepcheesebacon
 {
     partial class SubjectManage
     {
@@ -29,10 +31,10 @@
         private void InitializeComponent()
         {
             label2 = new Label();
-            modifyBtn = new Button();
-            deleteBtn = new Button();
+            modifyBtn = new CustomButtonStyle();
+            deleteBtn = new CustomButtonStyle();
             dataGridView1 = new DataGridView();
-            departmentBtn = new Button();
+            departmentBtn = new CustomButtonStyle();
             label3 = new Label();
             gradeText = new TextBox();
             departmentText = new TextBox();
@@ -51,22 +53,40 @@
             // 
             // modifyBtn
             // 
-            modifyBtn.Location = new Point(513, 403);
+            modifyBtn.BackColor = Color.FromArgb(94, 159, 242);
+            modifyBtn.BackgroundColor = Color.FromArgb(94, 159, 242);
+            modifyBtn.BorderColor = Color.RoyalBlue;
+            modifyBtn.BorderRadius = 20;
+            modifyBtn.BorderSize = 0;
+            modifyBtn.FlatStyle = FlatStyle.Flat;
+            modifyBtn.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            modifyBtn.ForeColor = Color.White;
+            modifyBtn.Location = new Point(541, 388);
             modifyBtn.Name = "modifyBtn";
             modifyBtn.Size = new Size(113, 43);
             modifyBtn.TabIndex = 38;
             modifyBtn.Text = "수정";
-            modifyBtn.UseVisualStyleBackColor = true;
+            modifyBtn.TextColor = Color.White;
+            modifyBtn.UseVisualStyleBackColor = false;
             modifyBtn.Click += modifyBtn_Click;
             // 
             // deleteBtn
             // 
-            deleteBtn.Location = new Point(678, 403);
+            deleteBtn.BackColor = Color.FromArgb(94, 159, 242);
+            deleteBtn.BackgroundColor = Color.FromArgb(94, 159, 242);
+            deleteBtn.BorderColor = Color.RoyalBlue;
+            deleteBtn.BorderRadius = 20;
+            deleteBtn.BorderSize = 0;
+            deleteBtn.FlatStyle = FlatStyle.Flat;
+            deleteBtn.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteBtn.ForeColor = Color.White;
+            deleteBtn.Location = new Point(706, 388);
             deleteBtn.Name = "deleteBtn";
             deleteBtn.Size = new Size(113, 43);
             deleteBtn.TabIndex = 39;
             deleteBtn.Text = "삭제";
-            deleteBtn.UseVisualStyleBackColor = true;
+            deleteBtn.TextColor = Color.White;
+            deleteBtn.UseVisualStyleBackColor = false;
             deleteBtn.Click += deleteBtn_Click;
             // 
             // dataGridView1
@@ -82,12 +102,21 @@
             // 
             // departmentBtn
             // 
-            departmentBtn.Location = new Point(346, 403);
+            departmentBtn.BackColor = Color.FromArgb(94, 159, 242);
+            departmentBtn.BackgroundColor = Color.FromArgb(94, 159, 242);
+            departmentBtn.BorderColor = Color.RoyalBlue;
+            departmentBtn.BorderRadius = 20;
+            departmentBtn.BorderSize = 0;
+            departmentBtn.FlatStyle = FlatStyle.Flat;
+            departmentBtn.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            departmentBtn.ForeColor = Color.White;
+            departmentBtn.Location = new Point(374, 388);
             departmentBtn.Name = "departmentBtn";
             departmentBtn.Size = new Size(113, 43);
             departmentBtn.TabIndex = 41;
             departmentBtn.Text = "등록";
-            departmentBtn.UseVisualStyleBackColor = true;
+            departmentBtn.TextColor = Color.White;
+            departmentBtn.UseVisualStyleBackColor = false;
             departmentBtn.Click += departmentBtn_Click;
             // 
             // label3
@@ -138,10 +167,10 @@
 
         #endregion
         private Label label2;
-        private Button modifyBtn;
-        private Button deleteBtn;
+        private CustomButtonStyle modifyBtn;
+        private CustomButtonStyle deleteBtn;
         private DataGridView dataGridView1;
-        private Button departmentBtn;
+        private CustomButtonStyle departmentBtn;
         private Label label3;
         private TextBox gradeText;
         private TextBox departmentText;

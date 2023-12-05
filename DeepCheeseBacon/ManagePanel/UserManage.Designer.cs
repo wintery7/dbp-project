@@ -1,4 +1,6 @@
-﻿namespace deepcheesebacon
+﻿using deepcheesebacon.Customizing;
+
+namespace deepcheesebacon
 {
     partial class UserManage
     {
@@ -29,18 +31,18 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            SubjectSearchBtn = new Button();
+            SubjectSearchBtn = new CustomButtonStyle();
             nameText = new TextBox();
             label3 = new Label();
             label4 = new Label();
             dateText = new TextBox();
             depText = new TextBox();
             label2 = new Label();
-            NameSearchBtn = new Button();
-            AgeSearchBtn = new Button();
+            NameSearchBtn = new CustomButtonStyle();
+            AgeSearchBtn = new CustomButtonStyle();
             userIdText = new TextBox();
-            ModifyBtn = new Button();
-            DeleteBtn = new Button();
+            ModifyBtn = new CustomButtonStyle();
+            DeleteBtn = new CustomButtonStyle();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -56,12 +58,20 @@
             // 
             // SubjectSearchBtn
             // 
+            SubjectSearchBtn.BackColor = SystemColors.Window;
+            SubjectSearchBtn.BackgroundColor = SystemColors.Window;
+            SubjectSearchBtn.BorderColor = Color.FromArgb(94, 159, 242);
+            SubjectSearchBtn.BorderRadius = 10;
+            SubjectSearchBtn.BorderSize = 2;
+            SubjectSearchBtn.FlatStyle = FlatStyle.Flat;
+            SubjectSearchBtn.ForeColor = Color.DarkBlue;
             SubjectSearchBtn.Location = new Point(262, 151);
             SubjectSearchBtn.Name = "SubjectSearchBtn";
             SubjectSearchBtn.Size = new Size(97, 30);
             SubjectSearchBtn.TabIndex = 44;
             SubjectSearchBtn.Text = "검색";
-            SubjectSearchBtn.UseVisualStyleBackColor = true;
+            SubjectSearchBtn.TextColor = Color.DarkBlue;
+            SubjectSearchBtn.UseVisualStyleBackColor = false;
             SubjectSearchBtn.Click += SearchBtn_Click;
             // 
             // nameText
@@ -120,22 +130,38 @@
             // 
             // NameSearchBtn
             // 
+            NameSearchBtn.BackColor = SystemColors.Window;
+            NameSearchBtn.BackgroundColor = SystemColors.Window;
+            NameSearchBtn.BorderColor = Color.FromArgb(94, 159, 242);
+            NameSearchBtn.BorderRadius = 10;
+            NameSearchBtn.BorderSize = 2;
+            NameSearchBtn.FlatStyle = FlatStyle.Flat;
+            NameSearchBtn.ForeColor = Color.DarkBlue;
             NameSearchBtn.Location = new Point(529, 151);
             NameSearchBtn.Name = "NameSearchBtn";
             NameSearchBtn.Size = new Size(97, 30);
             NameSearchBtn.TabIndex = 51;
             NameSearchBtn.Text = "검색";
-            NameSearchBtn.UseVisualStyleBackColor = true;
+            NameSearchBtn.TextColor = Color.DarkBlue;
+            NameSearchBtn.UseVisualStyleBackColor = false;
             NameSearchBtn.Click += NameSearchBtn_Click;
             // 
             // AgeSearchBtn
             // 
+            AgeSearchBtn.BackColor = SystemColors.Window;
+            AgeSearchBtn.BackgroundColor = SystemColors.Window;
+            AgeSearchBtn.BorderColor = Color.FromArgb(94, 159, 242);
+            AgeSearchBtn.BorderRadius = 10;
+            AgeSearchBtn.BorderSize = 2;
+            AgeSearchBtn.FlatStyle = FlatStyle.Flat;
+            AgeSearchBtn.ForeColor = Color.DarkBlue;
             AgeSearchBtn.Location = new Point(792, 151);
             AgeSearchBtn.Name = "AgeSearchBtn";
             AgeSearchBtn.Size = new Size(97, 30);
             AgeSearchBtn.TabIndex = 53;
             AgeSearchBtn.Text = "검색";
-            AgeSearchBtn.UseVisualStyleBackColor = true;
+            AgeSearchBtn.TextColor = Color.DarkBlue;
+            AgeSearchBtn.UseVisualStyleBackColor = false;
             AgeSearchBtn.Click += AgeSearchBtn_Click;
             // 
             // userIdText
@@ -148,22 +174,38 @@
             // 
             // ModifyBtn
             // 
+            ModifyBtn.BackColor = SystemColors.Window;
+            ModifyBtn.BackgroundColor = SystemColors.Window;
+            ModifyBtn.BorderColor = Color.FromArgb(94, 159, 242);
+            ModifyBtn.BorderRadius = 10;
+            ModifyBtn.BorderSize = 2;
+            ModifyBtn.FlatStyle = FlatStyle.Flat;
+            ModifyBtn.ForeColor = Color.DarkBlue;
             ModifyBtn.Location = new Point(689, 400);
             ModifyBtn.Name = "ModifyBtn";
             ModifyBtn.Size = new Size(97, 30);
             ModifyBtn.TabIndex = 59;
             ModifyBtn.Text = "수정";
-            ModifyBtn.UseVisualStyleBackColor = true;
+            ModifyBtn.TextColor = Color.DarkBlue;
+            ModifyBtn.UseVisualStyleBackColor = false;
             ModifyBtn.Click += ModifyBtn_Click;
             // 
             // DeleteBtn
             // 
+            DeleteBtn.BackColor = SystemColors.Window;
+            DeleteBtn.BackgroundColor = SystemColors.Window;
+            DeleteBtn.BorderColor = Color.FromArgb(94, 159, 242);
+            DeleteBtn.BorderRadius = 10;
+            DeleteBtn.BorderSize = 2;
+            DeleteBtn.FlatStyle = FlatStyle.Flat;
+            DeleteBtn.ForeColor = Color.DarkBlue;
             DeleteBtn.Location = new Point(792, 400);
             DeleteBtn.Name = "DeleteBtn";
             DeleteBtn.Size = new Size(97, 30);
             DeleteBtn.TabIndex = 60;
             DeleteBtn.Text = "삭제";
-            DeleteBtn.UseVisualStyleBackColor = true;
+            DeleteBtn.TextColor = Color.DarkBlue;
+            DeleteBtn.UseVisualStyleBackColor = false;
             DeleteBtn.Click += DeleteBtn_Click;
             // 
             // UserManage
@@ -193,17 +235,17 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private Button SubjectSearchBtn;
+        private CustomButtonStyle SubjectSearchBtn;
         private TextBox nameText;
         private Label label3;
         private Label label4;
         private TextBox dateText;
         private TextBox depText;
         private Label label2;
-        private Button NameSearchBtn;
-        private Button AgeSearchBtn;
+        private CustomButtonStyle NameSearchBtn;
+        private CustomButtonStyle AgeSearchBtn;
         private TextBox userIdText;
-        private Button ModifyBtn;
-        private Button DeleteBtn;
+        private CustomButtonStyle ModifyBtn;
+        private CustomButtonStyle DeleteBtn;
     }
 }
