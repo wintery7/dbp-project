@@ -7,6 +7,7 @@ namespace deepcheesebacon
 {
     public class Message
     {
+        public int id {  get; set; }
         public int senderId { get; set; }
         public int receiverId { get; set; }
         public string content { get; set; }
@@ -32,7 +33,7 @@ namespace deepcheesebacon
                 isCheck = "확인 안함";
             }
 
-            return $"보낸사람: {senderEmail} || 제목: {title} || 내용: {content} || 확인 여부: {isCheck}";
+            return $"보낸사람: {senderEmail} || 제목: {this.title} || 내용: {this.content} || 확인 여부: {isCheck}";
         }
     }
 

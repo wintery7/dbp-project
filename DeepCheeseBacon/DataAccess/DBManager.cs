@@ -722,7 +722,8 @@ CREATE TABLE IF NOT EXISTS approval (
                                 senderId = reader.GetInt32("sender_id"),
                                 receiverId = reader.GetInt32("receiver_id"),
                                 content = reader.GetString("content"),
-                                sentAt = reader.GetDateTime("sent_at")
+                                sentAt = reader.GetDateTime("sent_at"),
+                                title = reader.GetString("title"),
                             };
 
                             messages.Add(message);
@@ -800,9 +801,7 @@ CREATE TABLE IF NOT EXISTS approval (
                         // 메시지 저장 성공하면 알람 테이블에도 저장
                         using (MySqlCommand alertCommand = new MySqlCommand(alertQuery, connection))
                         {
-                            alertCommand.Parameters.AddWithValue("@userId", message.receiverId); // 여기서는 수신자의 ID를 사용하도록 가정
-                            alertCommand.Parameters.AddWithValue("@messageContent", message.content);
-                            alertCommand.Parameters.AddWithValue("@receivedAt", DateTime.Now);
+                            alertCommand.Parameters.AddWithValue("@receiverId", message.receiverId); // 여기서는 수신자의 ID를 사용하도록 가정
 
                             int rowsAffectedAlert = alertCommand.ExecuteNonQuery();
 
@@ -835,8 +834,8 @@ CREATE TABLE IF NOT EXISTS approval (
             List<Message> messages = new List<Message>();
 
             string query = "SELECT * FROM message " +
-                            "WHERE (sender_id = @userId AND receiver_id = @opponentUserId) " +
-                            "   OR (sender_id = @opponentUserId AND receiver_id = @userId) ";
+                           "WHERE (sender_id = @userId AND receiver_id = @opponentUserId) " +
+                           "   OR (sender_id = @opponentUserId AND receiver_id = @userId)";
 
             try
             {
@@ -856,20 +855,58 @@ CREATE TABLE IF NOT EXISTS approval (
                         {
                             Message message = new Message
                             {
+                                id = reader.GetInt32("id"),
                                 senderId = reader.GetInt32("sender_id"),
                                 receiverId = reader.GetInt32("receiver_id"),
                                 content = reader.GetString("content"),
                                 sentAt = reader.GetDateTime("sent_at"),
-                                isChecked = reader.GetBoolean("isChecked") // isChecked 값을 추가
+                                isChecked = reader.GetBoolean("isChecked"),
+                                title = reader.GetString("title"),
                             };
 
-                            if(message.receiverId == LoginedUserInfo.loginedUserInfo.userId)
-                            {
-                                message.isChecked = true;
-                            }
 
                             messages.Add(message);
                         }
+                    }
+                }
+
+                foreach (Message message in messages)
+                {
+                    Console.WriteLine($"receiver id: {message.receiverId} || my id: {LoginedUserInfo.loginedUserInfo.userId} ");
+
+                    if (message.receiverId == LoginedUserInfo.loginedUserInfo.userId)
+                    {
+                        if (!message.isChecked)
+                        {
+                            string updateMessageQuery = "UPDATE message SET isChecked = 1 WHERE id = @id";
+
+                            message.isChecked = true;
+
+                            try
+                            {
+                                using (MySqlCommand updateCmd = new MySqlCommand(updateMessageQuery, connection))
+                                {
+                                    updateCmd.Parameters.AddWithValue("@id", message.id);
+
+                                    int rowAffected = updateCmd.ExecuteNonQuery();
+
+                                    if (rowAffected > 0)
+                                    {
+                                        Console.WriteLine("메시지 상태 업데이트 성공");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("메시지 상태 업데이트 실패");
+                                    }
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"UpdateMessageStatus 오류 발생 {ex.Message}");
+                            }
+                        }
+
+
                     }
                 }
             }
@@ -1790,6 +1827,7 @@ CREATE TABLE IF NOT EXISTS approval (
                                 content = reader.GetString("content"),
                                 sentAt = reader.GetDateTime("sent_at"),
                                 isChecked = reader.GetBoolean("isChecked"),
+                                title = reader.GetString("title"),
                             };
                             if (message.receiverId == LoginedUserInfo.loginedUserInfo.userId)
                             {
