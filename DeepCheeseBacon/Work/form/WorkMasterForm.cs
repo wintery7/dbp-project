@@ -159,5 +159,10 @@ namespace deepcheesebacon
 
             dr.Close();
         }
+
+        private void CategoryList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

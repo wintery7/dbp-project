@@ -31,6 +31,7 @@ namespace deepcheesebacon
             DataSet dataset = dbManager.GetUser_dep(dep);
             dataGridView1.DataSource = dataset.Tables[0];
 
+
             depText.Clear();
 
         }
@@ -59,10 +60,18 @@ namespace deepcheesebacon
         // 과목별, 이름별, 나이별 셀 클릭시
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int selectedRow;
-            selectedRow = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[selectedRow];
-            userIdText.Text = row.Cells[0].Value.ToString(); // user_id를 textbox에 띄움
+            try
+            {
+                int selectedRow;
+                selectedRow = e.RowIndex;
+                DataGridViewRow row = dataGridView1.Rows[selectedRow];
+                userIdText.Text = row.Cells[0].Value.ToString(); // user_id를 textbox에 띄움
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
 
         }
 

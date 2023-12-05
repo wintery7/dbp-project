@@ -31,7 +31,7 @@ namespace deepcheesebacon
 
             LoadComboBox();
         }
-       
+
 
         // combobox에 department 테이블의 department_name을 로드
         private void LoadComboBox()
@@ -65,78 +65,91 @@ namespace deepcheesebacon
 
         }
 
-      
+
         // 등록버튼 누르면 db에 정보 저장
         private void regBtn_Click(object sender, EventArgs e)
         {
-            string role = roleText.Text;
-            string email = emailText.Text;
-            string pw = HashPassWord(pwText.Text);
-            string name = nameText.Text;
-            string gender = genderText.Text;
-            string pnum = pnumText.Text;
-            string addr = addrText.Text;
-            string date = dateText.Text;
-            string depid = comboBox1.Text; // ex) 수학(100)
-            string depid1 = depid.Substring(0, depid.IndexOf("("));
-            string num = depid.Substring(depid.IndexOf("(")+1, 1);
-            int id = dbManager.GetDepIdNum(depid1, num);
-
-            int resultNum = -1; // 초기 값 설정
-
-            // 입력한 텍스트박스 확인 후
-            if (Enum.TryParse(role, out Role result))
+            try
             {
-                switch (result)
+                string role = roleText.Text;
+                string email = emailText.Text;
+                string pw = HashPassWord(pwText.Text);
+                string name = nameText.Text;
+                string gender = genderText.Text;
+                string pnum = pnumText.Text;
+                string addr = addrText.Text;
+                string date = dateText.Text;
+                string depid = comboBox1.Text; // ex) 수학(100)
+                string depid1 = depid.Substring(0, depid.IndexOf("("));
+                string num = depid.Substring(depid.IndexOf("(") + 1, 1);
+                int id = dbManager.GetDepIdNum(depid1, num);
+
+                int resultNum = -1; // 초기 값 설정
+
+                // 입력한 텍스트박스 확인 후
+                if (Enum.TryParse(role, out Role result))
                 {
-                    case Role.원장:
-                        resultNum = 0;
-                        break;
-                    case Role.강사:
-                        resultNum = 1;
-                        break;
-                    case Role.보조강사:
-                        resultNum = 2;
-                        break;
-                    default:
-                        break;
+                    switch (result)
+                    {
+                        case Role.원장:
+                            resultNum = 0;
+                            break;
+                        case Role.강사:
+                            resultNum = 1;
+                            break;
+                        case Role.보조강사:
+                            resultNum = 2;
+                            break;
+                        default:
+                            break;
 
+                    }
                 }
+                // 직급 부분에 숫자로 저장
+                if (resultNum != -1)  // 유효한 enum 값일 경우 db에 저장
+                {
+                    int resutl = dbManager.InsertInfo(resultNum, email, pw, name, gender, pnum, addr, id, date);
+                    if(result > 0)
+                    {
+                        MessageBox.Show("등록되었습니다.");
+
+                    }
+                }
+
+
+                roleText.Text = "직급";
+                roleText.ForeColor = Color.Silver;
+
+                emailText.Text = "이메일";
+                emailText.ForeColor = Color.Silver;
+
+                pwText.Text = "비밀번호";
+                pwText.ForeColor = Color.Silver;
+
+                nameText.Text = "이름";
+                nameText.ForeColor = Color.Silver;
+
+                genderText.Text = "성별";
+                genderText.ForeColor = Color.Silver;
+
+                pnumText.Text = "전화번호";
+                pnumText.ForeColor = Color.Silver;
+
+                addrText.Text = "주소";
+                addrText.ForeColor = Color.Silver;
+
+                comboBox1.Text = "담당과목";
+                comboBox1.ForeColor = Color.Silver;
+
+                dateText.Text = "생년월일";
+                dateText.ForeColor = Color.Silver;
+
             }
-            // 직급 부분에 숫자로 저장
-            if (resultNum != -1)  // 유효한 enum 값일 경우 db에 저장
+            catch (Exception ex)
             {
-                dbManager.InsertInfo(resultNum, email, pw, name, gender, pnum, addr, id, date);
+
             }
-
-
-            roleText.Text = "직급";
-            roleText.ForeColor = Color.Silver;
-
-            emailText.Text = "이메일";
-            emailText.ForeColor = Color.Silver;
-
-            pwText.Text = "비밀번호";
-            pwText.ForeColor = Color.Silver;
-
-            nameText.Text = "이름";
-            nameText.ForeColor = Color.Silver;
-
-            genderText.Text = "성별";
-            genderText.ForeColor = Color.Silver;
-
-            pnumText.Text = "전화번호";
-            pnumText.ForeColor = Color.Silver;
-
-            addrText.Text = "주소";
-            addrText.ForeColor = Color.Silver;
-
-            comboBox1.Text = "담당과목";
-            comboBox1.ForeColor = Color.Silver;
-
-            dateText.Text = "생년월일";
-            dateText.ForeColor = Color.Silver;
-
+            
         }
 
         private void emailText_Enter(object sender, EventArgs e)

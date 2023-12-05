@@ -90,7 +90,7 @@ namespace deepcheesebacon
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new WorkForm(), sender);
+            OpenChildForm(new ApprovalSystemMainForm(), sender);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -101,7 +101,6 @@ namespace deepcheesebacon
         private void button1_Click(object sender, EventArgs e)
         {
             OpenChildForm(new form(), sender);
-
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
@@ -112,16 +111,16 @@ namespace deepcheesebacon
         // 결재 시스템 메인 폼 오픈
         private void button2_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new WorkForm(), sender);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ApprovalSystemMainForm(), sender);
+            OpenChildForm(new MessageLobbyForm(), sender);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new MessageLobbyForm(), sender);
         }
     }
 }

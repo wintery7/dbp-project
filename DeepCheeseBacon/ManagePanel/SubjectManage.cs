@@ -136,13 +136,22 @@ namespace deepcheesebacon
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int selectedRow;
-            selectedRow = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[selectedRow];
-            pre_grade = row.Cells[2].Value.ToString();
-            pre_dep = row.Cells[3].Value.ToString();
-            gradeText.Text = row.Cells[2].Value.ToString();
-            departmentText.Text = row.Cells[3].Value.ToString();
+            try
+            {
+                int selectedRow;
+                selectedRow = e.RowIndex;
+                DataGridViewRow row = dataGridView1.Rows[selectedRow];
+                pre_grade = row.Cells[2].Value.ToString();
+                pre_dep = row.Cells[3].Value.ToString();
+                gradeText.Text = row.Cells[2].Value.ToString();
+                departmentText.Text = row.Cells[3].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            
         }
 
 

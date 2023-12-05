@@ -10,7 +10,7 @@ namespace deepcheesebacon
     {
         public static LoginedUserInfo loginedUserInfo = new LoginedUserInfo();
         public int userId = 1;
-        public string email = "test";
+        public string email = "test@gmail.com";
         public Role role = Role.Requester;
 
         public static LoginedUserInfo GetMyInfo() { return loginedUserInfo; }

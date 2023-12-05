@@ -1,4 +1,5 @@
 ﻿using deepcheesebacon;
+using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Bcpg.OpenPgp;
 using System;
@@ -24,7 +25,10 @@ namespace deepcheesebacon
             myInfo = LoginedUserInfo.GetMyInfo();
             InitializeComponent();
             dbManager = DBManager.GetInstance();
-            
+
+            DataSet dataset = dbManager.ViewTableAttend(LoginedUserInfo.loginedUserInfo.userId);
+            dataGridView2.DataSource = dataset.Tables[0];
+
         }
        
 
