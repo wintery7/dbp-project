@@ -34,7 +34,6 @@
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
-            button2 = new Button();
             panel1 = new Panel();
             MainPanel = new Panel();
             panel1.SuspendLayout();
@@ -50,7 +49,7 @@
             button1.Name = "button1";
             button1.Size = new Size(271, 100);
             button1.TabIndex = 0;
-            button1.Text = "button1";
+            button1.Text = "Employee";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -68,12 +67,12 @@
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(0, 605);
+            button6.Location = new Point(0, 505);
             button6.Margin = new Padding(4);
             button6.Name = "button6";
             button6.Size = new Size(271, 100);
             button6.TabIndex = 5;
-            button6.Text = "button6";
+            button6.Text = "LogOut";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
@@ -82,12 +81,12 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(0, 505);
+            button5.Location = new Point(0, 405);
             button5.Margin = new Padding(4);
             button5.Name = "button5";
             button5.Size = new Size(271, 100);
             button5.TabIndex = 4;
-            button5.Text = "button5";
+            button5.Text = "Message";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
@@ -96,12 +95,12 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(0, 405);
+            button4.Location = new Point(0, 305);
             button4.Margin = new Padding(4);
             button4.Name = "button4";
             button4.Size = new Size(271, 100);
             button4.TabIndex = 3;
-            button4.Text = "button4";
+            button4.Text = "Approval";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -110,28 +109,14 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(0, 305);
+            button3.Location = new Point(0, 205);
             button3.Margin = new Padding(4);
             button3.Name = "button3";
             button3.Size = new Size(271, 100);
             button3.TabIndex = 2;
-            button3.Text = "button3";
+            button3.Text = "Business";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
-            // 
-            // button2
-            // 
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(0, 205);
-            button2.Margin = new Padding(4);
-            button2.Name = "button2";
-            button2.Size = new Size(271, 100);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // panel1
             // 
@@ -140,7 +125,6 @@
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4);
@@ -182,7 +166,6 @@
         private Button button5;
         private Button button4;
         private Button button3;
-        private Button button2;
         private Panel panel1;
         private Panel MainPanel;
     }

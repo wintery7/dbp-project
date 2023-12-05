@@ -174,7 +174,7 @@ namespace deepcheesebacon
             ApproveForm approveForm = new ApproveForm();
             approveForm.ShowDialog();
             LoadLists();
-            
+
         }
 
         private void listBoxMyApprovalProgressList_SelectedIndexChanged(object sender, EventArgs e)
