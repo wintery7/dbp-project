@@ -356,6 +356,4 @@ C:\Users\jhj07\OneDrive\바탕 화면\DBP\dbp-project\deepcheesebacon\obj\Debug\
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.Customizing.CustomButtonStyle.resources
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.Customizing.CustomComboBox.resources
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.Customizing.CustomTextBox.resources
-C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.Work.WorkManager.resources
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.SourceCode.ApprovalSystem.Forms.RealNameChatRobbyForm.resources
-

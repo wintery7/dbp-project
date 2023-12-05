@@ -20,13 +20,11 @@ namespace deepcheesebacon
 
         private void MenuColor(object sender)
         {
-            // ?????? ????? ??? ?????? ?? ??????? ????
             if (lastClickedItem != null)
             {
                 lastClickedItem.BackColor = Color.SteelBlue;
             }
 
-            // ???? ????? ??? ???? ????
             Button menu = (Button)sender;
             menu.BackColor = Color.SkyBlue;
             lastClickedItem = menu;
@@ -36,7 +34,6 @@ namespace deepcheesebacon
         {
             MenuColor((Button)sender);
 
-            // ???? ???? ??? ??? ????? userReg ???
             pMain.Controls.Clear();
             pMain.Controls.Add(userReg);
         }
@@ -45,7 +42,6 @@ namespace deepcheesebacon
         {
             MenuColor((Button)sender);
 
-            // ???? ???? ??? ??? ????? userManage ???
             pMain.Controls.Clear();
             pMain.Controls.Add(userManage);
         }
@@ -54,7 +50,6 @@ namespace deepcheesebacon
         {
             MenuColor((Button)sender);
 
-            // ???? ???? ??? ??? ????? subjectManage ???
             pMain.Controls.Clear();
             pMain.Controls.Add(subjectManage);
 
@@ -64,7 +59,6 @@ namespace deepcheesebacon
         {
             MenuColor((Button)sender);
 
-            // ???? ???? ??? ??? ????? salary ???
             pMain.Controls.Clear();
             pMain.Controls.Add(salary);
         }
@@ -73,7 +67,6 @@ namespace deepcheesebacon
         {
             MenuColor((Button)sender);
 
-            // ???? ???? ??? ??? ?????  attendanceReg ???
             pMain.Controls.Clear();
             pMain.Controls.Add(attendanceView);
         }
@@ -83,7 +76,6 @@ namespace deepcheesebacon
 
             MenuColor((Button)sender);
 
-            // ???? ???? ??? ??? ?????  attendanceReg ???
             pMain.Controls.Clear();
             pMain.Controls.Add(attendanceReg);
         }
