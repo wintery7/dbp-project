@@ -1,4 +1,4 @@
-﻿using deepcheesebacon.Work;
+﻿using deepcheesebacon.work;
 
 namespace deepcheesebacon;
 

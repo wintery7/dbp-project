@@ -358,3 +358,4 @@ C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\D
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.Customizing.CustomTextBox.resources
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.Work.WorkManager.resources
 C:\Users\User\Documents\GitHub\DeepCheeseBacon\dbp-project\deepcheesebacon\obj\Debug\net6.0-windows\deepcheesebacon.SourceCode.ApprovalSystem.Forms.RealNameChatRobbyForm.resources
+

@@ -1,4 +1,4 @@
-using deepcheesebacon.Work;
+using deepcheesebacon.work.src;
 using MySql.Data.MySqlClient;
 
 namespace deepcheesebacon
@@ -16,42 +16,22 @@ namespace deepcheesebacon
             Init();
         }
 
+        /* ----- Init Database ----- */
         private void InitDatabase()
         {
             DBHandlerForWork.Instance.SetDBSource("34.64.40.193", "deep_cheese", "seoungjun", "1234", "utf8");
             db = DBHandlerForWork.Instance;
         }
 
+        /* ----- Init ----- */
         private void Init()
         {
             log = Log.Instance;
-            LoadWork();
+
+            LoadWork();     // Work DataGridView Load
         }
 
-
-
-
-
-
-        /*
-        private void SetCustomTimePicker() {
-            this.StartTime.Format = DateTimePickerFormat.Custom;
-            this.StartTime.CustomFormat = "HH:mm";
-            this.EndTime.Format = DateTimePickerFormat.Custom;
-            this.EndTime.CustomFormat = "HH:mm";
-        }
-        */
-
-        private void MiddleCategoryCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //DB.setBottomCategory(this.BottomCategoryCombo, TopCategoryCombo.SelectedItem.ToString(), MiddleCategoryCombo.SelectedItem.ToString());
-        }
-
-        private void TopCategoryCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //DB.setMiddleCategory(MiddleCategoryCombo, this.BottomCategoryCombo, TopCategoryCombo.SelectedItem.ToString());
-        }
-
+        /* Work DataGridView Load */
         private void LoadWork()
         {
             int userId = LoginedUserInfo.GetMyInfo().userId;
@@ -65,118 +45,53 @@ namespace deepcheesebacon
             dr.Close();
         }
 
-        private void RegisterButton_Click(object sender, EventArgs e)
-        {
-            /*
-            DateTime startday = this.StartDay.Value.Date;
-            DateTime starttime = this.StartTime.Value;
-
-            DateTime start = startday.AddHours(starttime.Hour).AddMinutes(starttime.Minute);
-
-            DateTime endday = this.EndDay.Value.Date;
-            DateTime endtime = this.EndTime.Value;
-
-            DateTime end = endday.AddHours(endtime.Hour).AddMinutes(endtime.Minute);
-
-            string contents = this.WorkDetailBox.Text;
-            string topCategory = this.TopCategoryCombo.Text;
-            string middleCategory = this.MiddleCategoryCombo.Text;
-            string bottomCategory = this.BottomCategoryCombo.Text;
-
-            DB.insertWork(topCategory, middleCategory, bottomCategory, start, end, contents);
-            */
-        }
-
-        private void WorkMasterButton_Click(object sender, EventArgs e)
+        /* ----- Work Master Edit ----- */
+        private void WorkMasterButton_Click_1(object sender, EventArgs e)
         {
             Form form = new WorkMasterForm();
 
             form.Show();
         }
 
-        private void RemoveButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ModifyButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WorkDetailBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void IdSearchBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void IdSearchLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void customGroupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WorkForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void RemoveButton_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WorkView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        /* Top Category Load */
+        /* ----- Top Category Load ----- */
         private void TopCategoryCombo_Click(object sender, EventArgs e)
         {
-            MySqlDataReader dr = db.Select("top_category").From("work_category").Exec();
+            MySqlDataReader dr = db.Select("top_category").From("work_category").GroupBy("top_category").Exec();
 
+            // Item Add 전 Clear
             TopCategoryCombo.Items.Clear();
             while (dr.Read())
             {
                 TopCategoryCombo.Items.Add(dr.GetString("top_category"));
             }
+            // 하위 Category Init
             MiddleCategoryCombo.Text = "";
             BottomCategoryCombo.Text = "";
 
             dr.Close();
         }
 
-        /* Middle Category Load */
+        /* ----- Middle Category Load ----- */
         private void MiddleCategoryCombo_Click(object sender, EventArgs e)
         {
             string topCategory = TopCategoryCombo.Text;
 
+            // Top Category Null Check
             if (topCategory == "")
             {
                 return;
             }
 
-            MySqlDataReader dr = db.Select("middle_category").From("work_category").Where($"top_category='{topCategory}'").Exec();
+            MySqlDataReader dr = db.Select("middle_category").From("work_category" +
+                "").Where($"top_category='{topCategory}'").GroupBy("middle_category").Exec();
 
+            // Item Add 전 Clear
             MiddleCategoryCombo.Items.Clear();
             while (dr.Read())
             {
                 MiddleCategoryCombo.Items.Add(dr.GetString("middle_category"));
             }
+            // 하위 Category Init
             BottomCategoryCombo.Text = "";
 
             dr.Close();
@@ -188,14 +103,16 @@ namespace deepcheesebacon
             string topCategory = TopCategoryCombo.Text;
             string middleCategory = MiddleCategoryCombo.Text;
 
+            // Top Category, Middle Category Null Check
             if (topCategory == "" || middleCategory == "")
             {
                 return;
             }
 
             MySqlDataReader dr = db.Select("bottom_category").From("work_category").Where($"top_category='{topCategory}' " +
-                $"AND middle_category='{middleCategory}'").Exec();
+                $"AND middle_category='{middleCategory}'").GroupBy("bottom_category").Exec();
 
+            // Item Add 전 Clear
             BottomCategoryCombo.Items.Clear();
             while (dr.Read())
             {
@@ -205,11 +122,11 @@ namespace deepcheesebacon
             dr.Close();
         }
 
-        /* WorkId Load */
+        /* ----- WorkId Load ----- */
         private void WorkId_Click(object sender, EventArgs e)
         {
             int userId = LoginedUserInfo.GetMyInfo().userId;
-
+            // 자기 자신에게 해당하는 work_id만 불러옴
             MySqlDataReader dr = db.Select("work_id").From("work_detail").Where($"user_id={userId}").Exec();
 
             WorkId.Items.Clear();
@@ -224,6 +141,7 @@ namespace deepcheesebacon
         /* Register */
         private void RegisterButton_Click_1(object sender, EventArgs e)
         {
+            // 필수 입력 칸이 비었는 지 검사
             if (CheckEmpty())
             {
                 log.Here("올바른 값이 아닙니다.");
@@ -231,6 +149,15 @@ namespace deepcheesebacon
                 return;
             }
 
+            // StartTime, EndTime의 순서 검사
+            if (!CheckDate())
+            {
+                log.Here("올바른 날짜가 아닙니다.");
+
+                return;
+            }
+
+            // 겹치는 업무가 있는지 검사
             if (CheckDuplicate())
             {
                 log.Here("시간이 겹치는 업무가 있습니다.");
@@ -249,15 +176,19 @@ namespace deepcheesebacon
             {
                 log.Here("WORK REGISTER ERROR");
             }
+
             LoadWork();
+            InitControlBox();
         }
 
+        /* Check Empty */
         private bool CheckEmpty()
         {
             string topCategory = TopCategoryCombo.Text;
             string middleCategory = MiddleCategoryCombo.Text;
             string bottomCategory = BottomCategoryCombo.Text;
 
+            // Category가 비었는 경우
             if (topCategory == "" || middleCategory == "" || bottomCategory == "")
             {
                 return true;
@@ -265,6 +196,7 @@ namespace deepcheesebacon
 
             string contents = WorkDetailBox.Text;
 
+            // Contents가 비었는 경우
             if (contents == "")
             {
                 return true;
@@ -273,6 +205,17 @@ namespace deepcheesebacon
             return false;
         }
 
+        /* Check Date */
+        private bool CheckDate()
+        {
+            string startTime = GetStartTime();
+            string endTime = GetEndTime();
+
+            // startTime이 endTime보다 뒤에 있으면 false Return
+            return string.Compare(startTime, endTime) != 1;
+        }
+
+        /* Check Duplicate */
         private bool CheckDuplicate()
         {
             string startTime = GetStartTime();
@@ -288,6 +231,7 @@ namespace deepcheesebacon
 
                 dr.Close();
 
+                // 겹치는 업무가 있으면 true Return
                 return result == "1";
             }
             log.Here("DUPLICATE CHECK READ ERROR");
@@ -295,6 +239,7 @@ namespace deepcheesebacon
             return true;
         }
 
+        /* Get Category Id */
         private string GetCategoryId()
         {
             string topCategory = TopCategoryCombo.Text;
@@ -307,6 +252,7 @@ namespace deepcheesebacon
             string categoryId = "";
             if (dr.Read())
             {
+                // 대.중.소 Category에 해당하는 category_id
                 categoryId = dr.GetString("category_id");
             }
             dr.Close();
@@ -314,6 +260,7 @@ namespace deepcheesebacon
             return categoryId;
         }
 
+        /* Get Start Time */
         private string GetStartTime()
         {
             DateTime startday = StartDay.Value.Date;
@@ -324,6 +271,7 @@ namespace deepcheesebacon
             return start.ToString("yyyy-MM-dd HH:mm");
         }
 
+        /* Get End Time */
         private string GetEndTime()
         {
             DateTime endday = EndDay.Value.Date;
@@ -334,7 +282,19 @@ namespace deepcheesebacon
             return end.ToString("yyyy-MM-dd HH:mm");
         }
 
-        /* Delete */
+        /* Init ControlBox */
+        private void InitControlBox()
+        {
+            TopCategoryCombo.Text = "";
+            MiddleCategoryCombo.Text = "";
+            BottomCategoryCombo.Text = "";
+
+            WorkDetailBox.Text = "";
+
+            WorkId.Text = "";
+        }
+
+        /* ----- Delete ----- */
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             string workId = WorkId.Text;
@@ -348,13 +308,15 @@ namespace deepcheesebacon
             }
 
             LoadWork();
+            InitControlBox();
         }
 
-        /* Edit */
+        /* ----- Edit ----- */
         private void EditButton_Click(object sender, EventArgs e)
         {
             string workId = WorkId.Text;
 
+            // work_id 입력이 없는 경우
             if (workId == "")
             {
                 log.Here("올바른 ID 값이 아닙니다.");
@@ -362,6 +324,7 @@ namespace deepcheesebacon
                 return;
             }
 
+            // 필수 입력 칸이 비었는 경우
             if (CheckEmpty())
             {
                 log.Here("올바른 값이 아닙니다.");
@@ -369,6 +332,15 @@ namespace deepcheesebacon
                 return;
             }
 
+            // Start Time이 End Time보다 뒤에 있는 경우
+            if (!CheckDate())
+            {
+                log.Here("올바른 날짜가 아닙니다.");
+
+                return;
+            }
+
+            // 겹치는 업무가 있는 경우 (자기자신 제외)
             if (CheckDuplicateForEdit(workId))
             {
                 log.Here("시간이 겹치는 업무가 있습니다.");
@@ -387,14 +359,18 @@ namespace deepcheesebacon
             {
                 log.Here("WORK REGISTER ERROR");
             }
+
             LoadWork();
+            InitControlBox();
         }
 
+        /* Check Duplicate For Edit */
         private bool CheckDuplicateForEdit(string workId)
         {
             string startTime = GetStartTime();
             string endTime = GetEndTime();
 
+            // 자기자신을 제외한 겹치는 업무가 존재하는지 Query
             MySqlDataReader dr = db.Select("EXISTS (SELECT * FROM work_detail").Where($"((start_time BETWEEN '{startTime}' AND '{endTime}')" +
                 $"OR (end_time BETWEEN '{startTime}' AND '{endTime}')" +
                 $"OR (start_time <= '{startTime}' AND end_time >= '{endTime}'))" +
@@ -413,16 +389,18 @@ namespace deepcheesebacon
             return true;
         }
 
-        /* WorkId COmboBox Index Changed */
+        /* ----- WorkId COmboBox Index Changed ----- */
         private void WorkId_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadWorkDetail();
         }
 
+        /* Load Work Detail */
         private void LoadWorkDetail()
         {
             string workId = WorkId.Text;
 
+            // 입력된 work_id가 없는 경우
             if (workId == "")
             {
                 return;
@@ -433,9 +411,12 @@ namespace deepcheesebacon
 
             if (dr.Read())
             {
+                // Category
                 TopCategoryCombo.Text = dr.GetString("top_category");
                 MiddleCategoryCombo.Text = dr.GetString("middle_category");
                 BottomCategoryCombo.Text = dr.GetString("bottom_category");
+
+                // Contents
                 WorkDetailBox.Text = dr.GetString("contents");
 
                 // Time
@@ -447,11 +428,12 @@ namespace deepcheesebacon
             dr.Close();
         }
 
-        /* Keyword Search */
+        /* ----- Keyword Search ----- */
         private void KeywordSearchButton_Click(object sender, EventArgs e)
         {
             string contents = WorkDetailBox.Text;
 
+            // 입력된 값이 없는 경우
             if (contents == "")
             {
                 return;
@@ -467,7 +449,7 @@ namespace deepcheesebacon
             dr.Close();
         }
 
-        /* Time Search */
+        /* ----- Time Search ----- */
         private void SearchButton_Click(object sender, EventArgs e)
         {
             string startTime = GetStartTime();
@@ -485,9 +467,11 @@ namespace deepcheesebacon
             dr.Close();
         }
 
+        /* ----- Click Reload Button ----- */
         private void Reload_Click(object sender, EventArgs e)
         {
             LoadWork();
+            InitControlBox();
         }
     }
 }
