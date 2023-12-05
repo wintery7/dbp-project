@@ -1,4 +1,6 @@
-﻿namespace deepcheesebacon
+﻿using deepcheesebacon.Customizing;
+
+namespace deepcheesebacon
 {
     partial class AttendanceReg
     {
@@ -29,8 +31,8 @@
         private void InitializeComponent()
         {
             dateTimePicker1 = new DateTimePicker();
-            GoWorkBtn = new Button();
-            OffWorkBtn = new Button();
+            GoWorkBtn = new CustomButtonStyle();
+            OffWorkBtn = new CustomButtonStyle();
             dataGridView2 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -44,22 +46,40 @@
             // 
             // GoWorkBtn
             // 
+            GoWorkBtn.BackColor = Color.FromArgb(94, 159, 242);
+            GoWorkBtn.BackgroundColor = Color.FromArgb(94, 159, 242);
+            GoWorkBtn.BorderColor = Color.RoyalBlue;
+            GoWorkBtn.BorderRadius = 20;
+            GoWorkBtn.BorderSize = 0;
+            GoWorkBtn.FlatStyle = FlatStyle.Flat;
+            GoWorkBtn.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            GoWorkBtn.ForeColor = Color.White;
             GoWorkBtn.Location = new Point(530, 387);
             GoWorkBtn.Name = "GoWorkBtn";
             GoWorkBtn.Size = new Size(102, 43);
             GoWorkBtn.TabIndex = 41;
             GoWorkBtn.Text = "출근";
-            GoWorkBtn.UseVisualStyleBackColor = true;
+            GoWorkBtn.TextColor = Color.White;
+            GoWorkBtn.UseVisualStyleBackColor = false;
             GoWorkBtn.Click += GoWorkBtn_Click;
             // 
             // OffWorkBtn
             // 
+            OffWorkBtn.BackColor = Color.FromArgb(94, 159, 242);
+            OffWorkBtn.BackgroundColor = Color.FromArgb(94, 159, 242);
+            OffWorkBtn.BorderColor = Color.RoyalBlue;
+            OffWorkBtn.BorderRadius = 20;
+            OffWorkBtn.BorderSize = 0;
+            OffWorkBtn.FlatStyle = FlatStyle.Flat;
+            OffWorkBtn.Font = new Font("맑은 고딕", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            OffWorkBtn.ForeColor = Color.White;
             OffWorkBtn.Location = new Point(639, 387);
             OffWorkBtn.Name = "OffWorkBtn";
             OffWorkBtn.Size = new Size(102, 43);
             OffWorkBtn.TabIndex = 44;
             OffWorkBtn.Text = "퇴근";
-            OffWorkBtn.UseVisualStyleBackColor = true;
+            OffWorkBtn.TextColor = Color.White;
+            OffWorkBtn.UseVisualStyleBackColor = false;
             OffWorkBtn.Click += OffWorkBtn_Click;
             // 
             // dataGridView2
@@ -87,8 +107,8 @@
 
         #endregion
         private DateTimePicker dateTimePicker1;
-        private Button GoWorkBtn;
-        private Button OffWorkBtn;
+        private CustomButtonStyle GoWorkBtn;
+        private CustomButtonStyle OffWorkBtn;
         private DataGridView dataGridView2;
     }
 }
