@@ -30,6 +30,8 @@ namespace deepcheesebacon
                 Console.WriteLine("id:" + textBoxEmail.Texts);
                 Console.WriteLine("pw:" + textBoxPassword.Texts);
             }
+
+            AcceptButton = buttonLogin;
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)

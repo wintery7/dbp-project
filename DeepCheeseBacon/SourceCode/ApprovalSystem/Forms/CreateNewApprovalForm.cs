@@ -78,6 +78,11 @@ namespace deepcheesebacon
                         RequestId = myinfo.userId
                     };
 
+                    if(LoginedUserInfo.loginedUserInfo.role == Role.FirstApprover)
+                    {
+                        approval.RoleStatus = Role.FirstApprover;
+                    }
+
                     if (ApprovalService.CreateApproval(approval) > 0)
                     {
                         textBoxApprovalTitle.ClearText();

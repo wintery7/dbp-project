@@ -38,10 +38,10 @@ namespace deepcheesebacon
                 // 권한 상태 수정 1, 2차 승인자 식별자 등록
                 switch (request.approval.RoleStatus)
                 {
-                   /* case Role.Requester:
+                    case Role.Requester:
                         request.approval.RoleStatus = Role.FirstApprover;
 
-                        break;*/
+                        break;
                     case Role.FirstApprover:
                         request.approval.RoleStatus = Role.SecondApprover;
                         request.approval.FirstApproverId = request.approval.ApproverId;
