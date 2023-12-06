@@ -8,5 +8,6 @@ namespace deepcheesebacon.SourceCode.ApprovalSystem.Models
     {
         public Approval approval { get; set; } // 요청하고 하는 결재
 
+        public string nextApproverEmail { get; set; }
     }
 }

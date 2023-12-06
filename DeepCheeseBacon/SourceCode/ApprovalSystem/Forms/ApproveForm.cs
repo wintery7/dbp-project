@@ -18,6 +18,7 @@ namespace deepcheesebacon
         ApprovalService approvalService = new ApprovalService();
         LoginedUserInfo myInfo;
         List<Approval> pendingApprovalList;
+        List<(int, string)> secondApproverIdList;
 
         public ApproveForm()
         {
@@ -25,7 +26,21 @@ namespace deepcheesebacon
             myInfo = LoginedUserInfo.GetMyInfo();
             LoadTaskRequiringMyApprovalList();
             SetLabelDateTime();
+            SetNextApproverList();
         }
+
+        private void SetNextApproverList()
+        {
+            secondApproverIdList = approvalService.GetFirstApproverIdList();
+
+            comboBoxNextApproverList.Items.Clear();
+
+            foreach ((int, string) email in secondApproverIdList)
+            {
+                comboBoxNextApproverList.Items.Add(email.Item2);
+            }
+        }
+
 
         private void SetLabelDateTime()
         {
@@ -50,17 +65,23 @@ namespace deepcheesebacon
 
         private void buttonApproveApproval_Click(object sender, EventArgs e)
         {
-            if(listBoxTaskRequiringMyApprovalList.SelectedIndex == -1)
+            if (listBoxTaskRequiringMyApprovalList.SelectedIndex == -1)
             {
                 MessageBox.Show("결재하실 목록을 선택해주세요");
                 return;
             }
 
-            Approval selectedApproval = null; 
+            if(comboBoxNextApproverList.SelectedIndex == -1 && LoginedUserInfo.loginedUserInfo.role != Role.SecondApprover)
+            {
+                MessageBox.Show("다음 결재자를 선택해주세요");
+                return;
+            }
+
+            Approval selectedApproval = null;
 
             foreach (Approval approval in pendingApprovalList)
             {
-                if (approval.Id.Equals(((PendingApprovalItem)listBoxTaskRequiringMyApprovalList.SelectedItem).ApprovalId))
+                if (approval.Id.Equals(((Approval)listBoxTaskRequiringMyApprovalList.SelectedItem).Id))
                 {
                     selectedApproval = approval;
                 }
@@ -69,23 +90,42 @@ namespace deepcheesebacon
 
             if (selectedApproval != null)
             {
-                if(!textBoxComment.Text.IsNullOrEmpty())
+                if (!textBoxComment.Text.IsNullOrEmpty())
                 {
-                    if(selectedApproval.Comment.IsNullOrEmpty())
+                    if (selectedApproval.Comment.IsNullOrEmpty())
                     {
                         selectedApproval.Comment = $"{LoginedUserInfo.loginedUserInfo.email}: " + textBoxComment.Text + "\n";
+                        
                     }
                     else
                     {
                         selectedApproval.Comment += $"{LoginedUserInfo.loginedUserInfo.email}: " + textBoxComment.Text + "\n";
                     }
                 }
-                approvalService.ApproveRequest(
-                new ApprovalApproveRequest()
+                ApprovalApproveRequest approvalApproveRequest = new ApprovalApproveRequest();
+                approvalApproveRequest.approval = selectedApproval;
+                if(comboBoxNextApproverList.SelectedIndex != -1)
                 {
-                    approval = selectedApproval,
+                    approvalService.ApproveRequest(new ApprovalApproveRequest()
+                    {
+                        
+                        approval = selectedApproval,
+                        nextApproverEmail = comboBoxNextApproverList.SelectedItem.ToString()
+                    });
+                }
+                else
+                {
+                    approvalService.ApproveRequest(
+                    new ApprovalApproveRequest()
+                    {
+                        approval = selectedApproval,
 
-                });
+                    });
+                }
+
+                
+                textBoxComment.Clear();
+                listBoxTaskDetail.Items.Clear();
                 MessageBox.Show("결재완료되었습니다");
                 LoadTaskRequiringMyApprovalList();
             }
@@ -119,7 +159,7 @@ namespace deepcheesebacon
 
         private void buttonRejectApproval_Click(object sender, EventArgs e)
         {
-            if(listBoxTaskRequiringMyApprovalList.SelectedIndex == -1)
+            if (listBoxTaskRequiringMyApprovalList.SelectedIndex == -1)
             {
                 MessageBox.Show("반려하실 결재를 선택해주세요");
                 return;
@@ -133,7 +173,7 @@ namespace deepcheesebacon
             {
                 // 사용자가 폼에서 OK 버튼을 눌렀을 때 메모를 가져옴
                 memo = rejectForm.GetMemo(); // GetMemo는 RejectForm에서 메모를 반환하는 메서드로 가정
-                approvalId = ((PendingApprovalItem)listBoxTaskRequiringMyApprovalList.SelectedItem).ApprovalId;
+                approvalId = ((Approval)listBoxTaskRequiringMyApprovalList.SelectedItem).Id;
                 approvalService.RejectRequest(new ApprovalRejectRequest()
                 {
                     ApprovalId = approvalId,

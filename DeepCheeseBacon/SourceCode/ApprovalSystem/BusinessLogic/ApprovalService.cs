@@ -38,13 +38,17 @@ namespace deepcheesebacon
                 // 권한 상태 수정 1, 2차 승인자 식별자 등록
                 switch (request.approval.RoleStatus)
                 {
-                    case Role.Requester:
+                   /* case Role.Requester:
                         request.approval.RoleStatus = Role.FirstApprover;
-                        break;
+
+                        break;*/
                     case Role.FirstApprover:
                         request.approval.RoleStatus = Role.SecondApprover;
                         request.approval.FirstApproverId = request.approval.ApproverId;
-                        request.approval.ApproverId = 4; // 테스트 2차 승인자 한 명이라고 가정하고 4번 대입
+                        if(request.nextApproverEmail != null)
+                        {
+                            request.approval.ApproverId = ((User)dB.GetUserByEmail(request.nextApproverEmail)).UserId;
+                        };
                         break;
                     case Role.SecondApprover:
                         request.approval.RoleStatus = Role.Approved;
@@ -141,7 +145,7 @@ namespace deepcheesebacon
         // 1차 승인자 userID 리스트 불러오기
         public List<(int, string)> GetFirstApproverIdList()
         {
-            return dB.GetFirstApproverIdsList();
+            return dB.GetNextApproverIdsList();
         }
 
         public List<Approval> GetMyApproval(MyApprovalProgressRequest request)

@@ -36,9 +36,10 @@ namespace deepcheesebacon
             labelDateTime = new Label();
             customGroupBox1 = new CustomGroupBox();
             customGroupBox2 = new CustomGroupBox();
-            listBoxTaskDetail = new ListBox();
-            textBoxComment = new TextBox();
             label1 = new Label();
+            textBoxComment = new TextBox();
+            listBoxTaskDetail = new ListBox();
+            comboBoxNextApproverList = new ComboBox();
             customGroupBox1.SuspendLayout();
             customGroupBox2.SuspendLayout();
             SuspendLayout();
@@ -87,7 +88,7 @@ namespace deepcheesebacon
             listBoxTaskRequiringMyApprovalList.ItemHeight = 15;
             listBoxTaskRequiringMyApprovalList.Location = new Point(6, 36);
             listBoxTaskRequiringMyApprovalList.Name = "listBoxTaskRequiringMyApprovalList";
-            listBoxTaskRequiringMyApprovalList.Size = new Size(159, 334);
+            listBoxTaskRequiringMyApprovalList.Size = new Size(159, 304);
             listBoxTaskRequiringMyApprovalList.TabIndex = 13;
             listBoxTaskRequiringMyApprovalList.SelectedIndexChanged += listBoxTaskRequiringMyApprovalList_SelectedIndexChanged;
             // 
@@ -103,6 +104,7 @@ namespace deepcheesebacon
             // customGroupBox1
             // 
             customGroupBox1.BackColor = Color.Transparent;
+            customGroupBox1.Controls.Add(comboBoxNextApproverList);
             customGroupBox1.Controls.Add(listBoxTaskRequiringMyApprovalList);
             customGroupBox1.Location = new Point(21, 17);
             customGroupBox1.Name = "customGroupBox1";
@@ -134,6 +136,22 @@ namespace deepcheesebacon
             customGroupBox2.TitleForeColor = Color.White;
             customGroupBox2.TitleHatchStyle = System.Drawing.Drawing2D.HatchStyle.Percent60;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(6, 350);
+            label1.Name = "label1";
+            label1.Size = new Size(78, 15);
+            label1.TabIndex = 30;
+            label1.Text = "결재 코멘트: ";
+            // 
+            // textBoxComment
+            // 
+            textBoxComment.Location = new Point(90, 347);
+            textBoxComment.Name = "textBoxComment";
+            textBoxComment.Size = new Size(331, 23);
+            textBoxComment.TabIndex = 1;
+            // 
             // listBoxTaskDetail
             // 
             listBoxTaskDetail.FormattingEnabled = true;
@@ -143,21 +161,13 @@ namespace deepcheesebacon
             listBoxTaskDetail.Size = new Size(415, 304);
             listBoxTaskDetail.TabIndex = 0;
             // 
-            // textBoxComment
+            // comboBoxNextApproverList
             // 
-            textBoxComment.Location = new Point(90, 347);
-            textBoxComment.Name = "textBoxComment";
-            textBoxComment.Size = new Size(331, 23);
-            textBoxComment.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 350);
-            label1.Name = "label1";
-            label1.Size = new Size(78, 15);
-            label1.TabIndex = 30;
-            label1.Text = "결재 코멘트: ";
+            comboBoxNextApproverList.FormattingEnabled = true;
+            comboBoxNextApproverList.Location = new Point(6, 346);
+            comboBoxNextApproverList.Name = "comboBoxNextApproverList";
+            comboBoxNextApproverList.Size = new Size(159, 23);
+            comboBoxNextApproverList.TabIndex = 30;
             // 
             // ApproveForm
             // 
@@ -188,5 +198,6 @@ namespace deepcheesebacon
         private ListBox listBoxTaskDetail;
         private Label label1;
         private TextBox textBoxComment;
+        private ComboBox comboBoxNextApproverList;
     }
 }

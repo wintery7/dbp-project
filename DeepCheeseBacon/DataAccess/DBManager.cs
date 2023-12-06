@@ -483,7 +483,7 @@ CREATE TABLE IF NOT EXISTS approval (
             }
         }
 
-        public List<(int, string)> GetFirstApproverIdsList()
+        public List<(int, string)> GetNextApproverIdsList()
         {
             List<(int, string)> firstApproverIdList = new List<(int, string)>();
 
